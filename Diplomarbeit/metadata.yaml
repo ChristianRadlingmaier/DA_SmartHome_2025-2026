@@ -23,7 +23,7 @@ da-author:
 - vorname: Janik 
   nachname: Gierer
   klasse: 5AHWIN
-  thema: Entwicklung eines Prototypen
+  thema: Smart Assistant Steuerung des Smart Homes
   ki-tools:
   - name: Github Copilot
     zweck: Boilerplate codegenerierung, Codedokumentation

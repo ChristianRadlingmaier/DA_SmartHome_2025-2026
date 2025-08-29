@@ -1,255 +1,162 @@
-# Projekthandbuch
-\textauthor{Schueler XY}
+# Projekthandbuch – SmartHome Diplomarbeit
+
+**Autor:** Janik Gierer, Christian Radlinmaier, Christian Beichtbuchner, Chloe Pripfl
 
 ## Entwicklungsplan
 
 ### Projektauftrag
 
-Hier beschreiben Sie die allgemeinen Informationen zu Ihrem Maturaprojekt. Hier beschreiben sie den Projektkontext, nämlich die Ausgangssituation und Problembeschreibung
+Im Rahmen unserer Diplomarbeit entwickeln wir ein modellbasiertes SmartHome-System mit verschiedenen Sensoren und Aktoren. Diese werden über ein zentrales System mit FEHM (FHEM) und Home Assistant verwaltet und gesteuert. Das Projekt befasst sich mit der Automatisierung von Haushaltsprozessen auf einem Miniaturmodellhaus und bietet zusätzlich eine webbasierte Bedienoberfläche über Portainer und Node-RED. Ziel ist es, ein skalierbares, offenes System zu demonstrieren, das mit verschiedenen Protokollen wie MQTT kommuniziert.
 
+### Projektziele
 
-#### Projektziele
+- Aufbau eines funktionstüchtigen SmartHome-Modellhauses mit realitätsnaher Steuerung.
+- Integration von Home Assistant zur Steuerung und Visualisierung.
+- Anbindung von Sensoren (Temperatur, Helligkeit, Türkontakt) und Aktoren (Licht, Motoren, Heizung) via MQTT.
+- Visualisierung und Bedienung über Node-RED.
+- Verwaltung der Containerumgebung über Portainer.
+- Dokumentation der Einrichtung und Konfiguration.
+- Vorbereitung für später mögliche Erweiterungen wie Fernzugriff, Spracherkennung etc.
 
-Das Projektziel beschreibt den erwünschten Zustand (Sollzustand) nach dem erfolgreichen Abschluss des Projektes. Das Ziel wird wohlbedacht formuliert und durch aktives Handeln aller Projektbeteiligten erreicht. Projektziele sollten gemeinsam mit allen Projektbeteiligten erarbeitet werden.
+### Nicht-Ziele
 
-#### Nicht-Ziele bzw. nicht Inhalte
+- Keine Entwicklung eigener Sensorhardware (nur Integration vorhandener Komponenten).
+- Keine native App-Entwicklung.
+- Kein Live-Zugriff von außerhalb ohne VPN oder Portweiterleitung.
 
-Nicht-Ziele sind aus mehreren Gründen wichtig. Erstens helfen sie beim Erwartungsmanagement. Zweitens schaffen sie Klarheit darüber, was erledigt werden soll. Und drittens erhöhen Nicht-Ziele die Transparenz. Denn wenn man schon früh im Projekt explizit die Bereiche definiert, die das Projekt nicht bearbeiten soll, kann dadurch eine Diskussion über genau diese Randbereiche entstehen. 
+### Projektnutzen
 
-#### Projektnutzen
+- Demonstration moderner Automatisierung im Kleinformat.
+- Praxiserfahrung im Umgang mit Containerisierung, MQTT und Home Assistant.
+- Anwendbares Wissen für spätere berufliche Aufgaben oder größere Hausautomatisierungen.
+- Beitrag zum praxisnahen Unterricht an der HTL Leoben.
 
-Wie soll ein Außenstehender ein Projekt genehmigen, wenn nicht klar formuliert ist, WARUM das Projekt überhaupt durchgeführt werden soll? Auch hier ist es wichtig, möglichst konkret zu werden. Einen Projektnutzen z.B. mit „neueste Technik“ zu bezeichnen, ist nicht ausreichend.
+### Projektauftraggeber/in
 
-#### Projektauftraggeber/in
+**HTL Leoben** – Abteilung für Informationstechnologie  
+**Betreuer:** Prof. Hutter, Prof. Poetscher
 
-Hier beschreiben Sie wer der Projektauftraggeber ist. Falls es eine externe Firma ist können Sie hier eine kurze Beschreibung des Unternehmens (sofern Projektrelevant) einfügen.
+### Projekttermine
 
-#### Projekttermine
+| Termin        | Inhalt                          |
+|---------------|----------------------------------|
+| 2025-09-15    | Projektmanagement abgeschlossen  |
+| 2025-10-10    | Prototypaufbau abgeschlossen     |
+| 2025-10-31    | Systemintegration abgeschlossen  |
+| 2025-11-15    | Testbetrieb + Fehleranalyse      |
+| 2025-12-05    | Finalisierung & Präsentation     |
+| 2026-01-15    | Abgabe Dokumentation             |
 
-Welche Termine sind Fixtermine und was sollte an diesen Terminen stattfinden ? Beispiele hierfür sind z.B: Präsentationen, Projektende, Zwischenabgaben, fest eingeplante Besprechungen / Reviews (die auch Projektrelevant sind) die auf keinen Fall vergessen werden dürfen
+### Projektkosten
 
+| Meilenstein  | Kostenart | Menge | Einzelpreis | Gesamtkosten | Bezahlt durch     |
+|--------------|-----------|-------|-------------|---------------|--------------------|
+| Hardware     | Sensoren  | 6     | 7.00 €      | 42.00 €       | Schüler            |
+| Hardware     | Aktoren   | 4     | 8.00 €      | 32.00 €       | Schüler            |
+| Plattformen  | Raspberry Pi | 1 | 60.00 €      | 60.00 €       | Schule             |
+| Zubehör      | Kabel/Adapter | 1 | 10.00 €      | 10.00 €       | Schüler            |
+| Druckkosten  | Dokumentation | 1 | 25.00 €      | 25.00 €       | Schüler            |
 
+**Gesamtkosten: 169.00 €**
 
-| Termin     | Inhalt                          |
-|-----------:|:--------------------------------|
-| 2020-12-24 | Weihnachten                     |
-| 20XX-12-24 | Projektstart                    |
-| 20XX-10-24 | Projektpräsentation             |
-| 20XX-10-24 | Erreichung Meilenstein I        |
-| 20XX-10-24 | Erste Zwischenpräsentation      |
-| 20XX-10-24 | Erreichung Meilenstein II       |
-| 20XX-10-24 | Erreichung Meilenstein III      |
-| 20XX-10-24 | Zweite Zwischenpräsentation     |
-| 20XX-10-24 | Abgabe Endversion an Betreuer   |
-| 20XX-10-24 | Abgabe Gebundene Version        |
-| 20XX-10-24 | ...                             |
+### Projektrisiken
 
-: Projektterminübersicht
+| Risiko                          | Wahrscheinlichkeit | Auswirkungen                          | Maßnahmen                                 |
+|---------------------------------|---------------------|----------------------------------------|-------------------------------------------|
+| Hardware beschädigt             | Mittel (30%)        | Ersatz notwendig, Verzögerung möglich | Ersatzgeräte vorrätig halten              |
+| WLAN-Probleme                   | Niedrig (10%)       | Keine Kommunikation zwischen Modulen  | Kabelgebundene Option vorbereiten         |
+| MQTT-Verbindungsprobleme        | Mittel (20%)        | Sensoren/Aktoren nicht steuerbar      | Logging, Restart-Mechanismen implementieren|
+| Komplexität Home Assistant      | Hoch (40%)          | Verzögerung durch Konfigurationsfehler| Schrittweise testen, Dokumentation lesen  |
 
+## Projektorganisation
 
-#### Projektkosten
+### Projektbeteiligte
 
-Hier dokumentieren Sie welche Kosten fallen Für Ihr Projekt an und wer kommt für diese Kosten auf ?
+| Vorname   | Nachname     | Organisation | Kontaktinfo                  |
+|-----------|--------------|--------------|------------------------------|
+| Alexander | Gierer       | HTL Leoben   | a.gierer@htl-leoben.at       |
+| Klaus     | Auracher     | HTL Leoben   | k.auracher@htl-leoben.at     |
+| Michael   | Lukasiewicz  | Frequentis   | m.lukasiewicz@frequentis.com |
 
-| Meilenstein  | Kostenart | Menge  | Preis   | Gesamtkosten | Deckung durch |
-|:-------------|:---------:|:------:|--------:|-------------:|---------------|
-| Prototyp     | Personal  |  10.00 |   15.00 | 150.00      | Schüler       |
-| Prototyp     | Hardware  |  1     |  254.00 | 254.00      | Projektpartner|
-| DA-Schreiben | Druck     |  3     |   26.00 |  53.00      | Schüler       |
+### Projektrollen
 
- : Geplante Projektkosten
- 
-Am ende sollten Sie eine Projektkostensumme ermitteln und hier angeben damit man sagen kann
-__Das Projekt kostet in Summe so und so viel Euro__. 
-
-
-Am Ende der Diplomarbeit fügen Sie hier noch eine Liste der tatsächlich angefallenen Kosten ein.
-
-#### Projektrisiken
-
-Hier geben Sie an welche Risiken auf Ohr Projekt zutreffen können, und auch wie wahrscheinlich es ist das dieses Risiko eintritt.
-Eine Übersicht über Risiken finden sie hier: https://projekte-leicht-gemacht.de/blog/pm-in-der-praxis/130-projektrisiken-beispiele/
-
-Hier ein Beispiel:
-
-| Risiko         | EW  | Auswirkungen     | Maßnahmen     |
-|:--------------:|:---:| :----------------|:--------------|
-| Überziehen der Kosten | 15% | Erhöhte Kosten für Schüler | Budgetierung |
-| Ungenaue Schätzungen | 30% | Ungenaue Schätzungen führen zu Problem bezüglich Terminen und Budget. | Schätzungen mit Fachkollegen absprechen|
-| Verzögerungen beim Aufbau von Hard- und Software | 10% | Prototyp wird nicht rechtzeitig zur Endpräsentation fertig | Früh genug anfangen |
-
-: Projektrisiken
-
-### Projektorganisation
-
-#### Projektbeteiligte
-Hier wird definiert wer (welche Personen) an diesem Projekt beteiligt im Prinzip beteiligt ist.
-
-| Vorname     | Nachname     | Organisation | Kontaktinfos      |
-|:------------|:-------------|:-------------|:------------------|
-| Joltawan    | Barodscheff  | HTL Leoben   | jb@htl-leoben.at  |
-| Frank       | Borland      | Firma XY     | frank@borla.nd    |
-| ...         | ...          | ...          | ...               |
-
-: Projektbeteiligte
-
-Unter Kontaktinfos können neben der Emailadresse natürlich auch noch andere Informationen wie Telefonnunmmer, Postanschrift, usw. stehen. ... Im Prinzip alles was notwendig ist um die Person zu erreichen wenn es notwendig ist. 
-
-#### Projektrollen
-
-Hier werden den Kontakten von oben konkrete Rollen zuewiesen.
-
-| Projektrolle           | Rollenbeschreibung     | Name              |
-|------------------------|------------------------|-------------------|
-| Projektleiter | Verantwortlicher für Einhaltung des Projektrahmens | Joltawan Barodscheff |
-| Auftraggeber | Auftraggeber der internen Diplomarbeit | Frank Borland |
-| Betreuer | Schulischer Betreuer | G. Hutter |
-| Betreuer | Schulischer Betreuer | A. Poetscher |
-
-: Projektrollen
-
-Gerne können Sie hier auch noch zusätzlich eine Grafik oder ein Organisationsdiagramm einbauen.
-
-![Projektorganisationsdiagramm](img/projektorganisation.png){width=50%}
+| Rolle              | Beschreibung                                       | Name                  |
+|--------------------|---------------------------------------------------|-----------------------|
+| Projektleiter      | Gesamtkoordination, technischer Aufbau            | Alexander Gierer      |
+| Betreuer           | Schulischer Ansprechpartner, techn. Kontrolle     | Prof. Auracher        |
+| Auftraggeber       | Evaluierung im Kontext Frequentis-Kompatibilität | Michael Lukasiewicz   |
 
 ### Vorgehen bei Änderungen
 
-Hier dokumentieren sie betreffend des Meilensteinplans oder der Anwendungsfälle: 
-
-* Wer wird informiert, 
-* wer muss zustimmen, 
-* wo werden die Änderungen wie vermerkt?
-
-Das dient in erster Linie dazu um ein einheitliches Vorgehen definiert zu haben.
+- Änderungen werden im GitHub-Repo dokumentiert (Changelog.md).
+- Bei größeren Änderungen (z. B. Sensorwechsel) wird der Betreuer informiert.
+- Der Projektleiter entscheidet in Absprache mit Team und Betreuer über Annahme.
 
 ## Meilensteine
 
-Der Begriff taucht im Projektmanagement sehr häufig auf. Meilensteine sind wichtige Punkte im Projektverlauf. Oft werden sie auch als Prüfpunkte bezeichnet.
+### 2025-09-15: Projektmanagement abgeschlossen
+- Projekthandbuch erstellt und bestätigt.
+- Zeitplan abgestimmt.
 
-Generell kann ein Meilenstein ein Ereignis sein, an dem
+### 2025-10-10: Aufbau SmartHome Modellhaus abgeschlossen
+- Sensorik und Aktorik vollständig integriert.
+- Stromversorgung getestet.
 
-* etwas abgeschlossen ist,
-* etwas begonnen wird oder
-* über die weitere Vorgehensweise entschieden wird
+### 2025-10-31: Home Assistant lauffähig
+- Docker-Container laufen stabil.
+- Verbindung zu MQTT und Sensoren funktioniert.
 
-Meilensteine werden meist am Ende von Projektphasen definiert. Auch innerhalb von Phasen kann es zusätzliche Meilensteine geben.
+### 2025-11-15: Systemtest und Feineinstellungen
+- Automatisierungen laufen wie geplant.
+- UI optimiert (Node-RED Flows).
 
-Meilensteine verlaufen nie über eine Zeitdauer. Nie. Sie sind lediglich Entscheidungspunkte
+### 2025-12-05: Präsentation vorbereitet
+- Demo vorbereitet.
+- Feedback eingeholt und eingearbeitet.
 
-Hier ein Beispiel wie die Meilensteine im Fall einer aussehen können
-
-### 2020-09-15: Projektmanagement abgeschlossen
-
-- Projekthandbuch ist fertig
-- Serverinfrastruktur ist hergestellt
-- Bestellungen sind abgessendet
-
-### 2020-11-01: Genehmigung der DA
-
-- Einreichen des Antrags durch die Schüler/innen
-- DA Dokumentation wurde ausgefüllt und unterschrieben
-
-### 2020-11-26: Literaturrecherche abgeschlossen
-
-- Literatur zum Thema XY gesucht und in bibtex vermerkt
-- Aktellen Stand der Forschung erhoben
-- Verschriftlichung des Literaturteils begonnen 
-
-### 2020-12-17: Prototyp ist funktionell
-
-- DB mit Tabelle für Benutzer.
-- DB Kommunikation zur Anwendung (inkl. Dokumentation)
-- Es gibt in der Anwendung einen /Admin/ Benutzer. Dieser Benutzer kann weitere Benutzer in den Rollen /Lehrende/ und bzw. oder /Studierende/ anlegen.
-      
-### 2021-01-10: Applikation fertiggestellt
-
-- Lehrende sind dazu in der Lage Tests anzulegen.
-- Studenten können einen ihnen zugewiesenen Test absolvieren.
-
-### 2021-01-10: Review und Überarbeitung fertig
-
-- Der Quellcode ist gemeinsam mit den Projektpartnern reviewt
-- Quellcodedokumentation abgeschlossen (Javadoc)
-- Projekt baut auf eigenem Buildserver (Continous Integration)
-
-### 2021-02-03: Diploarbeit fertig verschriftlicht 
-
-- Stilfehler sind behoben
-- DA Dokumentationsblatt ist unterschrieben, eingescannt und im Hauptdokument enthalten 
-- Praxisteil ist ebgeschlossen und verschriftlicht
-- Informationen sind im DA Portal eingegeben
-- Unterschriebene DA Betreuungsprotokolle sind in der DA enthalten
-- DA liegt dem Betreuer in ausgedruckter Form vor
-    
+### 2026-01-15: Abgabe
+- Dokumentation vollständig gedruckt und gebunden.
+- Alle Unterlagen im DA-Portal eingetragen.
 
 ## Anwendungsfälle
 
-Hier beschreiben Sie die Anwendungsfälle (=UseCases) Ihrer Anwendung / Diplomarbeit. Dabei sollte die Beschreibung auf hohem Niveau (also ohne implementierungsspezifische Details) erfolgen und typischerweise so benannt sein, wie die Ziele aus Sicht der Akteure heißen: Mitglied anmelden, Geld abheben, Auto zurückgeben.
+### Überblick
 
-Jeder Anwendungsfall wird im selben Muster beschrieben. In den folgenden Absätzen ist zuerst eine allgemeine Beschreibung eines solchen Anwendungsfalls zu finden und dann ein Beispiel dazu.
+- SmartHome automatisch beleuchten
+- Temperaturabhängige Heizsteuerung
+- Türkontaktmeldung per Pushnachricht
+- Visualisierung der Sensordaten im Dashboard
+- Fernsteuerung über Handy (lokales WLAN)
+- Zeitschaltfunktionen
 
-Damit man auch versteht wer mit welchem Anwendungsfall agiert bietet es sich an hier eine Übersichtsgrafik zu erstellen:
-
-![Übersicht Anwendungsfälle](img/anwendungsfalldiagramm.png){width=60%}
-
-\newpage
-### Anwendungsfallname
-Anwendungsfälle haben einen eindeutigen Namen aus dem man auf den Inhalt des Anwendungsfalls schließen kann. Wenn Sie agil arbeiten dann stellt ein Anwendungsfall eine UserStory dar welche im Backlog liegt und im Laufe des Projekts (in einem Sprint) abgearbeitet wird.
+### Beispiel: Licht automatisch steuern
 
 #### Kurzbeschreibung
-Hier erfolgt eine kurze Beschreibung, was im Anwendungsfall passiert. Kurz bedeutet, dass es zwei oder drei Zeilen sind, selten mehr.
-      
+Die Beleuchtung wird bei Dunkelheit und Bewegung im Raum automatisch eingeschaltet.
+
 #### Trigger
-Der fachliche Grund bzw. die Gründe dafür, dass dieser Anwendungsfall ausgeführt 
+Helligkeitssensor meldet Dunkelheit **und** PIR-Sensor erkennt Bewegung.
 
 #### Vorbedingung
-Alle Bedingungen, die erfüllt sein müssen, damit dieser Anwendungsfall ausgeführt werden kann. Gibt es keine Vorbedingungen, so steht hier "keine".
-      
+System ist gestartet und Sensoren sind einsatzbereit.
+
 #### Nachbedingung
-Der Zustand, der nach einem erfolgreichen Durchlauf des Anwendungsfalls erwartet wird.
+Lampe wird für 2 Minuten eingeschaltet.
 
 #### Akteure
-Akteure sind beteiligte Personen oder Systeme außerhalb (!) des beschriebenen Systems. Z. B. Anwender, angemeldeter Anwender, Kunde, System, Abrechnungsprozess.
+- Benutzer (indirekt)
+- Sensoren (Bewegung, Helligkeit)
 
 #### Standardablauf
-Hier wird das typische Szenario dargestellt, das leicht zu verstehen oder der am häufigsten vorkommende Fall ist. An seinem Ende steht die Zielerreichung des Primärakteurs. Die Ablaufschritte werden nummeriert und meist in strukturierter Sprache beschrieben. Ablaufpläne können jedoch ebenfalls benutzt werden, wenn es angebracht erscheint. Mittels der UML können diese Ablaufschritte in Aktivitätsdiagrammen oder Anwendungsfall-orientierten Sequenzdiagrammen dargestellt werden.
 
-#### Fehlersituationen
-Dies sind Szenarien, die sich außerhalb des Standardablaufs auch bei der (versuchten) Zielerreichung des Anwendungsfalls ereignen können. Sie werden meistens als konditionale Verzweigungen der normalen Ablaufschritte dargestellt. An ihrem Ende steht ein Misserfolg, die Zielerreichung des Primärakteurs oder eine Rückkehr zum Standardablauf.
+1. Helligkeit < 200 Lux → Bedingung erfüllt
+2. Bewegung erkannt → Bedingung erfüllt
+3. Lampe wird via MQTT eingeschaltet
 
-#### Systemzustand im Fehlerfall
-Der Zustand, der nach einem erfolglosen Durchlauf des Anwendungsfalls erwartet wird.
+#### Fehlerfälle
 
-
-\newpage
-### Benutzer Anlegen
-
-#### Kurzbeschreibung
-Der Benutzer "Admin" kann auf Anfrage einen neuen Benutzer als "Lehrende" und bzw. oder "Studierende" anlegen
-
-#### Trigger
-Admin legt auf Anfrage eines Benutzers einen neuen Account an
-
-#### Vorbedingung
-Benutzer als "Admin" angemeldet
-      
-#### Nachbedingung
-Es existiert ein Eintrag in der DB Benutzer Tabelle für den neu erstellten Benutzer. (Dieser kann sich anschließend in der Anwendung anmelden)
-
-#### Akteure
-* Admin
-
-#### Fehlersituationen
-Admin bricht die Aktion ab
+- Keine Bewegung: Lampe bleibt aus
+- Lichtsensor defekt: keine Aktion
 
 #### Systemzustand im Fehlerfall
-Benutzer wird nicht angelegt und wird verworfen
-
-#### Standardablauf:
-
-1. Admin drückt Button, um einen neuen Benutzer anzulegen
-2. Es öffnet sich ein Formular, indem die nötigen Benutzer-Informationen eingegeben werden (Name, Adresse, Telephonnummer, E-Mail, Geburtsdatum, Passwort-Hash, Rolle). Der neue Benutzer muss mindestens einer der Rollen "Lehrende" und "Studierende" angehören
-
-#### Alternativabläufe:
-
-* Admin drückt den Button, um die Aktion abzubrechen 
+Licht bleibt aus, Status im Dashboard wird angezeigt.

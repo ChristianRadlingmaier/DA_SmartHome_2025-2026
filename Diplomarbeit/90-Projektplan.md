@@ -74,17 +74,21 @@ Im Rahmen unserer Diplomarbeit entwickeln wir ein modellbasiertes SmartHome-Syst
 
 | Vorname   | Nachname     | Organisation | Kontaktinfo                  |
 |-----------|--------------|--------------|------------------------------|
-| Alexander | Gierer       | HTL Leoben   | a.gierer@htl-leoben.at       |
-| Klaus     | Auracher     | HTL Leoben   | k.auracher@htl-leoben.at     |
-| Michael   | Lukasiewicz  | Frequentis   | m.lukasiewicz@frequentis.com |
+| Janik     | Gierer       | HTL Leoben   | 211wita04@htl-leoben.at       |
+| Christian | Beichtbuchner| HTL Leoben   | 211wita01@htl-leoben.at       |
+| Christian | Radlinmier   | HTL Leoben   | 211witb--@htl-leoben.at       |
+| Chloe     | Pripfl       | HTL Leoben   | 211witb--@htl-leoben.at       |
 
 ### Projektrollen
 
-| Rolle              | Beschreibung                                       | Name                  |
-|--------------------|---------------------------------------------------|-----------------------|
-| Projektleiter      | Gesamtkoordination, technischer Aufbau            | Alexander Gierer      |
-| Betreuer           | Schulischer Ansprechpartner, techn. Kontrolle     | Prof. Auracher        |
-| Auftraggeber       | Evaluierung im Kontext Frequentis-Kompatibilität | Michael Lukasiewicz   |
+| Rolle              | Beschreibung                                      | Name                    |
+|--------------------|---------------------------------------------------|-------------------------|
+| Projektleiter      | Gesamtkoordination, Umsetzung in HomeAssist       | Janik Gierer        |
+|                    |                                                   | Christian Beichtbuchner |
+|                    |                                                   | Christian Radlingmaier  |
+|                    |                                                   | Chloe Pripfl            |
+| Betreuer           | Schulischer Ansprechpartner, techn. Kontrolle     | Prof. Leitner           |
+
 
 ### Vorgehen bei Änderungen
 

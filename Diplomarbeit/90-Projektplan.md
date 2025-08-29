@@ -54,6 +54,7 @@ Im Rahmen unserer Diplomarbeit entwickeln wir ein modellbasiertes SmartHome-Syst
 | Hardware     | Sensoren  | 6     | 7.00 €      | 42.00 €       | Schüler            |
 | Hardware     | Aktoren   | 4     | 8.00 €      | 32.00 €       | Schüler            |
 | Plattformen  | Raspberry Pi | 1 | 60.00 €      | 60.00 €       | Schule             |
+| Haus         | 3D Druck  in 4 Teilen| 25.00€  |  100.00 €      | Schule            | 
 | Zubehör      | Kabel/Adapter | 1 | 10.00 €      | 10.00 €       | Schüler            |
 | Druckkosten  | Dokumentation | 1 | 25.00 €      | 25.00 €       | Schüler            |
 

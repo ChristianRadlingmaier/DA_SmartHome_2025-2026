@@ -77,7 +77,7 @@ Im Rahmen unserer Diplomarbeit entwickeln wir ein modellbasiertes SmartHome-Syst
 |-----------|--------------|--------------|------------------------------|
 | Janik     | Gierer       | HTL Leoben   | 211wita04@htl-leoben.at       |
 | Christian | Beichtbuchner| HTL Leoben   | 211wita01@htl-leoben.at       |
-| Christian | Radlinmier   | HTL Leoben   | 211witb--@htl-leoben.at       |
+| Christian | Radlingmaier | HTL Leoben   | 211witb21@htl-leoben.at       |
 | Chloe     | Pripfl       | HTL Leoben   | 211witb--@htl-leoben.at       |
 
 ### Projektrollen
@@ -86,7 +86,7 @@ Im Rahmen unserer Diplomarbeit entwickeln wir ein modellbasiertes SmartHome-Syst
 |--------------------|---------------------------------------------------|-------------------------|
 | Projektleiter      | Gesamtkoordination, Umsetzung in HomeAssist       | Janik Gierer        |
 |                    |                                                   | Christian Beichtbuchner |
-|                    |                                                   | Christian Radlingmaier  |
+|                    | Umsetzung in FHEM                                 | Christian Radlingmaier  |
 |                    |                                                   | Chloe Pripfl            |
 | Betreuer           | Schulischer Ansprechpartner, techn. Kontrolle     | Prof. Leitner           |
 

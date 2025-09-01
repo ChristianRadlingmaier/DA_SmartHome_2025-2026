@@ -1,4 +1,4 @@
-# Diplomarbeit_{2025-26}: {SmartHome}
+# Diplomarbeit_2025-26: SmartHome
 
 In dieser Diplomarbeit wird ein intelligentes SmartHome-Modellhaus entwickelt, das zentrale Automatisierungs- und Steuerungskomponenten eines modernen SmartHomes im Miniaturformat demonstriert. Ziel ist es, verschiedene Sensoren (z. B. Temperatur, Helligkeit) und Aktoren (z. B. Heizung, Beleuchtung, Lüftung) miteinander zu vernetzen und diese über eine zentrale Steuerung (Home Assistant und/oder FHEM) automatisiert sowie manuell bedienbar zu machen.
 

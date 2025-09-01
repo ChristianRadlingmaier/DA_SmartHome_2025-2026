@@ -1,52 +1,67 @@
-\newpage
 ## Dokumentation
 
-Im Abschnitt Projektdokumentation können Sie mit Hilfe eines Projektmanagementwerkzeuges Ihrer Wahl die Projektumsetzung dokumentieren. (Also ein fortlaufender Projektfortschrittsbericht)
+Im Abschnitt Projektdokumentation werden die durchgeführten Tätigkeiten, Aufwände und der Status des Projekts dokumentiert. Dies geschieht jeweils pro Meilensteinabschnitt.
 
-Normalerweise werden Sie die UserStories in mehrere SubTasks zerreissen und dann in einem agilen verfahen (Scrum, Kanban, was auch immer ihnen am geeignetsten erscheint) abarbeiten. Dazu können Sie natürlich eine Softwahre Ihrer Wahl verwenden.
+---
 
-Am Ende sollten sie aber für jeden Projektabschnitt (Das ist die Zeit zwischen den Meilensteinen) eine Dokumentation entstehen aus der ersichtlich ist
+### Projektfortschritt 09. Juli bis 25. August 2025
 
-* Berichtszeitraum
-* Durchgeführte Arbeiten im Berichtszeitraum sowie die Aufwände der einzelnen Personen
-* Projektstatus (Im Plan, Schwierigkeiten, Risiko)
-* Gesamtstatus sowie die möglicherweise notwendigen Maßnahmen für
-    - Leistungsziele
-    - Terminziele
-    - Kostenziele
-    - Teamarbeit
-* Nächste Schritte und notwendige Entscheidungen
+#### Berichtszeitraum
+09. Juli – 25. August 2025
 
-Im folgenden Abschnitt ist ein solcher Fortschritt illustriert. 
+#### Durchgeführte Arbeiten & Aufwände
 
-### Projektfortschritt 01. Juni bis 05. August 2020
+##### Gierer
 
-#### Gesamtstatus
+| Datum     | Stunden | Tätigkeit                                                                 |
+|-----------|---------|---------------------------------------------------------------------------|
+| 09. Jul   | 2       | Recherche, Raspberry Pi aufsetzen                                         |
+| 10. Jul   | 3       | Docker mit Home Assistant, MQTT, Portainer, Node-RED und Fernzugriff starten |
+| 14. Jul   | 2       | Fehlerbehebung Docker (Home Assistant)                                    |
+| 15. Jul   | 3       | Besprechung mit Beichtbuchner (Allgemeines & Kosten), erste Versuche Home Assistant |
+| 12. Aug   | 3       | Haus-Zeichnung für Home Assistant                                         |
+| 14. Aug   | 2       | Einrichtung des Hauses für Home Assistant                                 |
+| 25. Aug   | 2       | Fehlerbehebung im GitHub-Repository                                       |
 
-* Das Projekt befindet sich derzeit im Plan. 
-* Es wurden alle Teile bestellt und die Hardware dimensioniert
-* Bei den Lieferungen hat es leichte Verspätungen gegeben
+##### Beichtbuchner
 
+| Datum     | Stunden | Tätigkeit                                                                 |
+|-----------|---------|---------------------------------------------------------------------------|
+| 15. Jul   | 1       | Besprechung mit Gierer (Allgemeines & Kosten)                             |
+| 11. Aug   | 3       | Download Fusion 360 + erste Modellierungsversuche                         |
+| 11. Aug   | 4       | Erste Skizzen erstellt                                                    |
+| 17. Aug   | 8       | Fenster, Türen ausschneiden + Einkerbungen für Plexiglas                  |
+| 19. Aug   | 4       | Türen/Fenster modelliert, Kabelkanäle & Zwischendach                      |
+| 19. Aug   | 2       | Dach & Verbindungsdübel modelliert                                        |
 
-| Dimension           | Status            |  Maßnahmen             |
-|:--------------------|:------------------|:-----------------------|
-| Leistungsziele      | In Ordnung        | keine                  |
-| Terminziele         | Verzug durch Lieferprobleme | Bei restlichen Teilen Expresslieferung|
-| Kostenziele | Teile im Budget, Batterie sehr teuer | Günstigere Teile bei der restlichen Hardware verwenden |
-| Teamarbeit | optimal | keine |
+##### Radlingmaier
 
-:Projektstatus am 2020-08-05
+| Datum     | Stunden | Tätigkeit                                                                 |
+|-----------|---------|---------------------------------------------------------------------------|
+| 05. Aug   | 2       | Einrichtung von Perl                                                      |
+| 11. Aug   | 1       | Einlesen in Perl                                                          |
+| 12. Aug   | 1       | Einlesen in Perl                                                          |
+| 13. Aug   | 1       | Fehlerbehebung von Einrichtung                                            |
+
+#### Projektstatus
+
+| Dimension           | Status       | Maßnahmen                       |
+|---------------------|--------------|---------------------------------|
+| Leistungsziele      | *(leer)*     | *(leer)*                        |
+| Terminziele         | *(leer)*     | *(leer)*                        |
+| Kostenziele         | *(leer)*     | *(leer)*                        |
+| Teamarbeit          | *(leer)*     | *(leer)*                        |
+
+:Projektstatus am 25. August 2025
 
 #### Notwendige Entscheidungen
 
-* Die Zusammenbauphase muss etwas verschoben werden und startet nun um 14 Tage später. Das hat keinen Einfluss auf den Endtermin.
+- *(Eintrag leer – je nach aktuellem Projektverlauf zu ergänzen)*
 
 #### Nächste Schritte
 
-* Abklären ob die Expressbestellungen im Budget sind
-* Start dder Implementierungsphase
+- Weiterentwicklung der Integration in Home Assistant
+- Aufbau der Visualisierung und Sensor-Ansteuerung
+- Vorbereitung der Zwischenpräsentation
 
-: Projektstatus Stand 05. August 2020
-
-
-
+: Projektstatus Stand 25. August 2025

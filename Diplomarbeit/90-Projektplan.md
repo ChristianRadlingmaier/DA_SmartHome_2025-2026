@@ -154,8 +154,8 @@ Lampe wird für 2 Minuten eingeschaltet.
 
 #### Standardablauf
 
-1. Helligkeit < 200 Lux → Bedingung erfüllt
-2. Bewegung erkannt → Bedingung erfüllt
+1. Helligkeit < 200 Lux $\rightarrow$ Bedingung erfüllt
+2. Bewegung erkannt $\rightarrow$ Bedingung erfüllt
 3. Lampe wird via MQTT eingeschaltet
 
 #### Fehlerfälle

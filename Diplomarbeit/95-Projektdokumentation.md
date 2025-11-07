@@ -22,6 +22,7 @@ Im Abschnitt Projektdokumentation werden die durchgeführten Tätigkeiten, Aufw�
 | 12. Aug   | 3       | Haus-Zeichnung für Home Assistant                                         |
 | 14. Aug   | 2       | Einrichtung des Hauses für Home Assistant                                 |
 | 25. Aug   | 2       | Fehlerbehebung im GitHub-Repository                                       |
+| 26. Aug   | 2       | Recherche HomeAssistant                                     |
 
 ##### Beichtbuchner
 

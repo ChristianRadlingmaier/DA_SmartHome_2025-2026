@@ -54,6 +54,94 @@ LibreCAD
 
 #### Komponenten im Modellhaus
 - Arduino als Steuerungseinheit
+- eigenschaften der einzelnen arduinos
+- ## 1. Arduino Uno
+- **Beschreibung:** Das wohl bekannteste Board, ideal für Einsteiger.  
+- **Merkmale:** 14 digitale I/O-Pins, 6 analoge Eingänge, USB-Schnittstelle, ATmega328P-Mikrocontroller.  
+- **Einsatz:** Kleine Projekte, Lernplattform für Programmierung und Elektronik.
+![](){width=80%}
+
+## 2. Arduino Nano
+- **Beschreibung:** Kompaktes Board, ideal für Platz sparende Projekte.  
+- **Merkmale:** 14 digitale I/O-Pins, 8 analoge Eingänge, ATmega328P, USB-Anschluss mini/micro.  
+- **Einsatz:** Wearables, kleine Roboter, tragbare Geräte.
+
+
+## 3. Arduino Mega 2560
+- **Beschreibung:** Größeres Board für komplexere Projekte.  
+- **Merkmale:** 54 digitale I/O-Pins, 16 analoge Eingänge, ATmega2560-Mikrocontroller.  
+- **Einsatz:** Projekte mit vielen Sensoren/Aktoren, 3D-Drucker, große Automatisierungen.
+
+
+## 4. Arduino Leonardo
+- **Beschreibung:** Unterstützt USB-HID-Funktionen, kann als Maus/Tastatur agieren.  
+- **Merkmale:** ATmega32u4, 20 digitale Pins, 12 analoge Eingänge.  
+- **Einsatz:** Interaktive Geräte, Steuerungen für Computer.  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### Sensoren und Aktoren
+
+## 1. Sensoren
+Ein **Sensor** ist ein Gerät, das physikalische, chemische oder biologische Größen aus der Umgebung **erfasst** und in ein elektrisches Signal umwandelt, damit ein Computer, Mikrocontroller oder ein anderes System diese Daten weiterverarbeiten kann.  
+
+**Merkmale von Sensoren:**
+- Erfassen Umgebungsgrößen wie Temperatur, Licht, Feuchtigkeit, Bewegung, Druck oder chemische Zusammensetzung.
+- Wandeln die erfassten Größen in elektrische Signale (Spannung, Strom, Widerstand oder digitale Werte) um.
+- Werden oft in automatisierten Systemen eingesetzt, um Zustände zu überwachen.
+
+**Beispiele für Sensoren:**
+| Sensor | Messgröße | Anwendung |
+|--------|-----------|-----------|
+| Temperatursensor | Temperatur | Raumklimasteuerung, Wetterstationen |
+| Lichtsensor | Helligkeit | Automatische Beleuchtung, Kameras |
+| Bewegungssensor | Bewegung | Alarmanlagen, automatische Türen |
+| Feuchtigkeitssensor | Luftfeuchtigkeit | Klimakontrolle, Landwirtschaft |
+
+**Merksatz:**  
+> Sensoren *fühlen* oder *messen* die Umwelt.
+
+---
+
+## 2. Aktoren
+Ein **Aktor** ist ein Gerät, das elektrische Signale empfängt und in eine **physikalische Aktion** umsetzt. Anders gesagt: Aktoren führen Befehle aus und verändern die Umgebung.  
+
+**Merkmale von Aktoren:**
+- Reagieren auf Steuerbefehle aus einem System.
+- Wandeln elektrische Signale in mechanische, hydraulische, pneumatische oder andere physikalische Bewegungen um.
+- Werden eingesetzt, um Prozesse zu automatisieren oder direkt auf Sensorinformationen zu reagieren.
+
+**Beispiele für Aktoren:**
+| Aktor | Wirkung | Anwendung |
+|-------|---------|-----------|
+| Elektromotor | Bewegung / Drehung | Roboterarme, Lüfter |
+| Lampe | Licht erzeugen | Beleuchtungssysteme |
+| Ventil | Öffnen / Schließen | Heizungs- oder Bewässerungssysteme |
+| Lautsprecher | Ton / Schall | Audioausgabe, Warnsysteme |
+
+**Merksatz:**  
+> Aktoren *handeln* oder *tun etwas* in der Umwelt.
+
+---
+
 - LEDs, Sensoren und weitere Bauteile
 
 

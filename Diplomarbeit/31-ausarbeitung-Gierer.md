@@ -5,6 +5,26 @@ Dieses Kapitel wird oft auch als _Literaturrecherche_ bezeichnet. Da gehört all
 
 Das sind z.B: allgemeine Definitionen, Beschreibung von fachspezifischen Vorgehensweisen, Frameworks, Theorie zu verwendeten Algorithmen, besondere Umstände, ...
 
+Es werden hier die Theoretischen und Praktischen Grundlagen zur Umsetztung von Home Assistant für ein Modelhaus gelegt und wie diese auch im echten Leben auf ein richtiges Haus angewendet werden können. Es wird das nötige Wissen dargestellt damit der Leser den praktischen teil nachvollziehen und verstehen kann. der fokus liegt hierbei auf der einrichtung des Dockers auf dem Raspberry Pi, der Kommunikation zwischen dem raspberry Pi und der Kommunikation zwischen Arduino Uno und Aktoren wie Sensoren.
+
+## Theoretischer Hintergrund
+
+Ein SmartHome beschreibt ein vernetztes Haus bei dem bestimmte meist alltägliche Komponenten von einem einzelnen Punkt aus gesteuert und ausgelesen werden können dies passiert entweder automatisch oder oder per Benutzereingabe. Beispiele dafür wären per Handy das Licht oder die Heizung ein/aus zu stellen oder ab einer bestimmten Uhrzeit die Rollläden automatisch nach unten zu fahren. Dafür werden im beispiel dieser Diplomarbeit ein Arduino als Mikrocontroller, ein raspberry Pi als Steuerzentrale sowie im konkreten Bereich Home Assitant als Automatisierungsplattform zum Einsatz Dadurch wird die Kommunikation zwischen Sensoren und Aktoren gewährleistet und die Steuerlogik wird mittels MQTT übertragen.
+
+### Verwendete Aktoren 
+- 100Pcs 1/4W 5% Toleranz 150Ohm Wiederstand
+- 3mm Leuchtdioden
+
+### Zusätlich Benötigtes
+- IWILCS Dupont Crimp Set 790tlg inkl. Crimpzange
+- Kabel 0,5mm²
+- 4x PLA Basic Hellgrau (10104)
+- 2x PLA Basic Dunkelgrau (10105)
+
+### Verwendete Frameworks 
+- Home Assistant: 
+
+
 ## Praktische Arbeit
 
 > Hier beschreiben Sie ihren praktischen Teil. Es geht darum seine Implementierung / Versuche so darzustellen dass anhand dieser dre Leser erkennen kann was sie wie gemacht haben.

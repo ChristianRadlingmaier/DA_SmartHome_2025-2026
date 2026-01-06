@@ -12,10 +12,6 @@ In diesem teil der Arbeit werden:
 
 ## Theorieteil
 
-### Sensorenverbindung Jumperkabel
-
-Durch Herrn Hutter Anleitungen fürs Auto bekommen, worin alles beschrieben wird. Welche Sensoren auf welche Pins der Raspberry Pi verbunden werden müssen. 
-
 ### ROS2
 
 #### Was ist ROS?
@@ -31,3 +27,26 @@ Interprozesskommunikation und Paketmanagment zur verfügung. Außerdem finden si
 
 
 ### Verbindung zum Smartphone
+
+
+## Praxisteil
+
+### Sensorenverbindung Jumperkabel
+
+Durch Herrn Hutter Anleitungen fürs Auto bekommen, worin alles beschrieben wird. Welche Sensoren auf welche Pins der Raspberry Pi verbunden werden müssen. 
+
+### Kaputtes Ground Jumper Kabel
+
+Dieses Problem wurde einfach gelöst. Hierzu wurde ein Leitendes Pin-ähnelndes metallstück an das Kabel angelötet. 
+
+### Raspberry Pi Betriebssystem
+
+Um ein passendes Betriebssystem zu finden muss man sich zuerst die Raspberry Pi selbst anschauen. In dem Fall wurde eine Raspberry Pi 3 mit 64 bit verbaut. 
+Am besten für ROS2 ist Ubuntu. Da die Raspberry Pi 3 leider nicht für die LTS Version von Ubuntu geeignet ist, ist Raspberry OS die einfachste Option.
+
+Das Image kann man ganz einfach über den RaspberryPi Imager über einen anderen PC oder Laptop auf die SD Karte laden. Dort kann man direkt einen Namen (iotcar) und ein Passowrt auswählen
+und eine Internetverbindng vorbereiten.
+
+### ROS2 installieren
+
+

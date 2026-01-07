@@ -22,10 +22,14 @@ Es werden hier die Theoretischen und Praktischen Grundlagen zur Umsetztung von H
 
 ### Verwendete Frameworks
 
-- Home Assistant:
-- Node-RED:
-- MQTT:
-- Portainer:
+- **Home Assistant**
+    Dient als zentrales Steuerelement des Modelhauses. Es wird Praxisnahe simuliert wie man von einem Zentralen Standort sämtliche Geräte ansteuern und bedienen kann. 
+- **Node-RED**
+    Ermöglich die einfache erstellung und Automatisierung von Logik. Eingänge von Sensoren (Temperatur, Helligkeit) können eingelesen, verarbeitet werden und Aktoren entsprechend Angesteuert werden.  
+- **MQTT**
+    Wird als Kommunikationsprotokoll zwischen Mikrokontroller(Arduino Uno), dem Raspberry Pi und Home Assistant verwendet. Es sorgt für eine zuverlässige und schnelle Datenübermittlung.
+- **Portainer**  
+    Dient zur übersichtlichen verwaltung aller laufenden Docker-Container. Über das Webinterface können so Container leicht gestartet, gestoppt oder neu konfiguriert werden. 
 
 # Teilaufgabe – Smart-Home-Umsetzung mit Home Assistant und Node-RED
 
@@ -118,6 +122,8 @@ Steuerung der Lichter via USB-Port
 
 #### 2.4.1 Container für Home Assistant, Node-RED, MQTT und Portainer
 Verwaltet über `docker-compose` am Raspberry Pi
+Es wird am Raspberry Pi eine `docker-compose.yaml` Datei erstellt 1-.,mn 
+ 
 
 ---
 

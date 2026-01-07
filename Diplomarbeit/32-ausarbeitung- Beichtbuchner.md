@@ -120,7 +120,7 @@ Als eine der grundlegenden Größen der Elektrotechnik spielt die Spannung eine 
 
 #### Widerstand
 Der elektrische Widerstand beschreibt, wie stark der Stromfluss in einem Leiter oder Bauteil begrenzt wird. Er hängt von den Materialeigenschaften sowie von der Bauform des Leiters ab und bestimmt, wie leicht oder schwer sich elektrische Ladungen bewegen können.
-Ein hoher Widerstand reduziert den Strom, während ein niedriger Widerstand einen stärkeren Stromfluss zulässt. Der elektrische Widerstand wird in der Einheit Ohm (Ω) angegeben. Widerstände werden gezielt als Bauteile eingesetzt, um den Strom zu begrenzen, treten jedoch auch unerwünscht in anderen elektronischen Komponenten auf und führen dort zu Energieverlusten.
+Ein hoher Widerstand reduziert den Strom, während ein niedriger Widerstand einen stärkeren Stromfluss zulässt. Der elektrische Widerstand wird in der Einheit Ohm angegeben. Widerstände werden gezielt als Bauteile eingesetzt, um den Strom zu begrenzen, treten jedoch auch unerwünscht in anderen elektronischen Komponenten auf und führen dort zu Energieverlusten.
 
 [@Spannung-Strom-Widerstand-ElektronikKompendium]
 

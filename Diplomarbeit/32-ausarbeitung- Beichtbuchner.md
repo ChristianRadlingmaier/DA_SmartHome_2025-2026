@@ -34,13 +34,13 @@ Im letzten Schritt wird das fertige Modell visualisiert. Dabei werden Beleuchtun
 
 Bevor ein dreidimensionales Objekt erstellt werden kann, wird in der Regel zunächst eine zweidimensionale Skizze angefertigt. Diese Skizze dient als Grundlage für die spätere Modellierung und definiert die Form sowie die grundlegenden Abmessungen des Objekts. Anschließend wird die 2D-Geometrie in die dritte Dimension überführt, indem sie entlang einer Achse extrudiert oder auf andere Weise räumlich erweitert wird. Auf diese Weise entsteht ein Volumenkörper, der anschließend weiterbearbeitet, verfeinert und an die gewünschten Anforderungen angepasst werden kann.
 
-![Skizze](img/Skizze.png)
+<!-- ![Skizze](img/Skizze.png)-->
 
 ### 1.4 Volumen- und Flächenmodellierung
 
 In CAD-Programmen stehen zahlreiche Werkzeuge zur Verfügung, mit denen dreidimensionale Objekte erstellt und weiterbearbeitet werden können. Diese Werkzeuge ermöglichen es, Körper zu erweitern, Material gezielt zu entfernen oder Öffnungen und Aussparungen zu erzeugen. Typische Bearbeitungsschritte sind beispielsweise das Hinzufügen von Volumen, das Ausschneiden von Bereichen oder das Erstellen von Bohrungen.
 
-![Würfel](img/wuerfel.png)
+<!-- ![Würfel](img/wuerfel.png) -->
 
 Bei der Volumenmodellierung arbeitet man mit geschlossenen Körpern, die ein klares Innenvolumen haben. Dadurch lassen sich Bauteile genau konstruieren, und man kann zum Beispiel ihr Gewicht, Material oder ihre Stabilität berechnen. Diese Methode eignet sich besonders für technische Teile, weil sie eine stabile und verlässliche Form liefert.
 
@@ -126,7 +126,7 @@ Ein hoher Widerstand reduziert den Strom, während ein niedriger Widerstand eine
 
 ### 3.4 Ohmsche Gesetz
 
-```![Ohmsche Gesetz[@Ohmsche-Gesetz-Bild]](img/URI.jpg)
+![Ohmsche Gesetz[@Ohmsche-Gesetz-Bild]](img/URI.jpg)
 
 Das Ohmsche Gesetz beschreibt den Zusammenhang zwischen elektrischer Spannung(U), Stromstärke(I) und Widerstand(R) in einem Stromkreis. Mithilfe dieser Beziehung lassen sich unbekannte Größen berechnen, wenn zwei der drei Werte bekannt sind.
 Dieses Gesetz ist besonders wichtig für den praktischen Einsatz elektronischer Bauteile, da es hilft, den passenden Widerstand zu bestimmen. Wird ein Bauteil mit einer zu hohen Stromstärke betrieben, kann dies zu Beschädigungen oder zum Ausfall führen. Durch die richtige Berechnung lässt sich ein sicherer und zuverlässiger Betrieb gewährleisten. 
@@ -135,7 +135,7 @@ Dieses Gesetz ist besonders wichtig für den praktischen Einsatz elektronischer 
 
 Beim Rechnen mit dem Ohmschen Gesetz kann man sich merken, dass die elektrische Spannung (U) immer durch die Stromstärke (I) oder den Widerstand (R) geteilt wird. Die Stromstärke und der Widerstand stehen dabei in einer Multiplikationsbeziehung zueinander.
 
-``` ![Ohmsche Gesetz Rechnen[@Ohmsche-Gesetz-Rechnen-Bild]](img/ohms-law-triangle.svg)
+![Ohmsche Gesetz Rechnen[@Ohmsche-Gesetz-Rechnen-Bild]](img/ohms-law-triangle.svg)
 
 ### 3.5 Spannungsversorgung elektronischer Schaltungen
 
@@ -222,7 +222,7 @@ Der Arduino Uno ist einer der am häufigsten verwendeten Mikrocontroller und eig
 
 #### Arduino Nano
 
-![Arduino Nano[@Arduino-Nano-Bild]](img/Arduino%20Nano.jpg)
+![Arduino Nano[@Arduino-Nano-Bild]](img/Arduino-Nano.jpg)
 
 Der Arduino Nano bietet im Wesentlichen denselben Funktionsumfang wie der Arduino Uno, ist jedoch deutlich kompakter aufgebaut. Dadurch eignet er sich besonders für Projekte, bei denen wenig Platz zur Verfügung steht. Trotz seiner geringen Größe kann der Arduino Nano für viele der gleichen Anwendungen eingesetzt werden wie der Uno. Er wird häufig in kleineren Schaltungen, Prototypen oder fest verbauten Systemen verwendet, bei denen eine platzsparende Bauform von Vorteil ist.
 

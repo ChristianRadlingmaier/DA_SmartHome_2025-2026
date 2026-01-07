@@ -4,7 +4,8 @@
 
 Dieses Kapitel wird oft auch als _Literaturrecherche_ bezeichnet. Da gehört alles rein was der __normale__ Leser braucht um den praktischen Ansatz zu verstehen. Das bedeutet Sie brauchen einen roten Faden !
 
-Das sind z.B: allgemeine Definitionen, Beschreibung von fachspezifischen Vorgehensweisen, Frameworks, Theorie zu verwendeten Algorithmen, besondere Umstände, ...
+
+Das sind z.B: allgemeine Definitionen, Beschreibung von fachspezifischen Vorgehensweisen, Frameworks, Theorie zu verwendeten Algorithmen, besondere Umstände, ....
 
 Es werden hier die Theoretischen und Praktischen Grundlagen zur Umsetztung von Home Assistant für ein Modelhaus gelegt und wie diese auch im echten Leben auf ein richtiges Haus angewendet werden können. Es wird das nötige Wissen dargestellt damit der Leser den praktischen teil nachvollziehen und verstehen kann. der fokus liegt hierbei auf der einrichtung des Dockers auf dem Raspberry Pi, der Kommunikation zwischen dem raspberry Pi und der Kommunikation zwischen Arduino Uno und Aktoren wie Sensoren.
 

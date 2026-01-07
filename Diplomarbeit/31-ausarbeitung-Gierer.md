@@ -197,7 +197,7 @@ Vermeidung durch QoS und Last Will and Testament (LWT)
 
 ### 2.7.1 Erweiterung mit Sprachsteuerung (z. B. Alexa)
 ### 2.7.2 Erweiterung auf mehrere Räume oder Wohnungen
-### 2.7.3 Einbindung weiterer Sensoren (CO₂, Luftqualität, Helligkeit)
+### 2.7.3 Einbindung weiterer Sensoren (CO$_2$, Luftqualität, Helligkeit)
 
 ---
 

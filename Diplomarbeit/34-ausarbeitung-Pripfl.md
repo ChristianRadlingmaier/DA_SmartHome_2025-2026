@@ -42,10 +42,9 @@ Dieses Problem wurde einfach gelöst. Hierzu wurde ein Leitendes Pin-ähnelndes 
 ### Raspberry Pi Betriebssystem
 
 Um ein passendes Betriebssystem zu finden muss man sich zuerst die Raspberry Pi selbst anschauen. In dem Fall wurde eine Raspberry Pi 3 mit 64 bit verbaut. 
-Am besten für ROS2 ist Ubuntu. Da die Raspberry Pi 3 leider nicht für die LTS Version von Ubuntu geeignet ist, ist Raspberry OS die einfachste Option.
+Am besten für ROS2 ist Ubuntu. Da die Raspberry Pi 3 leider nicht für die LTS Version von Ubuntu geeignet ist, wurde nach einer anderen Option gesucht.
 
-Das Image kann man ganz einfach über den RaspberryPi Imager über einen anderen PC oder Laptop auf die SD Karte laden. Dort kann man direkt einen Namen (iotcar) und ein Passowrt auswählen
-und eine Internetverbindng vorbereiten.
+Es gibt ein Linux Betriebsystem welches für die Raspberry Pi und die Nutzung von ROS2 gemacht wurde. Dieses nennt sich DOITPi. Es beinhaltet eine "vorgefertigte Sammlung von DevOps-, IoT-Tools und Robot Operating System 2 (ROS2)". 
 
 ### ROS2 installieren
 

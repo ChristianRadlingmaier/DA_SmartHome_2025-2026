@@ -32,7 +32,7 @@ Im letzten Schritt wird das fertige Modell visualisiert. Dabei werden Beleuchtun
 
 ### 1.3 Arbeiten mit Skizzen
 
-Bevor ein dreidimensionales Objekt erstellt werden kann, wird in der Regel zunächst eine zweidimensionale Skizze angefertigt. Diese Skizze dient als Grundlage für die spätere Modellierung und definiert die Form sowie die grundlegenden Abmessungen des Objekts. Anschließend wird die 2D-Geometrie in die dritte Dimension überführt, indem sie entlang einer Achse extrudiert oder auf andere Weise räumlich erweitert wird. Auf diese Weise entsteht ein Volumenkörper, der anschließend weiterbearbeitet, verfeinert und an die gewünschten Anforderungen angepasst werden kann.
+Bevor ein dreidimensionales Objekt erstellt werden kann, wird in der Regel zunächst eine zweidimensionale Skizze angefertigt. Diese Skizze dient als Grundlage für die spätere Modellierung und definiert die Form sowie die grundlegenden Abmessungen des Objekts. Anschließend wird die 2D-Geometrie in die dritte Dimension überführt, indem sie entlang einer Achse extrudiert oder auf andere Weise räumlich erweitert wird. Auf diese Weise entsteht ein Volumenkörper, der anschließend weiterbearbeitet, verfeinert und an die gewünschten Anforderungen angepasst werden kann. 
 
 <!-- ![Skizze](img/Skizze.png)-->
 

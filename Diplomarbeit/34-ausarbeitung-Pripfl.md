@@ -35,15 +35,18 @@ Interprozesskommunikation und Paketmanagment zur verfügung. Außerdem finden si
 
 Durch Herrn Hutter Anleitungen fürs Auto bekommen, worin alles beschrieben wird. Welche Sensoren auf welche Pins der Raspberry Pi verbunden werden müssen. 
 
-### Kaputtes Ground Jumper Kabel
-
-Dieses Problem wurde einfach gelöst. Hierzu wurde ein Leitendes Pin-ähnelndes metallstück an das Kabel angelötet. 
 
 ### Raspberry Pi Betriebssystem
 
 Um ein passendes Betriebssystem zu finden muss man sich zuerst die Raspberry Pi selbst anschauen. In dem Fall wurde eine Raspberry Pi 3 mit 64 bit verbaut. 
 Am besten für ROS2 ist Ubuntu. Da die Raspberry Pi 3 leider nicht für die LTS Version von Ubuntu geeignet ist, wurde nach einer anderen Option gesucht.
 
-Es gibt ein Linux Betriebsystem welches für die Raspberry Pi und die Nutzung von ROS2 gemacht wurde. Dieses nennt sich DOITPi. Es beinhaltet eine "vorgefertigte Sammlung von DevOps-, IoT-Tools und Robot Operating System 2 (ROS2)". 
+Repositroy bla bla [@ros-realtime-rpi4-image]
 
 ### ROS2 installieren
+
+## Fehler
+
+### Kaputtes Ground Jumper Kabel
+
+Dieses Problem wurde einfach gelöst. Hierzu wurde ein Leitendes Pin-ähnelndes metallstück an das Kabel angelötet. 

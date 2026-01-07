@@ -30,6 +30,8 @@ Es werden hier die Theoretischen und Praktischen Grundlagen zur Umsetztung von H
     Wird als Kommunikationsprotokoll zwischen Mikrokontroller(Arduino Uno), dem Raspberry Pi und Home Assistant verwendet. Es sorgt für eine zuverlässige und schnelle Datenübermittlung.
 - **Portainer**  
     Dient zur übersichtlichen verwaltung aller laufenden Docker-Container. Über das Webinterface können so Container leicht gestartet, gestoppt oder neu konfiguriert werden. 
+- **Firmata**
+    Firmata ist ein Kommunikationsprotokoll, mit dem ein Computer (in meinen Fall Raspberry Pi) einen Mikrocontroller (Arduino UNO) direkt steuern kann. Dabei läuft am Mikrocontroller das StandardFirmata Sketch dies setzt die Pins schreibt die HIGH/LOW zustände der LEDs und liest die Pins ein wenn es gebraucht wird.
 
 # Teilaufgabe – Smart-Home-Umsetzung mit Home Assistant und Node-RED
 
@@ -40,7 +42,14 @@ Es werden hier die Theoretischen und Praktischen Grundlagen zur Umsetztung von H
 ## 1. Theoretische Grundlagen
     Ein SmartHome beschreibt ein vernetztes Haus bei dem bestimmte meist alltägliche Komponenten von einem einzelnen Punkt aus gesteuert und ausgelesen werden können dies passiert entweder automatisch oder oder per Benutzereingabe. Beispiele dafür wären per Handy das Licht oder die Heizung ein/aus zu stellen oder ab einer bestimmten Uhrzeit die Rollläden automatisch nach unten zu fahren. Dafür werden im beispiel dieser Diplomarbeit ein Arduino als Mikrocontroller, ein raspberry Pi als Steuerzentrale sowie im konkreten Bereich Home Assitant als Automatisierungsplattform zum Einsatz Dadurch wird die Kommunikation zwischen Sensoren und Aktoren gewährleistet und die Steuerlogik wird mittels MQTT übertragen.
 ### 1.1 Sensorik, Aktorik und Steuerung im Modellhaus
-*Grundlagen der Erfassung und Steuerung über Arduino und MQTT*
+Sensorik, Aktorik und Steuerung bilden die Grundlagen des Gesamten Modellhauses und sind in jedem Smart Home relevant. Dadurch wird die Grundlage für ein automatisertes System geschaffen. Wenn diese Komponenten zusammenarbeiten wird es möglich seine Aktoren voll automatisert zu steuern.
+  **Sensorik**
+  Die Sensorik sind alle Bauteile die Zustände oder die Umgebung messen. Die Sensoren dienen somit als  Sinnesorgane für das gestamte System. Es gibt Messergebnisse weiter (z.B Temperatur, Helligkeit, Bewegung oder Luftfeuchtigkeit). Diese daten werden dann an den Mikrokoontroller weiter gegäben.
+  **Aktorik**
+  Aktoren sind alle Komponenten die auf Basis von Benutzereingaben oder bei Änderung in den Messdaten reagieren. Es werden die Digitalen Signale in reale Aktionen umgewandelt. Aktoren wären Beispielsweise LEDs, Relais oder Motoren
+  **Steuerung**
+  Die Steuerung ist das zentrale Element des Modellhauses. Sie verarbeitet Eingaben und entscheidet, welche Aktoren angesteuert werden. Die Steuerlogik befindet sich in einer übergeordneten Software. Der Mikrocontroller setzt die empfangenen Befehle um. Dadurch bleibt das System einfach und flexibel.
+
 
 #### 1.1.1 Sensoren zur Messung von Umweltparametern
 Temperatur, Helligkeit, Bewegung und deren Bedeutung im Smart Home
@@ -62,7 +71,7 @@ Topic-Struktur, Payload-Formate, Zuverlässigkeit
 Visuelle Programmierung zur Automatisierung
 
 #### 1.2.3 Serieller Zugriff auf den Arduino vom Raspberry Pi
-Verbindung über `/dev/ttyACM0` für Steuerkommandos
+Verbindung über `/dev/ttyUSB0` für Steuerkommandos
 
 ---
 
@@ -122,8 +131,17 @@ Steuerung der Lichter via USB-Port
 
 #### 2.4.1 Container für Home Assistant, Node-RED, MQTT und Portainer
 Verwaltet über `docker-compose` am Raspberry Pi
-Es wird am Raspberry Pi eine `docker-compose.yaml` Datei erstellt 1-.,mn 
+Es wird am Raspberry Pi eine `docker-compose.yaml` Datei erstellt 
+Die `docker-compose.yaml` Datei sollte nicht im Home Verzeichnis liegen sondern in mindestens einem unter Verzeichnis zur besseren Kapselung und Übersicht 
+Schritte für Erstellung 
+1. cd $Unterverzeichnis
+2. `sudo nano docker-compose.yaml/docker-compose.yml`
+3. CODE EINFÜGEN
+4. Speichern der Datei
+5. Berechtigung gäben Für Datein ?!
+  
  
+  
 
 ---
 
@@ -155,46 +173,20 @@ Vermeidung durch QoS und LWT
 
 ## Praktische Arbeit
 
-> Hier beschreiben Sie ihren praktischen Teil. Es geht darum seine Implementierung / Versuche so darzustellen dass anhand dieser dre Leser erkennen kann was sie wie gemacht haben.
-
-Die Frage nach der Detailgenauigkeit lässt sich wie folgt beantworten: So, dass man Ihre Aufgabenstellung vollständig  nachvollziehen kann wenn man nur diese Diplomarbeit in Händen hat!
+Am Beginn der Arbeit wurde überlegt wie kann man es schaffen mit einem Ardiono UNO der selbst keine Internetverbindung hat mit Home Assistant zu verbinden. Es ist möglich mit einem Programm auf den Ardiono Namens standardFirmata dies ist ein programm das man installiert und dannach ganz einfach das gennante Example Programm auf dem Arduino lädt. Danach wurde festegestellt die Realitätsnahste verwendung von Home Assistant ist auf einem Raspberry Pi bei dem Home Assistant in einem Docker Container läuft. 
 
 ### Messergebnisse
 
-![Ein PNG Bild\label{fig:png_bild}](img/graph.png){width=70%}
 
-Bilder sind so scharf wie möglich darzustellen. Unnötige Dinge (welche für den Leser keine Information liefern) sind wegzuschneiden. Üblicherweise versucht das Framework Bilder möglichst gut und vollflächig in die Seite einzupassen - was aber speziell bei kleinen Bildern keinen Sinn macht. Daher kann man die Breite des Bildes `{width=xx%}` beeinflussen. Generell macht es keinen Sinn reisen Bilder mit dieser Funktion niederzuskalieren, sondern eher die Bilder schon vorher mittels eines Bildbearbeitungsprogrammes niederzurechnen. Damit wird das endgültige PDF nicht so groß.
+
+
+### Fehler
+
+## Berechtigunsprobleme 
+Diese Proble treten bei erstellung des Dockers auf und bei späterer Ausführung
+## Node-red Fehler
+`Permanent Error: Board` Fehler nicht reproduzierbar und wurde gelöst mit neustart von nodered und ändern des Pfades im Arduino Out-Node
+`Error: Pin conflict` Es wird in den arduino out nodes nicht erlaubt zweimal auf den gleichen Pin zuzugreifen
 
 ### Etwas Fliesstext
 
-We'll put some happy little leaves here and there. Poor old tree. Have fun with it. Isn't that fantastic? You can just push a little tree out of your brush like that.
-
-Making all those little fluffies that live in the clouds. If there's two big trees invariably sooner or later there's gonna be a little tree. There is no right or wrong - as long as it makes you happy and doesn't hurt anyone. Use absolutely no pressure. Just like an angel's wing. This is the time to get out all your flustrations, much better than kicking the dog around the house or taking it out on your spouse. I guess I'm a little weird. I like to talk to trees and animals. That's okay though; I have more fun than most people.
-
-\todo{Noch weitere Infos einholen}
-
-Do an almighty painting with us. Learn when to stop. Absolutely no pressure. You are just a whisper floating across a mountain. As trees get older they lose their chlorophyll. Clouds are free. They just float around the sky all day and have fun.
-
-Now a hierarchical tree from this repo:
-
-\dirtree{%
-.1 ./.
-.2 example.
-.3 ....
-.2 style.
-.3 ....
-.2 tools.
-.3 docker.
-.3 github.
-.2 Jenkinsfile.
-.2 Makefile.
-.2 REAMDE.md.
-}
-
-A fan brush can be your best friend. Sometimes you learn more from your mistakes than you do from your masterpieces. You can bend rivers. But when I get home, the only thing I have power over is the garbage. Don't kill all your dark areas - you need them to show the light. There's nothing wrong with having a tree as a friend.
-
-God gave you this gift of imagination. Use it. Use your imagination, let it go. Put your feelings into it, your heart, it's your world. There's not a thing in the world wrong with washing your brush. Happy painting, God bless. All those little son of a guns.
-
-I sincerely wish for you every possible joy life could bring. Everybody needs a friend. That's crazy.
-
-If you don't like it - change it. It's your world. Isn't it great to do something you can't fail at? Play with the angles. See how easy it is to create a little tree right in your world. This piece of canvas is your world. This painting comes right out of your heart.

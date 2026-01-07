@@ -11,7 +11,7 @@ Mein Teil der Diplomarbeit ist es ein Haus zu modellieren um dieses anschließen
 ### 1.1 Grundlagen der 3D-Modellierung
 
 Unter 3D-Modellierung versteht man die digitale Erstellung dreidimensionaler Objekte mit spezieller Software. Dabei werden geometrische Elemente wie Punkte, Linien und Flächen verwendet, um virtuelle Modelle mit räumlicher Ausdehnung zu erzeugen. Diese Modelle besitzen neben Länge und Breite auch eine Tiefe und können dadurch realitätsnah dargestellt und weiterverarbeitet werden. 
-[@3D-Modellierung-ALLPLAN]
+[@3D-Modellierung-Adobe]
 
 ### 1.2 Ablauf der 3D-Modellierung  
 
@@ -28,7 +28,7 @@ Nach der Erstellung der Grundform werden dem Modell Materialien und Oberflächen
 
 4. Rendering und Nachbearbeitung  
 Im letzten Schritt wird das fertige Modell visualisiert. Dabei werden Beleuchtung, Schatten und weitere visuelle Effekte berücksichtigt, um realistische oder stilisierte Darstellungen zu erzeugen. Dieser Vorgang erfordert in der Regel eine hohe Rechenleistung. Optional können die erzeugten Bilder oder Animationen anschließend weiterbearbeitet werden, um das Endergebnis zu optimieren.  
-[@3D-Modellierung-ALLPLAN]
+[@3D-Modellierung-Adobe]
 
 ### 1.3 Arbeiten mit Skizzen
 

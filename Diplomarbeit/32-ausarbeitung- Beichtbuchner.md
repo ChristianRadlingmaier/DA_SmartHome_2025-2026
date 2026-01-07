@@ -40,7 +40,7 @@ Bevor ein dreidimensionales Objekt erstellt werden kann, wird in der Regel zunä
 
 In CAD-Programmen stehen zahlreiche Werkzeuge zur Verfügung, mit denen dreidimensionale Objekte erstellt und weiterbearbeitet werden können. Diese Werkzeuge ermöglichen es, Körper zu erweitern, Material gezielt zu entfernen oder Öffnungen und Aussparungen zu erzeugen. Typische Bearbeitungsschritte sind beispielsweise das Hinzufügen von Volumen, das Ausschneiden von Bereichen oder das Erstellen von Bohrungen.
 
-![Würfel](img/Würfel.png)
+![Würfel](img/wuerfel.png)
 
 Bei der Volumenmodellierung arbeitet man mit geschlossenen Körpern, die ein klares Innenvolumen haben. Dadurch lassen sich Bauteile genau konstruieren, und man kann zum Beispiel ihr Gewicht, Material oder ihre Stabilität berechnen. Diese Methode eignet sich besonders für technische Teile, weil sie eine stabile und verlässliche Form liefert.
 
@@ -126,7 +126,7 @@ Ein hoher Widerstand reduziert den Strom, während ein niedriger Widerstand eine
 
 ### 3.4 Ohmsche Gesetz
 
-![Ohmsche Gesetz[@Ohmsche-Gesetz-Bild]](img/URI.jpg)
+```![Ohmsche Gesetz[@Ohmsche-Gesetz-Bild]](img/URI.jpg)
 
 Das Ohmsche Gesetz beschreibt den Zusammenhang zwischen elektrischer Spannung(U), Stromstärke(I) und Widerstand(R) in einem Stromkreis. Mithilfe dieser Beziehung lassen sich unbekannte Größen berechnen, wenn zwei der drei Werte bekannt sind.
 Dieses Gesetz ist besonders wichtig für den praktischen Einsatz elektronischer Bauteile, da es hilft, den passenden Widerstand zu bestimmen. Wird ein Bauteil mit einer zu hohen Stromstärke betrieben, kann dies zu Beschädigungen oder zum Ausfall führen. Durch die richtige Berechnung lässt sich ein sicherer und zuverlässiger Betrieb gewährleisten. 
@@ -135,7 +135,7 @@ Dieses Gesetz ist besonders wichtig für den praktischen Einsatz elektronischer 
 
 Beim Rechnen mit dem Ohmschen Gesetz kann man sich merken, dass die elektrische Spannung (U) immer durch die Stromstärke (I) oder den Widerstand (R) geteilt wird. Die Stromstärke und der Widerstand stehen dabei in einer Multiplikationsbeziehung zueinander.
 
-![Ohmsche Gesetz Rechnen[@Ohmsche-Gesetz-Rechnen-Bild]](img/ohms-law-triangle.svg)
+``` ![Ohmsche Gesetz Rechnen[@Ohmsche-Gesetz-Rechnen-Bild]](img/ohms-law-triangle.svg)
 
 ### 3.5 Spannungsversorgung elektronischer Schaltungen
 
@@ -214,7 +214,7 @@ Durch diese Arbeitsweise ist es möglich, einfache wie auch komplexere Steuerung
 ---
 #### Arduino Uno
 
-![Arduino Uno[@Arduino-Uno-Bild]](img/Arduino_Uno_-_R3.jpg)
+![Arduino Uno[@Arduino-Uno-Bild]](img/Arduino-Uno-R3.jpg)
 
 Der Arduino Uno ist einer der am häufigsten verwendeten Mikrocontroller und eignet sich besonders für Einsteiger sowie für einfache bis mittelkomplexe Projekte. Er basiert auf einem 8-Bit-Mikrocontroller und bietet eine übersichtliche Anzahl an digitalen und analogen Ein- und Ausgängen. Durch die einfache Programmierung und die große Verfügbarkeit an Bibliotheken und Beispielen lässt sich der Arduino Uno schnell in Betrieb nehmen. Er wird häufig für Steuerungsaufgaben, das Auslesen von Sensoren oder das Ansteuern von LEDs und anderen Aktoren verwendet. Aufgrund seiner Stabilität und guten Dokumentation ist er auch im schulischen Umfeld weit verbreitet.
 

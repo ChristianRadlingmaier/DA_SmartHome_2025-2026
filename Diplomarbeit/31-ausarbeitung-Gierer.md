@@ -121,7 +121,7 @@ Licht EIN/AUS über Serial empfangen
 ### 2.3 Node-RED Workflows zur Kommunikation
 
 #### 2.3.1 MQTT-IN zur Verarbeitung von Home-Assistant-Kommandos
-z. B. haus/licht/wohnzimmer → Serial
+z. B. haus/licht/wohnzimmer $\rightarrow$ Serial
 
 #### 2.3.2 Serial-Out an den Arduino
 Steuerung der Lichter via USB-Port

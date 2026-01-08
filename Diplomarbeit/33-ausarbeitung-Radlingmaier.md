@@ -3,11 +3,17 @@
 
 ## Theorie
 
-Dieses Kapitel wird oft auch als _Literaturrecherche_ bezeichnet. Da gehört alles rein was der __normale__ Leser braucht um den praktischen Ansatz zu verstehen. Das bedeutet Sie brauchen einen roten Faden !
+Dieses Kapitel dient der Vermittlung der notwendigen Grundlagen, die ein fachlich versierter Leser benötigt, um die praktische Umsetzung des Projekts nachvollziehen zu können. Es fasst relevante theoretische Inhalte zusammen und stellt sicher, dass ein durchgängiger und logisch aufgebauter Zusammenhang zwischen den einzelnen Themenbereichen entsteht.
 
-Das sind z.B: allgemeine Definitionen, Beschreibung von fachspezifischen Vorgehensweisen, Frameworks, Theorie zu verwendeten Algorithmen, besondere Umstände, ... 
+Behandelt werden dabei unter anderem:
+- grundlegende Begriffsdefinitionen
+- eingesetzte Software-Frameworks
+- fachbezogene Methoden und Vorgehensweisen
 
-Hier werden die theorethischen sowie die Praktischen Grundlagen für die Umsetzung von Fhem in einem Modellhaus gezeigt und wie man es unteranderem in einem Haus anwenden kann. Das benötigte Wissen sowie die Frameworks die verwendet werden, sind hier dargestellt, damit der Leser alles nachvollziehen kann und es auch nachmachen kann.
+
+Darüber hinaus werden in diesem Kapitel sowohl die theoretischen als auch die praktischen Grundlagen zur Realisierung eines Smart-Home-Systems für ein Modellhaus vorgestellt. Ergänzend wird aufgezeigt, inwiefern sich die beschriebenen Konzepte auf ein reales Wohngebäude übertragen lassen.
+
+Ein besonderer Schwerpunkt liegt auf der Installation und Nutzung von Docker auf einem Raspberry Pi sowie auf der Kommunikation zwischen dem Raspberry Pi, dem Arduino Uno und den angebundenen Sensoren und Aktoren.
 
 ### Verwendete Aktoren
 
@@ -33,11 +39,11 @@ Hier werden die theorethischen sowie die Praktischen Grundlagen für die Umsetzu
 **Schüler:** Christian Radlingmaier
 
 ## 1. Theoretische Grundlagen
-    Unter einem Smart Home versteht man ein Haus, in dem verschiedene technische Komponenten miteinander vernetzt sind und zentral überwacht sowie gesteuert werden können. Diese Steuerung kann sowohl automatisch durch definierte Abläufe als auch manuell durch den Nutzer erfolgen. So ist es beispielsweise möglich, Beleuchtung oder Heizsysteme über ein mobiles Endgerät zu bedienen oder Rollläden zeitgesteuert automatisch zu bewegen.
+Unter einem Smart Home versteht man ein Haus, in dem verschiedene technische Komponenten miteinander vernetzt sind und zentral überwacht sowie gesteuert werden können. Diese Steuerung kann sowohl automatisch durch definierte Abläufe als auch manuell durch den Nutzer erfolgen. So ist es beispielsweise möglich, Beleuchtung oder Heizsysteme über ein mobiles Endgerät zu bedienen oder Rollläden zeitgesteuert automatisch zu bewegen.
 
-    In dieser Diplomarbeit kommt ein Arduino als Mikrocontroller zum Einsatz, der für die Erfassung von Sensordaten sowie die Ansteuerung von Aktoren verantwortlich ist. Als zentrale Kontrolleinheit dient ein Raspberry Pi, auf dem die Smart-Home-Software FHEM betrieben wird. FHEM übernimmt die zentrale Verwaltung der angeschlossenen Geräte, verarbeitet eingehende Daten und setzt definierte Automatisierungsregeln um.
+In dieser Diplomarbeit kommt ein Arduino als Mikrocontroller zum Einsatz, der für die Erfassung von Sensordaten sowie die Ansteuerung von Aktoren verantwortlich ist. Als zentrale Kontrolleinheit dient ein Raspberry Pi, auf dem die Smart-Home-Software FHEM betrieben wird. FHEM übernimmt die zentrale Verwaltung der angeschlossenen Geräte, verarbeitet eingehende Daten und setzt definierte Automatisierungsregeln um.
 
-    Der Datenaustausch zwischen den einzelnen Systemkomponenten erfolgt über das MQTT-Protokoll. Dieses ermöglicht eine effiziente und zuverlässige Kommunikation zwischen Sensoren, Aktoren und der zentralen FHEM-Instanz.
+Der Datenaustausch zwischen den einzelnen Systemkomponenten erfolgt über das MQTT-Protokoll. Dieses ermöglicht eine effiziente und zuverlässige Kommunikation zwischen Sensoren, Aktoren und der zentralen FHEM-Instanz.
 
 ### 1.1 Sensorik, Aktorik und Steuerung    
 
@@ -73,6 +79,17 @@ Die Programmierung des Arduino Uno erfolgt über die Arduino-Entwicklungsumgebun
 Durch den Einsatz des Arduino Uno wird eine klare Trennung zwischen der hardwarebezogenen Steuerungsebene und der zentralen Automatisierungs- und Logikebene erreicht. Dies erhöht die Modularität des Systems und erleichtert sowohl Erweiterungen als auch Wartungsarbeiten.
 
 In dieser Diplomarbeit übernimmt der Arduino Uno somit die Aufgabe der direkten Steuerung von Sensoren und Aktoren und bildet die Verbindung zwischen der physischen Umgebung und der übergeordneten Smart-Home-Logik.
+
+#### 1.1.4 Raspberry Pi
+Der Raspberry Pi ist ein kompakter Einplatinencomputer, der für eine Vielzahl von Anwendungen im Bildungs-, Entwicklungs- und Embedded-Bereich eingesetzt wird. Trotz seiner geringen Größe bietet er ausreichende Rechenleistung, um als zentrale Steuereinheit in Smart-Home-Systemen zu fungieren. Der Betrieb erfolgt in der Regel mit einem Linux-basierten Betriebssystem, wodurch der Einsatz zahlreicher Open-Source-Anwendungen möglich ist.
+
+Im Rahmen dieser Diplomarbeit übernimmt der Raspberry Pi die Rolle der zentralen Steuer- und Kommunikationseinheit. Auf ihm werden mehrere Dienste ausgeführt, darunter Automatisierungs- und Management-Software wie Node-RED, MQTT-Broker sowie weitere containerisierte Anwendungen. Durch den Einsatz von Docker können diese Dienste voneinander getrennt betrieben und effizient verwaltet werden.
+
+Der Raspberry Pi ist für die Verarbeitung und Weiterleitung von Sensordaten verantwortlich und stellt die Verbindung zwischen den dezentralen Mikrocontrollern, wie dem Arduino Uno, und der zentralen Steuerlogik her. Über standardisierte Netzwerkprotokolle werden Daten empfangen, verarbeitet und Steuerbefehle an die entsprechenden Aktoren weitergegeben.
+
+Ein weiterer Vorteil des Raspberry Pi ist seine geringe Leistungsaufnahme bei gleichzeitig hoher Flexibilität. Dank integrierter Netzwerk- und Schnittstellenfunktionen kann er problemlos in bestehende Smart-Home-Infrastrukturen integriert und bei Bedarf erweitert werden.
+
+Aufgrund seiner Vielseitigkeit, der guten Unterstützung durch die Community sowie der Eignung für den Dauerbetrieb wird der Raspberry Pi in dieser Diplomarbeit als zentrale Plattform für den Betrieb und die Koordination des Smart-Home-Systems eingesetzt 
 
 ### 1.2 Frameworks
 

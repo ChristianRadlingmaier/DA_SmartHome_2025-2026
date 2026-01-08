@@ -196,8 +196,13 @@ Vermeidung durch QoS und Last Will and Testament (LWT)
 ## 2.7 Ausblick
 
 ### 2.7.1 Erweiterung mit Sprachsteuerung (z. B. Alexa)
+Home Assistant bietet eine einfache Möglichkeit zur Integration von Sprachsteuerung, da die dafür benötigten Grundfunktionen bereits im System vorhanden sind. Dadurch können bestehende Geräte ohne große Anpassungen per Sprachbefehl gesteuert werden.
 ### 2.7.2 Erweiterung auf mehrere Räume oder Wohnungen
+Falls zusätzliche Räume gebaut werden oder weitere Bereiche automatisiert werden sollen, kann die bestehende Implementierung der bereits vorhandenen Geräte übernommen und erweitert werden. Durch den modularen Aufbau des Systems lassen sich neue Räume einfach in die bestehende Struktur integrieren, ohne grundlegende Änderungen an der Architektur vornehmen zu müssen.
+Sensoren und Aktoren können nach dem gleichen Prinzip wie in den bereits umgesetzten Räumen angebunden werden. Die Steuerungslogik sowie die Kommunikationsstruktur bleiben dabei unverändert und werden lediglich um zusätzliche Geräte und Topics ergänzt. Dadurch ist es möglich, sowohl einzelne zusätzliche Räume als auch komplette Wohnungen in das Smart-Home-System einzubinden.
+Diese Erweiterbarkeit ermöglicht eine flexible Anpassung des Systems an wachsende Anforderungen und stellt sicher, dass auch größere Wohnbereiche oder mehrere Wohneinheiten effizient automatisiert werden können.
 ### 2.7.3 Einbindung weiterer Sensoren (CO$_2$, Luftqualität, Helligkeit)
+Das bestehende System kann durch zusätzliche Sensoren wie CO$_2$-, Luftqualitäts- oder Helligkeitssensoren erweitert werden. Diese lassen sich nach dem gleichen Prinzip wie bereits vorhandene Sensoren integrieren und in die bestehende Automatisierungslogik einbinden.
 
 ---
 

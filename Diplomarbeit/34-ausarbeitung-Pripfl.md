@@ -16,8 +16,29 @@ In diesem teil der Arbeit werden:
 
 #### Was ist ROS?
 
-ROS ist ein open Source System, welches wie ein Betriebssystem für Roboter agiert. Es stellt Dienste wie Hardwareabstraktion, Gerätetreiber, Utilityfunktionen, 
-Interprozesskommunikation und Paketmanagment zur verfügung. Außerdem finden sich nützliche Werkzeuge um Roboter zu programmieren, zu steuern und mit Hardware zu verbinden. 
+ROS (Robot Operating System) ist ein Open-Source-Framework, welches Bibliotheken, Werkzeuge und Kommunikationsmechanismen zur Entwicklung
+von Roboteranwendungen bereitstellt und die Programmierung stark vereinfacht. Ziel von ROS ist es, komplexe Robotersysteme modular,
+wiederverwendbar und skalierbar zu machen.
+
+##### Grundidee und Architektur
+
+ROS basiert auf einem verteilten System welche **Nodes** genannt werden. Ein Node ist ein einzelnes Programm welches eine Teilaufgabe
+übernimmt (z.B. Sensor Auswertung, Motorsteuerung, etc.). 
+
+**Masters** bieten die Namensregestrierung und -auflösung für den  Computation Graph bereit. Ohne den Master, würden Nodes sich nicht finden,
+nicht komunizieren und keine Services aufrufen können.
+
+Der **Parameter Server** ermöglicht es, Daten in Form von Schlüssel-Wert-Paaren zu speichern. Aktuell ist der Parameter Server Teil des ROS Masters.
+
+Node kommunizieren durch **Messages**, welche eine Datenstruktur mit typisierten Feldern ist. Unterstützt werden: Standard-Datentypen,
+Arrays von primitiven Datentypen und beliebig verschachtelte Strukturen und Arrays.
+
+Diese Messages werden über ein Transportsystem weitergekeitet, welches mit der Publish-/Subscripe-Semantik funktioniert. D.h. ein Node sendet
+eine Nchricht indem er auf einem **Topic** veröffentlicht (publish). Ein Topic ist ein Name, der den Inhalt der Nachricht identifiziert.
+Nodes, die an bestimmten Daten interessiert sind, abonieren (subscribe) das entprechende Topic. Z.B. ein Node welches die Aufgabe hat, die
+Geschwindigkeit in einen Graphen darzustellen, subscribed das Node mit dem Topic in dem die Daten der Geschwindigkeiten published werden.
+
+Dieses Publish-/Subscribe-Modell ist sehr flexibel, eignet sich aber nicht fpr Request-Reply-Interaktionen (Anfrage/Antwort), die in verteilten Systemen häufig benötigt werden. Sie werden über **Services** realisiert. 
 
 #### Warum ROS2
 (Warum ROS2, was kann es besser etc.)

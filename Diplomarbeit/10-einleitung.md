@@ -1,8 +1,11 @@
-# Einleitung
-Hier schreiben Sie eine Einleitung zu Ihrem Thema
-Das ist quasi der Problemaufriss
+# Einleitung 
 
+Smart-Home- und IoT-Systeme gewinnen sowohl im privaten als auch im industriellen Umfeld zunehmend an Bedeutung. Steigende Anforderungen an Energieeffizienz, Komfort, Sicherheit und Automatisierung führen dazu, dass klassische, isolierte Steuerungslösungen immer häufiger durch vernetzte Systeme ersetzt werden. Gleichzeitig zeigt sich jedoch, dass der Aufbau solcher Systeme mit einer Vielzahl technischer, organisatorischer und konzeptioneller Herausforderungen verbunden ist.
 
+Ein zentrales Problem besteht darin, dass Smart-Home- und IoT-Lösungen aus vielen unterschiedlichen Komponenten bestehen, die zuverlässig zusammenarbeiten müssen. Mikrocontroller, Sensoren, Aktoren, Kommunikationsprotokolle, Frameworks sowie Benutzeroberflächen bilden ein komplexes Gesamtsystem. Fehlende Standardisierung, unterschiedliche Softwarelösungen und die Notwendigkeit einer stabilen Kommunikation erschweren insbesondere für Einsteiger und Bildungseinrichtungen den strukturierten Zugang zu diesem Themenbereich.
 
-Das IoT-Car der HTL blanla und bla und weiteren, hat in der HTL Leoben noch keine richtige Verwendung gefunden. Um eine gute Basis für den Laborunterricht zu schaffen,
-wird in Folge dieser Diplomarbeit ROS2 auf dem Auto vorbereitet und die Verwendung der Kamera sowie die Steuerung per Smartphone implementiert.
+Vor diesem Hintergrund setzt die vorliegende Diplomarbeit an. Ziel ist es, anhand mehrerer praxisnaher Teilbereiche ein ganzheitliches Verständnis für den Aufbau, die Funktionsweise und die Umsetzung moderner Smart-Home- und IoT-Systeme zu vermitteln. Dabei werden sowohl software- als auch hardwareseitige Aspekte betrachtet. Die Arbeit verbindet theoretische Grundlagen mit praktischen Umsetzungen und zeigt auf, wie abstrakte Konzepte in realen Modellen angewendet werden können.
+
+Die einzelnen Ausarbeitungen behandeln dabei unterschiedliche Schwerpunkte, die sich zu einem Gesamtsystem ergänzen. Dazu zählen unter anderem die zentrale Hausautomation mit Home Assistant bzw. FHEM, die Modellierung und der physische Aufbau eines Modellhauses, die Grundlagen der Elektronik und Mikrocontrollertechnik sowie die Anbindung von Sensoren, Aktoren und externen Systemen wie mobilen Endgeräten oder Robotik-Plattformen. Durch diese Aufteilung wird deutlich, dass funktionierende IoT- und Smart-Home-Lösungen nur durch das Zusammenspiel mehrerer Disziplinen realisiert werden können.
+
+Der Hauptfokus dieser Arbeit liegt somit in der Frage, wie ein komplexes, vernetztes System verständlich geplant, strukturiert umgesetzt und zuverlässig betrieben werden kann. Die Diplomarbeit verfolgt dabei nicht das Ziel einer marktreifen Lösung, sondern einer nachvollziehbaren, modularen und erweiterbaren Umsetzung, die sowohl didaktisch sinnvoll als auch technisch fundiert ist. Auf diese Weise soll ein praxisnaher Einblick in moderne Automatisierungs- und IoT-Konzepte gegeben werden, der als Grundlage für weiterführende Projekte dienen kann.

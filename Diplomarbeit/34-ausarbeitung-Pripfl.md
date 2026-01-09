@@ -19,6 +19,7 @@ In diesem teil der Arbeit werden:
 ROS (Robot Operating System) ist ein Open-Source-Framework, welches Bibliotheken, Werkzeuge und Kommunikationsmechanismen zur Entwicklung
 von Roboteranwendungen bereitstellt und die Programmierung stark vereinfacht. Ziel von ROS ist es, komplexe Robotersysteme modular,
 wiederverwendbar und skalierbar zu machen.
+
 [@ROS2]
 
 ##### Grundidee und Architektur (ROS vs ROS 2)
@@ -41,6 +42,7 @@ Dieses Publish-/Subscribe-Modell ist sehr flexibel, eignet sich aber nicht fr Re
 Ein anbietender Node stellt den Service unter einem Namen bereit, ein Client kann dann diesen Service aufrufen, indem er eine Anfrage sendet und auf die Antwort wartet. ROS-Client-Bibliotheken stellen diese Kommunikation dem Programmierrer meist so dar, als hadle es sich um einen RPC (Remote Procedure Call). In ROS 2 stehen zusätzlich Actions als Standardmechanismus zur Verfügung, die speziell für langlaufende Aufgaben mit Feedback konzipiert sind.
 
 **Bags** ist ein Dateiformat zum Speichern und Wiedergeben von ROS-Messagedaten. Sie sind besonders wichtig für das Aufzeichnen von Sensordaten, die Entwicklung und testen von Algorithmen und für die Analyse von Systemverhalten. In ROS 2 wurde hierfür ein neues Backend implementiert, das verschiedene Speicherformate (z. B. SQLite) unterstützt.
+
 [@ROS-Architektur] & [@ROSvsROS2-Architektur]
 
 #### Warum ROS2
@@ -56,12 +58,11 @@ Ein anbietender Node stellt den Service unter einem Namen bereit, ein Client kan
 
 ### Sensorenverbindung Jumperkabel
 
-Durch Herrn Hutter Anleitungen fürs Auto bekommen, worin alles beschrieben wird. Welche Sensoren auf welche Pins der Raspberry Pi verbunden werden müssen. 
+Nach Anleitung der bla bla, wurden die Jumperkabel der Sensoren erneut wieder mit dem DigiBoard , welches auf der Raspberry Pi verbaut ist, wieder verbunden.
 
 ### Raspberry Pi Betriebssystem
 
-Um ein passendes Betriebssystem zu finden muss man sich zuerst die Raspberry Pi selbst anschauen. In dem Fall wurde eine Raspberry Pi 3 mit 64 bit verbaut. 
-Am besten für ROS2 ist Ubuntu. Da die Raspberry Pi 3 leider nicht für die LTS Version von Ubuntu geeignet ist, wurde nach einer anderen Option gesucht.
+Um ein passendes Betriebssystem zu finden muss man sich zuerst die Raspberry Pi selbst anschauen. In dem Fall wurde eine Raspberry Pi 3 mit 64 bit verbaut. Am besten für ROS2 ist Ubuntu. Da die Raspberry Pi 3 leider nicht für die LTS Version von Ubuntu geeignet ist, wurde nach einer anderen Option gesucht.
 
 Repositroy bla bla [@raspberry-pi-image]
 

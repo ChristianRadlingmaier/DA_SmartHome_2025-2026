@@ -1,6 +1,6 @@
 # Zielsetzung
 
-##Aktueller Stand
+
 
 ## Motivation der Arbeit
 

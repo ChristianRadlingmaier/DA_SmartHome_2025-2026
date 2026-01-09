@@ -92,7 +92,7 @@ Relais, LEDs und Mini-Lampen – Einsatzmöglichkeiten und Grenzen. [@abutair_se
 #### 1.1.3 Mikrocontroller (Arduino) als Basis für smarte Funktionen
 Auf dem Arduino wird das Beispiel *StandardFirmata* installiert. Dieses Sketch stellt die Firmata-Funktionen bereit und ermöglicht die Steuerung des Arduino über die serielle Schnittstelle durch einen Host (Raspberry Pi). [@arduino_firmata_docs; @firmata_arduino_github]
 
-*(Hinweis: In der Arduino IDE findet man es typischerweise unter **File → Examples → Firmata → StandardFirmata**.)* [@arduino_firmata_docs]
+*(Hinweis: In der Arduino IDE findet man es typischerweise unter **File -> Examples -> Firmata -> StandardFirmata**.)* [@arduino_firmata_docs]
 
 ##### Einbindung der Firmata-Bibliothek
 `#include <Firmata.h>`  

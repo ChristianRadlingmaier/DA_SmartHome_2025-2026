@@ -3,7 +3,7 @@
 **Autorin:** Chloe Pripfl
 **Projekt:** IoT-Car – Inbetriebnahme und ROS‑2‑Integration
 
----
+
 
 ## Einleitung
 
@@ -16,7 +16,7 @@ Ziel dieser Teilaufgabe ist es, eine technische Basis für die weitere Arbeit zu
 * Einbindung und Bereitstellung der Kamerasicht des Fahrzeugs
 * Implementierung einer Smartphone‑basierten Steuerung
 
----
+
 
 ## Theorieteil
 
@@ -51,7 +51,7 @@ Für klassische Anfrage‑/Antwort‑Kommunikation stehen **Services** zur Verf�
 
 [@ROS-Architektur] & [@ROSvsROS2-Architektur]
 
----
+
 
 #### Warum ROS 2?
 
@@ -61,7 +61,7 @@ Ein weiterer wichtiger Aspekt ist die verbesserte Echtzeitfähigkeit. Durch QoS�
 
 Zusätzlich ist ROS 2 besser für Embedded‑Plattformen wie den Raspberry Pi geeignet. Der geringere Ressourcenverbrauch, moderne Sicherheitsmechanismen und flexible Kommunikationsparameter machen ROS 2 zur idealen Wahl für dieses Projekt.
 
----
+
 
 #### ROS 2 Jazzy Jalisco
 
@@ -73,7 +73,7 @@ In Kombination mit einem Echtzeit‑Kernel (PREEMPT‑RT) eignet sich ROS 2 Jaz
 
 Darüber hinaus bietet Jazzy eine ausgereifte Integration der DDS‑Middleware (Data Distribution Service), welche eine skalierbare und flexible Kommunikation zwischen verteilten Komponenten ermöglicht.
 
----
+
 
 ### Raspberry‑Pi‑Image
 
@@ -89,7 +89,7 @@ Ein wesentliches Merkmal ist der verwendete Linux‑Kernel mit **PREEMPT‑RT‑
 
 Der SSH‑Zugriff ist standardmäßig aktiviert. Der voreingestellte Benutzername lautet *ubuntu*, ebenso das initiale Passwort, welches beim ersten Login geändert werden muss.
 
----
+
 
 ### Kameraanbindung in ROS 2
 
@@ -97,7 +97,7 @@ Die Kamera des IoT‑Cars wird in ROS 2 als eigener Node betrieben. Dieser erfa
 
 Für die Bilddaten werden standardisierte Message‑Typen aus dem Paket **sensor_msgs** verwendet. Dadurch ist eine einfache Weiterverarbeitung der Kameradaten möglich, etwa für spätere Erweiterungen wie Hinderniserkennung oder Spurverfolgung.
 
----
+
 
 ### Smartphone‑Anbindung und IoT‑Konzepte
 
@@ -107,7 +107,7 @@ Die Kommunikation kann über das Protokoll **MQTT** erfolgen, welches speziell f
 
 Durch die Kombination von ROS 2 und MQTT entsteht ein modulares und flexibel erweiterbares System, das sich für Fernsteuerung, Statusanzeigen und spätere autonome Funktionen eignet.
 
----
+
 
 ## Praxisteil
 
@@ -115,7 +115,7 @@ Durch die Kombination von ROS 2 und MQTT entsteht ein modulares und flexibel er
 
 Nach Anleitung des Herstellers wurden die Jumperkabel der Sensoren erneut mit dem DigiBoard verbunden, welches auf dem Raspberry Pi montiert ist. Dadurch konnten alle Sensoren wieder korrekt mit Strom versorgt und ausgelesen werden.
 
----
+
 
 ### Raspberry‑Pi‑Betriebssystem
 
@@ -131,7 +131,7 @@ Der erste Zugriff erfolgt lokal oder über SSH. Nach erfolgreichem Login steht R
 
 [@raspberry-pi-image]
 
----
+
 
 ## Fehler und Problemlösungen
 

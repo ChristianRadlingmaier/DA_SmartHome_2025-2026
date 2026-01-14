@@ -1,73 +1,142 @@
 # Teilaufgabe Schüler Pripfl
 
-\textauthor{Chloe Pripfl}
+**Autorin:** Chloe Pripfl
+**Projekt:** IoT-Car – Inbetriebnahme und ROS‑2‑Integration
 
-Das IoT-Car hat noch keine Verwendung gefunden. Zum Start der Diplomarbeit kann das Auto mithilfe einer Carson ModelSport Vernbedienung gesteuert werden.
-Außerdem sind die Jumper Kabel welche die Sensoren mit der verbauten Raspberry Pi verbinden ausgesteckt.
-In diesem teil der Arbeit werden:
-- Jumperkabel wieder verbunden,
-- ROS2 auf der Raspberry Pi augfesetzt,
-- die Kamerasicht des Autos 
-- sowie die Steuerung über ein Smartphone implementiert.
+---
+
+## Einleitung
+
+Das IoT-Car hat bislang noch keine produktive Verwendung gefunden. Zu Beginn der Diplomarbeit kann das Fahrzeug ausschließlich mithilfe einer Carson ModelSport Fernbedienung gesteuert werden. Zudem sind die Jumperkabel, welche die Sensoren mit dem verbauten Raspberry Pi verbinden, aktuell nicht angeschlossen.
+
+Ziel dieser Teilaufgabe ist es, eine technische Basis für die weitere Arbeit zu schaffen. Dazu werden folgende Schritte umgesetzt:
+
+* Wiederverbinden der Jumperkabel zu den Sensoren
+* Aufsetzen von ROS 2 auf dem Raspberry Pi
+* Einbindung und Bereitstellung der Kamerasicht des Fahrzeugs
+* Implementierung einer Smartphone‑basierten Steuerung
+
+---
 
 ## Theorieteil
 
-### ROS2
+### ROS 2
 
 #### Was ist ROS?
 
-ROS (Robot Operating System) ist ein Open-Source-Framework, welches Bibliotheken, Werkzeuge und Kommunikationsmechanismen zur Entwicklung
-von Roboteranwendungen bereitstellt und die Programmierung stark vereinfacht. Ziel von ROS ist es, komplexe Robotersysteme modular,
-wiederverwendbar und skalierbar zu machen.
+ROS (Robot Operating System) ist ein Open‑Source‑Framework, das Bibliotheken, Werkzeuge und Kommunikationsmechanismen zur Entwicklung von Roboteranwendungen bereitstellt. Es vereinfacht die Programmierung komplexer Systeme und ermöglicht eine modulare, wiederverwendbare und skalierbare Softwarearchitektur.
 
 [@ROS2]
 
-##### Grundidee und Architektur (ROS vs ROS 2)
+#### Grundidee und Architektur (ROS vs. ROS 2)
 
-ROS basiert auf einem verteilten System welche **Nodes** genannt werden. Ein Node ist ein einzelnes Programm welches eine Teilaufgabe
-übernimmt (z.B. Sensor Auswertung oder Motorsteuerung). In ROS 2 wurden die Nodes erweitert. Innerhalb eines Prozesses können nun mehrere Nodes betrieben werden. Zusätzlich wurden **Lifecycle-Nodes** eingeführt, die definierte Zustände wie unconfigured, inactive und active besitzen.
+ROS basiert auf einem verteilten System aus sogenannten **Nodes**. Ein Node ist ein einzelnes Programm, das eine klar definierte Teilaufgabe übernimmt, beispielsweise Sensorauswertung oder Motorsteuerung. In ROS 2 wurde dieses Konzept erweitert: Innerhalb eines Prozesses können mehrere Nodes betrieben werden. Zusätzlich wurden **Lifecycle‑Nodes** eingeführt, die definierte Zustände wie *unconfigured*, *inactive* und *active* besitzen.
 
-Ein **Master** bieten die Namensregestrierung und -auflösung für den Computation Graph. Ohne den Master, würden Nodes sich nicht finden, nicht komunizieren und keine Services aufrufen können. In ROS 2 existiert kein zentraler Master mehr; die Kommunikation und Discovery erfolgt dezentral. 
+In ROS 1 existiert ein zentraler **Master**, der für die Namensregistrierung und ‑auflösung im sogenannten Computation Graph zuständig ist. Ohne diesen Master können Nodes einander nicht finden und nicht miteinander kommunizieren. ROS 2 verzichtet auf einen zentralen Master; Discovery und Kommunikation erfolgen vollständig dezentral, was die Ausfallsicherheit erhöht.
 
-Der **Parameter Server** ermöglicht es, Daten in Form von Schlüssel-Wert-Paaren zu speichern. Aktuell ist der Parameter Server Teil des ROS Masters. In ROS 2 gibt es keinen zentralen Parameter Server mehr. Stattdessen sind Parameter node-lokal organisiert.
+Der **Parameter Server** dient zur Speicherung von Konfigurationswerten in Form von Schlüssel‑Wert‑Paaren. Während dieser in ROS 1 Teil des Masters ist, sind Parameter in ROS 2 node‑lokal organisiert.
 
-Node kommunizieren durch **Messages**, welche eine Datenstruktur mit typisierten Feldern ist. Unterstützt werden: Standard-Datentypen,
-Arrays von primitiven Datentypen und beliebig verschachtelte Strukturen und Arrays.
+Die Kommunikation zwischen Nodes erfolgt über **Messages**, welche strukturierte und typisierte Daten enthalten. Unterstützt werden primitive Datentypen, Arrays sowie verschachtelte Strukturen.
 
-Diese Messages werden über ein Transportsystem weitergekeitet, welches mit der Publish-/Subscripe-Semantik funktioniert. D.h. ein Node sendet
-eine Nchricht indem er auf einem **Topic** veröffentlicht (publish). Ein Topic ist ein Name, der den Inhalt der Nachricht identifiziert.
-Nodes, die an bestimmten Daten interessiert sind, abonieren (subscribe) das entprechende Topic. In ROS 2 wurden zusätzlich Quality-of-Service-Mechanismen (QoS) eingeführt, die eine bessere Kontrolle über Zuverlässigkeit, Latenz und Echtzeitfähigkeit ermöglichen und ROS 2 für Embedded- und Echtzeitsysteme geeignet machen.
+Messages werden über ein Transportsystem mit Publish‑/Subscribe‑Semantik übertragen:
 
-Dieses Publish-/Subscribe-Modell ist sehr flexibel, eignet sich aber nicht fr Request-Reply-Interaktionen (Anfrage/Antwort), die in verteilten Systemen häufig benötigt werden. Sie werden über **Services** realisiert. Ein Service besteht aus zwei Message-Strukturen, eine für die Anfrage (Request) und eine für die Antwort (Reply).
-Ein anbietender Node stellt den Service unter einem Namen bereit, ein Client kann dann diesen Service aufrufen, indem er eine Anfrage sendet und auf die Antwort wartet. ROS-Client-Bibliotheken stellen diese Kommunikation dem Programmierrer meist so dar, als hadle es sich um einen RPC (Remote Procedure Call). In ROS 2 stehen zusätzlich Actions als Standardmechanismus zur Verfügung, die speziell für langlaufende Aufgaben mit Feedback konzipiert sind.
+* Ein Node veröffentlicht Daten auf einem **Topic** (*publish*).
+* Andere Nodes können dieses Topic abonnieren (*subscribe*).
 
-**Bags** ist ein Dateiformat zum Speichern und Wiedergeben von ROS-Messagedaten. Sie sind besonders wichtig für das Aufzeichnen von Sensordaten, die Entwicklung und testen von Algorithmen und für die Analyse von Systemverhalten. In ROS 2 wurde hierfür ein neues Backend implementiert, das verschiedene Speicherformate (z. B. SQLite) unterstützt.
+ROS 2 erweitert dieses Modell um **Quality‑of‑Service‑Mechanismen (QoS)**, mit denen Zuverlässigkeit, Latenz und Echtzeitverhalten gezielt gesteuert werden können.
+
+Für klassische Anfrage‑/Antwort‑Kommunikation stehen **Services** zur Verfügung. Ein Service besteht aus einer Request‑ und einer Reply‑Message. Für langlaufende Aufgaben mit Statusrückmeldungen werden in ROS 2 zusätzlich **Actions** verwendet.
+
+**ROS Bags** sind Dateiformate zum Aufzeichnen und Wiedergeben von ROS‑Nachrichten. Sie werden insbesondere zur Analyse, Fehlersuche und Entwicklung genutzt. ROS 2 verwendet hierfür ein neues Backend mit Unterstützung mehrerer Speicherformate, wie z. B. SQLite.
 
 [@ROS-Architektur] & [@ROSvsROS2-Architektur]
 
-#### Warum ROS2
-(Warum ROS2, was kann es besser etc.)
+---
 
-#### Vorbereitungen für ROS2
-(also was braucht man um ROS2 zum laufen zu bringen)
+#### Warum ROS 2?
 
-### Verbindung zum Smartphone
-(vermutlich über mqtt)
+ROS 2 wurde entwickelt, um den Anforderungen moderner Robotik‑ und IoT‑Systeme gerecht zu werden. Ein wesentlicher Vorteil ist die dezentrale Architektur ohne zentralen Master, wodurch das System robuster gegenüber Ausfällen wird.
+
+Ein weiterer wichtiger Aspekt ist die verbesserte Echtzeitfähigkeit. Durch QoS‑Einstellungen und die Unterstützung von Echtzeit‑Betriebssystemen kann ROS 2 auch in zeitkritischen Anwendungen eingesetzt werden. Für das IoT‑Car bedeutet dies eine zuverlässigere Steuerung und stabilere Verarbeitung von Sensor‑ und Kameradaten.
+
+Zusätzlich ist ROS 2 besser für Embedded‑Plattformen wie den Raspberry Pi geeignet. Der geringere Ressourcenverbrauch, moderne Sicherheitsmechanismen und flexible Kommunikationsparameter machen ROS 2 zur idealen Wahl für dieses Projekt.
+
+---
+
+#### ROS 2 Jazzy Jalisco
+
+In dieser Diplomarbeit wird **ROS 2 Jazzy Jalisco** verwendet. Dabei handelt es sich um eine Long‑Term‑Support‑(LTS)‑Version, die über einen längeren Zeitraum mit Sicherheits‑ und Fehlerupdates versorgt wird.
+
+ROS 2 Jazzy basiert auf **Ubuntu 24.04 LTS** und nutzt aktuelle Systembibliotheken sowie moderne Compiler. Dadurch werden eine höhere Performance, bessere Sicherheit und eine gute Kompatibilität mit aktueller Hardware gewährleistet.
+
+In Kombination mit einem Echtzeit‑Kernel (PREEMPT‑RT) eignet sich ROS 2 Jazzy besonders für zeitkritische Anwendungen wie die Steuerung eines IoT‑Cars. Steuerbefehle, Sensordaten und Kamerastreams können mit geringerer Latenz und höherer Zuverlässigkeit verarbeitet werden.
+
+Darüber hinaus bietet Jazzy eine ausgereifte Integration der DDS‑Middleware (Data Distribution Service), welche eine skalierbare und flexible Kommunikation zwischen verteilten Komponenten ermöglicht.
+
+---
+
+### Raspberry‑Pi‑Image
+
+Das **ros‑realtime‑rpi4‑image** ist ein vorkonfiguriertes Betriebssystem‑Image für Raspberry‑Pi‑Geräte, das speziell für Robotik‑ und Echtzeit‑Anwendungen mit ROS 2 entwickelt wurde.
+
+#### Enthaltene Software und Eigenschaften
+
+Das Image basiert auf **Ubuntu Server 24.04 (64‑Bit)** und verzichtet bewusst auf eine grafische Benutzeroberfläche. Dadurch werden Systemressourcen geschont, was insbesondere auf leistungsschwächeren Plattformen wie dem Raspberry Pi 3 von Vorteil ist.
+
+ROS 2 Jazzy ist vollständig vorinstalliert. Nach dem ersten Start steht die komplette ROS‑2‑Laufzeitumgebung sofort zur Verfügung, inklusive aller zentralen Werkzeuge zur Paketverwaltung und Kommunikation.
+
+Ein wesentliches Merkmal ist der verwendete Linux‑Kernel mit **PREEMPT‑RT‑Patch**, der nicht‑deterministische Verzögerungen reduziert und zeitkritische Prozesse bevorzugt behandelt. Dies verbessert die Stabilität von Steuerungs‑ und Kommunikationsabläufen erheblich.
+
+Der SSH‑Zugriff ist standardmäßig aktiviert. Der voreingestellte Benutzername lautet *ubuntu*, ebenso das initiale Passwort, welches beim ersten Login geändert werden muss.
+
+---
+
+### Kameraanbindung in ROS 2
+
+Die Kamera des IoT‑Cars wird in ROS 2 als eigener Node betrieben. Dieser erfasst kontinuierlich Bilddaten und veröffentlicht diese als Messages auf einem Topic, beispielsweise */camera/image_raw*.
+
+Für die Bilddaten werden standardisierte Message‑Typen aus dem Paket **sensor_msgs** verwendet. Dadurch ist eine einfache Weiterverarbeitung der Kameradaten möglich, etwa für spätere Erweiterungen wie Hinderniserkennung oder Spurverfolgung.
+
+---
+
+### Smartphone‑Anbindung und IoT‑Konzepte
+
+Die Steuerung des IoT‑Cars über ein Smartphone stellt eine typische IoT‑Anwendung dar. Das Smartphone fungiert als Benutzeroberfläche, während der Raspberry Pi die eigentliche Steuerungslogik übernimmt.
+
+Die Kommunikation kann über das Protokoll **MQTT** erfolgen, welches speziell für ressourcenschonende und zuverlässige Nachrichtenübertragung entwickelt wurde. Steuerbefehle werden dabei als Nachrichten an definierte Topics gesendet und von einem ROS‑2‑Node auf dem Raspberry Pi empfangen und umgesetzt.
+
+Durch die Kombination von ROS 2 und MQTT entsteht ein modulares und flexibel erweiterbares System, das sich für Fernsteuerung, Statusanzeigen und spätere autonome Funktionen eignet.
+
+---
 
 ## Praxisteil
 
-### Sensorenverbindung Jumperkabel
+### Sensorenverbindung mit Jumperkabeln
 
-Nach Anleitung der bla bla, wurden die Jumperkabel der Sensoren erneut wieder mit dem DigiBoard , welches auf der Raspberry Pi verbaut ist, wieder verbunden.
+Nach Anleitung des Herstellers wurden die Jumperkabel der Sensoren erneut mit dem DigiBoard verbunden, welches auf dem Raspberry Pi montiert ist. Dadurch konnten alle Sensoren wieder korrekt mit Strom versorgt und ausgelesen werden.
 
-### Raspberry Pi Betriebssystem
+---
 
-Um ein passendes Betriebssystem zu finden muss man sich zuerst die Raspberry Pi selbst anschauen. In dem Fall wurde eine Raspberry Pi 3 mit 64 bit verbaut. Am besten für ROS2 ist Ubuntu. Da die Raspberry Pi 3 leider nicht für die LTS Version von Ubuntu geeignet ist, wurde nach einer anderen Option gesucht.
+### Raspberry‑Pi‑Betriebssystem
 
-Repositroy bla bla [@raspberry-pi-image]
+Für die Auswahl eines geeigneten Betriebssystems musste zunächst die verwendete Hardware berücksichtigt werden. Zum Einsatz kommt ein **Raspberry Pi 3 (64‑Bit)**. Da dieser nicht offiziell von Ubuntu 24.04 LTS unterstützt wird, musste auf eine alternative Lösung zurückgegriffen werden.
 
-## Fehler
+#### Installation
 
-### Kaputtes Ground Jumper Kabel
+Die Installation erfolgt über ein vorgefertigtes Image, das von der GitHub‑Release‑Seite des Projekts heruntergeladen wird. Abhängig vom Bereitstellungsformat muss das Image zunächst entpackt werden, beispielsweise mit dem Werkzeug *zstd*.
 
-Dieses Problem wurde einfach gelöst. Hierzu wurde ein Leitendes Pin-ähnelndes metallstück an das Kabel angelötet. 
+Anschließend wird das Image mithilfe des Raspberry Pi Imagers oder per Kommandozeile mit *dd* auf eine SD‑Karte geschrieben. Nach dem Einsetzen der SD‑Karte in den Raspberry Pi kann das System gestartet werden.
+
+Der erste Zugriff erfolgt lokal oder über SSH. Nach erfolgreichem Login steht ROS 2 unmittelbar zur Verfügung und kann direkt über die *ros2*‑Kommandozeile genutzt werden.
+
+[@raspberry-pi-image]
+
+---
+
+## Fehler und Problemlösungen
+
+### Defektes Ground‑Jumperkabel
+
+Ein defektes Ground‑Jumperkabel führte zunächst zu Funktionsstörungen der Sensoren. Das Problem wurde behoben, indem ein leitendes, pin‑ähnliches Metallstück an das Kabel angelötet wurde. Dadurch konnte eine stabile elektrische Verbindung wiederhergestellt werden.
+
+---

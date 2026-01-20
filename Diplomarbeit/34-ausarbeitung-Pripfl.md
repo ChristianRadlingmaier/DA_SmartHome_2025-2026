@@ -1,7 +1,6 @@
 # Teilaufgabe Schüler Pripfl
 
 **Autorin:** Chloe Pripfl
-**Projekt:** IoT-Car – Inbetriebnahme und ROS‑2‑Integration
 
 
 
@@ -109,34 +108,74 @@ Durch die Kombination von ROS 2 und MQTT entsteht ein modulares und flexibel er
 
 
 
-## Praxisteil
+# Praxisteil
 
 ### Sensorenverbindung mit Jumperkabeln
 
-Nach Anleitung des Herstellers wurden die Jumperkabel der Sensoren erneut mit dem DigiBoard verbunden, welches auf dem Raspberry Pi montiert ist. Dadurch konnten alle Sensoren wieder korrekt mit Strom versorgt und ausgelesen werden.
+Die Jumperkabel der Sensoren wurden gemäß der Herstelleranleitung erneut mit dem DigiBoard verbunden, das auf dem Raspberry Pi montiert ist. Dadurch konnten alle Sensoren zuverlässig mit Strom versorgt und korrekt ausgelesen werden.
 
+### Raspberry-Pi Inbetriebnahme
 
+#### Raspberry‑Pi‑Betriebssystem
 
-### Raspberry‑Pi‑Betriebssystem
-
-Für die Auswahl eines geeigneten Betriebssystems musste zunächst die verwendete Hardware berücksichtigt werden. Zum Einsatz kommt ein **Raspberry Pi 3 (64‑Bit)**. Da dieser nicht offiziell von Ubuntu 24.04 LTS unterstützt wird, musste auf eine alternative Lösung zurückgegriffen werden.
+Für die Auswahl eines geeigneten Betriebssystems war zunächst die eingesetzte Hardware zu berücksichtigen. Verwendet wird ein **Raspberry Pi 3 (64‑Bit)**. Da dieses Modell nicht offiziell von Ubuntu 24.04 LTS unterstützt wird, musste eine alternative Lösung gewählt werden.
 
 #### Installation
 
-Die Installation erfolgt über ein vorgefertigtes Image, das von der GitHub‑Release‑Seite des Projekts heruntergeladen wird. Abhängig vom Bereitstellungsformat muss das Image zunächst entpackt werden, beispielsweise mit dem Werkzeug *zstd*.
+Die Installation erfolgt über ein vorgefertigtes Image, das von der GitHub‑Release‑Seite des Projekts heruntergeladen wird. Abhängig vom Bereitstellungsformat muss das Image zuvor entpackt werden, beispielsweise mit dem Werkzeug *zstd*.  
 
-Anschließend wird das Image mithilfe des Raspberry Pi Imagers oder per Kommandozeile mit *dd* auf eine SD‑Karte geschrieben. Nach dem Einsetzen der SD‑Karte in den Raspberry Pi kann das System gestartet werden.
+Anschließend wird das Image entweder mithilfe des Raspberry Pi Imagers oder über die Kommandozeile mit `dd` auf eine SD‑Karte geschrieben. Nach dem Einsetzen der SD‑Karte in den Raspberry Pi kann das System gestartet werden.  
 
-Der erste Zugriff erfolgt lokal oder über SSH. Nach erfolgreichem Login steht ROS 2 unmittelbar zur Verfügung und kann direkt über die *ros2*‑Kommandozeile genutzt werden.
+Nach erfolgreichem Login steht ROS 2 unmittelbar zur Verfügung und kann direkt über die `ros2`-Kommandozeile genutzt werden.  
 
 [@raspberry-pi-image]
 
+#### Internetverbindung
 
+Das Setup erfolgt über die Verbindung des Raspberry Pi mit dem Laptop über ein LAN-Kabel. Um eine stabile Verbindung herzustellen, muss die Datei `/etc/dhcpcd.conf` angepasst werden. Hierzu wird der Befehl ausgeführt:
+
+```bash
+sudo nano /etc/dhcpcd.conf
+```
+
+Am Ende der Datei wird Folgendes eingetragen:
+
+```text
+interface eth0
+static ip_address=192.168.10.2/24
+```
+
+Anschließend ist ein Neustart des Raspberry Pi erforderlich:
+
+```bash
+sudo reboot
+```
+
+Die Verbindung kann überprüft werden, indem vom Raspberry Pi der Laptop angepingt wird und umgekehrt.  
+
+Um eine Internetverbindung über den Laptop bereitzustellen, wird in Windows bei den Netzwerkverbindungen das WLAN ausgewählt, rechtsgeklickt und unter "Freigabe" aktiviert. Anschließend wird die Ethernet-Verbindung ausgewählt, über die der Raspberry Pi angeschlossen ist. Ein erfolgreicher Test erfolgt durch das Anpingen einer externen Adresse, z. B.:
+
+```bash
+ping 8.8.8.8
+```
+
+#### Letzte Vorbereitungen
+
+Abschließend wird das System auf den neuesten Stand gebracht:
+
+```bash
+sudo apt update && sudo apt upgrade -y
+```
 
 ## Fehler und Problemlösungen
 
 ### Defektes Ground‑Jumperkabel
 
-Ein defektes Ground‑Jumperkabel führte zunächst zu Funktionsstörungen der Sensoren. Das Problem wurde behoben, indem ein leitendes, pin‑ähnliches Metallstück an das Kabel angelötet wurde. Dadurch konnte eine stabile elektrische Verbindung wiederhergestellt werden.
+Ein defektes Ground‑Jumperkabel führte zunächst zu Funktionsstörungen der Sensoren. Das Problem konnte behoben werden, indem ein leitendes, pin‑ähnliches Metallstück an das Kabel angelötet wurde. Dadurch wurde eine stabile elektrische Verbindung wiederhergestellt.
 
----
+### Tippfehler bei der Internetverbindung
+
+Die Internetverbindung funktionierte zunächst nicht, da ein kleiner Tippfehler in der Datei `/etc/dhcpcd.conf` die Ursache war. Nachdem der Fehler korrigiert wurde, konnte die Verbindung problemlos hergestellt werden. Dieses Problem erforderte längere Tests, ließ sich jedoch nach der Korrektur schnell beheben.
+
+
+

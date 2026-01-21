@@ -1,6 +1,6 @@
 # Teilaufgabe Schüler Pripfl
 
-**Autorin:** Chloe Pripfl
+\textauthor{Chloe Pripfl}
 
 
 

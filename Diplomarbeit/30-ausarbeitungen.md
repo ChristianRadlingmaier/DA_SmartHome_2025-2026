@@ -1,7 +1,7 @@
 # Aufgabenstellung 
 
 ## Auftraggeber
-Wer ist der Auftraggeber, wie ist es zu dieser Arbeit gekommen, was verspricht sich der Auftraggeber davon
+HTL-Leoben, Es ist sehr zukunftsorientiert und nachhaltig, deswegen haben wir uns für diese Diplomarbeit entschieden. 
 
 ## Ausgangssituation
 

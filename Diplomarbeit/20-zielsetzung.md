@@ -8,7 +8,6 @@ Die Motivation für diese Diplomarbeit ergibt sich aus der zunehmenden Relevanz 
 
 Diese Arbeit soll zeigen, wie moderne Automatisierungs- und IoT-Konzepte verständlich aufgebaut, praktisch umgesetzt und systematisch dokumentiert werden können. Durch die Aufteilung in mehrere Teilbereiche und Ausarbeitungen wird außerdem Teamarbeit gefördert und die Zusammenarbeit verschiedener technischer Disziplinen realitätsnah abgebildet.
 
----
 
 ## Ziel der Diplomarbeit
 
@@ -23,7 +22,7 @@ Ziel der Diplomarbeit ist die Konzeption, Umsetzung und Dokumentation eines modu
 
 Das System soll modular, erweiterbar und nachvollziehbar aufgebaut sein, sodass einzelne Komponenten unabhängig voneinander angepasst oder erweitert werden können.
 
----
+
 
 ## Nicht-Ziele der Diplomarbeit
 
@@ -37,7 +36,7 @@ Die Diplomarbeit verfolgt bewusst nicht das Ziel, ein marktreifes oder industrie
 
 Der Fokus liegt auf einer didaktisch sinnvollen, technisch korrekten und nachvollziehbaren Umsetzung im Rahmen einer schulischen Diplomarbeit.
 
----
+
 
 ## Veränderung durch diese Arbeit
 

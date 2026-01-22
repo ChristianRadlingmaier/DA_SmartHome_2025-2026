@@ -1,6 +1,6 @@
 # Einleitung 
 
-### Smart-Home-System im Modellhaus
+## Smart-Home-System im Modellhaus
 
 Ein wesentlicher Bestandteil der Diplomarbeit ist die Konzeption und Umsetzung eines Smart-Home-Systems in Form eines Modellhauses. Ziel dieses Teilbereichs ist es, die grundlegenden Prinzipien moderner Hausautomation praxisnah darzustellen und technisch nachvollziehbar umzusetzen. Dabei werden unterschiedliche Sensoren zur Erfassung von Umweltparametern sowie Aktoren zur Steuerung von Licht und weiteren Funktionen eingesetzt.
 
@@ -8,7 +8,7 @@ Die Sensoren und Aktoren sind an Mikrocontroller angebunden, welche als Schnitts
 
 Durch den modularen Aufbau des Smart-Home-Systems ist es möglich, weitere Räume, zusätzliche Geräte oder neue Funktionen ohne grundlegende Änderungen an der bestehenden Struktur zu integrieren. Das Modellhaus dient somit als abstrahierte, aber realitätsnahe Darstellung eines modernen Wohnhauses und ermöglicht es, komplexe Zusammenhänge der Hausautomation verständlich zu erklären und praktisch zu erproben.
 
-### IoT-Car
+## IoT-Car
 
 Neben dem Smart-Home-System wird in der Diplomarbeit ein IoT-Car als eigenständiger Anwendungsfall betrachtet. Dieses Projekt ist bewusst vom Smart-Home-Modell getrennt und stellt kein direkt integriertes Teilsystem dar. Vielmehr dient das IoT-Car als separates Beispiel zur Anwendung von IoT- und Automatisierungskonzepten in einem mobilen System.
 

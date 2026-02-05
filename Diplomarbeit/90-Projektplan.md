@@ -52,14 +52,14 @@
 
     | Meilenstein  | Kostenart | Menge | Einzelpreis | Gesamtkosten | Bezahlt durch     |
     |--------------|-----------|-------|-------------|---------------|--------------------|
-    | Hardware     | Sensoren  | 6     | 7.00 €      | 42.00 €       | Schüler            |
-    | Hardware     | Aktoren   | 4     | 8.00 €      | 32.00 €       | Schüler            |
-    | Plattformen  | Raspberry Pi | 1  | 60.00 €      | 60.00 €       | Schule            |
-    | Haus         | 3D Druck  | 8     | 25.00 €      | 200.00€       | Schule            |[comment]: <> (Genaue Kosten noch ausrechnen)
-    | Zubehör      | Kabel/Adapter | 1 | 10.00 €      | 10.00 €       | Schüler           |
-    | Druckkosten  | Dokumentation | 1 | 25.00 €      | 25.00 €       | Schüler           |
+    | Hardware     | Sensoren  | 6     | 7.00 \euro{}      | 42.00 \euro{}       | Schüler            |
+    | Hardware     | Aktoren   | 4     | 8.00 \euro{}      | 32.00 \euro{}       | Schüler            |
+    | Plattformen  | Raspberry Pi | 1  | 60.00 \euro{}      | 60.00 \euro{}       | Schule            |
+    | Haus         | 3D Druck  | 8     | 25.00 \euro{}      | 200.00\euro{}       | Schule            |[comment]: <> (Genaue Kosten noch ausrechnen)
+    | Zubehör      | Kabel/Adapter | 1 | 10.00 \euro{}      | 10.00 \euro{}       | Schüler           |
+    | Druckkosten  | Dokumentation | 1 | 25.00 \euro{}      | 25.00 \euro{}       | Schüler           |
 
-    Gesamtkosten: 269.00 €
+    Gesamtkosten: 269.00 \euro{}
 
     ### Projektrisiken
 

@@ -218,4 +218,4 @@ Modularer Ausbau ohne Änderungen an der Grundarchitektur.
 
 ### Einbindung weiterer Sensoren
 
-CO₂-, Luftqualitäts- und Helligkeitssensoren. [@ha_dev_sensor_entity]
+CO2-, Luftqualitäts- und Helligkeitssensoren. [@ha_dev_sensor_entity]

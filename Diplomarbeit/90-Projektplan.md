@@ -33,8 +33,8 @@
 
     ### Projektauftraggeber/in
 
-    **HTL Leoben** – Abteilung für Informationstechnologie  
-    **Betreuer:** Prof. Hutter, Prof. Poetscher
+    HTL Leoben Abteilung für Informationstechnologie  
+    Betreuer: Christoph Leitner, BEd., DI (FH) Markus Zacharias
 
     ### Projekttermine
 
@@ -59,7 +59,7 @@
     | Zubehör      | Kabel/Adapter | 1 | 10.00 €      | 10.00 €       | Schüler           |
     | Druckkosten  | Dokumentation | 1 | 25.00 €      | 25.00 €       | Schüler           |
 
-    **Gesamtkosten: 269.00 €**
+    Gesamtkosten: 269.00 €
 
     ### Projektrisiken
 

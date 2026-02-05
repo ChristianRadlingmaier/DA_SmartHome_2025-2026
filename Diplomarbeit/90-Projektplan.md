@@ -92,11 +92,11 @@
     | Betreuer           | Schulischer Ansprechpartner, techn. Kontrolle     | Christoph Leitner, BEd. |
     | Zweit Betreuer     | Zweiter Schulischer Ansprechpartner, techn. Kontrolle  | DI (FH) Markus Zacharias|
 
-    ### Vorgehen bei Änderungen
+   ### Vorgehen bei Änderungen
 
-    - Änderungen werden im GitHub-Repo dokumentiert (Changelog.md).
-    - Bei größeren Änderungen (z. B. Sensorwechsel) wird der Betreuer informiert.
-    - Der Projektleiter entscheidet in Absprache mit Team und Betreuer über Annahme.
+   - Änderungen werden im GitHub-Repo dokumentiert (Changelog.md).
+   - Bei größeren Änderungen (z. B. Sensorwechsel) wird der Betreuer informiert.
+   - Der Projektleiter entscheidet in Absprache mit Team und Betreuer über Annahme.
 
     ## Meilensteine
 

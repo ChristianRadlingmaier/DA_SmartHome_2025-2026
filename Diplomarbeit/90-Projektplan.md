@@ -1,4 +1,4 @@
-    # Projekthandbuch – SmartHome Diplomarbeit
+    # Projekthandbuch  SmartHome Diplomarbeit
 
     **Autor:** Janik Gierer, Christian Radlingmaier, Christian Beichtbuchner, Chloe Pripfl
 

@@ -14,7 +14,7 @@ Dazu zählen unter anderem:
 - besondere technische Rahmenbedingungen  
 
 In diesem Kapitel werden die theoretischen und praktischen Grundlagen zur Umsetzung von Home Assistant für ein Modellhaus beschrieben. Zusätzlich wird erläutert, wie diese Konzepte auf ein reales Wohnhaus übertragen werden können.  
-Der Fokus liegt auf der Einrichtung von Docker auf dem Raspberry Pi sowie auf der Kommunikation zwischen Raspberry Pi, Arduino Uno und den angeschlossenen Aktoren und Sensoren. [@ha_installation; @docker_what_is_container; @docker_compose_overview]
+Der Fokus liegt auf der Einrichtung von Docker auf dem Raspberry Pi sowie auf der Kommunikation zwischen Raspberry Pi, Arduino Uno und den angeschlossenen Aktoren und Sensoren. [@ha_installation; @docker_what_is_container ; @docker_compose_overview][]
 
 ## Verwendete Aktoren
 

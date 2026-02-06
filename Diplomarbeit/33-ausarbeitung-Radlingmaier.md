@@ -152,7 +152,7 @@ Der Ausdruck \n steht dabei für einen Zeilenumbruch.
 
 ##### Variablen
 
-Perl verwendet unterschiedliche Variablentypen, die durch spezielle Zeichen gekennzeichnet sind. Skalare Variablen, die einzelne Werte wie Zahlen oder Zeichenketten speichern, beginnen mit dem Zeichen $.
+Perl verwendet unterschiedliche Variablentypen, die durch spezielle Zeichen gekennzeichnet sind. Skalare Variablen, die einzelne Werte wie Zahlen oder Zeichenketten speichern, beginnen mit dem Zeichen `$`.
 `my $zahl = 10;`
 `my $text = "Smart Home";`
 Der Befehl my sorgt dafür, dass die Variable nur im aktuellen Gültigkeitsbereich verwendet werden kann.

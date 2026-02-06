@@ -38,16 +38,16 @@ Ein besonderer Schwerpunkt liegt auf der Installation und Nutzung von Docker auf
 
 **Schüler:** Christian Radlingmaier
 
-## 1. Theoretische Grundlagen
+## Theoretische Grundlagen
 Unter einem Smart Home versteht man ein Haus, in dem verschiedene technische Komponenten miteinander vernetzt sind und zentral überwacht sowie gesteuert werden können. Diese Steuerung kann sowohl automatisch durch definierte Abläufe als auch manuell durch den Nutzer erfolgen. So ist es beispielsweise möglich, Beleuchtung oder Heizsysteme über ein mobiles Endgerät zu bedienen oder Rollläden zeitgesteuert automatisch zu bewegen.
 
 In dieser Diplomarbeit kommt ein Arduino als Mikrocontroller zum Einsatz, der für die Erfassung von Sensordaten sowie die Ansteuerung von Aktoren verantwortlich ist. Als zentrale Kontrolleinheit dient ein Raspberry Pi, auf dem die Smart-Home-Software FHEM betrieben wird. FHEM übernimmt die zentrale Verwaltung der angeschlossenen Geräte, verarbeitet eingehende Daten und setzt definierte Automatisierungsregeln um.
 
 Der Datenaustausch zwischen den einzelnen Systemkomponenten erfolgt über das MQTT-Protokoll. Dieses ermöglicht eine effiziente und zuverlässige Kommunikation zwischen Sensoren, Aktoren und der zentralen FHEM-Instanz.
 
-### 1.1 Sensorik, Aktorik und Steuerung    
+### Sensorik, Aktorik und Steuerung    
 
-#### 1.1.1 Sensorik
+#### Sensorik
 Sensorik bildet eine zentrale Grundlage eines Smart-Home-Systems, da sie die Erfassung von physikalischen und umgebungsbezogenen Zuständen ermöglicht. Sensoren dienen dazu, Informationen aus der realen Umgebung aufzunehmen und diese in elektrische Signale umzuwandeln, die von Mikrocontrollern oder zentralen Steuereinheiten weiterverarbeitet werden können.
 
 In Smart-Home-Anwendungen kommen unterschiedliche Sensortypen zum Einsatz. Dazu zählen unter anderem Temperatursensoren, Feuchtigkeits- und Helligkeitssensoren sowie Bewegungs- und Kontaktsensoren. Diese erfassen kontinuierlich relevante Umgebungsdaten, die als Grundlage für automatisierte Entscheidungen und Steuerungsprozesse dienen.
@@ -58,7 +58,7 @@ Ein wesentlicher Vorteil moderner Sensorik ist ihre hohe Genauigkeit sowie der g
 
 In dieser Diplomarbeit wird Sensorik eingesetzt, um relevante Umgebungsparameter zu erfassen und als Grundlage für die Automatisierung und Steuerung innerhalb des Smart-Home-Systems zu dienen.
 
-#### 1.1.2 Aktorik
+#### Aktorik
 Aktorik bezeichnet die Gesamtheit aller Komponenten in einem Smart-Home-System, die auf Basis von Steuerbefehlen physische Aktionen ausführen. Aktoren setzen digitale Signale aus der Steuerungslogik in konkrete mechanische, elektrische oder optische Vorgänge um und stellen damit das Gegenstück zur Sensorik dar.
 
 In Smart-Home-Anwendungen werden unterschiedliche Aktortypen eingesetzt. Dazu zählen unter anderem Relaismodule zum Schalten von elektrischen Verbrauchern, Aktoren für Beleuchtungssysteme, Motoren zur Steuerung von Rolllaeden sowie Stellventile für Heizungs- oder Lueftungssysteme. Diese Aktoren reagieren auf Steuerbefehle, die entweder manuell durch den Benutzer oder automatisch durch definierte Regeln ausgelöst werden.
@@ -69,7 +69,7 @@ Ein wichtiger Aspekt der Aktorik ist die Zuverlässigkeit und Sicherheit der aus
 
 In dieser Diplomarbeit wird Aktorik eingesetzt, um auf Basis von Sensordaten und definierten Automatisierungsregeln gezielt in die Umgebung einzugreifen und den gewuenschten Komfort-, Sicherheits- und Energieeffizienzgewinn zu realisieren.
 
-#### 1.1.3 Steuerung(Arduino UNO)
+#### Steuerung(Arduino UNO)
 Die Steuerung stellt eine zentrale Funktion innerhalb des Smart-Home-Systems dar und ist für die Verarbeitung von Sensordaten sowie die Ansteuerung der Aktoren verantwortlich. In dieser Diplomarbeit wird der Arduino Uno als Mikrocontroller eingesetzt, um diese Aufgaben zuverlässig und effizient zu übernehmen.
 
 Der Arduino Uno fungiert als dezentrale Steuereinheit, an die verschiedene Sensoren und Aktoren angeschlossen sind. Die vom System erfassten Sensordaten werden vom Mikrocontroller eingelesen, vorverarbeitet und anschließend an die zentrale Automatisierungsplattform weitergeleitet. Gleichzeitig empfängt der Arduino Uno Steuerbefehle von der Zentrale und setzt diese in entsprechende Schalt- oder Regelvorgänge um.
@@ -80,7 +80,7 @@ Durch den Einsatz des Arduino Uno wird eine klare Trennung zwischen der hardware
 
 In dieser Diplomarbeit übernimmt der Arduino Uno somit die Aufgabe der direkten Steuerung von Sensoren und Aktoren und bildet die Verbindung zwischen der physischen Umgebung und der übergeordneten Smart-Home-Logik.
 
-#### 1.1.4 Raspberry Pi
+#### Raspberry Pi
 Der Raspberry Pi ist ein kompakter Einplatinencomputer, der für eine Vielzahl von Anwendungen im Bildungs-, Entwicklungs- und Embedded-Bereich eingesetzt wird. Trotz seiner geringen Größe bietet er ausreichende Rechenleistung, um als zentrale Steuereinheit in Smart-Home-Systemen zu fungieren. Der Betrieb erfolgt in der Regel mit einem Linux-basierten Betriebssystem, wodurch der Einsatz zahlreicher Open-Source-Anwendungen möglich ist.
 
 Im Rahmen dieser Diplomarbeit übernimmt der Raspberry Pi die Rolle der zentralen Steuer- und Kommunikationseinheit. Auf ihm werden mehrere Dienste ausgeführt, darunter Automatisierungs- und Management-Software wie Node-RED, MQTT-Broker sowie weitere containerisierte Anwendungen. Durch den Einsatz von Docker können diese Dienste voneinander getrennt betrieben und effizient verwaltet werden.
@@ -91,9 +91,9 @@ Ein weiterer Vorteil des Raspberry Pi ist seine geringe Leistungsaufnahme bei gl
 
 Aufgrund seiner Vielseitigkeit, der guten Unterstützung durch die Community sowie der Eignung für den Dauerbetrieb wird der Raspberry Pi in dieser Diplomarbeit als zentrale Plattform für den Betrieb und die Koordination des Smart-Home-Systems eingesetzt 
 
-### 1.2 Frameworks
+### Frameworks
 
-#### 1.2.1 FHEM
+#### FHEM
 FHEM ist ein quelloffenes Smart-Home-Framework, das zur Steuerung, Überwachung und Automatisierung von Haus- und Gebäudetechnik eingesetzt wird. Die Software wird überwiegend auf Linux-basierten Systemen betrieben, wie beispielsweise einem Raspberry Pi, und fungiert als zentrale Steuereinheit innerhalb eines Smart-Home-Systems.
 
 Das Framework ist modular aufgebaut und unterstützt eine Vielzahl von Geräten, Protokollen und Kommunikationsschnittstellen. Dadurch können sowohl Sensoren (z. B. Temperatur- oder Bewegungssensoren) als auch Aktoren (z. B. Relais, Heizungsventile oder Beleuchtungssysteme) in das System integriert werden. Die Verwaltung dieser Komponenten erfolgt zentral über FHEM.
@@ -104,7 +104,7 @@ Die Kommunikation zwischen FHEM und externen Geräten kann über unterschiedlich
 
 Aufgrund seiner Offenheit, Erweiterbarkeit und großen Community eignet sich FHEM besonders für individuelle und anpassbare Smart-Home-Lösungen. Aus diesen Gründen wurde FHEM als zentrale Automatisierungsplattform für diese Diplomarbeit ausgewählt.
 
-#### 1.2.2 Node-RED
+#### Node-RED
 Node-RED ist ein quelloffenes, ereignisgesteuertes Entwicklungsframework, das insbesondere im Bereich Smart Home und Internet of Things (IoT) eingesetzt wird. Es ermöglicht die grafische Erstellung von Steuerungs- und Automatisierungslogiken mithilfe eines webbasierten Editors. Die einzelnen Funktionsbausteine, sogenannte Nodes, werden per Drag-and-Drop miteinander verbunden und bilden gemeinsam sogenannte Flows, welche den Daten- und Kontrollfluss innerhalb des Systems abbilden.
 
 Innerhalb eines Smart-Home-Systems übernimmt Node-RED die Verarbeitung von Sensordaten sowie die Umsetzung von logischen Abläufen. Eingehende Informationen, beispielsweise von Temperatur- oder Bewegungssensoren, können analysiert, gefiltert und anschließend zur Steuerung von Aktoren wie Beleuchtung, Heizung oder Rollläden verwendet werden. Dadurch lassen sich sowohl einfache Automatisierungen als auch komplexe Abhängigkeiten realisieren.
@@ -115,7 +115,7 @@ Zusätzlich besteht die Möglichkeit, eigene Funktionslogiken mithilfe von JavaS
 
 Aufgrund seiner übersichtlichen grafischen Programmierumgebung, der hohen Erweiterbarkeit und der aktiven Community eignet sich Node-RED besonders für die Entwicklung individueller Smart-Home-Lösungen. Daher wird das Framework in dieser Diplomarbeit als zentrales Werkzeug zur Umsetzung von Automatisierungs- und Steuerungsprozessen verwendet. 
 
-#### 1.2.3 MQTT
+#### MQTT
 MQTT (Message Queuing Telemetry Transport) ist ein leichtgewichtiges, ereignisbasiertes Kommunikationsprotokoll, das speziell für den Einsatz in ressourcenbeschränkten Systemen entwickelt wurde. Aufgrund seines geringen Overheads und der hohen Zuverlässigkeit wird MQTT häufig in Smart-Home- und Internet-of-Things-Anwendungen eingesetzt.
 
 Das Protokoll basiert auf dem sogenannten Publish-Subscribe-Prinzip. Dabei kommunizieren die einzelnen Geräte nicht direkt miteinander, sondern über eine zentrale Instanz, den sogenannten Broker. Sensoren oder andere Datenquellen senden ihre Informationen als Nachrichten (Publish) an den Broker, während andere Komponenten diese Nachrichten abonnieren (Subscribe). Die Zuordnung erfolgt über eindeutig benannte Themen (Topics).
@@ -127,7 +127,7 @@ Ein weiterer Vorteil von MQTT ist die Unterstützung verschiedener Qualitätsstu
 Aufgrund seiner Effizienz, der einfachen Implementierung und der guten Integration in bestehende Smart-Home-Frameworks eignet sich MQTT besonders für die Kommunikation zwischen Sensoren, Aktoren und zentralen Steuerungssystemen. Aus diesen Gründen wird MQTT in dieser Diplomarbeit als zentrales Kommunikationsprotokoll für den Datenaustausch innerhalb des Smart-Home-Systems eingesetzt.
 
 
-#### 1.2.4 Portainer
+#### Portainer
 Portainer ist eine webbasierte Management- und Verwaltungsplattform zur einfachen Administration von containerbasierten Anwendungen. Die Software wird hauptsächlich in Verbindung mit Docker eingesetzt und ermöglicht es, Container, Images, Netzwerke und Volumes über eine grafische Benutzeroberfläche zu verwalten. Dadurch wird die Nutzung von Container-Technologien auch ohne tiefgehende Kommandozeilenkenntnisse erleichtert.
 
 Im Smart-Home-Umfeld eignet sich Portainer besonders für den Betrieb und die Organisation mehrerer Dienste auf einer zentralen Steuereinheit, wie beispielsweise einem Raspberry Pi oder einem Server. Anwendungen wie Node-RED, MQTT-Broker oder FHEM können in separaten Containern betrieben und über Portainer übersichtlich verwaltet werden. Dies erhöht die Wartbarkeit und Übersichtlichkeit des Gesamtsystems.

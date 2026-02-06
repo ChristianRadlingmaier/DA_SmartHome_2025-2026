@@ -138,6 +138,45 @@ Durch die Trennung der einzelnen Anwendungen in eigenständige Container wird di
 
 Aufgrund der übersichtlichen Benutzeroberfläche, der einfachen Handhabung und der guten Integration in Docker-basierte Systeme wird Portainer in dieser Diplomarbeit zur Verwaltung und Überwachung der containerisierten Smart-Home-Komponenten eingesetzt.
 
+### Einführung in die Programmiersprache Perl
+Im Rahmen dieser Diplomarbeit wurde erstmals mit der Programmiersprache Perl gearbeitet. Perl ist eine interpretierte, plattformunabhängige Programmiersprache, die besonders für Textverarbeitung, Systemskripte sowie die Automatisierung von Abläufen eingesetzt wird. Aufgrund ihrer Flexibilität und der guten Integration in Linux-Systeme findet Perl auch im Bereich Server- und Smart-Home-Anwendungen Verwendung.
+
+Perl-Programme bestehen aus einfachen, zeilenbasierten Anweisungen und werden in sogenannten Skripten gespeichert. Ein grundlegendes Perl-Programm beginnt üblicherweise mit einer sogenannten Shebang-Zeile, die angibt, mit welchem Interpreter das Skript ausgeführt werden soll.
+`#!/usr/bin/perl`
+
+##### Ausgabe von Text
+
+Eine der grundlegendsten Funktionen in Perl ist die Ausgabe von Text auf der Konsole. Dies erfolgt mit dem Befehl print.
+`print "Hello World\n";`
+Der Ausdruck \n steht dabei für einen Zeilenumbruch.
+
+##### Variablen
+
+Perl verwendet unterschiedliche Variablentypen, die durch spezielle Zeichen gekennzeichnet sind. Skalare Variablen, die einzelne Werte wie Zahlen oder Zeichenketten speichern, beginnen mit dem Zeichen $.
+`my $zahl = 10;`
+`my $text = "Smart Home";`
+Der Befehl my sorgt dafür, dass die Variable nur im aktuellen Gültigkeitsbereich verwendet werden kann.
+
+##### Bedingungen
+
+Mit bedingten Anweisungen lassen sich Entscheidungen im Programmablauf umsetzen. Eine einfache if-Anweisung sieht in Perl wie folgt aus:
+`if ($zahl > 5) {`
+`   print "Die Zahl ist größer als 5\n";`
+`}`
+
+##### Schleifen
+
+Perl bietet verschiedene Möglichkeiten zur Wiederholung von Programmteilen. Eine häufig genutzte Variante ist die for-Schleife:
+`for (my $i = 0; $i < 3; $i++) {`
+`    print "Durchlauf $i\n";`
+`}`
+
+##### Bedeutung für diese Diplomarbeit
+
+In dieser Diplomarbeit wird Perl verwendet, um Automatisierungsaufgaben und logische Abläufe innerhalb des Smart-Home-Systems umzusetzen. Die einfache Syntax und die gute Integration in Linux-basierte Systeme ermöglichen eine effiziente Implementierung von Steuerungs- und Verwaltungsfunktionen.
+
+Durch das Erlernen der Programmiersprache Perl konnten grundlegende Programmierkonzepte wie Variablen, Bedingungen und Schleifen praktisch angewendet und in das Gesamtsystem integriert werden.
+
 ## Praktische Arbeit
 
 
@@ -154,4 +193,3 @@ Anhand von XY kann man folgende Tabelle ableiten:
 |    1  |    1 |     1   |     1  |
 
 : Eine Tolle tabelle
-

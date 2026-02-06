@@ -14,7 +14,7 @@ Dazu zählen unter anderem:
 - besondere technische Rahmenbedingungen  
 
 In diesem Kapitel werden die theoretischen und praktischen Grundlagen zur Umsetzung von Home Assistant für ein Modellhaus beschrieben. Zusätzlich wird erläutert, wie diese Konzepte auf ein reales Wohnhaus übertragen werden können.  
-Der Fokus liegt auf der Einrichtung von Docker auf dem Raspberry Pi sowie auf der Kommunikation zwischen Raspberry Pi, Arduino Uno und den angeschlossenen Aktoren und Sensoren. [@ha_installation; @docker_what_is_container ; @docker_compose_overview][]
+Der Fokus liegt auf der Einrichtung von Docker auf dem Raspberry Pi sowie auf der Kommunikation zwischen Raspberry Pi, Arduino Uno und den angeschlossenen Aktoren und Sensoren. [@ha_installation] [@docker_compose_overview] [@docker_what_is_container]
 
 ## Verwendete Aktoren
 
@@ -31,19 +31,19 @@ Der Fokus liegt auf der Einrichtung von Docker auf dem Raspberry Pi sowie auf de
 ## Verwendete Frameworks
 
 - **Home Assistant**  
-  Dient als zentrales Steuerelement des Modellhauses. Es wird praxisnah simuliert, wie von einem zentralen Standort aus sämtliche Geräte gesteuert und überwacht werden können. [@ha_installation; @aavild_distributed_homeassistant_2024]
+  Dient als zentrales Steuerelement des Modellhauses. Es wird praxisnah simuliert, wie von einem zentralen Standort aus sämtliche Geräte gesteuert und überwacht werden können. [@ha_installation] [@aavild_distributed_homeassistant_2024]
 
 - **Node-RED**  
   Ermöglicht die einfache Erstellung und Automatisierung von Logiken. Sensordaten wie Temperatur oder Helligkeit können verarbeitet und entsprechende Aktoren angesteuert werden. [@nodered_homepage]
 
 - **MQTT**  
-  Wird als Kommunikationsprotokoll zwischen Mikrocontroller (Arduino Uno), Raspberry Pi und Home Assistant verwendet. Es ermöglicht eine zuverlässige und schnelle Datenübertragung. [@oasis_mqtt_v5_2019; @agyemang_mqtt_2022; @ha_mqtt_integration]
+  Wird als Kommunikationsprotokoll zwischen Mikrocontroller (Arduino Uno), Raspberry Pi und Home Assistant verwendet. Es ermöglicht eine zuverlässige und schnelle Datenübertragung. [@oasis_mqtt_v5_2019] [@agyemang_mqtt_2022] [@ha_mqtt_integration]
 
 - **Portainer**  
   Dient zur übersichtlichen Verwaltung aller laufenden Docker-Container über ein Webinterface. [@portainer_docs]
 
 - **Firmata**  
-  Firmata ist ein Kommunikationsprotokoll, mit dem ein Computer (in diesem Fall der Raspberry Pi) einen Mikrocontroller (Arduino Uno) direkt steuern kann. Auf dem Mikrocontroller läuft dabei das *StandardFirmata*-Sketch, welches das Setzen von Pins sowie das Lesen von Eingängen ermöglicht. [@arduino_firmata_docs; @firmata_arduino_github]
+  Firmata ist ein Kommunikationsprotokoll, mit dem ein Computer (in diesem Fall der Raspberry Pi) einen Mikrocontroller (Arduino Uno) direkt steuern kann. Auf dem Mikrocontroller läuft dabei das *StandardFirmata*-Sketch, welches das Setzen von Pins sowie das Lesen von Eingängen ermöglicht. [@arduino_firmata_doc] [@firmata_arduino_github]
 
 # Teilaufgabe – Smart-Home-Umsetzung mit Home Assistant und Node-RED
 
@@ -55,7 +55,7 @@ Ein Smart Home beschreibt ein vernetztes Haus, bei dem Geräte und Komponenten z
 Beispiele hierfür sind das Ein- und Ausschalten von Licht oder Heizung über ein Smartphone oder das automatische Herunterfahren von Rollläden zu bestimmten Uhrzeiten. [@abutair_secure_privacy_smart_home_2020]
 
 Im Rahmen dieser Diplomarbeit kommen ein Arduino Uno als Mikrocontroller, ein Raspberry Pi als Steuerzentrale sowie Home Assistant als Automatisierungsplattform zum Einsatz. [@ha_installation]  
-Die Kommunikation zwischen Sensoren und Aktoren erfolgt über MQTT. [@oasis_mqtt_v5_2019; @ha_mqtt_integration]
+Die Kommunikation zwischen Sensoren und Aktoren erfolgt über MQTT. [@oasis_mqtt_v5_2019] [@ha_mqtt_integration]
 
 ### Sensorik, Aktorik und Steuerung im Modellhaus
 
@@ -80,7 +80,7 @@ Relais, LEDs und Mini-Lampen – Einsatzmöglichkeiten und Grenzen. [@abutair_se
 
 #### Mikrocontroller (Arduino) als Basis für smarte Funktionen
 
-Auf dem Arduino wird das Beispiel *StandardFirmata* installiert. Dieses Sketch stellt die Firmata-Funktionen bereit und ermöglicht die Steuerung des Arduino über die serielle Schnittstelle durch einen Host (Raspberry Pi). [@arduino_firmata_docs; @firmata_arduino_github]
+Auf dem Arduino wird das Beispiel *StandardFirmata* installiert. Dieses Sketch stellt die Firmata-Funktionen bereit und ermöglicht die Steuerung des Arduino über die serielle Schnittstelle durch einen Host (Raspberry Pi). [@arduino_firmata_docs] [@firmata_arduino_github]
 
 *(Hinweis: In der Arduino IDE findet man es typischerweise unter **File -> Examples -> Firmata -> StandardFirmata**.)* [@arduino_firmata_docs]
 
@@ -134,7 +134,7 @@ Verbindung über `/dev/ttyUSB0` zur Übertragung von Steuerkommandos.
 
 #### Integration von MQTT-Geräten
 
-Manuelle Konfiguration im Vergleich zur MQTT-Integration. [@ha_mqtt_integration; @ha_mqtt_sensor]
+Manuelle Konfiguration im Vergleich zur MQTT-Integration. [@ha_mqtt_integration]  [@ha_mqtt_sensor]
 
 #### Automationen in Home Assistant
 
@@ -144,7 +144,7 @@ Beispielsweise Lichtsteuerung bei Bewegung oder Temperaturregelung. [@ha_automat
 
 #### Lovelace UI
 
-Dashboards für Licht, Heizung und Sensorwerte. [@ha_dashboards_intro; @ha_cards]
+Dashboards für Licht, Heizung und Sensorwerte. [@ha_dashboards_intro] [@ha_cards]
 
 #### Visualisierung von Zustandsänderungen
 
@@ -170,13 +170,13 @@ Platzierung und Verkabelung im Modellhaus.
 
 #### Empfang und Ausführung von Steuerkommandos
 
-Lichtsteuerung über serielle Befehle. [@arduino_firmata_docs; @firmata_arduino_github]
+Lichtsteuerung über serielle Befehle. [@arduino_firmata_docs] [@firmata_arduino_github]
 
 ### Node-RED Workflows zur Kommunikation
 
 #### MQTT-IN Nodes
 
-Beispiel: `haus/licht/wohnzimmer -> Serial`. [@nodered_homepage; @oasis_mqtt_v5_2019]
+Beispiel: `haus/licht/wohnzimmer -> Serial`. [@nodered_homepage] [@oasis_mqtt_v5_2019]
 
 #### Serial-Out an den Arduino
 
@@ -184,9 +184,14 @@ Steuerung der LEDs über den USB-Port. [@nodered_homepage]
 
 ### Docker-basierter Betrieb
 
-#### Container für Home Assistant, Node-RED, MQTT und Portainer
+Alle Schritte für das Aufsätzen des Docker können erst nach Aufsätzen der Raspberry PI OS gemacht werden. 
 
-Verwaltung über `docker-compose` am Raspberry Pi. [@docker_compose_overview; @docker_compose_file_reference; @portainer_docs]
+#### Container für Home Assistant, MQTT, Portainer
+
+Verwaltung über `docker-compose` am Raspberry Pi. [@docker_compose_overview] [@docker_compose_file_reference] [@portainer_docs]
+
+#### MQTT auf Raspberry Pi instalieren 
+Es ist nicht 
 
 ### Bedienung und Steuerung
 

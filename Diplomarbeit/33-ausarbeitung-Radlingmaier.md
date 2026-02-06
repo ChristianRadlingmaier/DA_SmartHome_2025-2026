@@ -148,7 +148,7 @@ Perl-Programme bestehen aus einfachen, zeilenbasierten Anweisungen und werden in
 
 Eine der grundlegendsten Funktionen in Perl ist die Ausgabe von Text auf der Konsole. Dies erfolgt mit dem Befehl print.
 `print "Hello World\n";`
-Der Ausdruck \n steht dabei für einen Zeilenumbruch.
+Der Ausdruck `\n` steht dabei für einen Zeilenumbruch.
 
 ##### Variablen
 

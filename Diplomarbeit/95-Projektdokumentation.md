@@ -6,7 +6,7 @@
 
 #### Sensordaten erfassen und senden
 
-**Beschreibung:** Das System erfasst kontinuierlich Umweltparameter (z. B. Temperatur, Helligkeit, Bewegung) im Modellhaus und sendet diese an die Zentrale.  
+**Beschreibung:** Das System erfasst kontinuierlich Umweltparameter (z. B. Temperatur, Helligkeit) im Modellhaus und sendet diese an die Zentrale.  
 **Trigger:** Zeitintervall oder Zustandsänderung eines Sensors  
 **Bedingungen:** Sensoren, Mikrocontroller (Arduino) und MQTT-Broker sind aktiv  
 **Ablauf:**
@@ -135,7 +135,7 @@
 |:--------------------|:-------------------------------|:-----------|
 | Leistungsziele      | Weitgehend erreicht            | Restpunkte auf Dokumentationsqualität und Feinschliff konzentrieren |
 | Terminziele         | Erreicht                       | Abschlussarbeiten entlang der verbleibenden Abgabetermine führen |
-| Kostenziele         | Unter Budget                   | Keine ungeplanten Zusatzanschaffungen |
+| Kostenziele         | Im Budget                   | Keine ungeplanten Zusatzanschaffungen |
 | Teamarbeit          | Sehr gut                       | Rollenaufteilung (Modellbau, Steuerlogik, Plattformbetrieb) beibehalten |
 
 :Projektstatus am 2026-02-20

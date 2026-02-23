@@ -235,14 +235,14 @@ Durch diese Arbeitsweise ist es möglich, einfache wie auch komplexere Steuerung
 
 ### Vergleich gängiger Mikrocontroller-Plattformen
 
----
+***
 #### Arduino Uno
 
 ![Arduino Uno[@Arduino-Uno-Bild]](img/bilder-ausarbeitung-Beichtbuchner/Mikrocontroller/Arduino-Uno-R3.jpg)
 
 Der Arduino Uno ist einer der am häufigsten verwendeten Mikrocontroller und eignet sich besonders für Einsteiger sowie für einfache bis mittelkomplexe Projekte. Er basiert auf einem 8-Bit-Mikrocontroller und bietet eine übersichtliche Anzahl an digitalen und analogen Ein- und Ausgängen. Durch die einfache Programmierung und die große Verfügbarkeit an Bibliotheken und Beispielen lässt sich der Arduino Uno schnell in Betrieb nehmen. Er wird häufig für Steuerungsaufgaben, das Auslesen von Sensoren oder das Ansteuern von LEDs und anderen Aktoren verwendet. Aufgrund seiner Stabilität und guten Dokumentation ist er auch im schulischen Umfeld weit verbreitet.
 
----
+***
 
 #### Arduino Nano
 
@@ -250,7 +250,7 @@ Der Arduino Uno ist einer der am häufigsten verwendeten Mikrocontroller und eig
 
 Der Arduino Nano bietet im Wesentlichen denselben Funktionsumfang wie der Arduino Uno, ist jedoch deutlich kompakter aufgebaut. Dadurch eignet er sich besonders für Projekte, bei denen wenig Platz zur Verfügung steht. Trotz seiner geringen Größe kann der Arduino Nano für viele der gleichen Anwendungen eingesetzt werden wie der Uno. Er wird häufig in kleineren Schaltungen, Prototypen oder fest verbauten Systemen verwendet, bei denen eine platzsparende Bauform von Vorteil ist.
 
----
+***
 
 #### ESP32
 
@@ -258,7 +258,7 @@ Der Arduino Nano bietet im Wesentlichen denselben Funktionsumfang wie der Arduin
 
 Der ESP32 ist ein leistungsstarker 32-Bit-Mikrocontroller, der sich vor allem durch seine integrierten Kommunikationsmöglichkeiten auszeichnet. Er verfügt über WLAN- und Bluetooth-Funktionalität und eignet sich daher besonders für vernetzte Anwendungen. Dank seiner höheren Rechenleistung und der Vielzahl an verfügbaren Schnittstellen kann der ESP32 mehrere Aufgaben gleichzeitig ausführen. Er wird häufig in Smart-Home-Anwendungen, IoT-Projekten oder Systemen eingesetzt, bei denen eine drahtlose Datenübertragung erforderlich ist. Zusätzlich bietet er Energiesparmodi, wodurch er auch für batteriebetriebene Anwendungen geeignet ist.
 
----
+***
 
 #### STM32
 
@@ -471,7 +471,7 @@ Bei diesem Teil Jedoch hat das Filament nicht mehr gereicht und nach dem wechsel
 - Passgenauigkeit der Teile
 - Vorbereitung für den Zusammenbau
 
----
+***
 
 ## 10 Aufbau der Grundplatte und des Modellhauses
 
@@ -507,7 +507,7 @@ Die Grundplatte, auf der das Haus und alle weiteren Komponenten platziert werden
 - Vermeidung von Kurzschlüssen
 - Kontrolle der Wärmeentwicklung
 
----
+***
 
 ## 12 Einrichtung und Ausstattung des Modellhauses
 
@@ -526,7 +526,7 @@ Die Grundplatte, auf der das Haus und alle weiteren Komponenten platziert werden
 - Optische Gestaltung
 - Wartungszugänglichkeit
 
----
+***
 
 ## 13 Inbetriebnahme und Tests
 
@@ -545,7 +545,7 @@ Die Grundplatte, auf der das Haus und alle weiteren Komponenten platziert werden
 - Lösungen und Verbesserungen
 - Erkenntnisse aus den Tests
 
----
+***
 
 ## 14 Ergebnisse und Erkenntnisse
 - Zusammenfassung der praktischen Arbeit

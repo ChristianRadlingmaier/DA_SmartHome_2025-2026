@@ -6,4 +6,3 @@ Zum Einsatz kommt ein Raspberry Pi als Steuerzentrale, auf dem über Docker-Cont
 
 Hilfe zu Benutzung dieses Templates finden Sie in der Datei [USAGE.md](USAGE.md)
 
-Der zweite Teil der Diplomarbeit beeinhaltet die in Betriebnahme des IoT Cars und das Konfigurieren der Steuerung über ein Smartphone.

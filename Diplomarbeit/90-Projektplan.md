@@ -1,6 +1,6 @@
 ﻿# Projekthandbuch SmartHome Diplomarbeit
 
-**Autor:** Janik Gierer, Christian Radlingmaier, Christian Beichtbuchner, Chloe Pripfl
+**Autor:** Janik Gierer, Christian Radlingmaier, Christian Beichtbuchner
 
 ## Entwicklungsplan
 
@@ -81,7 +81,6 @@ Gesamtkosten: 269.00 \euro{}
 | Janik     | Gierer         | HTL Leoben   | 211wita04@htl-leoben.at |
 | Christian | Beichtbuchner  | HTL Leoben   | 211wita01@htl-leoben.at |
 | Christian | Radlingmaier   | HTL Leoben   | 211witb21@htl-leoben.at |
-| Chloe     | Pripfl         | HTL Leoben   | 211witb20@htl-leoben.at |
 
 ### Projektrollen
 
@@ -90,7 +89,6 @@ Gesamtkosten: 269.00 \euro{}
 | Projektleiter  | Gesamtkoordination, Umsetzung in Home Assistant       | Janik Gierer            |
 | Teammitglied   | Modellierung Modellhaus, Verkabelung im Haus          | Christian Beichtbuchner |
 | Teammitglied   | Umsetzung in FHEM                                     | Christian Radlingmaier  |
-| Teammitglied   | Inbetriebnahme des IoT Cars                           | Chlö Pripfl            |
 | Betreuer       | Schulischer Ansprechpartner, techn. Kontrolle         | Christoph Leitner, BEd. |
 | Zweitbetreuer  | Zweiter schulischer Ansprechpartner, techn. Kontrolle | DI (FH) Markus Zacharias |
 

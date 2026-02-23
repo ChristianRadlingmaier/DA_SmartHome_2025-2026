@@ -51,8 +51,6 @@
 | QoS | Quality of Service |
 | RAM | Random Access Memory |
 | ROM | Read-Only Memory |
-| ROS | Robot Operating System |
-| ROS 2 | Robot Operating System 2 |
 | S. | Seite |
 | SD | Secure Digital |
 | SMD | Surface-Mount Device (Oberflächenmontage) |

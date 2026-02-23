@@ -29,16 +29,6 @@ da-author:
   klasse: 5AHWIN
   thema: Modellierung und Verkappelung des Modelhauses
 
-- vorname: Chloe 
-  nachname: Pripfl
-  klasse: 5BHWIN
-  thema: GUI Generierung
-  ki-tools:
-  - name: Galileo AI
-    zweck: Setendesign sowie UI/UX Design der App
-  - name: Grammarly Go
-    zweck: Stilverbesserung sowie Rechtschreibkorrekturen
-
 da-betreuer:
 - paraffe: Lech
   name: Dipl.-Wirt.-Ing. (FH) Leitner Christoph, BEd 

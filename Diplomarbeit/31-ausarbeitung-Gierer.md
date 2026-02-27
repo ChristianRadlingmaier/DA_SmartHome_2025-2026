@@ -2,9 +2,34 @@
 
 \textauthor{Janik Gierer}
 
-Dieses Kapitel dokumentiert die theoretischen Grundlagen und die praktische Umsetzung meines Teilprojekts im Rahmen der Diplomarbeit. Der Schwerpunkt liegt auf dem Betrieb eines Smart-Home-Modellhauses mit Home Assistant, Node-RED, MQTT, Docker und einem Arduino Uno als I/O-Ebene.
+Dieses Kapitel beschreibt die theoretischen Grundlagen sowie die bisher umgesetzten technischen Bausteine meines Teilprojekts innerhalb der Diplomarbeit. Der Schwerpunkt liegt auf dem Zusammenspiel von Home Assistant, Node-RED, MQTT, Docker und einem Arduino Uno in einem Smart-Home-Modellhaus. Es wird bewusst darauf geachtet, den Inhalt fachlich korrekt, nachvollziehbar und reproduzierbar darzustellen.
 
-Ziel ist ein nachvollziehbarer, technisch korrekter Aufbau, der sich im schulischen Umfeld reproduzieren laesst und als Grundlage fuer spaetere Erweiterungen dient. Neben der Implementierung werden auch Architekturentscheidungen, typische Fehlerquellen und Optimierungsmoeglichkeiten beschrieben. [@ha_installation] [@docker_compose_overview] [@docker_what_is_container]
+Ziel dieses Kapitels ist es, nicht nur einzelne Werkzeuge aufzulisten, sondern den Gesamtzusammenhang zu erklaeren: Welche Rolle uebernimmt welche Komponente, wie werden Daten transportiert, wie werden Zustandsaenderungen verarbeitet und wie wird daraus ein bedienbares, erweiterbares Smart-Home-System. [@ha_installation] [@nodered_homepage] [@oasis_mqtt_v5_2019]
+
+## Einordnung und Ziel dieses Abschnitts
+
+Der vorliegende Abschnitt ist eine Verbindung aus Literaturrecherche und technischer Dokumentation. Er soll einem fachlich interessierten Leser ermoeglichen, den praktischen Teil logisch nachzuvollziehen, ohne vorauszusetzen, dass die konkrete Projektumgebung bereits bekannt ist.
+
+Die Ausfuehrungen decken drei Ebenen ab:
+
+1. **Grundlagenebene:** Definitionen zu Smart Home, Sensorik, Aktorik und Steuerung.
+2. **Architekturebene:** Aufbau des Gesamtsystems mit Raspberry Pi, Arduino, Node-RED, MQTT und Home Assistant.
+3. **Umsetzungsebene:** Betriebs- und Konfigurationsschritte, die im Projekt bereits beschrieben wurden.
+
+Die Inhalte sind so formuliert, dass keine zusaetzlichen praktischen Ergebnisse behauptet werden, die nicht bereits Teil der bisherigen Projektarbeit sind.
+
+## Zielsetzung und fachliche Abgrenzung
+
+Die zentrale Zielsetzung besteht darin, ein modulares und verstaendliches Smart-Home-System im Modellmassstab zu realisieren, das typische Funktionen realer Hausautomation technisch korrekt abbildet. Dazu gehoeren die Erfassung von Umgebungsdaten, die Ausfuehrung von Schaltaktionen sowie die sichtbare Darstellung der Systemzustaende in einer Benutzeroberflaeche.
+
+Die Arbeit verfolgt nicht das Ziel, ein marktreifes Produkt zu entwickeln. Der Fokus liegt stattdessen auf:
+
+- nachvollziehbarer Architektur,
+- klar getrennten Verantwortlichkeiten der Systemkomponenten,
+- robuster Kommunikation zwischen den beteiligten Diensten,
+- guter Erweiterbarkeit fuer spaetere Projektphasen.
+
+Diese Abgrenzung ist wesentlich, damit Bewertung und Dokumentation auf denselben technischen Rahmenbedingungen basieren.
 
 ## Verwendete Komponenten
 
@@ -13,148 +38,259 @@ Ziel ist ein nachvollziehbarer, technisch korrekter Aufbau, der sich im schulisc
 - 3-mm-LEDs als Lichtaktoren
 - Widerstaende (1/4 W, 5 % Toleranz, 150 Ohm) zur Strombegrenzung
 
-Hinweis zur elektrischen Auslegung: Bei 5 V Betriebsspannung und einer roten LED mit ca. 2 V Vorwaertsspannung ergibt sich bei 150 Ohm ein Strom von rund 20 mA. Das liegt am oberen Bereich dessen, was ein Arduino-Pin dauerhaft liefern sollte. In der Praxis ist daher auf Strombudget pro Pin und pro Port zu achten, bei Bedarf sind hoehere Widerstandswerte sinnvoll.
+Die LED-Kreise bilden die zentrale, sichtbare Aktorik im Modellhaus. Ihr Vorteil ist die klare Rueckmeldung bei Schaltvorgaengen: Jede Zustandsaenderung ist direkt erkennbar und kann zusaetzlich im Dashboard kontrolliert werden.
 
-### Zusaetzliches Material
+**Hinweis zur Auslegung:** Bei 5 V Betriebsspannung, einer typischen LED-Vorwaertsspannung von ca. 2 V und 150 Ohm Vorwiderstand liegt der Strom rechnerisch im Bereich von etwa 20 mA. Das ist fuer viele Mikrocontroller-Pins bereits nahe am sinnvollen Grenzbereich. Fuer einen stabilen Dauerbetrieb ist daher eine sorgfaeltige Stromverteilung wichtig, insbesondere wenn mehrere Kanaele gleichzeitig geschaltet werden.
+
+### Sensorik
+
+Im Projektkontext werden folgende Sensorklassen betrachtet:
+
+- Helligkeitssensoren,
+- PIR-Bewegungssensoren,
+- Temperatursensoren,
+- Tuerkontakte.
+
+Die Sensorik stellt die Datengrundlage fuer Automationen dar. Ohne konsistente, wiederholbar erfasste Eingangswerte ist eine reproduzierbare Steuerlogik nicht moeglich.
+
+### Zusaetzliches Material und Modellhausbezug
 
 - Dupont-Crimp-Set inklusive Crimpzange
 - Leitungen mit 0,5 mm2 Querschnitt
-- PLA-Filament fuer das Modellhaus (hellgrau und dunkelgrau)
+- PLA-Filament fuer den Modellhausaufbau (hellgrau und dunkelgrau)
+
+Der Aufbau im Modellhaus hat einen didaktischen Vorteil: Leitungsfuehrung, Kanalzuordnung und Schaltverhalten werden sichtbar. Dadurch kann die technische Funktion nicht nur softwareseitig, sondern auch mechanisch und elektrisch nachvollzogen werden.
 
 ## Verwendete Frameworks und Protokolle
 
-- **Home Assistant**
-  Zentrale Smart-Home-Plattform fuer Geraeteintegration, Automationen und Dashboards. [@ha_installation] [@ha_automation]
-- **Node-RED**
-  Visuelle Entwicklungsumgebung fuer Datenfluesse und Logik zwischen MQTT, serieller Schnittstelle und Home Assistant. [@nodered_homepage]
-- **MQTT**
-  Leichtgewichtiges Publish/Subscribe-Protokoll fuer den Nachrichtenaustausch zwischen Diensten. [@oasis_mqtt_v5_2019] [@agyemang_mqtt_2022] [@ha_mqtt_integration]
-- **Portainer**
-  Weboberflaeche zur Verwaltung von Docker-Containern. [@portainer_docs]
-- **Firmata**
-  Standardisiertes Protokoll zur Steuerung eines Mikrocontrollers ueber eine serielle Host-Verbindung. [@arduino_firmata_docs] [@firmata_arduino_github]
+### Home Assistant
+
+Home Assistant dient als zentrale Integrations- und Bedienplattform. Hier laufen Entitaeten, Automationen und Dashboards zusammen. Damit entsteht ein einheitlicher Blick auf den Systemzustand. [@ha_installation] [@ha_automation]
+
+Im Projekt ist Home Assistant besonders wichtig fuer:
+
+- die Darstellung von Ist-Zustaenden,
+- die Ausloesung manueller Schaltvorgaenge,
+- die Definition regelbasierter Automationen.
+
+### Node-RED
+
+Node-RED wird als visuelle Verarbeitungsschicht eingesetzt. Datenfluesse koennen ueber Nodes modelliert, angepasst und nachvollzogen werden. Das erleichtert Iterationen waehrend der Entwicklung deutlich, da Logikbausteine ohne kompletten Neuaufbau des Systems angepasst werden koennen. [@nodered_homepage]
+
+Wesentliche Rolle von Node-RED im Projekt:
+
+- Bruecke zwischen serieller Kommunikation und MQTT,
+- Validierung und Transformation von Payloads,
+- geordnete Weitergabe von Befehlen und Statusmeldungen.
+
+### MQTT
+
+MQTT wird als leichtgewichtiges Publish/Subscribe-Protokoll fuer den Nachrichtenaustausch zwischen Diensten eingesetzt. Der Einsatz ist vor allem bei verteilten Komponenten sinnvoll, weil Sender und Empfaenger nicht direkt gekoppelt sein muessen. [@oasis_mqtt_v5_2019] [@agyemang_mqtt_2022] [@ha_mqtt_integration]
+
+Typische Vorteile im vorliegenden Kontext:
+
+- geringe Protokolloverheads,
+- einfache Skalierung auf weitere Topics und Entitaeten,
+- klare Trennung von Kommando- und Statuskanaelen.
+
+### Portainer
+
+Portainer dient als Weboberflaeche zur Verwaltung der Docker-Container. Das ist besonders hilfreich, wenn mehrere Dienste parallel betrieben und bei Bedarf einzeln neu gestartet, aktualisiert oder ueberwacht werden muessen. [@portainer_docs]
+
+### Firmata
+
+Firmata ist ein standardisiertes Protokoll, mit dem ein Host-System (hier Raspberry Pi bzw. Node-RED) einen Mikrocontroller (Arduino Uno) ueber die serielle Schnittstelle ansteuern kann. [@arduino_firmata_docs] [@firmata_arduino_github]
+
+Der praktische Nutzen liegt darin, dass keine vollstaendig eigene serielle Protokolldefinition implementiert werden muss. Stattdessen wird ein etablierter Standard genutzt.
+
+## Systemarchitektur
 
 ## Smart-Home-Umsetzung mit Home Assistant und Node-RED
 
 **Schueler:** Janik Gierer
 
+### Architektur in drei Ebenen
+
+Das System kann in drei logisch getrennte Ebenen aufgeteilt werden:
+
+1. **Feldebene (Arduino):** Direkte Anbindung von Sensorik und Aktorik.
+2. **Verarbeitungsebene (Node-RED + MQTT):** Datenfluss, Protokollbruecke und Logikaufbereitung.
+3. **Managementebene (Home Assistant):** Visualisierung, Automationen und Bedienung.
+
+Diese Trennung erhoeht die Wartbarkeit, weil Aenderungen auf einer Ebene nicht automatisch alle anderen Ebenen brechen.
+
+### Kommunikationspfad
+
+Im aktuellen Aufbau laeuft die Kommunikation entlang eines klaren Pfades:
+
+Sensor/Aktor <-> Arduino (I/O) <-> serielle Verbindung (Firmata) <-> Node-RED <-> MQTT-Broker <-> Home Assistant.
+
+Damit ist fachlich sauber getrennt:
+
+- **I/O-nahe Steuerung** auf Mikrocontroller-Ebene,
+- **Nachrichtentransport und Aufbereitung** auf Middleware-Ebene,
+- **Benutzerinteraktion und Regelwerk** auf Plattform-Ebene.
+
+Technisch wichtig: In dieser Architektur ist MQTT nicht der direkte Transportweg vom Arduino Uno zu Home Assistant. Der Arduino ist primaer seriell via Firmata angebunden; MQTT wird zwischen den Diensten auf dem Raspberry Pi genutzt. [@firmata_arduino_github] [@ha_mqtt_integration]
+
 ## Theoretische Grundlagen
 
-Ein Smart Home beschreibt ein vernetztes System aus Sensoren, Aktoren und Steuerlogik. Messwerte werden erfasst, interpretiert und ueber definierte Regeln in Aktionen umgesetzt. Die Bedienung erfolgt lokal oder remote ueber eine Benutzeroberflaeche. [@abutair_secure_privacy_smart_home_2020]
+### Begriff Smart Home
 
-Im vorliegenden Projekt kommen drei Ebenen zusammen:
+Ein Smart Home ist ein vernetztes System, in dem Sensorik, Aktorik und Steuerlogik zusammenwirken. Eingehende Daten werden ausgewertet und fuehren je nach Regelwerk zu Aktionen. Die Interaktion kann automatisch oder manuell ueber eine Benutzeroberflaeche erfolgen. [@abutair_secure_privacy_smart_home_2020]
 
-1. **Feldebene (Arduino):** direkte Anbindung von Sensoren und Aktoren.
-2. **Verarbeitungsebene (Node-RED + MQTT):** Transport, Aufbereitung und Weiterleitung von Daten.
-3. **Managementebene (Home Assistant):** Automationen, Visualisierung und Bedienung.
+Fuer diese Arbeit bedeutet das konkret:
 
-Technisch wichtig: Die Verbindung zwischen Arduino und Raspberry Pi erfolgt in diesem Aufbau primaer **seriell ueber Firmata**. MQTT wird zwischen Broker, Node-RED und Home Assistant eingesetzt, nicht als direkter Transportkanal zwischen Arduino Uno und Home Assistant. [@oasis_mqtt_v5_2019] [@ha_mqtt_integration] [@firmata_arduino_github]
+- Sensoren liefern Ereignisse bzw. Messwerte,
+- die Logik entscheidet ueber Aktionen,
+- Aktoren setzen diese Aktionen sichtbar um,
+- die Plattform stellt alles nachvollziehbar dar.
 
-### Sensorik, Aktorik und Steuerung im Modellhaus
+### Sensorik
 
-Sensorik, Aktorik und Steuerung bilden das Grundprinzip des Systems:
+Sensorik umfasst die strukturierte Erfassung physischer Zustaende. Im Modellhaus sind das insbesondere Helligkeit, Bewegung, Temperatur und Tuerstatus. Jeder Sensortyp liefert dabei eine andere Datencharakteristik:
 
-- **Sensorik:** erfasst Zustaende wie Helligkeit, Bewegung, Temperatur oder Tuerkontakt.
-- **Aktorik:** fuehrt Schaltvorgaenge aus, z. B. Licht ein/aus.
-- **Steuerung:** setzt Regeln um und verbindet Ereignisse mit Aktionen.
+- diskrete Ereignisse (z. B. Bewegung erkannt),
+- quasi-binaere Zustaende (z. B. Tuer offen/geschlossen),
+- kontinuierliche Werte (z. B. Temperatur).
 
-Damit lassen sich kontinuierliche Werte (z. B. Temperatur) und diskrete Ereignisse (z. B. Bewegung erkannt) einheitlich verarbeiten. [@abutair_secure_privacy_smart_home_2020]
+Diese Unterschiede sind fuer die Auswertung relevant, da Triggerlogik und Entprellung je nach Signaltyp unterschiedlich gestaltet werden muessen.
 
-#### Sensoren im Projekt
+### Aktorik
 
-- Helligkeitssensor fuer lichtabhaengige Schwellwerte
-- PIR-Bewegungssensor als Anwesenheitstrigger
-- Temperatursensor fuer klimaabhaengige Logik
-- Tuerkontakt fuer offen/geschlossen-Zustaende
+Aktorik setzt digitale Steuerentscheidungen in physische Wirkung um. Im Projekt sind dies primaer Lichtkanaele (LEDs). Auch wenn die Lasten im Modell klein sind, gelten dieselben Grundprinzipien wie in groesseren Anlagen:
 
-#### Aktoren im Projekt
+- sichere elektrische Auslegung,
+- klare Kanalzuordnung,
+- reproduzierbares Schaltverhalten.
 
-Als Aktoren werden vor allem LEDs bzw. kleine Lichtkreise verwendet. Die Ansteuerung erfolgt digital (HIGH/LOW), bei hoeheren Lasten oder galvanischer Trennung ueber Relais bzw. Treiberstufen. Die maximalen Stroeme der Mikrocontroller-Ausgaenge duerfen dabei nicht ueberschritten werden.
+Fuer hoehere Lasten waeren Treiberstufen oder Relais zwingend erforderlich, um Mikrocontroller-Ausgaenge zu entlasten.
 
-### Arduino Uno mit StandardFirmata
+### Steuerung
 
-Der Arduino Uno arbeitet mit dem Sketch **StandardFirmata**. Dadurch werden Pins vom Host-System (Raspberry Pi) ueber ein standardisiertes Protokoll gesetzt oder ausgelesen. [@arduino_firmata_docs] [@firmata_arduino_github]
+Steuerung verbindet Sensorik und Aktorik ueber ein Regelwerk. Ein typisches Muster ist:
 
-StandardFirmata ist in der Arduino IDE verfuegbar unter:
+1. Eingangssignal trifft ein.
+2. Bedingungen werden geprueft.
+3. Aktion wird ausgefuehrt.
+4. Zustand wird rueckgemeldet.
+
+Je klarer dieses Muster in Topics, Flows und Automationen abgebildet ist, desto besser sind Fehlersuche und Erweiterung moeglich.
+
+## Arduino Uno mit StandardFirmata
+
+### Rolle des Arduino im Gesamtsystem
+
+Der Arduino Uno dient als direkte I/O-Schnittstelle zur physikalischen Ebene. Er ist dort sinnvoll, wo Signale in Echtzeit eingelesen oder Ausgaenge unmittelbar gesetzt werden muessen.
+
+### Einsatz von StandardFirmata
+
+Im Projekt wird StandardFirmata verwendet. Dadurch kann der Arduino vom Host aus gesteuert werden, ohne dass fuer jede Aenderung ein separates, proprietaeres Applikationsprotokoll aufgesetzt werden muss. [@arduino_firmata_docs] [@firmata_arduino_github]
+
+In der Arduino IDE ist der Sketch verfuegbar unter:
 `File -> Examples -> Firmata -> StandardFirmata`
 
-Wichtige Bestandteile:
+Wesentliche Bestandteile:
 
-- `#include <Firmata.h>` bindet die Protokollbibliothek ein.
-- `Firmata.begin(57600);` initialisiert die serielle Kommunikation.
-- `Firmata.attach(...)` verknuepft eingehende Nachrichten mit Callback-Funktionen.
-- In `loop()` werden Nachrichten mit `Firmata.available()` und `Firmata.processInput()` verarbeitet.
+- `#include <Firmata.h>` fuer die Protokollfunktionen,
+- `Firmata.begin(57600);` fuer die serielle Initialisierung,
+- `Firmata.attach(...)` fuer die Zuordnung eingehender Nachrichten zu Callbacks,
+- zyklische Verarbeitung in `loop()` mit `Firmata.available()` und `Firmata.processInput()`.
 
-Diese Struktur erlaubt eine robuste, dauerhafte Host-Steuerung ohne eigenes komplexes Anwendungsprotokoll auf dem Mikrocontroller.
+Dieses Vorgehen ist fuer ein Lern- und Demonstrationsprojekt sinnvoll, weil es robuste Grundfunktionalitaet bereitstellt und den Fokus auf Systemintegration statt auf Low-Level-Protokolldesign legt.
 
-### Datenuebertragung und Kommunikation
+## Datenuebertragung und Kommunikationsdesign
 
-Die Kommunikationskette ist klar getrennt:
-Sensor/Aktor <-> Arduino (I/O) <-> serielle Verbindung <-> Node-RED <-> MQTT-Broker <-> Home Assistant.
+### MQTT als Nachrichtenrueckgrat
 
-Die Trennung reduziert Kopplung, erleichtert Fehlersuche und erlaubt spaetere Erweiterungen (weitere Sensoren, weitere Raeume, weitere Aktortypen). [@nodered_homepage] [@oasis_mqtt_v5_2019] [@ha_mqtt_integration]
+MQTT arbeitet mit einem Broker als zentralem Verteiler. Clients publizieren Nachrichten auf Topics oder abonnieren Topics. Der Broker entkoppelt damit Sender und Empfaenger. [@oasis_mqtt_v5_2019]
 
-#### MQTT als zentrales Nachrichtenprotokoll
+Typischer Nutzen in dieser Arbeit:
 
-MQTT arbeitet mit Clients, Topics und einem Broker. Komponenten publizieren Nachrichten oder abonnieren relevante Topics.
+- Sensorwerte koennen mehreren Verbrauchern bereitgestellt werden.
+- Schaltbefehle und Rueckmeldungen bleiben sauber getrennt.
+- Der Datenfluss ist durch Topic-Namen transparent.
 
-Beispielhafte Topic-Struktur:
+### Topic-Struktur
+
+Eine hierarchische Benennung erleichtert Wartung und Skalierung. Beispielhafte Struktur:
 
 - `haus/sensor/temperatur`
 - `haus/sensor/helligkeit`
 - `haus/licht/wohnzimmer/set`
 - `haus/licht/wohnzimmer/state`
 
-Empfohlene Praxis:
+Damit ist aus dem Topic bereits erkennbar, ob es sich um Messdaten, Schaltkommandos oder Statusmeldungen handelt.
 
-- QoS 0 fuer haeufige, unkritische Telemetrie
-- QoS 1 fuer wichtigere Schaltmeldungen
-- Retained Messages fuer letzten bekannten Zustand
-- Last Will and Testament (LWT) fuer Offline-Erkennung
+### Command- und State-Trennung
 
-[@oasis_mqtt_v5_2019] [@ha_mqtt_integration]
+Die Trennung von Soll- und Ist-Kanaelen verhindert Mehrdeutigkeiten:
 
-#### Node-RED als Logik- und Schnittstellenebene
+- `.../set` repraesentiert den angeforderten Zielzustand.
+- `.../state` repraesentiert den tatsaechlichen Rueckmeldezustand.
 
-Node-RED verbindet serielle Daten und MQTT-Topics mit leicht wartbaren Flows. Typischer Ablauf:
+Diese Trennung ist vor allem bei Dashboards und Automationen wichtig, um keine falschen Annahmen ueber den realen Aktorzustand zu treffen.
 
-1. MQTT-In oder Serial-In empfaengt Daten.
-2. Function-Node prueft und transformiert Payloads.
-3. MQTT-Out oder Serial-Out sendet Ergebnisse an Zielsysteme.
+### QoS, Retain und LWT
 
-Dadurch bleibt die Steuerlogik transparent und ohne Quellcode-Neubau anpassbar. [@nodered_homepage]
+Die Auswahl passender MQTT-Mechanismen verbessert Robustheit:
 
-#### Serieller Zugriff unter Linux
+- **QoS 0:** geeignet fuer haeufige, unkritische Telemetrie.
+- **QoS 1:** geeignet fuer wichtigere Schaltmeldungen.
+- **Retained Messages:** stellen den letzten bekannten Zustand fuer neue Subscriber bereit.
+- **Last Will and Testament (LWT):** signalisiert, wenn ein Client unerwartet offline geht.
 
-Arduino-Geraete erscheinen meist als `/dev/ttyACM0` oder `/dev/ttyUSB0`. Fuer stabilen Betrieb gilt:
+Im Zusammenspiel mit Home Assistant erhoeht das die Nachvollziehbarkeit bei Verbindungsunterbrechungen und Neustarts. [@ha_mqtt_integration]
 
-- nur ein Prozess darf den Port gleichzeitig nutzen
-- korrekte Benutzerrechte auf das Device muessen gesetzt sein
-- bei Neustarts kann sich der Device-Name aendern
+## Node-RED als Logik- und Integrationsschicht
 
-[@nodered_raspberrypi]
+Node-RED ist in dieser Arbeit mehr als ein Visualisierungstool fuer Datenfluesse. Es uebernimmt die technische Mittlerrolle zwischen serieller Hardwareanbindung und MQTT-basierter Plattformintegration. [@nodered_homepage]
 
-### Home Assistant als zentrale Steuereinheit
+Ein typischer Flow besteht aus:
 
-Home Assistant uebernimmt Integration, Automationsausfuehrung und Visualisierung. In diesem Projekt wird Home Assistant lokal am Raspberry Pi betrieben und mit MQTT-Entitaeten verbunden. [@ha_installation] [@ha_mqtt_integration] [@ha_automation]
+1. Eingang ueber MQTT-In oder Serial-In.
+2. Validierung und Transformation in Function-Nodes.
+3. Weitergabe ueber MQTT-Out oder Serial-Out.
 
-#### MQTT-Integration
+Dieses Muster ist wiederverwendbar und bildet eine gute Grundlage fuer zusaetzliche Kanale oder Raeume.
 
-Die Anbindung erfolgt manuell oder ueber MQTT Discovery. Discovery reduziert Konfigurationsaufwand, weil Entitaeten automatisch erstellt werden, sobald gueltige Discovery-Nachrichten publiziert werden. [@ha_mqtt_sensor]
+### Vorteile fuer die Projektarbeit
 
-#### Automationen
+- Schnelle Anpassung ohne komplettes Re-Deployment.
+- Transparente Darstellung der Datenpfade.
+- Leichte Erweiterung um Filter- und Plausibilitaetslogik.
 
-Automationen bestehen aus Trigger, optionalen Bedingungen und Aktionen. Beispiel:
+### Serieller Zugriff unter Linux
 
-- Trigger: Bewegung erkannt und Helligkeit unter Schwellwert
-- Bedingung: Automatikmodus aktiv
-- Aktion: Licht einschalten, nach Timeout ausschalten
+Arduino-Geraete erscheinen typischerweise als `/dev/ttyACM0` oder `/dev/ttyUSB0`. Fuer stabilen Betrieb muessen drei Punkte sichergestellt sein:
 
-Damit ist das Verhalten reproduzierbar und im Dashboard nachvollziehbar. [@ha_automation]
+- exklusiver Portzugriff,
+- korrekte Device-Rechte,
+- konsistente Portzuordnung nach Neustarts.
 
-### Visualisierung und Benutzeroberflaeche
+Diese Punkte sind haeufige Fehlerquellen in gemischten Hardware-/Software-Setups. [@nodered_raspberrypi]
 
-Die Bedienung erfolgt ueber Home-Assistant-Dashboards. Verwendet werden u. a. Entities-, Button- und Verlaufskarten fuer Schaltzustaende und Messwertverlaeufe. [@ha_dashboards_intro] [@ha_cards]
+## Home Assistant als zentrale Steuereinheit
+
+Home Assistant bildet die Bedien- und Automationsoberflaeche des Systems. Entitaeten, Trigger und Dashboards werden dort zusammengefuehrt. [@ha_installation] [@ha_automation]
+
+### MQTT-Integration
+
+Die Einbindung kann manuell oder ueber MQTT Discovery erfolgen. Discovery reduziert Konfigurationsaufwand, da Entitaeten aus gueltigen Discovery-Nachrichten erzeugt werden koennen. [@ha_mqtt_sensor]
+
+### Automationen
+
+Automationen folgen dem Schema Trigger -> Bedingungen -> Aktionen. Ein fuer das Modellhaus typisches Muster ist:
+
+- Trigger: Bewegung erkannt und Helligkeit unter Schwellwert,
+- Bedingung: Automatikmodus aktiv,
+- Aktion: Licht einschalten und nach definierter Zeit ausschalten.
+
+Das Muster ist bewusst einfach, aber praezise genug, um die Trennung zwischen Sensordatenerfassung und Aktorreaktion klar zu halten.
+
+### Dashboards und Visualisierung
+
+Die Visualisierung erfolgt ueber Dashboard-Karten wie Entities-, Button- und Verlaufskarten. Damit sind Schaltzustaende, Messwerttrends und manuelle Eingriffe auf einer Oberflaeche verfuegbar. [@ha_dashboards_intro] [@ha_cards]
 
 ## Praktische Umsetzung
 
@@ -162,37 +298,41 @@ Die Bedienung erfolgt ueber Home-Assistant-Dashboards. Verwendet werden u. a. En
 
 #### Stromversorgung und Verkabelung
 
-Der Raspberry Pi wird mit 5 V versorgt, der Arduino ueber USB angebunden. LED-Kreise werden mit Vorwiderstaenden betrieben, um Bauteile und I/O-Pins zu schuetzen. Fuer flexible Anpassungen im Modellhaus wurden gecrimpte Leitungen und steckbare Verbindungen verwendet.
+Der Raspberry Pi wird mit 5 V betrieben, der Arduino ist ueber USB angebunden. LED-Kreise sind ueber Vorwiderstaende abgesichert. Fuer den Aufbau wurden gecrimpte und steckbare Verbindungen genutzt, um Anpassungen ohne Loetarbeiten zu ermoeglichen.
 
 #### Einbau von LEDs, Relais und Sensoren
 
-Die Aktoren wurden raumbezogen im Modellhaus positioniert. Sensoren wurden so platziert, dass sie reale Nutzungsszenarien gut abbilden (z. B. Bewegung im Eingangsbereich, Helligkeit an typischer Fensterposition). Relais bzw. Treiber kommen dort zum Einsatz, wo Lasten nicht direkt ueber den Mikrocontroller geschaltet werden sollen.
+Die Aktoren wurden den Raeumen des Modellhauses zugeordnet. Sensoren wurden so positioniert, dass typische Nutzsituationen abgebildet werden koennen (z. B. Bewegung im Eingangsbereich, Helligkeitsmessung in raumtypischer Lage). Relais bzw. Treiberstufen werden dort vorgesehen, wo Lasttrennung erforderlich ist.
 
 ### Arduino-Integration
 
-Durch StandardFirmata liest der Host (Node-RED) Eingangs- und Sensordaten zyklisch aus und setzt Ausgaenge fuer Aktoren. Schaltbefehle werden deterministisch pro Nachricht ausgefuehrt, was die Fehlersuche vereinfacht. [@arduino_firmata_docs] [@firmata_arduino_github]
+Durch StandardFirmata liest der Host Eingangs- und Sensordaten aus und setzt Ausgaenge fuer Aktoren. Schaltbefehle werden deterministisch pro eingehender Nachricht verarbeitet. [@arduino_firmata_docs] [@firmata_arduino_github]
 
 ### Node-RED-Workflows
 
-- MQTT-In-Nodes abonnieren Sollwerte und Steuerbefehle.
-- Function-Nodes validieren Wertebereiche und Zustandslogik.
-- Serial-Out-Nodes senden Befehle an den Arduino.
-- MQTT-Out-Nodes publizieren Ist-Zustaende fuer Home Assistant.
+Die im Projekt verwendete Logik kann wie folgt zusammengefasst werden:
 
-Dieses Muster bildet eine klare Bruecke zwischen Hardwareebene und Visualisierungsebene. [@nodered_homepage] [@oasis_mqtt_v5_2019]
+- MQTT-In-Nodes abonnieren Sollwerte und Triggerinformationen,
+- Function-Nodes validieren Daten und bereiten Kommandos auf,
+- Serial-Out-Nodes uebertragen Befehle an den Arduino,
+- MQTT-Out-Nodes melden Ist-Zustaende zurueck.
+
+Durch diese Kette bleibt die Steuerlogik nachvollziehbar und modular.
 
 ### Erstinbetriebnahme am Raspberry Pi
 
-Ein strukturierter Erstaufbau reduziert spaetere Fehler:
+Fuer einen reproduzierbaren Erstaufbau hat sich ein klarer Ablauf bewahrt:
 
 1. System aktualisieren: `sudo apt update && sudo apt upgrade -y`
 2. Docker installieren und Benutzer zur Docker-Gruppe hinzufuegen. [@docker_compose_overview]
-3. Projektordner und Volume-Struktur anlegen.
-4. `compose.yaml` mit Home Assistant, MQTT und Portainer erstellen. [@docker_compose_file_reference]
-5. Container starten: `docker compose up -d`
-6. Status pruefen: `docker ps`, Logs bei Bedarf mit `docker logs <container>`
-7. Home Assistant Onboarding abschliessen und MQTT anbinden. [@ha_installation] [@ha_mqtt_integration]
+3. Projektverzeichnis samt Volume-Struktur anlegen.
+4. `compose.yaml` fuer Home Assistant, MQTT und Portainer erstellen. [@docker_compose_file_reference]
+5. Dienste starten: `docker compose up -d`
+6. Laufzeitstatus pruÌˆfen: `docker ps`, Logs mit `docker logs <container>`
+7. Home Assistant Onboarding abschliessen und MQTT integrieren. [@ha_mqtt_integration]
 8. Portainer initial konfigurieren. [@portainer_docs]
+
+Der Vorteil dieser festen Reihenfolge ist, dass Fehlerquellen frueh sichtbar werden und nicht erst spaeter bei der Automationslogik auftreten.
 
 ### Docker-basierter Betrieb
 
@@ -289,62 +429,117 @@ Editor-Zugriff:
 
 [@nodered_raspberrypi]
 
-### Bedienung und Tests
+## Bedienung und Steuerung
 
-Die taegliche Bedienung erfolgt ueber Home-Assistant-Dashboards; Node-RED arbeitet als Hintergrundlogik und Datendrehscheibe. [@ha_dashboards_intro] [@nodered_homepage]
+Die taegliche Bedienung erfolgt ueber Home-Assistant-Dashboards. Node-RED arbeitet parallel als Logik- und Integrationsschicht. Dadurch wird die Benutzeroberflaeche von der eigentlichen Nachrichtenverarbeitung entkoppelt. [@ha_dashboards_intro] [@nodered_homepage]
 
-#### Endgeraete
+### Steuerung ueber Endgeraete
 
-Steuerung ist ueber Browser am PC, Tablet und Smartphone moeglich. Schaltbefehle werden per Button gesendet, Zustandsaenderungen werden direkt visualisiert. [@ha_cards]
+Der Zugriff ist ueber Browser auf PC, Tablet und Smartphone moeglich. Schaltbefehle werden in der Regel per Button ausgeloest, Zustandsaenderungen erscheinen als direkte Rueckmeldung in den Karten.
 
-#### Test der Licht- und Heizungslogik
+### Bedeutung der Rueckmeldelogik
 
-Testablauf:
+Besonders wichtig fuer die Alltagstauglichkeit ist die Rueckmeldelogik:
 
-1. Ereignis simulieren (z. B. Dunkelheit oder Bewegung).
-2. Trigger und Bedingungen pruefen.
-3. Aktorzustand im Dashboard verifizieren.
-4. Rueckmeldung ueber MQTT-State-Topic kontrollieren.
+- Schaltkommandos allein reichen nicht aus,
+- erst die Rueckmeldung ueber State-Topics macht den realen Zustand transparent,
+- Automationen koennen so auf echte Zustandsaenderungen reagieren.
 
-Ergebnis: Die Lichtsteuerung und zustandsabhaengigen Schaltungen liefen im Testbetrieb stabil. Kommunikationsunterbrechungen konnten reproduziert und ueber Reconnect-Strategien abgefangen werden.
+Diese Trennung reduziert Fehlinterpretationen in der Bedienoberflaeche.
 
-### Fehleranalyse und Optimierungen
+## Test und Validierung im bisherigen Projektstand
 
-#### Serielle Kommunikation
+Die bisherige Validierung orientiert sich an den definierten Use-Cases und den vorhandenen Komponenten. Dabei wurde der Fokus auf funktionale Korrektheit und Kommunikationsstabilitaet gelegt.
 
-Typische Fehler:
+Typischer Ablauf:
 
-- Portkonflikte durch parallelen Zugriff
-- Device-Wechsel (`/dev/ttyUSB0` zu `/dev/ttyACM0`)
-- unzureichende Rechte auf dem seriellen Device
+1. Ereignis erzeugen (z. B. Dunkelheit, Bewegung oder Temperaturaenderung).
+2. Trigger- und Bedingungslogik beobachten.
+3. Aktorreaktion am Modellhaus und im Dashboard vergleichen.
+4. Rueckmeldung ueber Topics und Statuskarten kontrollieren.
 
-Massnahmen:
+Der bisher dokumentierte Projektbetrieb zeigt, dass Lichtsteuerung und zustandsabhaengige Schaltablaeufe reproduzierbar ausgeloest werden koennen. Verbindungsunterbrechungen wurden als Fehlerfall betrachtet und in der Logik beruecksichtigt.
 
-- festen Port in Node-RED konfigurieren
-- konkurrierende Prozesse beenden
-- Dienste nach Konfigurationsaenderungen sauber neu starten
+## Fehleranalyse und Optimierungen
 
-#### MQTT-Stabilitaet
+### Serielle Kommunikation
 
-Zur Absicherung wurden QoS, Retained Messages und LWT gezielt eingesetzt. Dadurch bleiben Offline-Zustaende sichtbar und nach Reconnect ist der letzte gueltige Zustand schneller wiederhergestellt. [@oasis_mqtt_v5_2019] [@ha_mqtt_integration]
+Typische Problemquellen:
+
+- Port ist bereits durch einen anderen Prozess belegt,
+- Device-Bezeichnung aendert sich nach Neustart,
+- fehlende Rechte auf `/dev/tty...`.
+
+Bewaehrte Massnahmen:
+
+- festen Port in Node-RED konfigurieren,
+- konkurrierende Prozesse beenden,
+- Dienst nach Aenderungen sauber neu starten.
+
+Diese Massnahmen verbessern die Stabilitaet der Host-zu-Arduino-Kommunikation deutlich.
+
+### MQTT-Stabilitaet
+
+Bei MQTT-Verbindungen sind vor allem Reconnect-Verhalten und Zustandskonsistenz entscheidend. Durch geeignete Kombination aus QoS, Retained Messages und LWT kann das System robuster auf Netzunterbrechungen reagieren. [@oasis_mqtt_v5_2019] [@ha_mqtt_integration]
+
+Wichtige Beobachtung fuer den Betrieb:
+
+- Offline-Zustaende sollen sichtbar werden,
+- nach Wiederverbindung soll ein konsistenter Ausgangszustand hergestellt werden,
+- Dashboards duerfen dabei keine veralteten Zustandsbilder dauerhaft anzeigen.
+
+## Uebertragbarkeit auf reale Wohnhaus-Szenarien
+
+Die im Modellhaus umgesetzte Architektur ist grundsaetzlich auf reale Umgebungen uebertragbar, wenn elektrische Auslegung, Sicherheitsanforderungen und Lasttrennung entsprechend angepasst werden. Der wesentliche Mehrwert des Modellansatzes liegt darin, dass die Struktur bereits jetzt klar definiert ist:
+
+- getrennte Ebenen fuer I/O, Verarbeitung und Bedienung,
+- standardisierte Schnittstellen zwischen den Ebenen,
+- zentrale Sicht auf den Gesamtzustand.
+
+Damit ist eine gute Grundlage fuer spaetere Skalierung geschaffen, ohne die Grundarchitektur neu entwerfen zu muessen.
+
+## Zusammenfassende Bewertung des Teilprojekts
+
+Aus technischer Sicht zeigt der bisherige Stand, dass der gewaehlte Stack fuer ein modulares Smart-Home-Modell geeignet ist:
+
+- Home Assistant als zentrale Plattform,
+- Node-RED als flexible Integrationslogik,
+- MQTT als entkoppeltes Transportprotokoll,
+- Docker fuer reproduzierbaren Dienstbetrieb,
+- Arduino/Firmata fuer den direkten Hardwarezugriff.
+
+Der zentrale Vorteil dieser Kombination liegt in der klaren Rollenverteilung. Jede Komponente hat eine nachvollziehbare Aufgabe, wodurch Entwicklung, Fehlersuche und Erweiterung strukturiert moeglich sind.
 
 ## Ausblick
 
-Die Architektur ist modular und fuer Erweiterungen vorbereitet.
+Die bestehende Architektur ist fuer Erweiterungen vorbereitet.
 
 ### Sprachsteuerung
 
-Eine Erweiterung mit Home-Assistant-Voice oder Alexa-Anbindung ist moeglich. [@ha_voice_control] [@ha_alexa_smart_home]
+Eine moegliche Erweiterung ist die Einbindung von Sprachsteuerung, z. B. ueber Home-Assistant-Voice oder Alexa-Integration. [@ha_voice_control] [@ha_alexa_smart_home]
 
 ### Skalierung auf mehrere Raeume
 
-Die Topic- und Entitaetsstruktur kann raumweise erweitert werden, z. B.:
+Die bestehende Topic- und Entitaetsstruktur kann auf weitere Raeume erweitert werden, etwa:
 
 - `haus/licht/kueche/set`
 - `haus/licht/schlafzimmer/set`
 - `haus/sensor/flur/bewegung`
 
-### Weitere Sensorik
+Wichtig ist dabei, die bisherige Namenskonvention konsistent beizubehalten.
 
-Zusaetzliche Sensoren wie CO2-, Luftqualitaets- oder Feuchtigkeitssensoren koennen direkt in bestehende Flows und Automationen integriert werden. [@ha_dev_sensor_entity]
+### Einbindung weiterer Sensorik
+
+Zusaetzliche Sensoren (z. B. CO2, Luftqualitaet, Feuchtigkeit) koennen als weitere Entitaeten in Home Assistant und als weitere Datenkanaele in Node-RED integriert werden. [@ha_dev_sensor_entity]
+
+### Methodischer Ausblick
+
+Fuer die weitere Arbeit ist es sinnvoll, bei jeder Erweiterung denselben Ablauf beizubehalten:
+
+1. fachliche Anforderung beschreiben,
+2. Datenfluss definieren,
+3. Topic- und Entitaetsmodell festlegen,
+4. Visualisierung und Testfall dokumentieren.
+
+So bleibt das System auch bei wachsendem Umfang technisch konsistent und dokumentierbar.
 

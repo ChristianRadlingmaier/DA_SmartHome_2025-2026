@@ -461,13 +461,13 @@ Bei diesem Teil Jedoch hat das Filament nicht mehr gereicht und nach dem wechsel
 ### Nachbearbeitung der gedruckten Bauteile
 Nach dem Druck gab es hin und wieder Dübel oder Wände welche nicht vollständig glatt waren. Auch Verformungen der Böden von manchen Teilen aufgrund der Luftfeuchtigkeit wurde festgestellt. 
 
-
 ## Aufbau der Grundplatte und des Modellhauses
 
 ### Aufbau und Gestaltung der Grundplatte
 
 Die Grundplatte, auf der das Haus und alle weiteren Komponenten platziert werden, besteht aus einer 70 cm langen, 70 cm breiten und 2 cm dicken Holzplatte. Darauf wurde ein Rahmen montiert, der exakt dem Umriss des Hauses entspricht, jedoch leicht versetzt angebracht wurde, um auf einer Seite mehr Platz für den Garten zu schaffen. An einer Seite des Rahmens wurde ein Scharnier befestigt, an dem das Haus montiert wird. Dadurch lässt es sich kippen, um einen leichteren Zugang zur darunterliegenden Elektronik zu ermöglichen. Zusätzlich wurde für die Terrasse eine weitere kleinere Holzplatte auf der Höhe des Hausbodens angebracht, um die Pflasterung mithilfe von Stickern darzustellen.
 
+![Haus](img/bilder-ausarbeitung-Beichtbuchner/FertigesHaus/Haus.png)
 
 ## Elektronischer Aufbau und Verkabelung
 
@@ -483,6 +483,8 @@ Der Arduino wurde unterhalb des Hauses auf der Grundplatte befestigt. Durch die 
 ### Sicherheitsmaßnahmen bei der Verkabelung
 Die einzelnen Lötstellen zwischen Kabeln, LEDs und Vorwiderständen wurden nach dem Verlöten sorgfältig isoliert. Hierfür kamen sowohl Schrumpfschläuche als auch Isolierband zum Einsatz. Durch das Abdecken der freiliegenden Kontaktstellen wird verhindert, dass leitende Teile unbeabsichtigt miteinander in Berührung kommen. Auf diese Weise können Kurzschlüsse sowie ungewollte elektrische Verbindungen zwischen einzelnen Leitungen zuverlässig vermieden werden. Zudem trägt die Isolierung zur mechanischen Stabilität der Verbindungsstellen bei und erhöht die Betriebssicherheit der gesamten Schaltung.
 
+![LED](img/bilder-ausarbeitung-Beichtbuchner/FertigesHaus/LED.png)
+
 
 ## Inbetriebnahme und Tests
 
@@ -494,6 +496,3 @@ Nun wurden sämtliche LEDs überprüft. Es wurden alle Lichtquellen gleichzeitig
 
 ### Fehleranalyse und Optimierungen
 Es wurde festgestellt, dass zwei LEDs nicht leuchteten als alle eingeschaltet wurden. Bei einer LED lag ein Programmierfehler vor, wodurch der entsprechende Ausgangspin nicht korrekt angesteuert wurde. Dieser Fehler wurde durch eine Anpassung des Programmcodes behoben. Bei der zweiten LED wurden Anode und Kathode vertauscht angeschlossen, sodass kein Stromfluss möglich war. Nach Korrektur der Polung funktionierte auch diese LED einwandfrei. Im Zuge der Optimierung wurden sämtliche Anschlüsse nochmals systematisch überprüft. Dabei kontrollierte man Lötstellen, Steckverbindungen, Widerstände sowie die Isolierungen und die Kabelführung. Nach Abschluss dieser Maßnahmen konnte das System vollständig und fehlerfrei in Betrieb genommen werden.
-
-
-TEST TEST TEST

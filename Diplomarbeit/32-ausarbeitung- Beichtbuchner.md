@@ -384,7 +384,7 @@ Für die Modellierung wird das CAD-Programm Fusion 360 verwendet, da es kostenlo
 
 ### Modellierung des Hauses
 
-In Fusion 360 begann der Modellierungsprozess mit dem Skizzieren des Bodens beziehungsweise der Grundfläche des Hauses aus der Vogelperspektive. Dabei wurde die reale Länge und Breite des Hauses jeweils mit 0,04 multipliziert, um die korrekten Maße für den späteren 3D-Druck zu erhalten. Anschließend wurde der Skizze ein Volumen zugewiesen, indem sie um 5 mm in die Höhe extrudiert wurde. Danach wurden die äußeren Wände mit einer Wandstärke von 1,26 cm konstruiert. Im nächsten Schritt folgte die Modellierung der inneren Wände mit einer Dicke von 0,908 cm. Sowohl die äußeren als auch die inneren Wände wurden anschließend auf eine Höhe von 10,46 cm extrudiert.
+In Fusion 360 begann der Modellierungsprozess mit dem Skizzieren des Bodens beziehungsweise der Grundfläche des Hauses aus der Vogelperspektive. Dabei wurde die reale Länge und Breite des Hauses jeweils mit 0,04 multipliziert, um die korrekten Maße für den späteren 3D-Druck zu erhalten. Aus diesen Berechnungen ergab sich eine Breite von 43,36cm, eine Länge von 45,12cm und eine Insgesamte Höhe von 12,61cm. Anschließend wurde der Skizze ein Volumen zugewiesen, indem sie um 5 mm in die Höhe extrudiert wurde. Danach wurden die äußeren Wände mit einer Wandstärke von 1,26 cm konstruiert. Im nächsten Schritt folgte die Modellierung der inneren Wände mit einer Dicke von 0,908 cm. Sowohl die äußeren als auch die inneren Wände wurden anschließend auf eine Höhe von 10,46 cm extrudiert.
 
 ![3](img/bilder-ausarbeitung-Beichtbuchner/3D-Modellierung/Haus/3.png)
 
@@ -419,12 +419,9 @@ Bei einem Element des Zwischendachs wurde festgestellt, dass es nur mit 2 Seiten
 ## 3D-Druck der Bauteile
 
 ### Auswahl des 3D-Druckverfahrens und Materials
-- Verwendetes Druckverfahren (z. B. FDM)
-
 Das Druckmaterial wurde auf der Seite von Bambu Lab online bestellt.
 
 Für die Wände wurden insgesamt vier Rollen hellgraues Filament verwendet, während für das Dach zwei Rollen dunkelgraues Filament zum Einsatz kamen. Auf vollständig weiße Bauteile wurde bewusst verzichtet, da diese nach dem Druck sehr stark ins Auge fallen würden und sich optisch deutlich vom Rest des Modells abheben könnten. 
-
 
 ### Vorbereitung der Druckdaten 
 
@@ -432,11 +429,10 @@ Nach der vollständigen Modellierung des Hauses wurden sämtliche Bauteile über
 
 Anschließend wurden die Dateien in den Slicer importiert. Als Drucker wurde der Bambu Lab H2S mit einer 0,2 mm Düse ausgewählt. Dabei kam das Profil „0.10 mm Standard @ BBL H2S 0.2 nozzle“ zum Einsatz. Die grundlegenden Qualitätsparameter wurden im Bereich „Qualität“ überprüft und entsprechend angepasst.
 
-Im nächsten Schritt erfolgte die Ausrichtung der einzelnen Bauteile im Bauraum. Diese wurden so positioniert, dass Überhänge möglichst reduziert und eine stabile Haftung auf dem Druckbett gewährleistet werden. Wo konstruktionsbedingt notwendig, wurden automatisch generierte Stützstrukturen aktiviert, um beispielsweise Tür- und Fensteröffnungen sowie Dachüberstände während des Druckvorgangs abzustützen und ein sauberes Druckergebnis zu erzielen.
+Im nächsten Schritt erfolgte die Ausrichtung der einzelnen Bauteile im Bauraum. Diese wurden so positioniert, dass Überhänge möglichst reduziert und eine stabile Haftung auf dem Druckbett gewährleistet werden. Wo konstruktionsbedingt notwendig, wurden automatisch generierte Stützstrukturen erstellt, um beispielsweise Tür- und Fensteröffnungen sowie Dachüberstände während des Druckvorgangs abzustützen und ein sauberes Druckergebnis zu erzielen.
 
 ### Druckparameter und Druckeinstellungen
 Für den Druck wurde eine Schichthöhe von 0,1 mm gewählt. Auch die Höhe der ersten Schicht wurde auf 0,1 mm eingestellt. Die Druckgeschwindigkeit wurde entsprechend dem verwendeten Standardprofil beibehalten, um ein ausgewogenes Verhältnis zwischen Druckdauer und Druckqualität sicherzustellen. Das Infill wurde unterschiedlich und so definiert, dass die Bauteile eine ausreichende Stabilität aufweisen, ohne unnötig viel Material zu verbrauchen. Zusätzlich wurden die Wandstärken passend zur 0,2 mm Düse sowie zu den zuvor konstruierten Modellmaßen eingestellt, um robuste und formstabile Außenflächen zu erhalten.
-
 
 ### Durchführung des Druckvorgangs
 
@@ -459,7 +455,8 @@ Teil 2:
 Bei diesem Teil Jedoch hat das Filament nicht mehr gereicht und nach dem wechsel der Rolle hat der Drucker begonnen um etwa 5mm versetzt weiterzudrucken. Dieser Fehler konnte auch nicht behoben werden und somit mussten wir wieder von vorne beginnen.
 
 ### Nachbearbeitung der gedruckten Bauteile
-Nach dem Druck gab es hin und wieder Dübel oder Wände welche nicht vollständig glatt waren. Auch Verformungen der Böden von manchen Teilen aufgrund der Luftfeuchtigkeit wurde festgestellt. 
+Nach dem Druck fiel auf, dass einige Dübel oder Wände nicht vollständig glatt waren. Außerdem traten bei manchen Teilen Verformungen der Böden auf, die vermutlich durch die Luftfeuchtigkeit verursacht wurden. Diese Unebenheiten hatten jedoch nur geringe Auswirkung auf das Teil und stellten keine zukünftigen Probleme dar. Diese Vervormungen wurden mithilfe von schleifpapier etwas abgeschliffen und verschönert.
+
 
 ## Aufbau der Grundplatte und des Modellhauses
 

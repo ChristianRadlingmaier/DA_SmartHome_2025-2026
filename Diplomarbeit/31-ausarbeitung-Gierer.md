@@ -182,9 +182,6 @@ Dieses Muster trennt Erkennung (Sensorik) und Reaktion (Aktorik) klar und bleibt
 
 ### Visualisierung und Benutzeroberfläche
 
-#### Lovelace UI
-
-Die Lovelace-Oberfläche dient zur Darstellung und Bedienung relevanter Entitäten. Für das Modellhaus werden eigene Dashboards mit Karten für Lichtstatus, Temperaturwerte und Systemzustände eingesetzt. [@ha_dashboards_intro] [@ha_cards]
 
 #### Visualisierung von Zustandsänderungen
 
@@ -276,7 +273,18 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./portainer:/data
-```
+   ```
+
+#### Projektstruktur
+`mkdir smarthome`-> erstellt einen Ordner mit dem Namen smarthome der Name des Ordners kann freigewählt werden es muss aber im nachstehenden Teil immer dieser Ordner Name sein.
+`cd smarthome` -> man geht in den ordner den man gerade erstellt hat. Danach gleich die Ordnerstruktur für die Volumes erstellen  `mkdir -p homeassistant` Ordner für homeassistant erstellen `mkdir -p mosquitto/config mosquitto/data mosquitto/log` erstellen des Ordners für die Ordner mosquitto und den dazugehörigen config,data und log. Als leztes noch den Ordner für Portainer erstellen mit `mkdir -p portainer`    
+
+#### Docker & Compose auf Raspberry Pi OS installieren
+Als erstes muss man das System updaten mit `sudo apt update && sudo apt upgrade -y` danach den Docker installieren mit `curl -fsSL https://get.docker.com | sudo sh`. Der User muss in der docker-Gruppe hinzugefügt werden um Berechtigungsprobleme zu vermeiden dies macht man mit `sudo usermod -aG docker $USER` und `newgrp docker` danach kann man den ersten Docker test machen mit `docker run --rm hello-world`. Wenn das Docker Compose Plugin nicht installiert ist `sudo apt install -y docker-compose-plugin` und danach `docker compose version`
+
+#### YAML-Datei erstellen 
+`sudo nano docker-compose.yml` oder `sudo nano docker-compose.yaml` beide Varianten sind möglich. Die [Docker-basierter Betrieb](31-ausarbeitung-Gierer.md) Datei dort einfügen man muss in der Kommandozeile (Bash) immer rechtsklick einfügen/paste verwenden ctrl+v funktioniert nicht. 
+
 
 #### Bei Neustart des Raspberry Pi
 

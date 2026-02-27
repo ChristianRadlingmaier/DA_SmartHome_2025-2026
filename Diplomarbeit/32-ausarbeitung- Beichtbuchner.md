@@ -496,3 +496,4 @@ Nun wurden sämtliche LEDs überprüft. Es wurden alle Lichtquellen gleichzeitig
 Es wurde festgestellt, dass zwei LEDs nicht leuchteten als alle eingeschaltet wurden. Bei einer LED lag ein Programmierfehler vor, wodurch der entsprechende Ausgangspin nicht korrekt angesteuert wurde. Dieser Fehler wurde durch eine Anpassung des Programmcodes behoben. Bei der zweiten LED wurden Anode und Kathode vertauscht angeschlossen, sodass kein Stromfluss möglich war. Nach Korrektur der Polung funktionierte auch diese LED einwandfrei. Im Zuge der Optimierung wurden sämtliche Anschlüsse nochmals systematisch überprüft. Dabei kontrollierte man Lötstellen, Steckverbindungen, Widerstände sowie die Isolierungen und die Kabelführung. Nach Abschluss dieser Maßnahmen konnte das System vollständig und fehlerfrei in Betrieb genommen werden.
 
 
+Test

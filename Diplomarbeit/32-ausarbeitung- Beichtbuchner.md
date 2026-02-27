@@ -374,11 +374,6 @@ Damit solche Systeme zuverlässig funktionieren, ist eine sorgfältige Programmi
 
 Zu Beginn der praktischen Arbeit wurde ein geeignetes Wohnhaus als Vorlage für das Modell gesucht, das sowohl zur Aufgabenstellung als auch eine moderne Bauweise aufweist. Nachdem ein passendes Haus gefunden wurde, wurde der Eigentümer kontaktiert und um Erlaubnis für die Nachmodellierung gebeten. Nach seiner Zustimmung stellte er die originalen Baupläne zur Verfügung. Diese dienten als Grundlage für die digitale Nachmodellierung des Hauses in Fusion 360. Durch die Verwendung der vorhandenen Pläne war es möglich, das Gebäude maßstabsgetreu und detailnah nachzubauen, wodurch die Umsetzung des Modells so realitätsnah wie möglich gehalten werden konnte.
 
-![Erdgeschoss](img/bilder-ausarbeitung-Beichtbuchner/Hausplan/Erdgeschoss.jpg)
-![NordundOstansicht](img/bilder-ausarbeitung-Beichtbuchner/Hausplan/Nord%20und%20Ostansicht.jpg)
-![WestundSüdansicht](img/bilder-ausarbeitung-Beichtbuchner/Hausplan/West%20und%20Südansicht.jpg)
-![Schnitt](img/bilder-ausarbeitung-Beichtbuchner/Hausplan/Schnitt.jpg)
-
 Das Haus ist in ein Erdgeschoss und einen Keller unterteilt. Für das Modell wurde jedoch nur das Erdgeschoss modelliert, da der Keller später nicht sichtbar ist und für die Elektronik des Projekts verwendet wird.
 
 Der Maßstab der für das Modellhaus ausgesucht wurde ist 1:25.
@@ -433,17 +428,15 @@ Für die Wände wurden insgesamt vier Rollen hellgraues Filament verwendet, wäh
 
 ### Vorbereitung der Druckdaten 
 
-Nach der vollständigen Modellierung des Hauses wurden alle Bauteile über die Funktion „3D-Drucken“ in Fusion 360 als STL-Dateien exportiert, da dies die richtige Dateiformat für den 3D-Drucker ist.
+Nach der vollständigen Modellierung des Hauses wurden sämtliche Bauteile über die Funktion „3D-Drucken“ in Fusion 360 als STL-Dateien exportiert, da dieses Dateiformat vom verwendeten 3D-Drucker verarbeitet werden kann.
 
-- Export der Modelle aus Fusion 360
-- Einstellungen im Slicer
-- Stützstrukturen und Ausrichtung
+Anschließend wurden die Dateien in den Slicer importiert. Als Drucker wurde der Bambu Lab H2S mit einer 0,2 mm Düse ausgewählt. Dabei kam das Profil „0.10 mm Standard @ BBL H2S 0.2 nozzle“ zum Einsatz. Die grundlegenden Qualitätsparameter wurden im Bereich „Qualität“ überprüft und entsprechend angepasst.
+
+Im nächsten Schritt erfolgte die Ausrichtung der einzelnen Bauteile im Bauraum. Diese wurden so positioniert, dass Überhänge möglichst reduziert und eine stabile Haftung auf dem Druckbett gewährleistet werden. Wo konstruktionsbedingt notwendig, wurden automatisch generierte Stützstrukturen aktiviert, um beispielsweise Tür- und Fensteröffnungen sowie Dachüberstände während des Druckvorgangs abzustützen und ein sauberes Druckergebnis zu erzielen.
 
 ### Druckparameter und Druckeinstellungen
-- Schichthöhe
-- Druckgeschwindigkeit
-- Infill und Wandstärken
-- Einfluss der Parameter auf Qualität und Stabilität
+Für den Druck wurde eine Schichthöhe von 0,1 mm gewählt. Auch die Höhe der ersten Schicht wurde auf 0,1 mm eingestellt. Die Druckgeschwindigkeit wurde entsprechend dem verwendeten Standardprofil beibehalten, um ein ausgewogenes Verhältnis zwischen Druckdauer und Druckqualität sicherzustellen. Das Infill wurde unterschiedlich und so definiert, dass die Bauteile eine ausreichende Stabilität aufweisen, ohne unnötig viel Material zu verbrauchen. Zusätzlich wurden die Wandstärken passend zur 0,2 mm Düse sowie zu den zuvor konstruierten Modellmaßen eingestellt, um robuste und formstabile Außenflächen zu erhalten.
+
 
 ### Durchführung des Druckvorgangs
 
@@ -466,89 +459,40 @@ Teil 2:
 Bei diesem Teil Jedoch hat das Filament nicht mehr gereicht und nach dem wechsel der Rolle hat der Drucker begonnen um etwa 5mm versetzt weiterzudrucken. Dieser Fehler konnte auch nicht behoben werden und somit mussten wir wieder von vorne beginnen.
 
 ### Nachbearbeitung der gedruckten Bauteile
-- Entfernen von Stützmaterial
-- Versäubern der Oberflächen
-- Passgenauigkeit der Teile
-- Vorbereitung für den Zusammenbau
+Nach dem Druck gab es hin und wieder Dübel oder Wände welche nicht vollständig glatt waren. Auch Verformungen der Böden von manchen Teilen aufgrund der Luftfeuchtigkeit wurde festgestellt. 
 
-***
 
-## 10 Aufbau der Grundplatte und des Modellhauses
+## Aufbau der Grundplatte und des Modellhauses
 
-### 10.1 Aufbau und Gestaltung der Grundplatte
+### Aufbau und Gestaltung der Grundplatte
 
 Die Grundplatte, auf der das Haus und alle weiteren Komponenten platziert werden, besteht aus einer 70 cm langen, 70 cm breiten und 2 cm dicken Holzplatte. Darauf wurde ein Rahmen montiert, der exakt dem Umriss des Hauses entspricht, jedoch leicht versetzt angebracht wurde, um auf einer Seite mehr Platz für den Garten zu schaffen. An einer Seite des Rahmens wurde ein Scharnier befestigt, an dem das Haus montiert wird. Dadurch lässt es sich kippen, um einen leichteren Zugang zur darunterliegenden Elektronik zu ermöglichen. Zusätzlich wurde für die Terrasse eine weitere kleinere Holzplatte auf der Höhe des Hausbodens angebracht, um die Pflasterung mithilfe von Stickern darzustellen.
 
 
-## 11 Elektronischer Aufbau und Verkabelung
+## Elektronischer Aufbau und Verkabelung
 
-### 11.1 Planung der elektrischen Verschaltung
-- Übersicht über alle elektrischen Komponenten
-- Positionierung von Arduino und LEDs
-- Planung der Leitungsführung
+### Planung der elektrischen Verschaltung
+Zu Beginn wurde eine detaillierte Planung der elektrischen Verschaltung durchgeführt. Dabei wurde eine Übersicht über alle benötigten Komponenten erstellt. Hierzu zählen der Mikrocontroller, mehrere LEDs zur Simulation der Deckenbeleuchtung sowie die entsprechenden Verbindungskabel. Der Arduino wurde zentral unter dem Haus positioniert, um möglichst kurze Leitungswege zu gewährleisten. Für jede einzelne LED wurde ein separater digitaler Pin am Arduino vorgesehen. Dadurch ist es möglich, jede Lichtquelle unabhängig voneinander anzusteuern und gezielt zu schalten. Ein weiterer wichtiger Bestandteil der Planung war die Leitungsführung. Die Kabel verlaufen von der Unterseite des Hauses durch die zuvor konstruierten Kabelkanäle innerhalb der Wände bis hin zum Zwischendach. Diese strukturierte Kabelführung sorgt für Ordnung im Modell und verhindert lose oder sichtbare Leitungen im Innenraum.
 
-### 11.2 Umsetzung von Reihen- und Parallelschaltungen
-- Entscheidung für geeignete Schaltungsarten
-- Vorteile der Parallelschaltung bei LEDs
-- Einsatz von Widerständen
+### Einbau der LEDs
+Die LEDs wurden in die dafür vorgesehenen Löcher im Zwischendach eingesetzt. Die Positionierung erfolgte entsprechend der geplanten Raumaufteilung, sodass jede LED eine Deckenlampe simuliert. Anschließend begann die Verdrahtung der einzelnen LEDs. Zwischen der Anode und der jeweiligen Steuerleitung wurde ein Vorwiderstand eingebaut. Dieser dient dazu, den Strom zu begrenzen und die LEDs vor Beschädigung durch zu hohe Stromstärken zu schützen. Die Kathoden aller LEDs wurden jeweils in eine gemeinsame Klemme geführt. Dadurch konnte eine saubere und übersichtliche Zusammenführung der Masseleitungen hergestellt werden.
 
-### 11.3 Einbau und Anschluss der LEDs
-- Positionierung der LEDs im Modell
-- Befestigung der LEDs
-- Verdrahtung und Polung
+### Integration des Mikrocontrollers
+Der Arduino wurde unterhalb des Hauses auf der Grundplatte befestigt. Durch die erhöhte und klappbare Konstruktion des Modells bleibt der Mikrocontroller jederzeit zugänglich und kann bei Bedarf gewartet oder neu programmiert werden. Die digitalen Ausgangspins des Arduino wurden jeweils mit den Steuerleitungen der einzelnen LEDs verbunden, sodass jede LED separat angesteuert werden kann. Die zuvor zusammengeführten Masseleitungen wurden über ein einzelnes Kabel mit dem Ground-Pin des Arduino verbunden. Die Spannungsversorgung des Systems erfolgt zentral über den Mikrocontroller. Dadurch wird eine kompakte und strukturierte Anordnung der gesamten Elektronik gewährleistet.
 
-### 11.4 Integration des Mikrocontrollers
-- Platzierung des Arduino
-- Anschluss der Ein- und Ausgänge
-- Verbindung zur Spannungsversorgung
+### Sicherheitsmaßnahmen bei der Verkabelung
+Die einzelnen Lötstellen zwischen Kabeln, LEDs und Vorwiderständen wurden nach dem Verlöten sorgfältig isoliert. Hierfür kamen sowohl Schrumpfschläuche als auch Isolierband zum Einsatz. Durch das Abdecken der freiliegenden Kontaktstellen wird verhindert, dass leitende Teile unbeabsichtigt miteinander in Berührung kommen. Auf diese Weise können Kurzschlüsse sowie ungewollte elektrische Verbindungen zwischen einzelnen Leitungen zuverlässig vermieden werden. Zudem trägt die Isolierung zur mechanischen Stabilität der Verbindungsstellen bei und erhöht die Betriebssicherheit der gesamten Schaltung.
 
-### 11.5 Sicherheitsmaßnahmen bei der Verkabelung
-- Isolierung der Kabel
-- Vermeidung von Kurzschlüssen
-- Kontrolle der Wärmeentwicklung
 
-***
+## Inbetriebnahme und Tests
 
-## 12 Einrichtung und Ausstattung des Modellhauses
+### Erstinbetriebnahme der Elektronik
+Nach Abschluss der vollständigen Verkabelung erfolgte die Erstinbetriebnahme der Elektronik. Dabei wurde das System erstmals mit Spannung versorgt und die grundlegende Funktionsfähigkeit überprüft. Ziel dieses Schrittes war es, festzustellen, ob alle Komponenten ordnungsgemäß angeschlossen sind und das Zusammenspiel zwischen Hardware und Software grundsätzlich funktioniert.
 
-### 12.1 Auswahl externer 3D-Modelle
-- Suche nach geeigneten Möbelmodellen
-- Quellen der Modelle
-- Kriterien für die Auswahl
+### Funktionstests der Beleuchtung
+Nun wurden sämtliche LEDs überprüft. Es wurden alle Lichtquellen gleichzeitig aktiviert, um die grundsätzliche Betriebsbereitschaft der Beleuchtung sicherzustellen. Darüber hinaus erfolgte eine Kontrolle der einzelnen Schaltungen. Dabei wurden die jeweiligen Ausgangspins gezielt angesteuert, um die Funktion jeder LED separat zu prüfen. So konnte sichergestellt werden, dass jede Lichtquelle korrekt mit dem vorgesehenen Pin verbunden ist und individuell gesteuert werden kann. Zusätzlich wurde die Steuerung durch den Mikrocontroller überprüft. Hierbei wurde kontrolliert, ob die programmierten Signale ordnungsgemäß ausgegeben werden und die LEDs entsprechend reagieren.
 
-### 12.2 Anpassung und Integration der Modelle
-- Skalierung der Möbel
-- Anpassung an das Hausmodell
-- Druck oder manuelle Anpassungen
+### Fehleranalyse und Optimierungen
+Es wurde festgestellt, dass zwei LEDs nicht leuchteten als alle eingeschaltet wurden. Bei einer LED lag ein Programmierfehler vor, wodurch der entsprechende Ausgangspin nicht korrekt angesteuert wurde. Dieser Fehler wurde durch eine Anpassung des Programmcodes behoben. Bei der zweiten LED wurden Anode und Kathode vertauscht angeschlossen, sodass kein Stromfluss möglich war. Nach Korrektur der Polung funktionierte auch diese LED einwandfrei. Im Zuge der Optimierung wurden sämtliche Anschlüsse nochmals systematisch überprüft. Dabei kontrollierte man Lötstellen, Steckverbindungen, Widerstände sowie die Isolierungen und die Kabelführung. Nach Abschluss dieser Maßnahmen konnte das System vollständig und fehlerfrei in Betrieb genommen werden.
 
-### 12.3 Platzierung der elektronischen Komponenten
-- Verbergen von Kabeln und Bauteilen
-- Optische Gestaltung
-- Wartungszugänglichkeit
 
-***
-
-## 13 Inbetriebnahme und Tests
-
-### 13.1 Erstinbetriebnahme der Elektronik
-- Erste Spannungsversorgung
-- Überprüfung der Anschlüsse
-- Sicherheitskontrolle
-
-### 13.2 Funktionstests der Beleuchtung
-- Test der einzelnen LEDs
-- Kontrolle der Schaltungen
-- Überprüfung der Steuerung
-
-### 13.3 Fehleranalyse und Optimierungen
-- Auftretende Probleme
-- Lösungen und Verbesserungen
-- Erkenntnisse aus den Tests
-
-***
-
-## 14 Ergebnisse und Erkenntnisse
-- Zusammenfassung der praktischen Arbeit
-- Was gut funktioniert hat
-- Welche Probleme aufgetreten sind
-- Was man bei einem ähnlichen Projekt verbessern würde

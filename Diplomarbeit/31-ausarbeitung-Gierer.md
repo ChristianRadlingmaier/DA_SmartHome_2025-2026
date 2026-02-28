@@ -294,7 +294,30 @@ Die Visualisierung erfolgt über Dashboard-Karten wie Entities-, Button- und Ver
 
 ## Praktische Umsetzung
 
-### Hardwareaufbau
+### Raspberry PI Befehle mit Erklärung 
+
+- `sudo apt update` aktualisiert die Paketlisten des Systems.
+- `sudo apt upgrade -y` installiert verfügbare Paket-Updates automatisch mit Bestätigung.
+- `curl -fsSL https://get.docker.com | sudo sh` lädt das Docker-Installationsskript und führt es aus.
+- `sudo usermod -aG docker $USER` fügt den aktuellen Benutzer zur Docker-Gruppe hinzu.
+- `newgrp docker` aktiviert die neue Gruppenmitgliedschaft ohne kompletten Neustart.
+- `docker run --rm hello-world` testet die Docker-Installation mit einem Referenz-Container.
+- `sudo apt install -y docker-compose-plugin` installiert das Compose-Plugin für Docker.
+- `docker compose version` zeigt die installierte Compose-Version an.
+- `mkdir smarthome` erstellt das Projektverzeichnis.
+- `cd smarthome` wechselt in das Projektverzeichnis.
+- `mkdir -p homeassistant` erstellt den Konfigurationsordner für Home Assistant.
+- `mkdir -p mosquitto/config mosquitto/data mosquitto/log` erstellt die Ordnerstruktur für MQTT.
+- `mkdir -p portainer` erstellt das Datenverzeichnis für Portainer.
+- `nano compose.yaml` öffnet bzw. erstellt die Compose-Datei im Editor.
+- `docker compose up -d` startet alle in `compose.yaml` definierten Dienste im Hintergrund.
+- `docker ps` zeigt laufende Container inklusive Status und Ports.
+- `docker logs <container>` zeigt die Logs eines bestimmten Containers zur Fehleranalyse.
+- `hostname -I` gibt die lokale IP-Adresse des Raspberry Pi aus.
+- `bash <(curl -sL https://github.com/node-red/linux-installers/releases/latest/download/update-nodejs-and-nodered-deb)` installiert bzw. aktualisiert Node.js und Node-RED.
+- `sudo systemctl enable nodered.service` aktiviert Node-RED für den automatischen Start beim Booten.
+- `sudo systemctl start nodered.service` startet den Node-RED-Dienst sofort.
+- `sudo systemctl status nodered.service --no-pager` zeigt den aktuellen Dienststatus ohne Pager-Ausgabe.
 
 #### Stromversorgung und Verkabelung
 
@@ -327,10 +350,7 @@ Für einen reproduzierbaren Erstaufbau hat sich ein klarer Ablauf bewährt:
 2. Docker installieren und Benutzer zur Docker-Gruppe hinzufügen. [@docker_compose_overview]
 3. Projektverzeichnis samt Volume-Struktur anlegen.
 4. `compose.yaml` für Home Assistant, MQTT und Portainer erstellen. [@docker_compose_file_reference]
-5. Dienste starten: `docker compose up -d`
-6. Laufzeitstatus prüfen: `docker ps`, Logs mit `docker logs <container>`
-7. Home Assistant Onboarding abschließen und MQTT integrieren. [@ha_mqtt_integration]
-8. Portainer initial konfigurieren. [@portainer_docs]
+5. Portainer initial konfigurieren. [@portainer_docs]
 
 Der Vorteil dieser festen Reihenfolge ist, dass Fehlerquellen früh sichtbar werden und nicht erst später bei der Automationslogik auftreten.
 
@@ -404,6 +424,32 @@ nano compose.yaml
 
 Danach den Compose-Inhalt einfügen und speichern.
 
+##### Mosquitto-Konfiguration erstellen
+`sudo nano mosquitto/config/mosquitto.conf`
+***einfügen der datei***
+
+#### Docker starten und testen
+
+In der Bash startest du alles mit `docker compose up -d`.
+Zum Prüfen, ob alle Container laufen, nutzt du `docker ps` — bei jedem Container sollte STATUS: Up stehen, oft auch mit einer Zeitangabe (z. B. „Up 3 minutes“). Mit `docker compose logs -f` kannst du die Logs live mitlesen. Wenn dort Fehler auftauchen, sind es häufig Berechtigungsprobleme bei Dateien oder Ordnern (Volumes).
+
+Mit `chmod 777 datei` gibst du einer Datei/Ordner Vollzugriff. Das ist nur im Ausnahmefall sinnvoll und sollte vorsichtig verwendet werden: Bei eigenen, lokal erstellten Dateien ist das meist unkritischer, aber bei Dateien aus dem Internet kann das ein Sicherheitsrisiko sein.
+
+Deine IP-Adresse am Raspberry bekommst du mit `hostname -I`.
+Danach testest du den Zugriff auf die gewünschte Anwendung, z. B. Home Assistant: `http://<IP-DEINES-PI>:8123`.
+
+#### Wenn etwas nicht startet
+
+1. Mit `docker ps` prüfen, welche Container unhealthy oder exited sind.
+
+2. Mit `docker logs <container>` die Logs genau dieses Containers ansehen der, der nicht läuft.
+
+3. Falls es nach Berechtigungen aussieht: prüfen, ob Ordner/Dateien für Volumes existieren und les-/schreibbar sind (Berechtigungen sind ein häufiger Grund).
+
+4. Aus den Logs ergibt sich meist die konkrete Fehlermeldung — am effektivsten ist es, diese Logs mithilfen von KI genauer zu untersuchen (z. B. inklusive der letzten ~30 Zeilen).
+
+5. Falls Hardware beteiligt ist: Es kann auch sein, dass der Arduino falsch steckt oder nicht erkannt wird. Das prüfst du mit `ls -l /dev/ttyACM* /dev/ttyUSB* 2>/dev/null`.
+
 #### Betrieb nach Neustart
 
 - Im Projektordner starten: `docker compose up -d`
@@ -437,15 +483,6 @@ Die tägliche Bedienung erfolgt über Home-Assistant-Dashboards. Node-RED arbeit
 
 Der Zugriff ist über Browser auf PC, Tablet und Smartphone möglich. Schaltbefehle werden in der Regel per Button ausgelöst, Zustandsänderungen erscheinen als direkte Rückmeldung in den Karten.
 
-### Bedeutung der Rückmeldelogik
-
-Besonders wichtig für die Alltagstauglichkeit ist die Rückmeldelogik:
-
-- Schaltkommandos allein reichen nicht aus,
-- erst die Rückmeldung über State-Topics macht den realen Zustand transparent,
-- Automationen können so auf echte Zustandsänderungen reagieren.
-
-Diese Trennung reduziert Fehlinterpretationen in der Bedienoberfläche.
 
 ## Test und Validierung im bisherigen Projektstand
 
@@ -453,7 +490,7 @@ Die bisherige Validierung orientiert sich an den definierten Use-Cases und den v
 
 Typischer Ablauf:
 
-1. Ereignis erzeugen (z. B. Dunkelheit, Bewegung oder Temperaturänderung).
+1. Ereignis erzeugen.
 2. Trigger- und Bedingungslogik beobachten.
 3. Aktorreaktion am Modellhaus und im Dashboard vergleichen.
 4. Rückmeldung über Topics und Statuskarten kontrollieren.

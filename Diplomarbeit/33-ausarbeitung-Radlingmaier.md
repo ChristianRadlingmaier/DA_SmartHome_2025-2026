@@ -351,13 +351,13 @@ Beispiel: LED im Wohnzimmer
 Erklärung der Konfiguration
 
 setList on off
-→ definiert die Schaltzustände
+ -> definiert die Schaltzustände
 
 readingList
-→ empfängt Statusmeldungen vom Arduino
+ -> empfängt Statusmeldungen vom Arduino
 
 setList mit Topic
-→ sendet beim Klick auf „on“ oder „off“ eine MQTT-Nachricht
+ -> sendet beim Klick auf „on“ oder „off“ eine MQTT-Nachricht
 
 Dadurch erscheint in der Weboberfläche automatisch ein Schalter.
 
@@ -377,7 +377,7 @@ Das bewirkt:
 
 #### Zuordnung zu Räumen
 
-Damit die LEDs logisch gruppiert werden, wurde das Attribut "room" verwendet:
+Damit die LEDs logisch gruppiert werden, wurde das Attribut „room“ verwendet:
 `attr LED_Wohnzimmer room Wohnzimmer`
 `attr LED_Kueche room Kueche`
 `attr LED_Schlafzimmer room Schlafzimmer`
@@ -404,14 +404,3 @@ In deiner Diplomarbeit kannst du zusätzlich zeigen, dass FHEM die LED auch logi
 `Hier zeigt sich der Vorteil von FHEM:`
 `Die Logik kann direkt in Perl erweitert werden.`
 
-### Auswertung der Ergebnisse
-
-Anhand von XY kann man folgende Tabelle ableiten:
-
-| Right | Left | Default | Center |
-|------:|:-----|---------|:------:|
-|   12  |  12  |    12   |    12  |
-|  123  |  123 |   123   |   123  |
-|    1  |    1 |     1   |     1  |
-
-: Eine Tolle tabelle

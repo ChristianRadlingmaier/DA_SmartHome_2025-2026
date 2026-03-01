@@ -179,8 +179,230 @@ Durch das Erlernen der Programmiersprache Perl konnten grundlegende Programmierk
 
 ## Praktische Arbeit
 
+In diesem Kapitel wird die praktische Umsetzung des Smart-Home-Systems beschrieben. Ziel war es, eine modulare und erweiterbare Architektur auf Basis von FHEM (Perl) zu realisieren. Als zentrale Steuereinheit wurde ein Raspberry Pi eingesetzt. Die Kommunikation zwischen Sensorik, Aktorik und der Steuerzentrale erfolgt über das MQTT-Protokoll. Zusätzlich wurde Node-RED zur Visualisierung und zur Erstellung von Logik-Workflows verwendet.
 
+### MQTT im Kontext von FHEM und Perl
 
+Rolle von MQTT in der FHEM-Architektur
+
+In dieser Diplomarbeit übernimmt MQTT nicht nur die reine Nachrichtenübertragung, sondern fungiert als Entkopplungsschicht zwischen Hardware und Automatisierungslogik.
+
+Während der Arduino Sensordaten erzeugt und Aktoren physisch schaltet, verarbeitet FHEM als zentrale Instanz diese Informationen und trifft Steuerentscheidungen.
+MQTT stellt sicher, dass diese Kommunikation asynchron und zustandsunabhängig erfolgt.
+
+Im Gegensatz zu direkten TCP- oder seriellen Verbindungen ermöglicht MQTT eine lose Kopplung der Systemkomponenten. Dadurch kann beispielsweise Node-RED oder ein zusätzliches Visualisierungssystem ergänzt werden, ohne die bestehende Struktur anzupassen.
+
+#### MQTT-Integration in FHEM
+
+In FHEM erfolgt die MQTT-Anbindung über das Modul MQTT2_CLIENT.
+Dabei agiert FHEM selbst als MQTT-Client und verbindet sich mit einem lokal laufenden Broker wie Eclipse Mosquitto, der auf dem Raspberry Pi betrieben wird.
+
+Die Konfiguration in FHEM erfolgt beispielsweise über:
+`define myMQTT MQTT2_CLIENT 127.0.0.1:1883`
+`attr myMQTT autocreate 1`
+
+Dadurch kann FHEM:
+
+- MQTT-Nachrichten abonnieren
+- Statusänderungen empfangen
+- eigene Nachrichten publizieren
+
+Ein wesentlicher Vorteil dieser Methode ist die direkte Weiterverarbeitung der MQTT-Payloads innerhalb von FHEM-Perl-Funktionen.
+
+#### Verarbeitung von MQTT-Daten in Perl
+
+Ein besonderer Schwerpunkt dieser Arbeit liegt auf der Nutzung von Perl innerhalb von FHEM.
+Eingehende MQTT-Nachrichten können in FHEM über sogenannte Notify- oder DOIF-Definitionen verarbeitet werden.
+
+Beispielhaft kann ein Temperaturwert aus einem MQTT-Topic analysiert und weiterverarbeitet werden:
+`define tempNotify notify MQTT2_DEVICE:temperature.* {`
+`  my $wert = ReadingsVal("MQTT2_DEVICE","temperature",0);`
+`  if($wert > 25){`
+`    fhem("set Heizung off");`
+`  }`
+`}`
+
+Hier wird deutlich:
+
+- MQTT dient nur als Transportmechanismus
+- Die Entscheidungslogik liegt vollständig in Perl
+- FHEM fungiert als zentrale Steuerinstanz
+
+Diese Trennung erhöht die Wartbarkeit des Systems erheblich.
+
+#### Strukturierung der MQTT-Kommunikation
+
+Im Gegensatz zur reinen hierarchischen Topic-Betrachtung wird in dieser Arbeit zusätzlich auf eine funktionsbasierte Gliederung der Topics geachtet.
+
+Dabei werden Topics nicht nur nach Raum, sondern nach Systemfunktion strukturiert, z. B.:
+
+- system/temperature/current
+- system/heating/target
+- system/light/state
+- system/light/command
+
+Diese Trennung ermöglicht:
+
+- klare Unterscheidung zwischen Soll- und Ist-Werten
+- einfache Erweiterbarkeit
+- saubere Trennung von Status und Steuerbefehl
+
+Gerade in FHEM erleichtert dies die Definition von Readings und Attributen.
+
+#### Sicherheitsaspekte von MQTT im lokalen Netzwerk
+
+Da das Smart-Home-System vollständig im lokalen Netzwerk betrieben wird, wurde bewusst auf externe Broker verzichtet.
+Der MQTT-Broker läuft ausschließlich auf dem Raspberry Pi.
+
+Zur Absicherung wurden folgende Maßnahmen berücksichtigt:
+
+- Deaktivierung des anonymen Zugriffs
+- Benutzername/Passwort
+- Einschränkung auf das interne Netzwerk
+
+Damit wird verhindert, dass unautorisierte Geräte Nachrichten publizieren oder manipulieren.
+
+#### Abgrenzung zu anderen Protokollen
+
+In der Planungsphase wurden auch alternative Kommunikationsmöglichkeiten betrachtet:
+
+- direkte serielle Kommunikation
+- HTTP-REST-Schnittstellen
+- WebSockets
+
+MQTT wurde gewählt, da es speziell für IoT-Anwendungen entwickelt wurde und:
+
+- geringe Bandbreite benötigt
+- zustandsorientiert arbeitet
+- skalierbar ist
+
+Im Gegensatz zur direkten seriellen Kommunikation ermöglicht MQTT zudem mehrere gleichzeitige Abonnenten.
+
+### Umsetzung des Systems FHEM (Perl)
+
+#### Installation von FHEM auf den Raspberry PI
+
+##### Vorbereitung des Systems 
+
+Als zentrale Steuereinheit des Smart-Home-Systems wurde ein Raspberry Pi 5 verwendet. Dieses basiert auf Debian Linux und bietet eine stabile Grundlage für serverbasierte Anwendungen wie FHEM. Zuserst wurde das System aktualiesiert, um sicher zustellen das alle Pakete up to date sind, mit den commands (`sudo apt update & sudo apt upgrade -y`). 
+
+##### Installation von FHEM 
+
+Bei FHEM handelt es sich um eine serverbasierte Smart-Home-Software, die in der Programmiersprache Perl entwickelt wurde. FHEM läuft als Hintergrunddienst und ist über ein Webinterface erreichbar.
+
+Die Installation folgt mit folgende Commands.
+`wget https://fhem.de/fhem-6.4.deb`
+`sudo dpkg -i fhem-6.4.deb`
+
+Falls Abhängigkeiten fehlten, wurden diese mit folgenden Befehk nach installiert:
+`sudo apt --fix-broken install` 
+
+Nach erfolgreciher Installation startet FHEM automatisch als Dienst.
+
+##### Überprüfung der Installation 
+
+Die Weboberfläche ist standartmäßig über Port 8083 erreichbar: 
+ `http://<IP-Adresse-des-Raspberry-Pi>:8083`
+  
+Nach diesem Befehl erscheint die FHEM-WEB-Oberfläche, wodurch bestätigt wird, dass die Installation erfolgreich war.
+
+Zusätzlich kann man den Status des Dienstes überprüfen, mit den Befehl:
+`sudo systemctl status fhem`
+
+Ein aktiver Status ("active(running)") zeigt an, das der Server korrekt ausgeführt wird.
+
+#### Einbindung der LEDs in die FHEM-Weboberfläche
+
+##### Grundprinzip der LED-Integration
+
+Die LEDs stellen im Modellhaus die Lichtaktoren dar.
+Physikalisch sind sie über Vorwiderstände mit digitalen Ausgängen des Arduino Uno verbunden.
+
+Die Steuerung erfolgt in mehreren Schritten:
+
+1. Weboberfläche (FHEM) sendet Schaltbefehl
+2. FHEM publiziert MQTT-Nachricht
+3. Arduino empfängt Befehl
+4. Digitaler Ausgang wird gesetzt
+5. LED leuchtet bzw. erlischt
+
+FHEM übernimmt dabei die Rolle der zentralen Steuerinstanz.
+
+#### Anlegen des MQTT-Devices in FHEM
+
+Zunächst wurde in FHEM die MQTT-Verbindung definiert:
+`define myMQTT MQTT2_CLIENT 127.0.0.1:1883`
+`attr myMQTT autocreate 1`
+
+Damit verbindet sich FHEM mit dem lokal laufenden Broker Eclipse Mosquitto.
+
+#### Anlegen eines LED-Geräts in FHEM
+
+Für jede LED wurde ein eigenes Device angelegt.
+
+Beispiel: LED im Wohnzimmer
+
+`define LED_Wohnzimmer MQTT2_DEVICE`
+`attr LED_Wohnzimmer room Wohnzimmer`
+`attr LED_Wohnzimmer setList on off`
+`attr LED_Wohnzimmer readingList haus/licht/wohnzimmer/state`
+`attr LED_Wohnzimmer setList on:haus/licht/wohnzimmer/set on off:haus/licht/wohnzimmer/set off`
+
+Erklärung der Konfiguration
+
+setList on off
+→ definiert die Schaltzustände
+
+readingList
+→ empfängt Statusmeldungen vom Arduino
+
+setList mit Topic
+→ sendet beim Klick auf „on“ oder „off“ eine MQTT-Nachricht
+
+Dadurch erscheint in der Weboberfläche automatisch ein Schalter.
+
+#### Darstellung in der Weboberfläche
+
+In der FHEM-Weboberfläche wird jedes definierte Device automatisch angezeigt.
+Zur besseren Übersicht wurden:
+`attr LED_Wohnzimmer icon light_ceiling`
+`attr LED_Wohnzimmer webCmd on:off`
+gesetzt.
+
+Das bewirkt:
+
+- Anzeige eines Lichtsymbols
+- Direkte Schaltbuttons im Webinterface
+- Übersichtliche Raumstruktur
+
+#### Zuordnung zu Räumen
+
+Damit die LEDs logisch gruppiert werden, wurde das Attribut "room" verwendet:
+`attr LED_Wohnzimmer room Wohnzimmer`
+`attr LED_Kueche room Kueche`
+`attr LED_Schlafzimmer room Schlafzimmer`
+
+Dadurch erscheinen die Geräte in der jeweiligen Raumansicht.
+
+#### Rückmeldung des LED-Zustandes
+
+Wichtig für die Weboberfläche ist die Statusrückmeldung.
+Der Arduino sendet nach jeder Zustandsänderung:
+`haus/licht/wohnzimmer/state ON`
+
+FHEM aktualisiert dadurch automatisch das Reading des Devices.
+Ohne Rückmeldung würde der Schalter zwar klicken, aber der Status wäre nicht synchron.
+
+#### Verarbeitung mit Perl (optional erweitert) 
+
+In deiner Diplomarbeit kannst du zusätzlich zeigen, dass FHEM die LED auch logisch verarbeiten kann:
+`define autoLicht notify LED_Wohnzimmer:on {`
+`  Log 1, "Wohnzimmer Licht wurde eingeschaltet";`
+`}`
+
+`Damit wird bei jeder Zustandsänderung ein Logeintrag erzeugt.`
+`Hier zeigt sich der Vorteil von FHEM:`
+`Die Logik kann direkt in Perl erweitert werden.`
 
 ### Auswertung der Ergebnisse
 

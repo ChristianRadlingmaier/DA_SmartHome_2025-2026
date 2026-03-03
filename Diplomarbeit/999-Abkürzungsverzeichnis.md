@@ -69,6 +69,5 @@
 | vs. | versus |
 | W | Watt |
 | WLAN | Wireless Local Area Network |
-
 | z.B. | zum Beispiel |
 

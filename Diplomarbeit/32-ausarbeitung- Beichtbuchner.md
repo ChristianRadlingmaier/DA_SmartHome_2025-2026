@@ -419,44 +419,58 @@ Bei einem Element des Zwischendachs wurde festgestellt, dass es nur mit 2 Seiten
 ## 3D-Druck der Bauteile
 
 ### Auswahl des 3D-Druckverfahrens und Materials
-Das Druckmaterial wurde auf der Seite von Bambu Lab online bestellt.
 
-Für die Wände wurden insgesamt vier Rollen hellgraues Filament verwendet, während für das Dach zwei Rollen dunkelgraues Filament zum Einsatz kamen. Auf vollständig weiße Bauteile wurde bewusst verzichtet, da diese nach dem Druck sehr stark ins Auge fallen würden und sich optisch deutlich vom Rest des Modells abheben könnten. 
+Das verwendete Filament wurde direkt über den Hersteller Bambu Lab bezogen. Für den Druck kam ein FDM-Verfahren (Fused Deposition Modeling) zum Einsatz, bei dem geschmolzener Kunststoff schichtweise aufgetragen wird.
+
+Für die Wände des Modellhauses wurden insgesamt vier Rollen hellgraues Filament verwendet, während für das Dach zwei Rollen dunkelgraues Filament zum Einsatz kamen. Auf vollständig weiße Bauteile wurde bewusst verzichtet, da diese im Gesamtbild des Modells optisch stark hervorstechen würden und keinen realistischen Eindruck vermitteln. Durch die gewählte Farbkombination entsteht ein harmonisches und modernes Erscheinungsbild.
+
+Als Druckmaterial wurde PLA verwendet, da es sich einfach verarbeiten lässt, eine gute Druckqualität ermöglicht und für Modellbauprojekte ausreichend stabil ist.
 
 ### Vorbereitung der Druckdaten 
 
-Nach der vollständigen Modellierung des Hauses wurden sämtliche Bauteile über die Funktion „3D-Drucken“ in Fusion 360 als STL-Dateien exportiert, da dieses Dateiformat vom verwendeten 3D-Drucker verarbeitet werden kann.
+Nach Abschluss der Modellierung in Fusion 360 wurden alle Bauteile über die Funktion „3D-Drucken“ als STL-Dateien exportiert. Dieses Dateiformat ist für den 3D-Druck geeignet, da es die Oberflächengeometrie der Modelle beschreibt und vom Slicer verarbeitet werden kann.
 
-Anschließend wurden die Dateien in den Slicer importiert. Als Drucker wurde der Bambu Lab H2S mit einer 0,2 mm Düse ausgewählt. Dabei kam das Profil „0.10 mm Standard @ BBL H2S 0.2 nozzle“ zum Einsatz. Die grundlegenden Qualitätsparameter wurden im Bereich „Qualität“ überprüft und entsprechend angepasst.
+Anschließend wurden die STL-Dateien in die verwendete Slicing-Software importiert. Als Drucker wurde der Bambu Lab H2S mit einer 0,2 mm Düse ausgewählt. Dabei kam das Profil „0.10 mm Standard @ BBL H2S 0.2 nozzle“ zum Einsatz, welches bereits auf eine hohe Detailgenauigkeit ausgelegt ist.
 
-Im nächsten Schritt erfolgte die Ausrichtung der einzelnen Bauteile im Bauraum. Diese wurden so positioniert, dass Überhänge möglichst reduziert und eine stabile Haftung auf dem Druckbett gewährleistet werden. Wo konstruktionsbedingt notwendig, wurden automatisch generierte Stützstrukturen erstellt, um beispielsweise Tür- und Fensteröffnungen sowie Dachüberstände während des Druckvorgangs abzustützen und ein sauberes Druckergebnis zu erzielen.
+Im Bereich „Qualität“ wurden die grundlegenden Parameter überprüft und bei Bedarf angepasst. Danach erfolgte die Ausrichtung der einzelnen Bauteile im Bauraum. Diese wurden so positioniert, dass Überhänge möglichst reduziert und eine optimale Haftung auf dem Druckbett erreicht wird. Wo es konstruktionsbedingt erforderlich war, wurden automatisch generierte Stützstrukturen aktiviert. Diese dienten dazu, Tür- und Fensteröffnungen sowie Dachüberstände während des Druckvorgangs zu stabilisieren und ein sauberes Druckergebnis zu gewährleisten.
 
 ### Druckparameter und Druckeinstellungen
-Für den Druck wurde eine Schichthöhe von 0,1 mm gewählt. Auch die Höhe der ersten Schicht wurde auf 0,1 mm eingestellt. Die Druckgeschwindigkeit wurde entsprechend dem verwendeten Standardprofil beibehalten, um ein ausgewogenes Verhältnis zwischen Druckdauer und Druckqualität sicherzustellen. Das Infill wurde unterschiedlich und so definiert, dass die Bauteile eine ausreichende Stabilität aufweisen, ohne unnötig viel Material zu verbrauchen. Zusätzlich wurden die Wandstärken passend zur 0,2 mm Düse sowie zu den zuvor konstruierten Modellmaßen eingestellt, um robuste und formstabile Außenflächen zu erhalten.
+
+Für den Druck wurde eine Schichthöhe von 0,1 mm gewählt. Auch die erste Schicht wurde mit 0,1 mm definiert, um eine gleichmäßige Oberfläche zu erzielen. Die geringe Schichthöhe sorgt für eine hohe Detailgenauigkeit und ein sauberes Erscheinungsbild der Bauteile.
+
+Die Druckgeschwindigkeit wurde gemäß dem gewählten Standardprofil beibehalten, um ein ausgewogenes Verhältnis zwischen Druckdauer und Druckqualität sicherzustellen. Das Infill wurde je nach Bauteil angepasst, sodass ausreichend Stabilität gegeben war, ohne unnötig viel Material zu verbrauchen.
+
+Die Wandstärken wurden passend zur 0,2 mm Düse sowie zu den konstruierten Modellmaßen eingestellt. Dadurch konnten robuste Außenflächen und eine gute Formstabilität gewährleistet werden.
 
 ### Durchführung des Druckvorgangs
 
-Die einzelnen Bauteile unterscheiden sich in ihrer Größe, weshalb auch die Druckzeiten variieren. Das größte Teil benötigte etwa 10 Stunden, während das kleinste bereits nach rund 1 Stunde fertig war. Während des Druckvorgangs konnten die Teile jederzeit mithilfe einer eingebauten Kamera überwacht werden um somit mögliche Fehler oder andere Probleme schnellstmöglich festzustellen. Dadurch war es möglich, den Druck bei Bedarf sofort zu stoppen, um Materialverschwendung zu vermeiden.
+Die einzelnen Bauteile unterscheiden sich in ihrer Größe, weshalb auch die Druckzeiten stark variierten. Das größte Bauteil benötigte rund 10 Stunden Druckzeit, während kleinere Teile bereits nach etwa einer Stunde fertiggestellt waren.
 
-#### Druckfehler
+Während des Druckvorgangs wurde der Prozess über die integrierte Kamera des Druckers überwacht. Dadurch konnten mögliche Fehler frühzeitig erkannt und bei Bedarf sofort eingegriffen werden. Diese Kontrolle half dabei, Materialverschwendung zu vermeiden und fehlerhafte Drucke rechtzeitig abzubrechen.
 
-Bei zwei Teilen gab es Probleme bei denen der Druck abbgebrochen werden musste und ein erneuter Druck notwendig war.
+### Druckfehler
 
-Teil 1:
+Trotz sorgfältiger Vorbereitung traten bei zwei Bauteilen Probleme auf, die einen erneuten Druck erforderlich machten.
+
+**Teil 1:**
 
 ![Druckfehler1](img/bilder-ausarbeitung-Beichtbuchner/Druckfehler/Druckfehler1.png)
 
-Hier ist die Stütze der Tür weggebrochen welche notwenig war um den oberen Teil des Türramens zu halten. Diese Konnte nicht wieder angebracht werden und somit wurde der Druck erneut begonnen.
+Während des Druckvorgangs brach die Stützstruktur im Bereich der Türöffnung ab. Diese war notwendig, um den oberen Teil des Türrahmens zu stabilisieren. Da die Stütze nicht wiederhergestellt werden konnte, musste der Druckvorgang abgebrochen und das Bauteil vollständig neu gedruckt werden.
 
-Teil 2:
+**Teil 2:**
 
 ![Druckfehler2](img/bilder-ausarbeitung-Beichtbuchner/Druckfehler/Druckfehler2.png)
 
-Bei diesem Teil Jedoch hat das Filament nicht mehr gereicht und nach dem wechsel der Rolle hat der Drucker begonnen um etwa 5mm versetzt weiterzudrucken. Dieser Fehler konnte auch nicht behoben werden und somit mussten wir wieder von vorne beginnen.
+Bei diesem Bauteil reichte das Filament während des Drucks nicht aus. Nach dem Rollenwechsel setzte der Drucker den Vorgang mit einem Versatz von etwa 5 mm fort. Dadurch entstand eine deutliche Verschiebung im Bauteil, wodurch dieses unbrauchbar wurde und ebenfalls neu gedruckt werden musste.
 
 ### Nachbearbeitung der gedruckten Bauteile
 
-Nach dem Druck fiel auf, dass einige Dübel oder Wände nicht vollständig glatt waren. Außerdem traten bei manchen Teilen Verformungen der Böden auf, die vermutlich durch die Luftfeuchtigkeit verursacht wurden. Diese Unebenheiten hatten jedoch nur geringe Auswirkung auf das Teil und stellten keine zukünftigen Probleme dar. Diese Vervormungen wurden mithilfe von schleifpapier etwas abgeschliffen und verschönert.
+Nach Abschluss des Drucks wurden zunächst alle Stützstrukturen entfernt. Anschließend wurden die Bauteile auf mögliche Unebenheiten oder Druckrückstände überprüft.
+
+Bei einigen Teilen waren kleinere Oberflächenunregelmäßigkeiten sowie leichte Verformungen im Bereich der Böden erkennbar. Diese könnten durch Umwelteinflüsse wie Luftfeuchtigkeit oder Temperaturschwankungen entstanden sein. Die betroffenen Stellen wurden mit Schleifpapier vorsichtig nachbearbeitet, um eine glattere Oberfläche zu erzielen.
+
+Abschließend wurden alle Bauteile auf Passgenauigkeit geprüft und für den späteren Zusammenbau vorbereitet.
 
 ## Aufbau der Grundplatte und des Modellhauses
 

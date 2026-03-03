@@ -4,7 +4,73 @@
 ## Theorie
 
 ### Einordnung des Aufgabenbereichs
-Mein Teil der Diplomarbeit ist es ein Haus zu modellieren um dieses anschließend mit Sensoren und Aktoren auszustatten. Der Plan ist es ein bereits bestehendes Haus nachzubauen, um es so Real wie möglich zu halten. Das Haus wird mithilfe von Online Downloadbaren Möbel eingerichtet und der Garten wird auf die gleiche weise angedeutet und dekoriert. Vorgesehene ansteuerbare Elemente sind LEDs sowie auch eine Wetterstation welche wir im Unterricht schon gebaut und Programmiert haben. 
+Mein Teil der Diplomarbeit ist es ein Haus zu modellieren um dieses anschließend mit Sensoren und Aktoren auszustatten. Der Plan ist es ein bereits bestehendes Haus nachzubauen, um es so Real wie möglich zu halten. Das Haus wird mithilfe von Online downloadbaren Möbel eingerichtet und der Garten wird auf die gleiche weise angedeutet und dekoriert. Vorgesehene ansteuerbare Elemente sind LEDs sowie auch eine Wetterstation welche wir im Unterricht schon gebaut und Programmiert haben. 
+
+## CAD-Programme
+
+### CAD-Programme im Überblick
+
+CAD-Programme (Computer-Aided-Design) sind spezielle Softwareprogramme, die zur Erstellung und Bearbeitung von digitalen Zeichnungen und Modellen verwendet werden. Sie helfen dabei, technische Entwürfe übersichtlich und präzise darzustellen und dienen als wichtige Grundlage für die weitere Planung und Umsetzung.
+
+>CAD-Programme werden in der Architektur, im Ingenieurwesen und im Baugewerbe eingesetzt, um Projekte zu entwerfen und Konstruktionsunterlagen, wie z. B. Konstruktions- und Fertigungszeichnungen, zu erstellen.[@CAD-Programme-ALLPLAN]
+
+[@CAD-Programme-ALLPLAN]
+
+### Allgemeine Funktionsweise von CAD-Programmen
+
+CAD ist die Abkürzung für computergestütztes Zeichnen bzw. computergestütztes Entwerfen. Während Bau- und Konstruktionszeichnungen früher manuell auf Papier erstellt wurden, werden diese Aufgaben heute größtenteils mithilfe spezieller Software durchgeführt. CAD-Programme ermöglichen es, Entwürfe digital zu erstellen und sowohl in zweidimensionaler als auch in dreidimensionaler Form darzustellen. Dadurch können Zeichnungen ausgedruckt oder digitale 3D-Modelle weiterverwendet und geteilt werden.
+
+Der Einsatz von CAD-Software erleichtert es, unterschiedliche Entwurfsvarianten zu vergleichen und komplexe Konstruktionen anschaulich darzustellen. Zudem erlauben CAD-Programme eine sehr präzise Arbeitsweise, was bereits in der Planungsphase zu einer höheren Genauigkeit führt. Diese Präzision trägt dazu bei, Fehler während der Umsetzung zu reduzieren, wodurch Zeit und Kosten eingespart werden können. Darüber hinaus unterstützt die digitale Planung ein effizienteres und nachhaltigeres Arbeiten. 
+
+[@CAD-Programme-ALLPLAN]
+
+### Auswahl eines geeigneten CAD-Programms
+
+Bei der Auswahl eines geeigneten CAD-Programms ist es wichtig, sich im Vorfeld Gedanken über die Komplexität des geplanten Projekts zu machen. Je nach Umfang und Detailgrad der Konstruktion werden unterschiedliche Funktionen und Werkzeuge benötigt, weshalb nicht jedes CAD-Programm für jedes Projekt gleichermaßen geeignet ist.
+
+>Die Entscheidung für die richtige CAD Software hängt von verschiedenen Faktoren ab. Zunächst sollten Sie Ihre spezifischen Anforderungen analysieren: Benötigen Sie primär 2D-Zeichnungen oder 3D-Modellierung? Arbeiten Sie allein oder im Team? Welche Branchen-spezifischen Funktionen sind erforderlich? [@aedificium-digital-CAD-Software]
+
+[@aedificium-digital-CAD-Software]
+
+
+### Vergleich wichtiger CAD-Programme
+
+In der Praxis existieren viele verschiedene CAD-Programme, die sich in Funktionsumfang, Zielgruppe und Einsatzgebieten unterscheiden. Nachfolgend werden einige der bekanntesten Softwarelösungen vorgestellt, um einen Überblick über Optionen für die digitale Modellierung zu geben.
+
+**AutoCAD**  
+AutoCAD gilt als einer der Industriestandards im Bereich CAD-Software und wird weltweit in Architektur, Bauwesen und Maschinenbau eingesetzt. Die Software bietet umfangreiche Werkzeuge für präzise 2D-Zeichnungen und 3D-Modellierung und ist besonders für technische Zeichnungen und Baupläne geeignet. AutoCAD unterstützt eine große Zahl an Dateiformaten und bietet Möglichkeiten zur Zusammenarbeit über Cloud-Dienste.
+
+**SolidWorks**  
+SolidWorks ist eine weit verbreitete CAD-Lösung, die besonders im Maschinen- und Produktdesign genutzt wird. Die Software zeichnet sich durch parametrische 3D-Modellierung aus und enthält erweiterte Werkzeuge für Simulationen und Konstruktionen komplexer Baugruppen. Sie eignet sich besonders für industrielle Anwendungen, bei denen detaillierte Analysen und Simulationen notwendig sind.
+
+**Fusion 360**  
+Fusion 360 kombiniert CAD, CAM und CAE in einer einheitlichen Plattform und arbeitet cloud-basiert. Dadurch ermöglicht die Software die Zusammenarbeit über verschiedene Geräte hinweg und vereinfacht den Austausch von Projektdaten im Team. Sie ist gut geeignet für Produktentwicklung, 3D-Druck und moderne Fertigungsverfahren. Fusion 360 bietet auch eine kostenlose Nutzung für Studenten, Startups und Hobbyanwender an, was insbesondere für Projekte mit beschränktem Budget von Vorteil sein kann.
+
+**Autodesk Inventor**  
+Inventor ist eine weitere professionelle Lösung von Autodesk und richtet sich vor allem an Anwender im Maschinenbau und Produktdesign. Die Software bietet erweiterte parametrische Modellierungsfunktionen und eine gute Integration in andere Autodesk-Produkte. Sie eignet sich für anspruchsvolle Konstruktionsaufgaben und technische Dokumentationen.{index=3}
+
+**CATIA**  
+CATIA ist eine leistungsstarke CAD-Software, die vor allem in großen Industrien wie Luft- und Raumfahrt oder Fahrzeugbau eingesetzt wird. Sie ermöglicht die Modellierung sehr komplexer Freiformflächen und umfangreicher Baugruppen. Aufgrund des hohen Funktionsumfangs und der steilen Lernkurve ist sie eher für professionelle Anwender in spezialisierten Branchen geeignet.
+
+**SketchUp**  
+SketchUp ist ein intuitiv nutzbares CAD-Programm, das sich besonders für architektonische Visualisierungen und Konzeptmodelle eignet. Die einfache Bedienung macht es für Einsteiger und Schüler attraktiv. Eine kostenlose Version ist im Browser verfügbar, während die Pro-Version zusätzliche Funktionen für technische Zeichnungen bietet.
+
+**FreeCAD**  
+FreeCAD ist eine freie, Open-Source-Alternative, die parametrische 3D-Modellierung bietet. Die Software eignet sich für Anwender mit begrenztem Budget, zum Beispiel für Schüler, Studenten oder kleinere Projekte. FreeCAD unterstützt verschiedene Arbeitsbereiche und wird kontinuierlich weiterentwickelt, auch wenn der Funktionsumfang im Vergleich zu kommerziellen Programmen teilweise eingeschränkt ist.
+
+### Übersichtstabelle
+
+| Programm | Zielgruppe | Besonderheiten | Einsatzgebiet |
+|----------|-------------|---------------|---------------|
+| AutoCAD | Profis/Einsteiger | Umfangreiche 2D-/3D-Werkzeuge | Architektur, Bau, Technik |
+| SolidWorks | Profis | Parametrische Modellierung, Simulation | Produkt- & Maschinenbau |
+| Fusion 360 | Einsteiger/Profis | Cloud-basierte All-in-One-Lösung | Produktdesign & Fertigung |
+| Autodesk Inventor | Profis | Technische Dokumentation & Konstruktion | Maschinenbau |
+| CATIA | Enterprise | Komplexe Freiformflächen | Fahrzeug-/Luftfahrtindustrie |
+| SketchUp | Einsteiger | Einfache, intuitive Modellierung | Architektur & Visualisierung |
+| FreeCAD | Alle | Open Source, kostenlos | Unterricht, kleine Projekte |
+
+[@aedificium-digital-CAD-Software]
 
 ## Modellierung
 
@@ -17,16 +83,16 @@ Unter 3D-Modellierung versteht man die digitale Erstellung dreidimensionaler Obj
 
 Der Prozess der 3D-Modellierung lässt sich in mehrere grundlegende Schritte unterteilen. Diese Abfolge stellt einen allgemeinen Überblick dar, wobei der genaue Arbeitsablauf je nach verwendeter Software, persönlicher Arbeitsweise oder Projektanforderungen variieren kann. 
 
-1. Konzeptphase  
+**1. Konzeptphase** 
 Zu Beginn steht die Ideenfindung. In dieser Phase wird das geplante Objekt konzeptionell ausgearbeitet, beispielsweise durch Skizzen auf Papier oder einfache digitale Entwürfe. Ziel ist es, eine klare Vorstellung des Modells zu entwickeln, bevor mit der eigentlichen Modellierung begonnen wird.
 
-2. Modellierungsphase  
+**2. Modellierungsphase**  
 In diesem Schritt wird das Objekt mithilfe einer 3D-Software erstellt. Dabei kommen unterschiedliche Modellierungstechniken zum Einsatz. Häufig wird mit geometrischen Grundelementen gearbeitet, die aus Punkten, Kanten und Flächen bestehen und schrittweise zu einem dreidimensionalen Modell zusammengesetzt werden. Je nach Software können auch alternative Methoden verwendet werden, die ein besonders intuitives Arbeiten ermöglichen.
 
-3. Texturierung  
+**3. Texturierung**  
 Nach der Erstellung der Grundform werden dem Modell Materialien und Oberflächen zugewiesen. Diese bestimmen das visuelle Erscheinungsbild und verleihen dem Objekt Farbe, Struktur und Detailtiefe. Texturen können individuell erstellt, automatisch generiert oder aus Bildvorlagen abgeleitet werden.
 
-4. Rendering und Nachbearbeitung  
+**4. Rendering und Nachbearbeitung**  
 Im letzten Schritt wird das fertige Modell visualisiert. Dabei werden Beleuchtung, Schatten und weitere visuelle Effekte berücksichtigt, um realistische oder stilisierte Darstellungen zu erzeugen. Dieser Vorgang erfordert in der Regel eine hohe Rechenleistung. Optional können die erzeugten Bilder oder Animationen anschließend weiterbearbeitet werden, um das Endergebnis zu optimieren.  
 [@3D-Modellierung-Adobe]
 
@@ -66,28 +132,6 @@ Der Einsatz externer Modelle kann den Modellierungsprozess deutlich beschleunige
 
 Solche Modelle eignen sich auch für die physische Umsetzung mithilfe eines 3D-Druckers. Dabei können heruntergeladene Modelle ausgedruckt und anschließend in ein Projekt integriert werden. Voraussetzung hierfür ist jedoch, dass die Modelle korrekt skaliert sind und den technischen Anforderungen des jeweiligen Druckverfahrens entsprechen. Durch den gezielten Einsatz externer Modelle lässt sich der Arbeitsaufwand reduzieren, während gleichzeitig ein hoher Detailgrad erreicht werden kann. 
 
-## CAD-Programme
-
-### CAD-Programme im Überblick
-
-CAD-Programme sind spezielle Softwareprogramme, die zur Erstellung und Bearbeitung von digitalen Zeichnungen und Modellen verwendet werden. Sie helfen dabei, technische Entwürfe übersichtlich und präzise darzustellen und dienen als wichtige Grundlage für die weitere Planung und Umsetzung.
-
->CAD-Programme werden in der Architektur, im Ingenieurwesen und im Baugewerbe eingesetzt, um Projekte zu entwerfen und Konstruktionsunterlagen, wie z. B. Konstruktions- und Fertigungszeichnungen, zu erstellen. 
-
-[@CAD-Programme-ALLPLAN]
-
-#### Allgemeine Funktionsweise von CAD-Programmen
-
-CAD ist die Abkürzung für computergestütztes Zeichnen bzw. computergestütztes Entwerfen. Während Bau- und Konstruktionszeichnungen früher manuell auf Papier erstellt wurden, werden diese Aufgaben heute größtenteils mithilfe spezieller Software durchgeführt. CAD-Programme ermöglichen es, Entwürfe digital zu erstellen und sowohl in zweidimensionaler als auch in dreidimensionaler Form darzustellen. Dadurch können Zeichnungen ausgedruckt oder digitale 3D-Modelle weiterverwendet und geteilt werden.
-
-Der Einsatz von CAD-Software erleichtert es, unterschiedliche Entwurfsvarianten zu vergleichen und komplexe Konstruktionen anschaulich darzustellen. Zudem erlauben CAD-Programme eine sehr präzise Arbeitsweise, was bereits in der Planungsphase zu einer höheren Genauigkeit führt. Diese Präzision trägt dazu bei, Fehler während der Umsetzung zu reduzieren, wodurch Zeit und Kosten eingespart werden können. Darüber hinaus unterstützt die digitale Planung ein effizienteres und nachhaltigeres Arbeiten. 
-
-[@CAD-Programme-ALLPLAN]
-
-#### Auswahl eines geeigneten CAD-Programms
-
-Bei der Auswahl eines geeigneten CAD-Programms ist es wichtig, sich im Vorfeld Gedanken über die Komplexität des geplanten Projekts zu machen. Je nach Umfang und Detailgrad der Konstruktion werden unterschiedliche Funktionen und Werkzeuge benötigt, weshalb nicht jedes CAD-Programm für jedes Projekt gleichermaßen geeignet ist.
-
 ## 3D-Druck
 
 ### Grundlagen des 3D-Drucks  
@@ -122,13 +166,26 @@ Weitere Parameter, die den Druckprozess beeinflussen, sind unter anderem die Dru
 
 Wichtige Einstellungen im Überblick:
 
-- **Layerhöhe:** Dicke jeder Schicht, beeinflusst Oberfläche und Druckzeit  
-- **Perimeter Shells:** Anzahl und Dicke der Außenwände für Stabilität  
-- **Top/Bottom Solid Layers:** Anzahl der geschlossenen oberen und unteren Schichten  
-- **Infill:** Muster und Füllgrad für Festigkeit und Gewicht  
-- **Support:** Stützstrukturen für Überhänge  
-- **Druckbett- und Düsentemperatur:** Optimiert Haftung und Materialfluss  
-- **Druckgeschwindigkeit & erste Schichtgeschwindigkeit:** Beeinflussen Genauigkeit und Haftung
+**Layerhöhe:** 
+  - Dicke jeder Schicht, beeinflusst Oberfläche und Druckzeit  
+
+**Perimeter Shells:** 
+  - Anzahl und Dicke der Außenwände für Stabilität  
+
+**Top/Bottom Solid Layers:** 
+  - Anzahl der geschlossenen oberen und unteren Schichten  
+
+**Infill:** 
+  - Muster und Füllgrad für Festigkeit und Gewicht  
+
+**Support:** 
+  - Stützstrukturen für Überhänge  
+
+**Druckbett- und Düsentemperatur:** 
+  - Optimiert Haftung und Materialfluss  
+
+**Druckgeschwindigkeit & erste Schichtgeschwindigkeit:** 
+  - Beeinflussen Genauigkeit und Haftung
 
 ### Nachbearbeitung und Integration ins Projekt
 
@@ -154,9 +211,10 @@ Elektronische Bauteile sind einzelne Bestandteile, aus denen elektronische Schal
 
 Der Unterschied zwischen diesen zwei Kategorien ist:
 
-- Aktive Bauteile
+**Aktive Bauteile:**
   - Steuern oder verstärken den Stromfluss jedoch brauchen sie eine externe Energiequelle.
-- Passive Bauteile
+
+**Passive Bauteile:**
   - Beeinflussen den Stromfluss indem sie ihn regulieren, speichern oder verzögern ohne einer zusätzlichen externen Energiequelle.
 
 [@Elektronische-Bauteile-HEINEN]
@@ -166,27 +224,38 @@ Der Unterschied zwischen diesen zwei Kategorien ist:
 Die Spannungsversorgung ist ein grundlegender Bestandteil elektronischer Schaltungen. Ihre Aufgabe besteht darin, eine vorhandene Energiequelle, wie beispielsweise Netzstrom oder eine Batterie, in eine für die jeweilige Schaltung geeignete und möglichst konstante Gleichspannung umzuwandeln. Viele elektronische Bauteile benötigen feste Versorgungsspannungen, etwa 5 V oder 12 V, um zuverlässig arbeiten zu können. Dabei muss die Spannungsversorgung Schwankungen der Eingangsspannung sowie Änderungen der Stromaufnahme ausgleichen, damit die Ausgangsspannung stabil bleibt. [@Spannungsquellen-ElectronicsTutorials]
 
 ### Arten von Spannungsversorgungen
-- Netzteile:
+
+**Netzteil:**
   - Ist ein Gerät, das den Strom aus der Steckdose in eine benutzbare Gleichspannung für elektronische Geräte umwandelt.
-- Batterien/Akkus: 
+  
+**Batterie/Akku:**
   - Bieten mobile Gleichspannungen, die aber mit der Zeit schwanken.
-- Generator:
+  
+**Generator:**
   - Wandelt mechanische Energie in elektrischen Strom um.
-- Konstantspannungsquellen: 
+  
+**Konstantspannungsquelle:**
   - Versucht immer die gleiche Spannung am Ausgang zu liefern, egal wie sich Last oder Eingangsspannung verändert. 
+  
 [@Spannungsquellen-ElectronicsTutorials]
 
 ### Methoden zur Spannungsstabilisierung
-- Z-Diode: 
+
+**Z-Diode:**
   - Einfachste Methode, gut für geringe, konstante Ströme, aber mit höherem Spannungsabfall und Wärmeentwicklung bei höheren Strömen.
-- Spannungsregler (IC): 
+  
+**Spannungsregler (IC):**
   - Integrierte Schaltungen (ICs), die eine sehr genaue und stabile Spannung liefern, auch mit Überstromschutz.
-- Linearregler: 
+  
+**Linearregler:** 
   - Einfache Schaltung, oft mit einem Transistor, erzeugt wenig Rauschen, aber viel Wärme (Verlustleistung).
-- Schaltregler: 
+  
+**Schaltregler:** 
   - Effizienter, wandelt Spannung durch schnelles Schalten; heutzutage dominierend (z.B. in Schaltnetzteilen).
-- Spannungsteiler (Widerstände): 
+  
+**Spannungsteiler (Widerstände):** 
   - Nur für spezielle Fälle geeignet, wenn die Stromaufnahme konstant ist, da die Spannung mit abnehmender Batterie (oder steigender Last) abfällt. 
+  
 [@Schaltungstechnik-Stromversorgung-technik-reicke]
 
 ## Mikrocontroller
@@ -235,14 +304,12 @@ Durch diese Arbeitsweise ist es möglich, einfache wie auch komplexere Steuerung
 
 ### Vergleich gängiger Mikrocontroller-Plattformen
 
-***
 #### Arduino Uno
 
 ![Arduino Uno[@Arduino-Uno-Bild]](img/bilder-ausarbeitung-Beichtbuchner/Mikrocontroller/Arduino-Uno-R3.jpg)
 
 Der Arduino Uno ist einer der am häufigsten verwendeten Mikrocontroller und eignet sich besonders für Einsteiger sowie für einfache bis mittelkomplexe Projekte. Er basiert auf einem 8-Bit-Mikrocontroller und bietet eine übersichtliche Anzahl an digitalen und analogen Ein- und Ausgängen. Durch die einfache Programmierung und die große Verfügbarkeit an Bibliotheken und Beispielen lässt sich der Arduino Uno schnell in Betrieb nehmen. Er wird häufig für Steuerungsaufgaben, das Auslesen von Sensoren oder das Ansteuern von LEDs und anderen Aktoren verwendet. Aufgrund seiner Stabilität und guten Dokumentation ist er auch im schulischen Umfeld weit verbreitet.
 
-***
 
 #### Arduino Nano
 
@@ -250,7 +317,6 @@ Der Arduino Uno ist einer der am häufigsten verwendeten Mikrocontroller und eig
 
 Der Arduino Nano bietet im Wesentlichen denselben Funktionsumfang wie der Arduino Uno, ist jedoch deutlich kompakter aufgebaut. Dadurch eignet er sich besonders für Projekte, bei denen wenig Platz zur Verfügung steht. Trotz seiner geringen Größe kann der Arduino Nano für viele der gleichen Anwendungen eingesetzt werden wie der Uno. Er wird häufig in kleineren Schaltungen, Prototypen oder fest verbauten Systemen verwendet, bei denen eine platzsparende Bauform von Vorteil ist.
 
-***
 
 #### ESP32
 
@@ -258,13 +324,49 @@ Der Arduino Nano bietet im Wesentlichen denselben Funktionsumfang wie der Arduin
 
 Der ESP32 ist ein leistungsstarker 32-Bit-Mikrocontroller, der sich vor allem durch seine integrierten Kommunikationsmöglichkeiten auszeichnet. Er verfügt über WLAN- und Bluetooth-Funktionalität und eignet sich daher besonders für vernetzte Anwendungen. Dank seiner höheren Rechenleistung und der Vielzahl an verfügbaren Schnittstellen kann der ESP32 mehrere Aufgaben gleichzeitig ausführen. Er wird häufig in Smart-Home-Anwendungen, IoT-Projekten oder Systemen eingesetzt, bei denen eine drahtlose Datenübertragung erforderlich ist. Zusätzlich bietet er Energiesparmodi, wodurch er auch für batteriebetriebene Anwendungen geeignet ist.
 
-***
 
 #### STM32
 
 ![STM32[@STM32-Bild]](img/bilder-ausarbeitung-Beichtbuchner/Mikrocontroller/STM32.jpg)
 
 Die STM32-Mikrocontroller basieren auf einer 32-Bit-Architektur und sind in vielen unterschiedlichen Varianten erhältlich. Sie zeichnen sich durch hohe Leistungsfähigkeit, Flexibilität und einen professionellen Einsatzbereich aus. STM32-Controller werden häufig in industriellen Anwendungen, in der Automatisierungstechnik oder in technisch anspruchsvollen Projekten verwendet. Sie bieten umfangreiche Konfigurationsmöglichkeiten, zahlreiche Schnittstellen und eine hohe Rechengeschwindigkeit. Aufgrund ihrer Komplexität erfordern sie jedoch meist ein tieferes technisches Verständnis als einfache Arduino-Plattformen.
+
+## Sensoren und Aktoren
+
+Sensoren und Aktoren bilden zentrale Bestandteile automatisierter und elektronischer Systeme. Sie ermöglichen es technischen Systemen, Informationen aus ihrer Umgebung aufzunehmen und darauf gezielt zu reagieren. Sensoren übernehmen dabei die Aufgabe der Datenerfassung, während Aktoren für die Umsetzung von Aktionen verantwortlich sind. Man kann Sensoren als Eingabeelemente und Aktoren als Ausgabeelemente eines Systems verstehen.
+
+[@Sensorik-und-Aktorik-StudySmarter]
+
+### Sensoren – Funktionsweise und Einsatzgebiete
+
+Sensoren dienen dazu, physikalische oder chemische Größen aus der Umgebung zu erfassen und diese in elektrische Signale umzuwandeln. Diese Signale können anschließend von einem Mikrocontroller oder einem anderen elektronischen System verarbeitet werden. Dadurch ist es möglich, Zustände wie Temperatur, Licht oder Feuchtigkeit digital auszuwerten.
+
+Typische Sensoren kommen in vielen technischen Anwendungen zum Einsatz. Ein Temperatursensor misst beispielsweise die Umgebungstemperatur, ein Lichtsensor erfasst die Helligkeit, und ein Feuchtigkeitssensor bestimmt den Feuchtigkeitsgehalt der Luft oder eines Materials.
+
+Je nach Messgröße lassen sich Sensoren in verschiedene Kategorien einteilen. Häufig verwendete Sensortypen sind Temperatursensoren zur Erfassung von Wärme, Lichtsensoren zur Messung von Helligkeit, Drucksensoren zur Erkennung von Kraft- oder Druckänderungen sowie Bewegungssensoren, die Bewegungen oder Beschleunigungen wahrnehmen. Alle diese Sensoren haben gemeinsam, dass sie physikalische Informationen in elektrische Signale umwandeln, die weiterverarbeitet werden können.
+
+[@Sensorik-und-Aktorik-StudySmarter]
+
+### Aktoren – Funktionsweise und Einsatzgebiete
+
+Aktoren übernehmen die Aufgabe, elektrische Signale in eine physische Aktion umzusetzen. Sie reagieren auf Steuerbefehle eines Mikrocontrollers oder eines anderen Systems und führen daraufhin eine Bewegung oder eine andere gewünschte Funktion aus. Während Sensoren Informationen liefern, sorgen Aktoren dafür, dass auf diese Informationen reagiert wird.
+
+Zu den häufig eingesetzten Aktoren zählen unter anderem Elektromotoren, die mechanische Bewegung erzeugen, Lautsprecher, die elektrische Signale in Schall umwandeln, sowie Leuchtdioden (LEDs), die durch elektrische Ansteuerung Licht aussenden. Aktoren spielen eine entscheidende Rolle in automatisierten Systemen, da sie digitale Steuerbefehle in reale Vorgänge umsetzen.
+
+Ein funktionierendes Zusammenspiel zwischen Sensoren und Aktoren ist Voraussetzung dafür, dass Systeme selbstständig und zielgerichtet arbeiten können. Nur wenn Sensordaten korrekt ausgewertet werden, können Aktoren die passenden Aktionen ausführen.
+
+[@Sensorik-und-Aktorik-StudySmarter]
+
+
+### Wie Sensoren und Aktoren Zusammenarbeiten
+
+Das Zusammenwirken von Sensoren und Aktoren erfolgt meist in einem wiederkehrenden Ablauf. Zunächst erfassen Sensoren Daten aus der Umgebung. Diese Informationen werden anschließend verarbeitet und ausgewertet, um eine Entscheidung zu treffen. Auf Basis dieser Entscheidung wird schließlich ein Aktor angesteuert, der eine entsprechende Aktion ausführt.
+
+Ein einfaches Beispiel für diesen Ablauf ist ein automatisches Bewässerungssystem. Ein Feuchtigkeitssensor misst den Feuchtigkeitsgehalt des Bodens. Sinkt dieser unter einen festgelegten Wert, wird ein Signal ausgelöst. Daraufhin öffnet ein elektronisch gesteuertes Ventil und startet die Bewässerung.
+
+Damit solche Systeme zuverlässig funktionieren, ist eine sorgfältige Programmierung und Abstimmung der Sensoren und Aktoren notwendig. Nur durch genaue Messungen und präzise Steuerung können automatisierte Systeme korrekt und effizient auf Veränderungen ihrer Umgebung reagieren.
+
+[@Sensorik-und-Aktorik-StudySmarter]
 
 
 ## Verkabelung
@@ -326,45 +428,6 @@ Ein Schaltplan ist eine grafische Darstellung einer elektrischen oder elektronis
 Darüber hinaus werden Schaltpläne häufig als Grundlage für das Layout von Leiterplatten (PCB) verwendet. Da Leiterplatten sehr komplex sein können, erlaubt der Schaltplan, alle Verbindungen und Bauteilpositionen präzise zu planen, bevor die Leiterplatte gefertigt wird. Auf diese Weise dient er sowohl der Dokumentation als auch der fehlerfreien Umsetzung eines Projekts.
 
 [@Schaltplan-Wikipedia]
-
-
-## Sensoren und Aktoren
-
-Sensoren und Aktoren bilden zentrale Bestandteile automatisierter und elektronischer Systeme. Sie ermöglichen es technischen Systemen, Informationen aus ihrer Umgebung aufzunehmen und darauf gezielt zu reagieren. Sensoren übernehmen dabei die Aufgabe der Datenerfassung, während Aktoren für die Umsetzung von Aktionen verantwortlich sind. Man kann Sensoren als Eingabeelemente und Aktoren als Ausgabeelemente eines Systems verstehen.
-
-[@Sensorik-und-Aktorik-StudySmarter]
-
-### Sensoren – Funktionsweise und Einsatzgebiete
-
-Sensoren dienen dazu, physikalische oder chemische Größen aus der Umgebung zu erfassen und diese in elektrische Signale umzuwandeln. Diese Signale können anschließend von einem Mikrocontroller oder einem anderen elektronischen System verarbeitet werden. Dadurch ist es möglich, Zustände wie Temperatur, Licht oder Feuchtigkeit digital auszuwerten.
-
-Typische Sensoren kommen in vielen technischen Anwendungen zum Einsatz. Ein Temperatursensor misst beispielsweise die Umgebungstemperatur, ein Lichtsensor erfasst die Helligkeit, und ein Feuchtigkeitssensor bestimmt den Feuchtigkeitsgehalt der Luft oder eines Materials.
-
-Je nach Messgröße lassen sich Sensoren in verschiedene Kategorien einteilen. Häufig verwendete Sensortypen sind Temperatursensoren zur Erfassung von Wärme, Lichtsensoren zur Messung von Helligkeit, Drucksensoren zur Erkennung von Kraft- oder Druckänderungen sowie Bewegungssensoren, die Bewegungen oder Beschleunigungen wahrnehmen. Alle diese Sensoren haben gemeinsam, dass sie physikalische Informationen in elektrische Signale umwandeln, die weiterverarbeitet werden können.
-
-[@Sensorik-und-Aktorik-StudySmarter]
-
-### Aktoren – Funktionsweise und Einsatzgebiete
-
-Aktoren übernehmen die Aufgabe, elektrische Signale in eine physische Aktion umzusetzen. Sie reagieren auf Steuerbefehle eines Mikrocontrollers oder eines anderen Systems und führen daraufhin eine Bewegung oder eine andere gewünschte Funktion aus. Während Sensoren Informationen liefern, sorgen Aktoren dafür, dass auf diese Informationen reagiert wird.
-
-Zu den häufig eingesetzten Aktoren zählen unter anderem Elektromotoren, die mechanische Bewegung erzeugen, Lautsprecher, die elektrische Signale in Schall umwandeln, sowie Leuchtdioden (LEDs), die durch elektrische Ansteuerung Licht aussenden. Aktoren spielen eine entscheidende Rolle in automatisierten Systemen, da sie digitale Steuerbefehle in reale Vorgänge umsetzen.
-
-Ein funktionierendes Zusammenspiel zwischen Sensoren und Aktoren ist Voraussetzung dafür, dass Systeme selbstständig und zielgerichtet arbeiten können. Nur wenn Sensordaten korrekt ausgewertet werden, können Aktoren die passenden Aktionen ausführen.
-
-[@Sensorik-und-Aktorik-StudySmarter]
-
-
-### Wie Sensoren und Aktoren Zusammenarbeiten
-
-Das Zusammenwirken von Sensoren und Aktoren erfolgt meist in einem wiederkehrenden Ablauf. Zunächst erfassen Sensoren Daten aus der Umgebung. Diese Informationen werden anschließend verarbeitet und ausgewertet, um eine Entscheidung zu treffen. Auf Basis dieser Entscheidung wird schließlich ein Aktor angesteuert, der eine entsprechende Aktion ausführt.
-
-Ein einfaches Beispiel für diesen Ablauf ist ein automatisches Bewässerungssystem. Ein Feuchtigkeitssensor misst den Feuchtigkeitsgehalt des Bodens. Sinkt dieser unter einen festgelegten Wert, wird ein Signal ausgelöst. Daraufhin öffnet ein elektronisch gesteuertes Ventil und startet die Bewässerung.
-
-Damit solche Systeme zuverlässig funktionieren, ist eine sorgfältige Programmierung und Abstimmung der Sensoren und Aktoren notwendig. Nur durch genaue Messungen und präzise Steuerung können automatisierte Systeme korrekt und effizient auf Veränderungen ihrer Umgebung reagieren.
-
-[@Sensorik-und-Aktorik-StudySmarter]
-
 
 ## Praktische Arbeit
 

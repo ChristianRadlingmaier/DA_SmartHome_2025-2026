@@ -455,16 +455,14 @@ Teil 2:
 Bei diesem Teil Jedoch hat das Filament nicht mehr gereicht und nach dem wechsel der Rolle hat der Drucker begonnen um etwa 5mm versetzt weiterzudrucken. Dieser Fehler konnte auch nicht behoben werden und somit mussten wir wieder von vorne beginnen.
 
 ### Nachbearbeitung der gedruckten Bauteile
-Nach dem Druck fiel auf, dass einige Dübel oder Wände nicht vollständig glatt waren. Außerdem traten bei manchen Teilen Verformungen der Böden auf, die vermutlich durch die Luftfeuchtigkeit verursacht wurden. Diese Unebenheiten hatten jedoch nur geringe Auswirkung auf das Teil und stellten keine zukünftigen Probleme dar. Diese Vervormungen wurden mithilfe von schleifpapier etwas abgeschliffen und verschönert.
 
+Nach dem Druck fiel auf, dass einige Dübel oder Wände nicht vollständig glatt waren. Außerdem traten bei manchen Teilen Verformungen der Böden auf, die vermutlich durch die Luftfeuchtigkeit verursacht wurden. Diese Unebenheiten hatten jedoch nur geringe Auswirkung auf das Teil und stellten keine zukünftigen Probleme dar. Diese Vervormungen wurden mithilfe von schleifpapier etwas abgeschliffen und verschönert.
 
 ## Aufbau der Grundplatte und des Modellhauses
 
-### Aufbau und Gestaltung der Grundplatte
-
-Die Grundplatte, auf der das Haus und alle weiteren Komponenten platziert werden, besteht aus einer 70 cm langen, 70 cm breiten und 2 cm dicken Holzplatte. Darauf wurde ein Rahmen montiert, der exakt dem Umriss des Hauses entspricht, jedoch leicht versetzt angebracht wurde, um auf einer Seite mehr Platz für den Garten zu schaffen. An einer Seite des Rahmens wurde ein Scharnier befestigt, an dem das Haus montiert wird. Dadurch lässt es sich kippen, um einen leichteren Zugang zur darunterliegenden Elektronik zu ermöglichen. Zusätzlich wurde für die Terrasse eine weitere kleinere Holzplatte auf der Höhe des Hausbodens angebracht, um die Pflasterung mithilfe von Stickern darzustellen.
-
 ![Haus](img/bilder-ausarbeitung-Beichtbuchner/FertigesHaus/Haus.png)
+
+Die Grundplatte, auf der das Haus und alle weiteren Komponenten platziert wird, besteht aus einer 70 cm langen, 70 cm breiten und 2 cm dicken Holzplatte. Darauf wurde ein Rahmen montiert, der exakt dem Umriss des Hauses entspricht, jedoch leicht versetzt angebracht wurde, um auf einer Seite mehr Platz für den Garten zu schaffen. An der gegenüberliegenden Seite des Rahmens wurde ein Scharnier befestigt, an dem das Haus montiert wurde. Dadurch lässt es sich kippen, um einen leichteren Zugang zur darunterliegenden Elektronik zu ermöglichen. Zusätzlich wurde für die Terrasse eine weitere kleinere Holzplatte auf der Höhe des Hausbodens angebracht, um die Pflasterung mithilfe von Stickern darzustellen. 
 
 ## Elektronischer Aufbau und Verkabelung
 
@@ -481,7 +479,6 @@ Der Arduino wurde unterhalb des Hauses auf der Grundplatte befestigt. Durch die 
 Die einzelnen Lötstellen zwischen Kabeln, LEDs und Vorwiderständen wurden nach dem Verlöten sorgfältig isoliert. Hierfür kamen sowohl Schrumpfschläuche als auch Isolierband zum Einsatz. Durch das Abdecken der freiliegenden Kontaktstellen wird verhindert, dass leitende Teile unbeabsichtigt miteinander in Berührung kommen. Auf diese Weise können Kurzschlüsse sowie ungewollte elektrische Verbindungen zwischen einzelnen Leitungen zuverlässig vermieden werden. Zudem trägt die Isolierung zur mechanischen Stabilität der Verbindungsstellen bei und erhöht die Betriebssicherheit der gesamten Schaltung.
 
 ![LED](img/bilder-ausarbeitung-Beichtbuchner/FertigesHaus/LED.png)
-
 
 ## Inbetriebnahme und Tests
 

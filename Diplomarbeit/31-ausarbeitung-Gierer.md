@@ -116,6 +116,7 @@ Das System kann in drei logisch getrennte Ebenen aufgeteilt werden:
 1. **Feldebene (Arduino):** Direkte Anbindung von Sensorik und Aktorik.
 2. **Verarbeitungsebene (Node-RED + MQTT):** Datenfluss, Protokollbrücke und Logikaufbereitung.
 3. **Managementebene (Home Assistant):** Visualisierung, Automationen und Bedienung.
+4. ![DataFlow](img/bilder-Gierer/dataflow-gierer.png)
 
 Diese Trennung erhöht die Wartbarkeit, weil Änderungen auf einer Ebene nicht automatisch alle anderen Ebenen brechen.
 
@@ -559,7 +560,7 @@ Eine mögliche Erweiterung ist die Einbindung von Sprachsteuerung, z. B. über H
 
 Die bestehende Topic- und Entitätsstruktur kann auf weitere Räume erweitert werden, etwa:
 
-- `haus/licht/kche/set`
+- `haus/licht/küche/set`
 - `haus/licht/schlafzimmer/set`
 - `haus/sensor/flur/bewegung`
 

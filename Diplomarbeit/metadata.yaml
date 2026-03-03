@@ -28,6 +28,9 @@ da-author:
   nachname: Beichtbuchner
   klasse: 5AHWIN
   thema: Modellierung und Verkappelung des Modelhauses
+  ki-tools:
+  - name: ChatGPT-5.1
+    zweck: Rechtschreibkorrektur und Formulierungshilfe
 
 da-betreuer:
 - paraffe: Lech

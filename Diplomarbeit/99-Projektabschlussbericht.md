@@ -4,24 +4,24 @@
 ### Erfolgsmessung
 
 #### Erreichung Leistungs-/Qualitätsziele
-Hier beschreibe sie ob Sie das ursprünglich vereinbarte Ziel erreicht haben oder nicht. Falls es zu irgendwelchen Abweichungen gekommen ist dann beschreiben Sie warum das so war und was Sie dagegen unternommen haben.
+Hier beschreiben Sie, ob Sie das ursprünglich vereinbarte Ziel erreicht haben oder nicht. Falls es zu Abweichungen gekommen ist, beschreiben Sie, warum das so war und was Sie dagegen unternommen haben.
 
 #### Erreichung Terminziele
-Hier dokumentieren Sie ob Sie Ihre gesteckten Termine für die Meilensteine einhalten konnten. Falls es zu verzügen gekommen ist argumentieren sie hier warum das so war.
+Hier dokumentieren Sie, ob Sie Ihre gesteckten Termine für die Meilensteine einhalten konnten. Falls es zu Verzögerungen gekommen ist, argumentieren Sie hier, warum das so war.
 
 #### Erreichung Kosten-/Aufwandsziele
-Hier dokumentieren Sie ob Sie Ihr eingangs geplantes Budget einhalten konnten oder nicht. Wenn nicht geben Sie hier bitte eine Begümdung dafür an.
+Hier dokumentieren Sie, ob Sie Ihr eingangs geplantes Budget einhalten konnten oder nicht. Wenn nicht, geben Sie hier bitte eine Begründung dafür an.
 
-### Refelxion / Lessons Learned
+### Reflexion / Lessons Learned
 
 #### Teamarbeit 
-Hier dokumentieren sie Ihre Erkenntnisse bezüglich der Teamarbeit in Ihrem Projekt. Was ist gut gelaufen und was schlecht ?
+Hier dokumentieren Sie Ihre Erkenntnisse bezüglich der Teamarbeit in Ihrem Projekt. Was ist gut gelaufen und was schlecht?
 
 #### Projektmanagement
-Hier dokumentieren sie Ihre Erkenntnisse bezüglich des Projektmanagements. 
+Hier dokumentieren Sie Ihre Erkenntnisse bezüglich des Projektmanagements.
 
 #### Sonstige Lernerfahrungen
-Hier dokuentieren was sie im Bezug auf das Projekt sonst noch so gelernt haben
+Hier dokumentieren Sie, was Sie im Bezug auf das Projekt sonst noch gelernt haben.
 
 ### Nachhaltigkeitsanalyse
 

@@ -6,7 +6,7 @@
 
 ### Projektauftrag
 
-Im Rahmen unserer Diplomarbeit entwickeln wir ein modellbasiertes SmartHome-System mit verschiedenen Sensoren und Aktoren. Diese werden über ein zentrales System mit FHEM und Home Assistant verwaltet und gesteuert. Das Projekt befasst sich mit der Automatisierung von Haushaltsprozessen auf einem Miniaturmodellhaus und bietet zusätzlich eine webbasierte Bedienoberfläche ueber Portainer und Node-RED. Ziel ist es, ein skalierbares, offenes System zu demonstrieren, das mit Protokollen wie MQTT kommuniziert.
+Im Rahmen unserer Diplomarbeit entwickeln wir ein modellbasiertes SmartHome-System mit verschiedenen Sensoren und Aktoren. Diese werden über ein zentrales System mit FHEM und Home Assistant verwaltet und gesteuert. Das Projekt befasst sich mit der Automatisierung von Haushaltsprozessen auf einem Miniaturmodellhaus und bietet zusätzlich eine webbasierte Bedienoberfläche über Portainer und Node-RED. Ziel ist es, ein skalierbares, offenes System zu demonstrieren, das mit Protokollen wie MQTT kommuniziert.
 
 ### Projektziele
 
@@ -22,13 +22,13 @@ Im Rahmen unserer Diplomarbeit entwickeln wir ein modellbasiertes SmartHome-Syst
 
 - Keine Entwicklung eigener Sensorhardware (nur Integration vorhandener Komponenten).
 - Keine native App-Entwicklung.
-- Kein Live-Zugriff von ausserhalb ohne VPN oder Portweiterleitung.
+- Kein Live-Zugriff von außerhalb ohne VPN oder Portweiterleitung.
 
 ### Projektnutzen
 
 - Demonstration moderner Automatisierung im Kleinformat.
 - Praxiserfahrung im Umgang mit Containerisierung, MQTT und Home Assistant.
-- Anwendbares Wissen für spätere berufliche Aufgaben oder grössere Hausautomatisierungen.
+- Anwendbares Wissen für spätere berufliche Aufgaben oder größere Hausautomatisierungen.
 - Beitrag zum praxisnahen Unterricht an der HTL Leoben.
 
 ### Projektauftraggeber/in
@@ -65,7 +65,7 @@ Gesamtkosten: 269.00 \euro{}
 
 ### Projektrisiken
 
-| Risiko                     | Wahrscheinlichkeit | Auswirkungen                         | Massnahmen                                |
+| Risiko                     | Wahrscheinlichkeit | Auswirkungen                         | Maßnahmen                                |
 |---------------------------|--------------------|--------------------------------------|-------------------------------------------|
 | Hardware beschädigt      | Mittel (30%)       | Ersatz notwendig, Verzögerung möglich | Ersatzgeräte vorrätig halten         |
 | WLAN-Probleme             | Niedrig (10%)      | Keine Kommunikation zwischen Modulen | Kabelgebundene Option vorbereiten        |
@@ -97,7 +97,7 @@ Gesamtkosten: 269.00 \euro{}
 ### Vorgehen bei Änderungen
 
 - Änderungen werden im GitHub-Repo dokumentiert (Changelog.md).
-- Bei grösseren Änderungen (z. B. Sensorwechsel) wird der Betreuer informiert.
+- Bei größeren Änderungen (z. B. Sensorwechsel) wird der Betreuer informiert.
 - Der Projektleiter entscheidet in Absprache mit Team und Betreuer über die Annahme.
 
 ## Meilensteine
@@ -106,7 +106,7 @@ Gesamtkosten: 269.00 \euro{}
 
 - Projektauftrag bestätigt
 - Projekthandbuch erstellt und abgestimmt
-- Zeitplan gemäss DA-Vorgaben festgelegt
+- Zeitplan gemäß DA-Vorgaben festgelegt
 - GitHub-Repository und Grundstruktur eingerichtet
 
 ### 2025-10-10 - Aufbau SmartHome-Modellhaus abgeschlossen

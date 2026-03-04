@@ -298,7 +298,18 @@ Das Muster ist bewusst einfach, aber präzise genug, um die Trennung zwischen Se
 
 Die Visualisierung erfolgt über Dashboard-Karten wie Entities-, Button- und Verlaufskarten. Damit sind Schaltzustände, Messwerttrends und manuelle Eingriffe auf einer Oberfläche verfügbar. [@ha_dashboards_intro] [@ha_cards]
 
+
 ### Sicherheit des Systems
+
+Für den Gesamtbetrieb ist nicht nur die Funktion, sondern auch die Absicherung der Kommunikations- und Bedienebene entscheidend. Im vorliegenden Aufbau betrifft das vor allem den MQTT-Broker, Node-RED als Logikschicht und Home Assistant als zentrale Plattform. Ziel ist es, unbefugte Zugriffe zu verhindern, Zustandsdaten konsistent zu halten und Ausfälle möglichst schnell erkennbar zu machen. [@oasis_mqtt_v5_2019] [@ha_installation]
+
+Beim Einsatz von MQTT sollte der Broker nicht anonym erreichbar sein. Sinnvoll sind eigene Benutzerkonten pro Dienst (z. B. Home Assistant und Node-RED), starke Passwörter, eine klare ACL-Regelung pro Topic-Bereich sowie verschlüsselte Verbindungen (TLS), sobald Daten nicht ausschließlich in einem isolierten Testnetz laufen. Dadurch wird vermieden, dass beliebige Clients Schaltbefehle publizieren oder Statusdaten manipulieren. [@oasis_mqtt_v5_2019] [@ha_mqtt_integration]
+
+Node-RED benötigt insbesondere Schutz am Editor-Zugang, da dort die gesamte Verarbeitungslogik verändert werden kann. Deshalb sind Passwortschutz für den Editor, ein restriktiver Netzwerkzugriff (nur internes Netz oder VPN) sowie regelmäßige Updates der installierten Nodes wesentlich. Zusätzlich sollten Flows versioniert bzw. gesichert werden, damit nach Fehlkonfigurationen oder Ausfällen ein definierter Zustand schnell wiederhergestellt werden kann. [@nodered_homepage]
+
+In Home Assistant steht die Zugriffskontrolle der Benutzerkonten im Vordergrund. Bewährte Maßnahmen sind getrennte Benutzer statt gemeinsamer Logins, starke Passwörter, aktivierte Mehrfaktor-Authentifizierung bei Fernzugriff sowie eine saubere Trennung von Konfigurationsdaten und Geheimnissen (z. B. Passwörter/Tokens nicht im Klartext in Automationen). Ergänzend erhöhen regelmäßige Backups und zeitnahe Sicherheitsupdates die Betriebssicherheit deutlich. [@ha_installation] [@ha_automation]
+
+In Summe ergibt sich ein mehrschichtiges Sicherheitskonzept: abgesicherter Nachrichtentransport über MQTT, kontrollierbare Logikänderungen in Node-RED und rollenbasierter Zugriff in Home Assistant. Damit bleibt das System auch bei wachsendem Umfang wartbar und widerstandsfähig.
 
 ## Praktische Umsetzung
 

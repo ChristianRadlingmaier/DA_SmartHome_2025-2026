@@ -500,3 +500,14 @@ In deiner Diplomarbeit kannst du zusätzlich zeigen, dass FHEM die LED auch logi
 `Hier zeigt sich der Vorteil von FHEM:`
 `Die Logik kann direkt in Perl erweitert werden.`
 
+### Ausblick
+
+Im Rahmen dieser Diplomarbeit wurde ein funktionales Smart-Home-System entwickelt und umgesetzt. Dabei wurde gezeigt, wie ein Raspberry Pi als zentrale Steuereinheit eingesetzt werden kann, um verschiedene Komponenten wie Beleuchtung, Heizungssteuerung und eine Wetterstation miteinander zu vernetzen. Durch die Verwendung von FHEM, MQTT sowie eines Arduino-Mikrocontrollers konnte eine flexible und erweiterbare Architektur geschaffen werden, die eine zuverlässige Kommunikation zwischen Sensoren, Aktoren und der zentralen Steuerung ermöglicht.
+
+Das entwickelte System stellt eine solide Grundlage für weitere Erweiterungen dar. Zukünftig könnten zusätzliche Sensoren und Aktoren integriert werden, um den Funktionsumfang des Systems weiter zu erhöhen. Beispielsweise wäre die Einbindung von Bewegungsmeldern, Tür- und Fenstersensoren oder Rauchmeldern denkbar, um Sicherheitsfunktionen im Smart Home zu realisieren.
+
+Ein weiterer möglicher Ausbau besteht in der Integration von Sprachsteuerungssystemen oder mobilen Anwendungen, sodass das Smart-Home-System komfortabel über Smartphones oder Sprachassistenten gesteuert werden kann. Ebenso könnten automatisierte Szenarien implementiert werden, bei denen verschiedene Geräte abhängig von Uhrzeit, Wetterdaten oder Anwesenheit der Bewohner automatisch gesteuert werden.
+
+Auch im Bereich der Energieeffizienz bietet das System weiteres Entwicklungspotenzial. Durch die intelligente Auswertung von Sensordaten könnten Heizungs- und Beleuchtungssysteme noch effizienter geregelt werden, wodurch Energie eingespart und der Wohnkomfort gleichzeitig erhöht werden kann.
+
+Zusammenfassend zeigt diese Arbeit, dass bereits mit kostengünstiger Hardware und frei verfügbarer Software leistungsfähige Smart-Home-Lösungen realisiert werden können. Die im Projekt entwickelte Architektur bietet eine gute Basis für zukünftige Erweiterungen und Weiterentwicklungen im Bereich der Gebäudeautomation.

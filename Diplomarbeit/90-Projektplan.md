@@ -74,6 +74,8 @@ Gesamtkosten: 269.00 \euro{}
 
 ## Projektorganisation
 
+![Projektorganisation](img/Projektplan/Projektorganisation.png){ width=100% }
+
 ### Projektbeteiligte
 
 | Vorname   | Nachname       | Organisation | Kontaktinfo             |

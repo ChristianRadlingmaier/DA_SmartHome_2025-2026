@@ -116,7 +116,8 @@ Das System kann in drei logisch getrennte Ebenen aufgeteilt werden:
 1. **Feldebene (Arduino):** Direkte Anbindung von Sensorik und Aktorik.
 2. **Verarbeitungsebene (Node-RED + MQTT):** Datenfluss, Protokollbrücke und Logikaufbereitung.
 3. **Managementebene (Home Assistant):** Visualisierung, Automationen und Bedienung.
-4. ![DataFlow](img/bilder-Gierer/dataflow-gierer.png)
+
+![Dataflow des Systems](img/bilder-Gierer/dataflow-gierer.png){ width=80% }
 
 Diese Trennung erhöht die Wartbarkeit, weil Änderungen auf einer Ebene nicht automatisch alle anderen Ebenen brechen.
 
@@ -133,6 +134,10 @@ Damit ist fachlich sauber getrennt:
 - **Benutzerinteraktion und Regelwerk** auf Plattform-Ebene.
 
 Technisch wichtig: In dieser Architektur ist MQTT nicht der direkte Transportweg vom Arduino Uno zu Home Assistant. Der Arduino ist primär seriell via Firmata angebunden; MQTT wird zwischen den Diensten auf dem Raspberry Pi genutzt. [@firmata_arduino_github] [@ha_mqtt_integration]
+
+### Systemanwendungsfall
+
+![Systemanwendungsfalldiagramm](img/bilder-Gierer/Systemanwendugsfalldiagramm.png){ width=80% }
 
 ## Theoretische Grundlagen
 
@@ -357,6 +362,8 @@ Der Vorteil dieser festen Reihenfolge ist, dass Fehlerquellen früh sichtbar wer
 
 ### Docker-basierter Betrieb
 
+![Deployment-Diagramm](img/bilder-Gierer/Deployment-Diagramm.png){ width=80% }
+
 ```yaml
 version: "3.9"
 
@@ -404,6 +411,8 @@ mkdir -p homeassistant
 mkdir -p mosquitto/config mosquitto/data mosquitto/log
 mkdir -p portainer
 ```
+![Ordnerstruktur](img/bilder-Gierer/Ordnerstruktur.png){ width=80% }
+
 
 #### Docker und Compose auf Raspberry Pi OS
 

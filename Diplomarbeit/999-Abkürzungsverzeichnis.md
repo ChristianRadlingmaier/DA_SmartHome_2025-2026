@@ -70,4 +70,4 @@
 | W | Watt |
 | WLAN | Wireless Local Area Network |
 | z.B. | zum Beispiel |
-
+|PWM| Pulse Width Modulation|

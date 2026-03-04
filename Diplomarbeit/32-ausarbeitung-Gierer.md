@@ -156,8 +156,6 @@ Für diese Arbeit bedeutet das konkret:
 
 Sensorik umfasst die strukturierte Erfassung physischer Zustände. Im Modellhaus sind das insbesondere Helligkeit, Bewegung, Temperatur und Türstatus. Jeder Sensortyp liefert dabei eine andere Datencharakteristik:
 
-- diskrete Ereignisse (z. B. Bewegung erkannt),
-- quasi-binäre Zustände (z. B. Tür offen/geschlossen),
 - kontinuierliche Werte (z. B. Temperatur).
 
 Diese Unterschiede sind für die Auswertung relevant, da Triggerlogik und Entprellung je nach Signaltyp unterschiedlich gestaltet werden müssen.
@@ -278,7 +276,9 @@ Diese Punkte sind häufige Fehlerquellen in gemischten Hardware-/Software-Setups
 
 ## Home Assistant als zentrale Steuereinheit
 
-Home Assistant bildet die Bedien- und Automationsoberfläche des Systems. Entitäten, Trigger und Dashboards werden dort zusammengeführt. [@ha_installation] [@ha_automation]
+Home Assistant dient als zentrale Bedien- und Automationsplattform des gesamten Smart-Home-Systems.
+In dieser Umgebung werden alle relevanten Komponenten zusammengeführt: die einzelnen Entitäten (z. B. Sensoren, Aktoren und Geräte), auslösende Bedingungen (Trigger) sowie die Visualisierung über Dashboards. Dadurch können Zustände und Messwerte in Echtzeit überwacht, Geräte manuell gesteuert und automatisierte Abläufe zentral konfiguriert werden.
+Die Bündelung dieser Funktionen in einer Oberfläche erhöht die Übersichtlichkeit, vereinfacht die Verwaltung des Systems und ermöglicht eine benutzerfreundliche Bedienung im Alltag. [@ha_installation] [@ha_automation]
 
 ### MQTT-Integration
 
@@ -288,7 +288,7 @@ Die Einbindung kann manuell oder über MQTT Discovery erfolgen. Discovery reduzi
 
 Automationen folgen dem Schema Trigger -> Bedingungen -> Aktionen. Ein für das Modellhaus typisches Muster ist:
 
-- Trigger: Bewegung erkannt und Helligkeit unter Schwellwert,
+- Trigger: Sonne geht auf,
 - Bedingung: Automatikmodus aktiv,
 - Aktion: Licht einschalten und nach definierter Zeit ausschalten.
 
@@ -297,6 +297,8 @@ Das Muster ist bewusst einfach, aber präzise genug, um die Trennung zwischen Se
 ### Dashboards und Visualisierung
 
 Die Visualisierung erfolgt über Dashboard-Karten wie Entities-, Button- und Verlaufskarten. Damit sind Schaltzustände, Messwerttrends und manuelle Eingriffe auf einer Oberfläche verfügbar. [@ha_dashboards_intro] [@ha_cards]
+
+### Sicherheit des Systems
 
 ## Praktische Umsetzung
 

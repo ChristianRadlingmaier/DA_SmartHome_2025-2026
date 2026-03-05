@@ -453,6 +453,229 @@ Die tägliche Bedienung erfolgt über Home-Assistant-Dashboards. Node-RED arbeit
 Der Zugriff ist über Browser auf PC, Tablet und Smartphone möglich. Schaltbefehle werden in der Regel per Button ausgelöst, Zustandsänderungen erscheinen als direkte Rückmeldung in den Karten.
 
 
+## Integration der Wetterstation (einfach nachbaubar)
+
+Dieser Abschnitt beschreibt die Umsetzung so, dass auch Personen ohne Vorkenntnisse mit Raspberry Pi und Arduino sie Schritt für Schritt nachbauen können.
+
+### Ziel
+
+Die Wetterstation auf der HTL-Platine misst:
+
+- Temperatur über NTC (analog)
+- Helligkeit über LDR (analog)
+
+Die Daten werden über diesen Weg verarbeitet:
+
+Arduino Wetterstation -> Node-RED (Serial) -> MQTT -> Home Assistant
+
+Parallel läuft ein zweiter Arduino mit StandardFirmata für die LED-Steuerung.
+
+### Voraussetzungen
+
+- Raspberry Pi mit laufendem Home Assistant, MQTT-Broker und Node-RED
+- Zwei Arduinos (einer für Wetterstation, einer für Firmata/LED)
+- HTL-Sensor-Platine (NTC + LDR)
+- USB-Kabel für beide Arduinos
+
+![Ordnerstruktur](img/bilder-Gierer/WetterStationDatenfluss.png){ width=80% }
+
+### Schritt 1: Wetterstations-Arduino programmieren
+
+In der Arduino IDE:
+
+1. `Werkzeuge -> Board -> Arduino Uno`
+2. `Werkzeuge -> Port -> <Wetterstations-Arduino>`
+3. Folgenden Sketch hochladen:
+
+```cpp
+#include <math.h>
+
+const int PIN_LDR = A0;
+const int PIN_NTC = A1;
+
+const float SERIES_RESISTOR = 10000.0;
+const float NTC_NOMINAL = 10000.0;
+const float BETA = 3950.0;
+const float T0_KELVIN = 298.15;
+
+void setup() {
+  Serial.begin(9600);
+  delay(500);
+  Serial.println("timestamp_ms,temperature_c,humidity_pct,light_raw,light_pct");
+}
+
+float ntcToCelsius(int raw) {
+  if (raw <= 0) raw = 1;
+  if (raw >= 1023) raw = 1022;
+
+  float rNtc = SERIES_RESISTOR * (1023.0 / raw - 1.0);
+  float invT = (1.0 / T0_KELVIN) + (1.0 / BETA) * log(rNtc / NTC_NOMINAL);
+  float tempK = 1.0 / invT;
+  return tempK - 273.15;
+}
+
+void loop() {
+  int lightRaw = analogRead(PIN_LDR);
+  int ntcRaw = analogRead(PIN_NTC);
+
+  float temperatureC = ntcToCelsius(ntcRaw);
+  float humidityPct = 0.0; // Kein Feuchtesensor auf der HTL-Platine
+
+  // In dieser Schaltung: niedriger Rohwert = heller
+  float lightPct = (1023.0 - lightRaw) / 1023.0 * 100.0;
+  if (lightPct < 0) lightPct = 0;
+  if (lightPct > 100) lightPct = 100;
+
+  Serial.print(millis());
+  Serial.print(",");
+  Serial.print(temperatureC, 2);
+  Serial.print(",");
+  Serial.print(humidityPct, 2);
+  Serial.print(",");
+  Serial.print(lightRaw);
+  Serial.print(",");
+  Serial.println(lightPct, 2);
+
+  delay(2000);
+}
+```
+
+Hinweis: Auf der HTL-Platine ist kein DHT22 vorhanden. DHT-Code liefert deshalb keine gültigen Werte.
+
+### Schritt 2: LED-Arduino mit Firmata programmieren
+
+In der Arduino IDE:
+
+`Datei -> Beispiele -> Firmata -> StandardFirmata`
+
+Dann den Sketch auf den zweiten Arduino (LED-Steuerung) hochladen.
+
+### Schritt 3: Stabile USB-Namen mit udev einrichten
+
+Da sich `/dev/ttyUSB0` und `/dev/ttyUSB1` nach Neustarts vertauschen können, werden feste Symlinks erstellt:
+
+- `/dev/arduino_weather`
+- `/dev/arduino_firmata`
+
+USB-Pfade prüfen:
+
+```bash
+udevadm info -q path -n /dev/ttyUSB0
+udevadm info -q path -n /dev/ttyUSB1
+```
+
+Regeldatei erstellen:
+
+```bash
+sudo nano /etc/udev/rules.d/99-arduino-fixed.rules
+```
+
+Inhalt (Pfade bei Bedarf anpassen):
+
+```rules
+# Wetterstation (Beispiel: USB-Pfad 1-1.4)
+SUBSYSTEM=="tty", KERNEL=="ttyUSB*", KERNELS=="1-1.4", SYMLINK+="arduino_weather"
+
+# Firmata-Arduino (Beispiel: USB-Pfad 1-1.2)
+SUBSYSTEM=="tty", KERNEL=="ttyUSB*", KERNELS=="1-1.2", SYMLINK+="arduino_firmata"
+```
+
+Regeln aktivieren:
+
+```bash
+sudo udevadm control --reload-rules
+sudo udevadm trigger
+ls -l /dev/arduino_*
+```
+
+### Schritt 4: Node-RED-Flow erstellen (Serial -> JSON -> MQTT)
+
+In Node-RED (`http://<raspberry-ip>:1880`) drei Nodes verbinden:
+
+1. `serial in`
+2. `function`
+3. `mqtt out`
+
+Einstellungen:
+
+- `serial in`: Port `/dev/arduino_weather`, 9600 Baud, Split `\n`
+- `mqtt out`: Topic `weatherstation/state`, Broker `localhost`
+
+Code für die `function`-Node:
+
+```javascript
+const line = (msg.payload || "").toString().trim();
+if (!line || line.startsWith("timestamp_ms")) return null;
+
+const p = line.split(",");
+if (p.length < 5) return null;
+
+const data = {
+  timestamp_ms: Number(p[0]),
+  temperature_c: Number(p[1]),
+  humidity_pct: Number(p[2]),
+  light_raw: Number(p[3]),
+  light_pct: Number(p[4])
+};
+
+if (Object.values(data).some(v => Number.isNaN(v))) return null;
+msg.payload = data;
+return msg;
+```
+
+Danach in Node-RED auf `Deploy` klicken.
+
+### Schritt 5: MQTT testen
+
+```bash
+mosquitto_sub -h localhost -t weatherstation/state -v
+```
+
+Wenn `mosquitto_sub` am Host nicht installiert ist:
+
+```bash
+docker exec -it mqtt mosquitto_sub -h localhost -t weatherstation/state -v
+```
+
+Wenn laufend JSON-Nachrichten ankommen, funktioniert der Datenfluss.
+
+### Schritt 6: Sensoren in Home Assistant einbinden
+
+In `configuration.yaml`:
+
+```yaml
+mqtt:
+  sensor:
+    - name: Wetterstation Temperatur
+      state_topic: "weatherstation/state"
+      unit_of_measurement: "°C"
+      value_template: "{{ value_json.temperature_c }}"
+    - name: Wetterstation Helligkeit
+      state_topic: "weatherstation/state"
+      unit_of_measurement: "%"
+      value_template: "{{ value_json.light_pct }}"
+```
+
+Home Assistant neu starten. Danach sind beide Sensoren im Dashboard verfügbar.
+
+### Schritt 7: LED-Steuerung parallel betreiben
+
+Für die LED-Steuerung verwendet Node-RED den zweiten Arduino auf `/dev/arduino_firmata`.
+Damit sind Wetterstation und LED-Logik sauber getrennt.
+
+### Typische Fehler und Lösung
+
+- `serial port busy`:
+  Nur Node-RED darf den Wetterstations-Port öffnen.
+- `null`/`nan` bei Temperatur:
+  Falscher Sketch auf dem Wetterstations-Arduino.
+- Helligkeit wirkt umgekehrt:
+  Invertierte Berechnung nutzen (`1023 - lightRaw`).
+
+### Ergebnis
+
+Die Wetterstation liefert stabile Live-Werte über MQTT in Home Assistant. Durch die udev-Symlinks bleibt die Lösung auch nach Neustarts und Umstecken zuverlässig.
+
 ## Test und Validierung im bisherigen Projektstand
 
 Die bisherige Validierung orientiert sich an den definierten Use-Cases und den vorhandenen Komponenten. Dabei wurde der Fokus auf funktionale Korrektheit und Kommunikationsstabilität gelegt.
@@ -542,6 +765,7 @@ Für die weitere Arbeit ist es sinnvoll, bei jeder Erweiterung denselben Ablauf 
 4. Visualisierung und Testfall dokumentieren.
 
 So bleibt das System auch bei wachsendem Umfang technisch konsistent und dokumentierbar.
+
 
 
 

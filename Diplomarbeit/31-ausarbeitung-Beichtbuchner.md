@@ -4,13 +4,13 @@
 ## Theorie
 
 ### Einordnung des Aufgabenbereichs
-Mein Teil der Diplomarbeit ist es ein Haus zu modellieren um dieses anschließend mit Sensoren und Aktoren auszustatten. Der Plan ist es ein bereits bestehendes Haus nachzubauen, um es so Real wie möglich zu halten. Das Haus wird mithilfe von Online downloadbaren Möbel eingerichtet und der Garten wird auf die gleiche weise angedeutet und dekoriert. Vorgesehene ansteuerbare Elemente sind LEDs sowie auch eine Wetterstation welche wir im Unterricht schon gebaut und Programmiert haben. 
+Mein Teil der Diplomarbeit ist es ein Haus zu modellieren um dieses anschließend mit Sensoren und Aktoren auszustatten. Der Plan ist es ein bereits bestehendes Haus nachzubauen, um es so Real wie möglich zu halten. Das Haus wird mithilfe von Online downloadbaren Möbel eingerichtet und der Garten wird auf die gleiche weise angedeutet und dekoriert. Vorgesehene ansteuerbare Elemente sind LEDs sowie auch eine Wetterstation welche wir im Unterricht schon gebaut und programmiert haben. 
 
 ## CAD-Programme
 
 ### CAD-Programme im Überblick
 
-CAD-Programme (Computer-Aided-Design) sind spezielle Softwareprogramme, die zur Erstellung und Bearbeitung von digitalen Zeichnungen und Modellen verwendet werden. Sie helfen dabei, technische Entwürfe übersichtlich und präzise darzustellen und dienen als wichtige Grundlage für die weitere Planung und Umsetzung.
+CAD-Programme sind spezielle Softwareprogramme, die zur Erstellung und Bearbeitung von digitalen Zeichnungen und Modellen verwendet werden. Sie helfen dabei, technische Entwürfe übersichtlich und präzise darzustellen und dienen als wichtige Grundlage für die weitere Planung und Umsetzung.
 
 >CAD-Programme werden in der Architektur, im Ingenieurwesen und im Baugewerbe eingesetzt, um Projekte zu entwerfen und Konstruktionsunterlagen, wie z. B. Konstruktions- und Fertigungszeichnungen, zu erstellen.[@CAD-Programme-ALLPLAN]
 
@@ -269,7 +269,9 @@ Der Unterschied zwischen diesen zwei Kategorien ist:
 
 ### Spannungsversorgung elektronischer Schaltungen
 
-Die Spannungsversorgung ist ein grundlegender Bestandteil elektronischer Schaltungen. Ihre Aufgabe besteht darin, eine vorhandene Energiequelle, wie beispielsweise Netzstrom oder eine Batterie, in eine für die jeweilige Schaltung geeignete und möglichst konstante Gleichspannung umzuwandeln. Viele elektronische Bauteile benötigen feste Versorgungsspannungen, etwa 5 V oder 12 V, um zuverlässig arbeiten zu können. Dabei muss die Spannungsversorgung Schwankungen der Eingangsspannung sowie Änderungen der Stromaufnahme ausgleichen, damit die Ausgangsspannung stabil bleibt. [@Spannungsquellen-ElectronicsTutorials]
+Die Spannungsversorgung ist ein grundlegender Bestandteil elektronischer Schaltungen. Ihre Aufgabe besteht darin, eine vorhandene Energiequelle, wie beispielsweise Netzstrom oder eine Batterie, in eine für die jeweilige Schaltung geeignete und möglichst konstante Gleichspannung umzuwandeln. Viele elektronische Bauteile benötigen feste Versorgungsspannungen, etwa 5 V oder 12 V, um zuverlässig arbeiten zu können. Dabei muss die Spannungsversorgung Schwankungen der Eingangsspannung sowie Änderungen der Stromaufnahme ausgleichen, damit die Ausgangsspannung stabil bleibt.
+
+[@Spannungsquellen-ElectronicsTutorials]
 
 ### Arten von Spannungsversorgungen
 
@@ -592,15 +594,23 @@ Die Grundplatte, auf der das Haus und alle weiteren Komponenten platziert wird, 
 ## Elektronischer Aufbau und Verkabelung
 
 ### Planung der elektrischen Verschaltung
+
 Zu Beginn wurde eine detaillierte Planung der elektrischen Verschaltung durchgeführt. Dabei wurde eine Übersicht über alle benötigten Komponenten erstellt. Hierzu zählen der Mikrocontroller, mehrere LEDs zur Simulation der Deckenbeleuchtung sowie die entsprechenden Verbindungskabel. Der Arduino wurde zentral unter dem Haus positioniert, um möglichst kurze Leitungswege zu gewährleisten. Für jede einzelne LED wurde ein separater digitaler Pin am Arduino vorgesehen. Dadurch ist es möglich, jede Lichtquelle unabhängig voneinander anzusteuern und gezielt zu schalten. Ein weiterer wichtiger Bestandteil der Planung war die Leitungsführung. Die Kabel verlaufen von der Unterseite des Hauses durch die zuvor konstruierten Kabelkanäle innerhalb der Wände bis hin zum Zwischendach. Diese strukturierte Kabelführung sorgt für Ordnung im Modell und verhindert lose oder sichtbare Leitungen im Innenraum.
 
+![Schaltplan](img/bilder-ausarbeitung-Beichtbuchner/FertigesHaus/Schaltplan.png)
+
 ### Einbau der LEDs
+
 Die LEDs wurden in die dafür vorgesehenen Löcher im Zwischendach eingesetzt. Die Positionierung erfolgte entsprechend der geplanten Raumaufteilung, sodass jede LED eine Deckenlampe simuliert. Anschließend begann die Verdrahtung der einzelnen LEDs. Zwischen der Anode und der jeweiligen Steuerleitung wurde ein Vorwiderstand eingebaut. Dieser dient dazu, den Strom zu begrenzen und die LEDs vor Beschädigung durch zu hohe Stromstärken zu schützen. Die Kathoden aller LEDs wurden jeweils in eine gemeinsame Klemme geführt. Dadurch konnte eine saubere und übersichtliche Zusammenführung der Masseleitungen hergestellt werden.
 
+![LED-Verkabelung](img/bilder-ausarbeitung-Beichtbuchner/FertigesHaus/LEDs-Verkabelung.png)
+
 ### Integration des Mikrocontrollers
+
 Der Arduino wurde unterhalb des Hauses auf der Grundplatte befestigt. Durch die erhöhte und klappbare Konstruktion des Modells bleibt der Mikrocontroller jederzeit zugänglich und kann bei Bedarf gewartet oder neu programmiert werden. Die digitalen Ausgangspins des Arduino wurden jeweils mit den Steuerleitungen der einzelnen LEDs verbunden, sodass jede LED separat angesteuert werden kann. Die zuvor zusammengeführten Masseleitungen wurden über ein einzelnes Kabel mit dem Ground-Pin des Arduino verbunden. Die Spannungsversorgung des Systems erfolgt zentral über den Mikrocontroller. Dadurch wird eine kompakte und strukturierte Anordnung der gesamten Elektronik gewährleistet.
 
 ### Sicherheitsmaßnahmen bei der Verkabelung
+
 Die einzelnen Lötstellen zwischen Kabeln, LEDs und Vorwiderständen wurden nach dem Verlöten sorgfältig isoliert. Hierfür kamen sowohl Schrumpfschläuche als auch Isolierband zum Einsatz. Durch das Abdecken der freiliegenden Kontaktstellen wird verhindert, dass leitende Teile unbeabsichtigt miteinander in Berührung kommen. Auf diese Weise können Kurzschlüsse sowie ungewollte elektrische Verbindungen zwischen einzelnen Leitungen zuverlässig vermieden werden. Zudem trägt die Isolierung zur mechanischen Stabilität der Verbindungsstellen bei und erhöht die Betriebssicherheit der gesamten Schaltung.
 
 ![LED](img/bilder-ausarbeitung-Beichtbuchner/FertigesHaus/LED.png)
@@ -608,10 +618,13 @@ Die einzelnen Lötstellen zwischen Kabeln, LEDs und Vorwiderständen wurden nach
 ## Inbetriebnahme und Tests
 
 ### Erstinbetriebnahme der Elektronik
+
 Nach Abschluss der vollständigen Verkabelung erfolgte die Erstinbetriebnahme der Elektronik. Dabei wurde das System erstmals mit Spannung versorgt und die grundlegende Funktionsfähigkeit überprüft. Ziel dieses Schrittes war es, festzustellen, ob alle Komponenten ordnungsgemäß angeschlossen sind und das Zusammenspiel zwischen Hardware und Software grundsätzlich funktioniert.
 
 ### Funktionstests der Beleuchtung
+
 Nun wurden sämtliche LEDs überprüft. Es wurden alle Lichtquellen gleichzeitig aktiviert, um die grundsätzliche Betriebsbereitschaft der Beleuchtung sicherzustellen. Darüber hinaus erfolgte eine Kontrolle der einzelnen Schaltungen. Dabei wurden die jeweiligen Ausgangspins gezielt angesteuert, um die Funktion jeder LED separat zu prüfen. So konnte sichergestellt werden, dass jede Lichtquelle korrekt mit dem vorgesehenen Pin verbunden ist und individuell gesteuert werden kann. Zusätzlich wurde die Steuerung durch den Mikrocontroller überprüft. Hierbei wurde kontrolliert, ob die programmierten Signale ordnungsgemäß ausgegeben werden und die LEDs entsprechend reagieren.
 
 ### Fehleranalyse und Optimierungen
+
 Es wurde festgestellt, dass zwei LEDs nicht leuchteten als alle eingeschaltet wurden. Bei einer LED lag ein Programmierfehler vor, wodurch der entsprechende Ausgangspin nicht korrekt angesteuert wurde. Dieser Fehler wurde durch eine Anpassung des Programmcodes behoben. Bei der zweiten LED wurden Anode und Kathode vertauscht angeschlossen, sodass kein Stromfluss möglich war. Nach Korrektur der Polung funktionierte auch diese LED einwandfrei. Im Zuge der Optimierung wurden sämtliche Anschlüsse nochmals systematisch überprüft. Dabei kontrollierte man Lötstellen, Steckverbindungen, Widerstände sowie die Isolierungen und die Kabelführung. Nach Abschluss dieser Maßnahmen konnte das System vollständig und fehlerfrei in Betrieb genommen werden.

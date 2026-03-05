@@ -118,11 +118,15 @@ Die Strukturierung komplexer CAD-Modelle ist ein wesentlicher Bestandteil einer 
 
 Ein häufig verwendeter Ansatz ist das sogenannte Top-Down-Design. Dabei wird zunächst eine übergeordnete Struktur, oft als „Skelettmodell“ bezeichnet, erstellt, welche die grundlegenden Abmessungen und Referenzen vorgibt. Einzelne Bauteile werden anschließend auf Basis dieses Skeletts modelliert. Änderungen an den zentralen Vorgaben wirken sich automatisch auf alle abhängigen Komponenten aus, wodurch sich dieser Ansatz besonders für flexible und anpassbare Konstruktionen eignet.
 
+>Der Top-Down-Modellierungsansatz kann großartige Ergebnisse beim Entwurf komplexer oder maßgeschneiderter Systeme liefern, die global geändert werden müssen. Unterhaltungselektronik„Z. B. passen Sie Unterkomponenten in ein Gehäuse, das normalerweise auf ästhetische Anziehungskraft ausgelegt ist. Ändert sich die Gehäuseform, müssen sich mit ihr auch die Teilkomponenten ändern. In einem solchen Fall bringt die globale Parameterkontrolle der Top-Down-Modellierung das Projekt voran, wobei das Risiko von Fehlern und Nacharbeiten geringer ist, wenn sich das Design ändert.[@Autodesk-Modeling]
+
 Im Gegensatz dazu steht das Bottom-Up-Design. Hier werden einzelne Bauteile unabhängig voneinander modelliert und anschließend zu einer Baugruppe zusammengefügt. Diese Vorgehensweise ist besonders sinnvoll, wenn standardisierte oder wiederverwendbare Teile eingesetzt werden. Änderungen an der Gesamtstruktur erfordern jedoch meist eine manuelle Anpassung der einzelnen Komponenten.
 
-Ergänzend dazu spielt die parametrische Modellierung eine zentrale Rolle bei der Strukturierung komplexer Modelle. Durch die Definition von Parametern, Beziehungen und Abhängigkeiten können Änderungen gezielt und konsistent umgesetzt werden, ohne dass das Modell vollständig neu erstellt werden muss.
+>Bei der Bottom-up-Modellierung arbeiten Designer zunächst an einzelnen Teilemodellen und kombinieren diese schließlich zu einem separaten Montagemodell. Die Teilemodelle enthalten die für die Fertigung benötigte Geometrie. Das Montagemodell enthält Informationen darüber, wie Teile miteinander in Beziehung stehen, und kann a erzeugen Materialschein (BOM)&. Bei diesem traditionellen Ansatz müssen Designänderungen individuell an jedem miteinander verbundenen Teil vorgenommen werden, was eine fehleranfälligere Methode sein kann. Die Bottom-up-Methode wird am häufigsten von Teams verwendet, die an einem Design für ein Produkt mit vielen standardisierten Beziehungen zwischen Komponenten arbeiten, beispielsweise einem Fahrrad.[@Autodesk-Modeling]
 
-Zusätzlich tragen eine sinnvolle Unterteilung in Baugruppen, eine klare Benennung von Bauteilen sowie eine logische Organisation von Ebenen und Referenzen wesentlich zur Übersichtlichkeit bei. Der gezielte Einsatz spezieller Modellierungsfunktionen, wie etwa Splines oder Flächenbefehle für organische Geometrien, unterstützt die Umsetzung komplexer Formen und erhöht die Flexibilität bei der Modellierung.
+Zusätzlich tragen eine sinnvolle Unterteilung in Baugruppen, eine klare Benennung von Bauteilen sowie eine logische Organisation von Ebenen und Referenzen wesentlich zur Übersichtlichkeit bei. 
+
+[@Autodesk-Modeling]
 
 ### Verwendung externer Modelle und Bibliotheken
 
@@ -131,6 +135,8 @@ Neben der eigenen Modellierung besteht die Möglichkeit, auf externe 3D-Modelle 
 Der Einsatz externer Modelle kann den Modellierungsprozess deutlich beschleunigen, da häufig verwendete oder standardisierte Objekte nicht vollständig neu erstellt werden müssen. Diese Modelle können in das eigene CAD-Projekt importiert und bei Bedarf angepasst oder weiterverarbeitet werden.
 
 Solche Modelle eignen sich auch für die physische Umsetzung mithilfe eines 3D-Druckers. Dabei können heruntergeladene Modelle ausgedruckt und anschließend in ein Projekt integriert werden. Voraussetzung hierfür ist jedoch, dass die Modelle korrekt skaliert sind und den technischen Anforderungen des jeweiligen Druckverfahrens entsprechen. Durch den gezielten Einsatz externer Modelle lässt sich der Arbeitsaufwand reduzieren, während gleichzeitig ein hoher Detailgrad erreicht werden kann. 
+
+[@Grabcad-Modeling]
 
 ## 3D-Druck
 
@@ -152,40 +158,82 @@ Nach der geometrischen Kontrolle erfolgt der Export des Modells in ein für 3D-D
 
 Der Slicer übersetzt das digitale Modell in druckbare Anweisungen für den 3D-Drucker. Dabei wird das Objekt in horizontale Schichten zerlegt, die vom Drucker nacheinander aufgebaut werden. Außerdem berechnet der Slicer die Innenstruktur, das sogenannte Infill, sowie gegebenenfalls Stützstrukturen für Überhänge.
 
-Darüber hinaus werden alle relevanten Druckparameter festgelegt, darunter Materialwahl, Schichthöhe, Druckgeschwindigkeit und Temperatur. Moderne Slicer, wie beispielsweise Bambu Studio, automatisieren viele dieser Schritte und ermöglichen eine präzise Vorschau des Druckvorgangs. Bambu Studio veranschaulicht, wie ein Slicer das Modell analysiert, die Schichten erzeugt und den G-Code generiert, der anschließend vom Drucker interpretiert wird. Auf diese Weise wird sichergestellt, dass das digitale Modell korrekt und mit den gewünschten Eigenschaften in ein physisches Objekt umgesetzt werden kann.
+Darüber hinaus werden alle relevanten Druckparameter festgelegt, darunter Materialwahl, Schichthöhe, Druckgeschwindigkeit und Temperatur. Diese Einstellungen legen fest, wie das Modell Schicht für Schicht aufgebaut wird und haben einen großen Einfluss auf die Qualität, Stabilität und Druckdauer des fertigen Bauteils. Moderne Slicer, wie beispielsweise Bambu Studio, automatisieren viele dieser Schritte und ermöglichen eine präzise Vorschau des Druckvorgangs. Bambu Studio veranschaulicht, wie ein Slicer das Modell analysiert, die Schichten erzeugt und den G-Code generiert, der anschließend vom Drucker interpretiert wird. Der G-Code enthält die genauen Bewegungen des Druckers sowie Informationen zu Materialzufuhr, Temperaturen und Geschwindigkeiten. Auf diese Weise wird sichergestellt, dass das digitale Modell korrekt und mit den gewünschten Eigenschaften in ein physisches Objekt umgesetzt werden kann.
 
 [@3D-Printing-FreeCAD]
 
 ### Druckprozess und Einstellungen  
 
-Der 3D-Druckprozess wird stark von den gewählten Parametern beeinflusst, die bestimmen, wie das Modell Schicht für Schicht aufgebaut wird. Ein entscheidender Faktor ist die Layerhöhe, also die Dicke jeder einzelnen Schicht. Dünnere Schichten erzeugen feinere Oberflächen, verlängern aber die Druckzeit, während dickere Schichten schneller gedruckt werden und sichtbare Schichtraster hinterlassen. Auch die Anzahl der oberen und unteren Schichten sowie die Dicke der Außenwände beeinflussen Stabilität und Formtreue des Bauteils.
+Bevor ein Druck gestartet wird, ist es wichtig, den Drucker korrekt zu kalibrieren und die wichtigsten Parameter sorgfältig einzustellen. Fehlerhafte Einstellungen können dazu führen, dass sich Schichten verschieben, das Material nicht richtig haftet oder das Bauteil instabil wird.
 
-Ebenso wichtig ist die Haftung des Modells auf dem Druckbett, die durch unterschiedliche Methoden wie *Skirt*, *Brim* oder *Raft* optimiert werden kann. Die innere Struktur, das Infill, legt fest, wie fest und schwer das Bauteil ist. Überhänge werden durch Stützstrukturen (Supports) stabilisiert, die nach dem Druck wieder entfernt werden.
+Im Folgenden werden die wichtigsten Einstellungen beim 3D-Druck erklärt.
 
-Weitere Parameter, die den Druckprozess beeinflussen, sind unter anderem die Druckgeschwindigkeit, die Düsen- und Bett-Temperatur, die Geschwindigkeit der ersten Schicht und die Kühlung der Schichten. All diese Einstellungen werden im Slicer definiert, der anschließend den G-Code erzeugt, der den Drucker steuert.
+**Layerhöhe (Schichthöhe):**
 
-Wichtige Einstellungen im Überblick:
+Die Layerhöhe beschreibt die Dicke jeder einzelnen gedruckten Schicht.
 
-**Layerhöhe:** 
-  - Dicke jeder Schicht, beeinflusst Oberfläche und Druckzeit  
+- Kleine Layerhöhen erzeugen eine glattere und detailliertere Oberfläche  
+- Dadurch verlängert sich jedoch die Druckzeit, da mehr Schichten gedruckt werden müssen  
+- Größere Layerhöhen verkürzen die Druckzeit, führen jedoch zu sichtbaren Schichtlinien  
 
-**Perimeter Shells:** 
-  - Anzahl und Dicke der Außenwände für Stabilität  
+Die Wahl der richtigen Layerhöhe ist daher immer ein Kompromiss zwischen Druckqualität und Druckdauer.
 
-**Top/Bottom Solid Layers:** 
-  - Anzahl der geschlossenen oberen und unteren Schichten  
+**Außenwände (Perimeter / Shells):**
 
-**Infill:** 
-  - Muster und Füllgrad für Festigkeit und Gewicht  
+Die Außenwände bestimmen, wie viele Linien der Drucker an der Außenseite des Modells druckt.
 
-**Support:** 
-  - Stützstrukturen für Überhänge  
+- Mehr Außenwände erhöhen die Stabilität des Bauteils  
+- Dünne Strukturen oder Öffnungen werden dadurch stabiler  
+- Außerdem verbessert sich die Oberflächenqualität des Modells  
 
-**Druckbett- und Düsentemperatur:** 
-  - Optimiert Haftung und Materialfluss  
+Zusätzlich werden die obersten und untersten Schichten (Top- und Bottom-Layers) definiert.  
+Diese sorgen dafür, dass das Modell eine geschlossene Oberfläche erhält und keine Lücken entstehen.
 
-**Druckgeschwindigkeit & erste Schichtgeschwindigkeit:** 
-  - Beeinflussen Genauigkeit und Haftung
+**Infill (Füllstruktur):**
+
+Das Infill beschreibt die innere Struktur eines gedruckten Bauteils.
+
+- Der Füllgrad bestimmt, wie stark das Modell im Inneren gefüllt ist  
+- Ein höherer Füllgrad sorgt für mehr Stabilität  
+- Gleichzeitig steigt jedoch auch der Materialverbrauch und die Druckzeit  
+
+In vielen Fällen reicht eine teilweise Füllung aus, da die Außenwände bereits einen Großteil der Stabilität übernehmen.  
+Typische Infill-Muster sind beispielsweise Linien, Dreiecke oder Wabenstrukturen.
+
+**Support-Strukturen (Stützstrukturen):**
+
+Bei komplexen Modellen können sogenannte Überhänge entstehen.  
+Das sind Bereiche, bei denen während des Drucks keine Schicht direkt darunter liegt.
+
+Um ein Absacken des Materials zu verhindern, können im Slicer Supports erzeugt werden.
+
+- Diese dienen als temporäre Stütze während des Drucks  
+- Sie stabilisieren Überhänge oder größere Öffnungen  
+- Nach dem Druck werden sie wieder entfernt  
+
+**Haftung auf dem Druckbett:**
+
+Damit ein Druck erfolgreich ist, muss die erste Schicht gut auf dem Druckbett haften.  
+Wenn dies nicht der Fall ist, kann sich das Modell während des Drucks lösen oder verformen.
+
+Zur Verbesserung der Haftung können verschiedene Methoden verwendet werden:
+
+- **Skirt:** Linie um das Modell, um den Materialfluss zu stabilisieren  
+  
+- **Brim:** Erweiterung der Kontaktfläche des Modells mit dem Druckbett  
+  
+- **Raft:** zusätzliche Grundplatte unter dem Bauteil für bessere Stabilität  
+
+**Temperatur und Druckgeschwindigkeit:**
+
+Auch Temperatur und Druckgeschwindigkeit haben großen Einfluss auf das Druckergebnis.
+
+- Die Düsentemperatur muss zum verwendeten Filament passen, damit das Material gleichmäßig schmilzt  
+- Die Druckbetttemperatur verbessert die Haftung der ersten Schicht  
+- Eine höhere Druckgeschwindigkeit verkürzt die Druckzeit  
+- Für detaillierte Modelle wird meist eine geringere Geschwindigkeit verwendet, um präzisere Ergebnisse zu erzielen  
+
+[@Conrad-3D-Drucker-Kalibrieren]
 
 ### Nachbearbeitung und Integration ins Projekt
 

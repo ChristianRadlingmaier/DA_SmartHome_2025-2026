@@ -648,7 +648,7 @@ mqtt:
   sensor:
     - name: Wetterstation Temperatur
       state_topic: "weatherstation/state"
-      unit_of_measurement: "°C"
+      unit_of_measurement: "C"
       value_template: "{{ value_json.temperature_c }}"
     - name: Wetterstation Helligkeit
       state_topic: "weatherstation/state"

@@ -22,7 +22,7 @@ CAD ist die Abkürzung für computergestütztes Zeichnen bzw. computergestützte
 
 Der Einsatz von CAD-Software erleichtert es, unterschiedliche Entwurfsvarianten zu vergleichen und komplexe Konstruktionen anschaulich darzustellen. Zudem erlauben CAD-Programme eine sehr präzise Arbeitsweise, was bereits in der Planungsphase zu einer höheren Genauigkeit führt. Diese Präzision trägt dazu bei, Fehler während der Umsetzung zu reduzieren, wodurch Zeit und Kosten eingespart werden können. Darüber hinaus unterstützt die digitale Planung ein effizienteres und nachhaltigeres Arbeiten. 
 
-[@CAD-Programme-ALLPLAN]
+[@CAD-Programme-ALLPLAN] 
 
 ### Auswahl eines geeigneten CAD-Programms
 

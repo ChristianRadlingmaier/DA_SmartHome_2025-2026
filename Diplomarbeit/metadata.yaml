@@ -22,12 +22,12 @@ da-author:
 - vorname: Christian 
   nachname: Radlingmaier
   klasse: 5BHWIN
-  thema: Fehm Steuerung des Smart Homes
+  thema: FHEM Steuerung des Smart Homes
 
 - vorname: Christian 
   nachname: Beichtbuchner
   klasse: 5AHWIN
-  thema: Modellierung und Verkappelung des Modelhauses
+  thema: Modellierung und Verkabelung des Modellhauses
   ki-tools:
   - name: ChatGPT-5.1
     zweck: Rechtschreibkorrektur und Formulierungshilfe
@@ -43,55 +43,55 @@ da-kurzfassung-de: >-
   Diese Diplomarbeit beschreibt die Planung, Umsetzung und Bewertung eines
   modularen Smart-Home-Systems auf Basis eines Modellhauses. Ausgangspunkt war
   die Anforderung, typische Funktionen moderner Hausautomation nicht nur
-  theoretisch zu erklaeren, sondern in einer technisch sauberen und
+  theoretisch zu erklären, sondern in einer technisch sauberen und
   reproduzierbaren Form praktisch umzusetzen. Im Zentrum stand dabei eine
   klar strukturierte Gesamtarchitektur, die Hardwareanbindung,
-  Kommunikationslogik und Bedienoberflaeche voneinander trennt. Das Projekt
-  wurde als Teamarbeit durchgefuehrt und in mehrere Teilbereiche gegliedert:
+  Kommunikationslogik und Bedienoberfläche voneinander trennt. Das Projekt
+  wurde als Teamarbeit durchgeführt und in mehrere Teilbereiche gegliedert:
   Modellierung und Verkabelung des Hauses, Integration der Steuerungsplattform
   sowie Aufbau der Automations- und Kommunikationslogik.
 
   Die technische Umsetzung erfolgte auf einem Raspberry Pi mit
   containerbasiertem Betrieb. Mit Docker Compose wurden Home Assistant, ein
   MQTT-Broker und Portainer bereitgestellt. Node-RED wurde als
-  Integrationsschicht eingesetzt, um Datenfluesse zwischen serieller
-  Hardwareanbindung, MQTT-Topics und Automationen transparent abzubilden. Fuer
+  Integrationsschicht eingesetzt, um Datenflüsse zwischen serieller
+  Hardwareanbindung, MQTT-Topics und Automationen transparent abzubilden. Für
   die physische I/O-Ebene kam ein Arduino Uno mit StandardFirmata zum Einsatz,
-  wodurch Sensor- und Aktorsignale robust in die Softwareebene ueberfuehrt
+  wodurch Sensor- und Aktorsignale robust in die Softwareebene überführt
   werden konnten. Die Trennung in Feldebene, Verarbeitungsebene und
-  Managementebene ermoeglichte eine gute Wartbarkeit und vereinfachte
+  Managementebene ermöglichte eine gute Wartbarkeit und vereinfachte
   Fehlersuche, Erweiterung und Dokumentation.
 
   Im praktischen Betrieb wurden zentrale Use Cases umgesetzt und getestet:
-  automatische Lichtsteuerung in Abhaengigkeit von Helligkeit und Bewegung,
-  kontinuierliche Sensordatenerfassung, manuelle Steuerung ueber Dashboard
-  sowie Rueckmeldung von Ist-Zustaenden ueber getrennte MQTT-Command- und
-  State-Kanaele. Die Validierung erfolgte anhand definierter Testablaeufe und
+  automatische Lichtsteuerung in Abhängigkeit von Helligkeit und Bewegung,
+  kontinuierliche Sensordatenerfassung, manuelle Steuerung über Dashboard
+  sowie Rückmeldung von Ist-Zuständen über getrennte MQTT-Command- und
+  State-Kanäle. Die Validierung erfolgte anhand definierter Testabläufe und
   zeigte, dass die End-to-End-Kommunikation zwischen Sensorik, Arduino,
   Node-RED, MQTT und Home Assistant stabil und nachvollziehbar funktioniert.
   Typische Fehlerquellen wie serielle Portkonflikte, Rechteprobleme oder
-  Verbindungsabbrueche wurden analysiert und durch geeignete Betriebs- und
+  Verbindungsabbrüche wurden analysiert und durch geeignete Betriebs- und
   Restart-Strategien reduziert.
 
   Neben den technischen Ergebnissen zeigte das Projekt auch organisatorische
   und methodische Lernerfolge. Die strukturierte Rollenverteilung innerhalb des
   Teams, die laufende Versionsverwaltung sowie die Dokumentation von
-  Entscheidungen und Tests erwiesen sich als entscheidend fuer Termin- und
-  Qualitaetsziele. Der Modellhausansatz erleichterte die Verknuepfung von
+  Entscheidungen und Tests erwiesen sich als entscheidend für Termin- und
+  Qualitätsziele. Der Modellhausansatz erleichterte die Verknüpfung von
   Theorie und Praxis, weil elektrische, logische und visuelle Aspekte direkt
   beobachtbar waren. Gleichzeitig wurde sichtbar, dass Skalierung in reale
-  Umgebungen zusaetzliche Anforderungen an Sicherheit, Lasttrennung und
-  Betriebsstabilitaet stellt. Damit liefert die Arbeit nicht nur eine
+  Umgebungen zusätzliche Anforderungen an Sicherheit, Lasttrennung und
+  Betriebsstabilität stellt. Damit liefert die Arbeit nicht nur eine
   funktionierende Demonstration, sondern auch einen klaren methodischen Rahmen
-  fuer den geordneten Ausbau zu umfangreicheren Smart-Home-Szenarien.
+  für den geordneten Ausbau zu umfangreicheren Smart-Home-Szenarien.
 
   Zusammenfassend wurde das gesetzte Ziel erreicht: Es entstand ein
-  funktionsfaehiges, modular aufgebautes Smart-Home-Demonstrationssystem, das
+  funktionsfähiges, modular aufgebautes Smart-Home-Demonstrationssystem, das
   fachliche Grundlagen mit realer technischer Umsetzung verbindet und als
-  belastbare Basis fuer weitere Ausbaustufen dient. Das System ist auf weitere
-  Raeume, zusaetzliche Sensorik und komplexere Automationen uebertragbar.
+  belastbare Basis für weitere Ausbaustufen dient. Das System ist auf weitere
+  Räume, zusätzliche Sensorik und komplexere Automationen übertragbar.
   Gleichzeitig liefert die Arbeit eine strukturierte Dokumentation, die
-  Inbetriebnahme, Konfiguration, Test und Weiterentwicklung fuer nachfolgende
+  Inbetriebnahme, Konfiguration, Test und Weiterentwicklung für nachfolgende
   Projekte deutlich erleichtert.
 
 da-kurzfassung-en: >-

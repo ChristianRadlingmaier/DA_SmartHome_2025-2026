@@ -311,6 +311,101 @@ Zusätzlich kann man den Status des Dienstes überprüfen, mit den Befehl:
 
 Ein aktiver Status ("active(running)") zeigt an, das der Server korrekt ausgeführt wird.
 
+#### Perl Code
+
+##### Licht Ein/Aus
+
+Dieser Code verarbeitet den Set-Befehl von FHEM.
+
+Zuerst wird überprüft, ob der Befehl light lautet.
+- Mit dem Code `if ($cmd eq "light")`
+Danach wird kontrolliert, ob der Benutzer den Wert On oder Off angegeben hat.
+- Mit dem Code `my $v = lc($a[2]);`
+Anschließend wird das MQTT-Topic geladen, über das der Befehl gesendet wird
+- Mit dem Code `my $topic = AttrVal($name, "mqttLightTopic", "home/wohnzimmer/licht/cmd");`
+Danach wird die MQTT-Nachricht erstellt, die den Zustand der LED beschreibt.
+- Mit dem Code `{\"state\":\"ON\"}` oder `{\"state\":\"OFF\"}`
+Schließlich wird der Befehl über MQTT gesendet.
+- Mit dem Code `_publish_mqtt($hash, $topic, $payload);`
+
+Der Arduino empfängt diese Nachricht und schaltet die LED entsprechend Ein oder Aus.
+
+##### Helligkeitssteuerung der LED(PWM)
+
+Neben dem Ein- und Ausschalten kann auch die Helligkeit der LED gesteuert werden.
+
+Erklärung: 
+Dieser Code ermöglicht die Bimmung der LED.
+
+Der Benutzer kann einen Wert zwischen 0 und 255 angeben.
+- Mit dem Code `set SmartHome brightness 120`
+Der Wert wird überprüft und auf einen gültigen Bereich begrenzt.
+- Mit dem Code `$b = $min if ($b < $min);` `$b = $max if ($b > $max);`
+Danach wird eine MQTT-Nachricht erzeugt.
+- `{"brightness":120}`
+Diese Nachricht wird an den Arduino gesendet.
+
+Der Arduino nutzt anschließend PWM (Pulse Width Modulation), um die Helligkeit der LED zu verändern.
+
+#### Wetterstation
+
+Funktionsbeschreibung
+
+Die Wetterstation dient zur Erfassung von Umweltdaten, die im Smart-Home-System verwendet werden können.
+
+Folgende Messwerte werden verarbeitet:
+
+- Temperatur
+- Luftfeuchtigkeit
+- Luftdruck
+- Windgeschwindigkeit
+- Niederschlag
+- Lichtstärke
+
+Die Sensorwerte werden vom Arduino gemessen und über MQTT an FHEM übertragen.
+Das Perl-Modul speichert diese Werte anschließend als Readings im Smart-Home-System.
+
+##### Verarbeitung der Wetterdaten
+
+Die Verarbeitung erfolgt im Notify-Bereich des Perl-Moduls.
+
+BILD
+
+Erklärung:
+
+Dieser Code erkennt Ereignisse eines Wetter-Geräts.
+- Mit dem Code `if ($devName =~ /Wetter/i)`
+Das bedeutet:
+Wenn ein Gerät mit dem Namen Wetter Daten sendet, wird dieser Code ausgeführt.
+
+Danach wird eine Zuordnungstabelle (Hash-Map) erstellt.
+- MIt dem Code `my %map = (temperature => "weather_temperature");`
+Diese Tabelle definiert, wie die Sensordaten im Smart-Home-System gespeichert werden.
+
+##### Speichern der Messwerte
+
+Der nächste Codeabschnitt speichert die Sensordaten.
+
+BILD
+
+Erklärung:
+ 
+ Zuerst wird eine Aktualisierung der Readings gestartet.
+ - Mit dem Code `readingsBeginUpdate($hash);`
+ Danach werden alle empfangenen Sensorwerte durchlaufen.
+ - MIt dem Code `foreach my $e (@{$events})`
+ Die Werte werden aus der Nachricht extrahiert.
+ - Mit dem Code `my ($r, $v) = ($1, $2);`
+Wenn der Sensorwert in der Tabelle vorhanden ist, wird er gespeichert.
+- Mit dem Code `readingsBulkUpdate($hash, $map{$r}, $v);`
+
+Beispiel:
+Wenn der Arduino folgende MQTT-Nachricht sendet:
+`temperature: 21.5`
+wird in FHEM automatisch das Reading gesetzt:
+`weather_temperature = 21.5`
+
+
 #### Einbindung der LEDs in die FHEM-Weboberfläche
 
 ##### Grundprinzip der LED-Integration
@@ -331,6 +426,7 @@ FHEM übernimmt dabei die Rolle der zentralen Steuerinstanz.
 #### Anlegen des MQTT-Devices in FHEM
 
 Zunächst wurde in FHEM die MQTT-Verbindung definiert:
+
 `define myMQTT MQTT2_CLIENT 127.0.0.1:1883`
 `attr myMQTT autocreate 1`
 
@@ -404,3 +500,14 @@ In deiner Diplomarbeit kannst du zusätzlich zeigen, dass FHEM die LED auch logi
 `Hier zeigt sich der Vorteil von FHEM:`
 `Die Logik kann direkt in Perl erweitert werden.`
 
+### Ausblick
+
+Im Rahmen dieser Diplomarbeit wurde ein funktionales Smart-Home-System entwickelt und umgesetzt. Dabei wurde gezeigt, wie ein Raspberry Pi als zentrale Steuereinheit eingesetzt werden kann, um verschiedene Komponenten wie Beleuchtung, Heizungssteuerung und eine Wetterstation miteinander zu vernetzen. Durch die Verwendung von FHEM, MQTT sowie eines Arduino-Mikrocontrollers konnte eine flexible und erweiterbare Architektur geschaffen werden, die eine zuverlässige Kommunikation zwischen Sensoren, Aktoren und der zentralen Steuerung ermöglicht.
+
+Das entwickelte System stellt eine solide Grundlage für weitere Erweiterungen dar. Zukünftig könnten zusätzliche Sensoren und Aktoren integriert werden, um den Funktionsumfang des Systems weiter zu erhöhen. Beispielsweise wäre die Einbindung von Bewegungsmeldern, Tür- und Fenstersensoren oder Rauchmeldern denkbar, um Sicherheitsfunktionen im Smart Home zu realisieren.
+
+Ein weiterer möglicher Ausbau besteht in der Integration von Sprachsteuerungssystemen oder mobilen Anwendungen, sodass das Smart-Home-System komfortabel über Smartphones oder Sprachassistenten gesteuert werden kann. Ebenso könnten automatisierte Szenarien implementiert werden, bei denen verschiedene Geräte abhängig von Uhrzeit, Wetterdaten oder Anwesenheit der Bewohner automatisch gesteuert werden.
+
+Auch im Bereich der Energieeffizienz bietet das System weiteres Entwicklungspotenzial. Durch die intelligente Auswertung von Sensordaten könnten Heizungs- und Beleuchtungssysteme noch effizienter geregelt werden, wodurch Energie eingespart und der Wohnkomfort gleichzeitig erhöht werden kann.
+
+Zusammenfassend zeigt diese Arbeit, dass bereits mit kostengünstiger Hardware und frei verfügbarer Software leistungsfähige Smart-Home-Lösungen realisiert werden können. Die im Projekt entwickelte Architektur bietet eine gute Basis für zukünftige Erweiterungen und Weiterentwicklungen im Bereich der Gebäudeautomation.

@@ -40,11 +40,11 @@
 **Bedingungen:** Dienste und Datenquellen sind aktiv  
 **Ablauf:**
 
-1. Plattform lädt aktülle Sensordaten  
+1. Plattform lädt aktuelle Sensordaten  
 2. Daten werden als Statuswerte und Verläufe dargestellt  
 3. Benutzer kann Abweichungen erkennen und reagieren  
 
-**Alternative:** Datenqülle nicht verfügbar  
+**Alternative:** Datenquelle nicht verfügbar  
 **Ergebnis:** Transparente Übersicht über aktuellen Systemzustand
 
 #### Geräte manuell steuern
@@ -99,12 +99,12 @@
 * Die Modellierung des Hauses in Fusion 360 wurde begonnen (Grundstruktur, Fenster/Türen, Kabelkanäle, Zwischendach, Dach).
 * Erste Arbeiten für Skripting und Automatisierung (Perl) wurden aufgebaut.
 
-| Dimension           | Status                         | Massnahmen |
+| Dimension           | Status                         | Maßnahmen |
 |:--------------------|:-------------------------------|:-----------|
 | Leistungsziele      | Teilweise erreicht             | Fokus auf stabile Sensor-/Aktoranbindung und erste End-to-End-Flows |
 | Terminziele         | Im Plan                        | Priorisierung der Kernfunktionen vor Detailerweiterungen |
 | Kostenziele         | Im Budget                   | Weiterhin Nutzung geplanter Komponenten und vorhandener Infrastruktur |
-| Teamarbeit          | Gut                            | Regelmässige Abstimmung zwischen Modellbau, Backend und Automatisierung |
+| Teamarbeit          | Gut                            | Regelmäßige Abstimmung zwischen Modellbau, Backend und Automatisierung |
 
 :Projektstatus am 2025-08-25
 
@@ -125,13 +125,13 @@
 
 #### Gesamtstatus
 
-* Projektplanung und Systemaufbau wurden gemäss Meilensteinen umgesetzt.
+* Projektplanung und Systemaufbau wurden gemäß Meilensteinen umgesetzt.
 * Modellhausaufbau, Grundverkabelung und Montage der Sensorik/Aktorik wurden abgeschlossen.
 * Systemgrundlagen (Raspberry Pi, Docker, MQTT-Broker) laufen stabil.
 * Home Assistant/FHEM und Node-RED wurden integriert; grundlegende Automatisierungen funktionieren.
 * Testbetrieb, Optimierung und Dokumentationsarbeiten wurden bis zur Finalisierung durchgeführt.
 
-| Dimension           | Status                         | Massnahmen |
+| Dimension           | Status                         | Maßnahmen |
 |:--------------------|:-------------------------------|:-----------|
 | Leistungsziele      | Weitgehend erreicht            | Restpunkte auf Dokumentationsqualität und Feinschliff konzentrieren |
 | Terminziele         | Erreicht                       | Abschlussarbeiten entlang der verbleibenden Abgabetermine führen |
@@ -142,7 +142,7 @@
 
 #### Notwendige Entscheidungen
 
-* Endgültige Abgrenzung des Funktionsumfangs gemäss Nicht-Zielen (kein Produktivsystem, keine native App).
+* Endgültige Abgrenzung des Funktionsumfangs gemäß Nicht-Zielen (kein Produktivsystem, keine native App).
 * Vereinheitlichung der Formulierungen und technische Konsistenz in allen Kapitelteilen.
 * Festlegung der finalen Demo-Szenarien für Präsentation und Fachgespräch.
 

@@ -705,6 +705,7 @@ Bewährte Maßnahmen:
 - konkurrierende Prozesse beenden,
 - Dienst nach Änderungen sauber neu starten.
 
+
 Diese Maßnahmen verbessern die Stabilität der Host-zu-Arduino-Kommunikation deutlich.
 
 **MQTT-Stabilität**

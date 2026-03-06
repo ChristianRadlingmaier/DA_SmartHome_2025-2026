@@ -161,9 +161,7 @@ da-kiquellen:
   short-prompt: Ordnerstruktur Diagramm
   pdf-file: Perl-Fehler-Erklaerung.pdf  
 
-- ki: ChatGPT5.3
-  short-prompt: Wetterstation Erklaerung
-  pdf-file: wetterstation.pdf  
+
 
 
 ---

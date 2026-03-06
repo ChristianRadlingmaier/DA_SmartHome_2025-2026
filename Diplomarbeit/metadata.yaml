@@ -152,15 +152,12 @@ da-kiquellen:
   pdf-file: gpt-docker-compose.pdf
 
 da-appendix:
-- abschnitt: Technische Dokumentation
-  pdf-file: pandoc-manual.pdf
-  seiten: 53-73
 
-- abschnitt: Betreuungsprotokolle
-  pdf-file: betreuungsprotokolle.pdf    
+
 
 # Diplomarbeitsvereinbarungen müssen zum Schluss sein 
-
+- abschniit: Dokumentation Gierer
+- pdf-file: htl-da-doku-de-ab2025-it-christian-radlingmaier
 
   
 ---

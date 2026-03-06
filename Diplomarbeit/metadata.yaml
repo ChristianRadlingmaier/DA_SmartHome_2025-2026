@@ -139,18 +139,6 @@ da-kurzfassung-en: >-
   additional sensors, and more complex automations.
 
 da-kiquellen:
-- ki: ChatGPT4
-  short-prompt: Erklärung Pandoc
-  pdf-file: gpt-pandoc.pdf
-
-- ki: ChatGPT3.5
-  short-prompt: Aufbau eines Atoms
-  pdf-file: gpt-atom.pdf
-
-- ki: ChatGPT5.3
-  short-prompt: Erklärung Docker Compose
-  pdf-file: gpt-docker-compose.pdf
-
 - ki: ChatGPT5.3
   short-prompt: FHEM Code
   pdf-file: FHEM-Code.pdf  

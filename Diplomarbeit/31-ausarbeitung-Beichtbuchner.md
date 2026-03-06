@@ -393,7 +393,7 @@ Sensoren dienen dazu, physikalische oder chemische Größen aus der Umgebung zu 
 
 Typische Sensoren kommen in vielen technischen Anwendungen zum Einsatz. Ein Temperatursensor misst beispielsweise die Umgebungstemperatur, ein Lichtsensor erfasst die Helligkeit, und ein Feuchtigkeitssensor bestimmt den Feuchtigkeitsgehalt der Luft oder eines Materials.
 
-Je nach Messgröße lassen sich Sensoren in verschiedene Kategorien einteilen. Häufig verwendete Sensortypen sind Temperatursensoren zur Erfassung von Wärme, Lichtsensoren zur Messung von Helligkeit, Drucksensoren zur Erkennung von Kraft- oder Druckänderungen sowie Bewegungssensoren, die Bewegungen oder Beschleunigungen wahrnehmen. Alle diese Sensoren haben gemeinsam, dass sie physikalische Informationen in elektrische Signale umwandeln, die weiterverarbeitet werden können.
+Je nach Messgröße lassen sich Sensoren in verschiedene Kategorien einteilen. Häufig verwendete Sensortypen sind Temperatursensoren zur Erfassung von Wärme, Lichtsensoren zur Messung von Helligkeit, Drucksensoren zur Erkennung von Kraft- oder Druckänderungen sowie Feuchtigkeitssensoren, die den Feuchtigkeitsgehalt von Luft oder Materialien erfassen. Alle diese Sensoren haben gemeinsam, dass sie physikalische Informationen in elektrische Signale umwandeln, die weiterverarbeitet werden können.
 
 [@Sensorik-und-Aktorik-StudySmarter]
 

@@ -41,7 +41,6 @@ Die LED-Kreise bilden die zentrale, sichtbare Aktorik im Modellhaus. Ihr Vorteil
 Im Projektkontext werden folgende Sensorklassen betrachtet:
 
 - Helligkeitssensoren,
-- PIR-Bewegungssensoren,
 - Temperatursensoren,
 - Türkontakte.
 
@@ -140,7 +139,7 @@ Für diese Arbeit bedeutet das konkret:
 - Aktoren setzen diese Aktionen sichtbar um,
 - die Plattform stellt alles nachvollziehbar dar.
 
-Sensorik umfasst die strukturierte Erfassung physischer Zustände. Im Modellhaus sind das insbesondere Helligkeit, Bewegung, Temperatur und Türstatus. Jeder Sensortyp liefert dabei eine andere Datencharakteristik:
+Sensorik umfasst die strukturierte Erfassung physischer Zustände. Im Modellhaus sind das insbesondere Helligkeit, Temperatur und Türstatus. Jeder Sensortyp liefert dabei eine andere Datencharakteristik:
 
 - kontinuierliche Werte (z. B. Temperatur).
 
@@ -303,7 +302,7 @@ In Summe ergibt sich ein mehrschichtiges Sicherheitskonzept: abgesicherter Nachr
 
 Der Raspberry Pi wird mit 5 V betrieben, der Arduino ist über USB angebunden. LED-Kreise sind über Vorwiderstände abgesichert. Für den Aufbau wurden gecrimpte und steckbare Verbindungen genutzt, um Anpassungen ohne Lötarbeiten zu ermöglichen.
 
-Die Aktoren wurden den Räumen des Modellhauses zugeordnet. Sensoren wurden so positioniert, dass typische Nutzungssituationen abgebildet werden können (z. B. Bewegung im Eingangsbereich, Helligkeitsmessung in raumtypischer Lage). Relais bzw. Treiberstufen werden dort vorgesehen, wo Lasttrennung erforderlich ist.
+Die Aktoren wurden den Räumen des Modellhauses zugeordnet. Sensoren wurden so positioniert, dass typische Nutzungssituationen abgebildet werden können (z. B. Türstatus im Eingangsbereich, Helligkeitsmessung in raumtypischer Lage). Relais bzw. Treiberstufen werden dort vorgesehen, wo Lasttrennung erforderlich ist.
 
 Durch StandardFirmata liest der Host Eingangs- und Sensordaten aus und setzt Ausgänge für Aktoren. Schaltbefehle werden deterministisch pro eingehender Nachricht verarbeitet. [@arduino_firmata_docs] [@firmata_arduino_github]
 
@@ -752,7 +751,7 @@ Die bestehende Topic- und Entitätsstruktur kann auf weitere Räume erweitert we
 
 - `haus/licht/küche/set`
 - `haus/licht/schlafzimmer/set`
-- `haus/sensor/flur/bewegung`
+- `haus/sensor/flur/helligkeit`
 
 Wichtig ist dabei, die bisherige Namenskonvention konsistent beizubehalten.
 

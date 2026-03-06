@@ -20,14 +20,13 @@
 
 #### Beleuchtung automatisch steuern
 
-**Beschreibung:** Bei Dunkelheit und erkannter Bewegung wird die Beleuchtung automatisch eingeschaltet.  
-**Trigger:** Helligkeitswert unter Schwellwert und Bewegung erkannt  
+**Beschreibung:** Bei Dunkelheit wird die Beleuchtung automatisch eingeschaltet.  
+**Trigger:** Helligkeitswert unter Schwellwert  
 **Bedingungen:** Sensorik, Regelwerk (Home Assistant/FHEM/Node-RED) und Aktorik sind aktiv  
 **Ablauf:**
 
 1. Helligkeit wird geprüft  
-2. Bewegungsmelder meldet Aktivität  
-3. Steuerlogik schaltet Licht über MQTT ein  
+2. Steuerlogik schaltet Licht über MQTT ein  
 
 **Alternative:** Einer der Sensorwerte fehlt oder ist fehlerhaft  
 **Ergebnis:** Licht wird für die definierte Zeit aktiviert und danach wieder ausgeschaltet

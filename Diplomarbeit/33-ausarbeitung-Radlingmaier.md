@@ -50,9 +50,9 @@ Der Datenaustausch zwischen den einzelnen Systemkomponenten erfolgt über das MQ
 ##### Sensorik
 Sensorik bildet eine zentrale Grundlage eines Smart-Home-Systems, da sie die Erfassung von physikalischen und umgebungsbezogenen Zuständen ermöglicht. Sensoren dienen dazu, Informationen aus der realen Umgebung aufzunehmen und diese in elektrische Signale umzuwandeln, die von Mikrocontrollern oder zentralen Steuereinheiten weiterverarbeitet werden können.
 
-In Smart-Home-Anwendungen kommen unterschiedliche Sensortypen zum Einsatz. Dazu zählen unter anderem Temperatursensoren, Feuchtigkeits- und Helligkeitssensoren sowie Bewegungs- und Kontaktsensoren. Diese erfassen kontinuierlich relevante Umgebungsdaten, die als Grundlage für automatisierte Entscheidungen und Steuerungsprozesse dienen.
+In Smart-Home-Anwendungen kommen unterschiedliche Sensortypen zum Einsatz. Dazu zählen unter anderem Temperatursensoren, Feuchtigkeits- und Helligkeitssensoren sowie Kontaktsensoren. Diese erfassen kontinuierlich relevante Umgebungsdaten, die als Grundlage für automatisierte Entscheidungen und Steuerungsprozesse dienen.
 
-Die erfassten Sensordaten werden in der Regel von Mikrocontrollern, wie beispielsweise einem Arduino, ausgelesen und anschließend an eine zentrale Automatisierungsplattform übertragen. Dort können die Daten analysiert, visualisiert und für die Umsetzung von Automatisierungsregeln genutzt werden. Auf diese Weise ist es möglich, auf bestimmte Zustände gezielt zu reagieren, etwa durch das Einschalten der Beleuchtung bei Bewegung oder das Anpassen der Heizleistung in Abhängigkeit von der Raumtemperatur.
+Die erfassten Sensordaten werden in der Regel von Mikrocontrollern, wie beispielsweise einem Arduino, ausgelesen und anschließend an eine zentrale Automatisierungsplattform übertragen. Dort können die Daten analysiert, visualisiert und für die Umsetzung von Automatisierungsregeln genutzt werden. Auf diese Weise ist es möglich, auf bestimmte Zustände gezielt zu reagieren, etwa durch das Einschalten der Beleuchtung bei Dunkelheit oder das Anpassen der Heizleistung in Abhängigkeit von der Raumtemperatur.
 
 Ein wesentlicher Vorteil moderner Sensorik ist ihre hohe Genauigkeit sowie der geringe Energieverbrauch. In Kombination mit standardisierten Kommunikationsprotokollen lassen sich Sensoren flexibel in bestehende Smart-Home-Systeme integrieren und bei Bedarf erweitern.
 
@@ -96,7 +96,7 @@ Aufgrund seiner Vielseitigkeit, der guten Unterstützung durch die Community sow
 ##### FHEM
 FHEM ist ein quelloffenes Smart-Home-Framework, das zur Steuerung, Überwachung und Automatisierung von Haus- und Gebäudetechnik eingesetzt wird. Die Software wird überwiegend auf Linux-basierten Systemen betrieben, wie beispielsweise einem Raspberry Pi, und fungiert als zentrale Steuereinheit innerhalb eines Smart-Home-Systems.
 
-Das Framework ist modular aufgebaut und unterstützt eine Vielzahl von Geräten, Protokollen und Kommunikationsschnittstellen. Dadurch können sowohl Sensoren (z. B. Temperatur- oder Bewegungssensoren) als auch Aktoren (z. B. Relais, Heizungsventile oder Beleuchtungssysteme) in das System integriert werden. Die Verwaltung dieser Komponenten erfolgt zentral über FHEM.
+Das Framework ist modular aufgebaut und unterstützt eine Vielzahl von Geräten, Protokollen und Kommunikationsschnittstellen. Dadurch können sowohl Sensoren (z. B. Temperatur- oder Helligkeitssensoren) als auch Aktoren (z. B. Relais, Heizungsventile oder Beleuchtungssysteme) in das System integriert werden. Die Verwaltung dieser Komponenten erfolgt zentral über FHEM.
 
 Ein wesentliches Merkmal von FHEM ist die flexible Automatisierungslogik. Mithilfe von Regeln, Zeitplänen und Ereignissen können Abläufe definiert werden, die automatisch auf bestimmte Zustände oder Sensordaten reagieren. Zusätzlich bietet FHEM verschiedene Möglichkeiten zur Benutzerinteraktion, etwa über eine webbasierte Oberfläche oder externe Anwendungen.
 
@@ -107,7 +107,7 @@ Aufgrund seiner Offenheit, Erweiterbarkeit und großen Community eignet sich FHE
 ##### Node-RED
 Node-RED ist ein quelloffenes, ereignisgesteuertes Entwicklungsframework, das insbesondere im Bereich Smart Home und Internet of Things (IoT) eingesetzt wird. Es ermöglicht die grafische Erstellung von Steuerungs- und Automatisierungslogiken mithilfe eines webbasierten Editors. Die einzelnen Funktionsbausteine, sogenannte Nodes, werden per Drag-and-Drop miteinander verbunden und bilden gemeinsam sogenannte Flows, welche den Daten- und Kontrollfluss innerhalb des Systems abbilden.
 
-Innerhalb eines Smart-Home-Systems übernimmt Node-RED die Verarbeitung von Sensordaten sowie die Umsetzung von logischen Abläufen. Eingehende Informationen, beispielsweise von Temperatur- oder Bewegungssensoren, können analysiert, gefiltert und anschließend zur Steuerung von Aktoren wie Beleuchtung, Heizung oder Rollläden verwendet werden. Dadurch lassen sich sowohl einfache Automatisierungen als auch komplexe Abhängigkeiten realisieren.
+Innerhalb eines Smart-Home-Systems übernimmt Node-RED die Verarbeitung von Sensordaten sowie die Umsetzung von logischen Abläufen. Eingehende Informationen, beispielsweise von Temperatur- oder Helligkeitssensoren, können analysiert, gefiltert und anschließend zur Steuerung von Aktoren wie Beleuchtung, Heizung oder Rollläden verwendet werden. Dadurch lassen sich sowohl einfache Automatisierungen als auch komplexe Abhängigkeiten realisieren.
 
 Ein wesentlicher Vorteil von Node-RED ist die Unterstützung zahlreicher Kommunikationsprotokolle und Schnittstellen. Dazu zählen unter anderem MQTT, HTTP sowie WebSockets, wodurch eine einfache Integration von Mikrocontrollern, Smart-Home-Zentralen und externen Diensten möglich ist. In dieser Diplomarbeit wird Node-RED insbesondere zur Verarbeitung von MQTT-Nachrichten und zur Umsetzung der Steuerlogik eingesetzt.
 
@@ -529,7 +529,7 @@ In deiner Diplomarbeit kannst du zusätzlich zeigen, dass FHEM die LED auch logi
 
 Im Rahmen dieser Diplomarbeit wurde ein funktionales Smart-Home-System entwickelt und umgesetzt. Dabei wurde gezeigt, wie ein Raspberry Pi als zentrale Steuereinheit eingesetzt werden kann, um verschiedene Komponenten wie Beleuchtung, Heizungssteuerung und eine Wetterstation miteinander zu vernetzen. Durch die Verwendung von FHEM, MQTT sowie eines Arduino-Mikrocontrollers konnte eine flexible und erweiterbare Architektur geschaffen werden, die eine zuverlässige Kommunikation zwischen Sensoren, Aktoren und der zentralen Steuerung ermöglicht.
 
-Das entwickelte System stellt eine solide Grundlage für weitere Erweiterungen dar. Zukünftig könnten zusätzliche Sensoren und Aktoren integriert werden, um den Funktionsumfang des Systems weiter zu erhöhen. Beispielsweise wäre die Einbindung von Bewegungsmeldern, Tür- und Fenstersensoren oder Rauchmeldern denkbar, um Sicherheitsfunktionen im Smart Home zu realisieren.
+Das entwickelte System stellt eine solide Grundlage für weitere Erweiterungen dar. Zukünftig könnten zusätzliche Sensoren und Aktoren integriert werden, um den Funktionsumfang des Systems weiter zu erhöhen. Beispielsweise wäre die Einbindung von Tür- und Fenstersensoren oder Rauchmeldern denkbar, um Sicherheitsfunktionen im Smart Home zu realisieren.
 
 Ein weiterer möglicher Ausbau besteht in der Integration von Sprachsteuerungssystemen oder mobilen Anwendungen, sodass das Smart-Home-System komfortabel über Smartphones oder Sprachassistenten gesteuert werden kann. Ebenso könnten automatisierte Szenarien implementiert werden, bei denen verschiedene Geräte abhängig von Uhrzeit, Wetterdaten oder Anwesenheit der Bewohner automatisch gesteuert werden.
 

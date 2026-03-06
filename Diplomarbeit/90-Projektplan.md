@@ -180,11 +180,11 @@ Gesamtkosten: 269.00 \euro{}
 
 #### Kurzbeschreibung
 
-Die Beleuchtung wird bei Dunkelheit und Bewegung im Raum automatisch eingeschaltet.
+Die Beleuchtung wird bei Dunkelheit automatisch eingeschaltet.
 
 #### Trigger
 
-Helligkeitssensor meldet Dunkelheit **und** PIR-Sensor erkennt Bewegung.
+Helligkeitssensor meldet Dunkelheit.
 
 #### Vorbedingung
 
@@ -197,17 +197,16 @@ Lampe wird für 2 Minuten eingeschaltet.
 #### Akteure
 
 - Benutzer (indirekt)
-- Sensoren (Bewegung, Helligkeit)
+- Sensoren (Helligkeit)
 
 #### Standardablauf
 
 1. Helligkeit < 200 Lux $\rightarrow$ Bedingung erfüllt
-2. Bewegung erkannt $\rightarrow$ Bedingung erfüllt
-3. Lampe wird via MQTT eingeschaltet
+2. Lampe wird via MQTT eingeschaltet
 
 #### Fehlerfälle
 
-- Keine Bewegung: Lampe bleibt aus
+- Helligkeit über Schwellwert: Lampe bleibt aus
 - Lichtsensor defekt: keine Aktion
 
 #### Systemzustand im Fehlerfall

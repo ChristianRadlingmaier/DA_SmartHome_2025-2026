@@ -44,7 +44,6 @@
 | OBJ | Wavefront OBJ (Dateiformat) |
 | Ohm | Ohm |
 | PDF | Portable Document Format |
-| PIR | Passive Infrared (Bewegungssensor) |
 | PLA | Polylactid |
 | PREEMPT-RT | Preemptible Real-Time (Linux-Kernel-Patch) |
 | PWM | Pulsweitenmodulation |

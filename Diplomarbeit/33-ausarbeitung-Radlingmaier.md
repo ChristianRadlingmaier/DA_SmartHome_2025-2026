@@ -132,7 +132,7 @@ Ein weiterer Vorteil von MQTT ist die Unterstützung verschiedener Qualitätsstu
 
 Aufgrund seiner Effizienz, der einfachen Implementierung und der guten Integration in bestehende Smart-Home-Frameworks eignet sich MQTT besonders für die Kommunikation zwischen Sensoren, Aktoren und zentralen Steuerungssystemen. Aus diesen Gründen wird MQTT in dieser Diplomarbeit als zentrales Kommunikationsprotokoll für den Datenaustausch innerhalb des Smart-Home-Systems eingesetzt.[@mqtt_protocol]
 
-![MQTT Struktur](img/bilder-Radlingmaier/MQTT-Struktur.png){ width=80% }
+![MQTT Struktur](img/bilder-Radlingmaier/MQTT-Struktur.jpg){ width=80% }
 [@opc_router_was_ist_mqtt]
 
 ##### Portainer

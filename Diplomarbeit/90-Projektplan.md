@@ -1,6 +1,7 @@
 ﻿# Projekthandbuch SmartHome Diplomarbeit
 
 **Autor:** Janik Gierer, Christian Radlingmaier, Christian Beichtbuchner
+**Stand:** 06.03.2026
 
 ## Entwicklungsplan
 
@@ -38,15 +39,17 @@ Betreuer: Christoph Leitner, BEd., DI (FH) Markus Zacharias
 
 ### Projekttermine
 
-| Termin     | Inhalt                             |
-|------------|------------------------------------|
-| 2025-12-15 | Projektmanagement abgeschlossen    |
-| 2025-11-10 | Prototypaufbau abgeschlossen       |
-| 2025-01-15 | 3D-Druck abgeschlossen             |
-| 2025-01-31 | Systemintegration abgeschlossen    |
-| 2025-02-15 | Testbetrieb + Fehleranalyse        |
-| 2025-02-20 | Finalisierung und Präsentation    |
-| 2026-03-06 | Abgabe Dokumentation               |
+| Termin     | Inhalt                          | Status (Stand 06.03.2026) |
+|------------|---------------------------------|----------------------------|
+| 2025-09-15 | Projektstart und Planung        | Abgeschlossen              |
+| 2025-10-10 | Aufbau SmartHome-Modellhaus     | Abgeschlossen              |
+| 2025-10-31 | Systemgrundlagen funktionsfähig | Abgeschlossen              |
+| 2025-11-15 | Systemintegration               | Abgeschlossen              |
+| 2025-12-15 | Systemtest und Optimierung      | Abgeschlossen              |
+| 2026-01-15 | Dokumentation weitgehend fertig | Abgeschlossen              |
+| 2026-02-20 | Finalisierung                   | Abgeschlossen              |
+| 2026-03-06 | Abgabe Dokumentation            | Fällig heute               |
+| März 2026  | Präsentation und Fachgespräch   | Offen                      |
 
 ### Projektkosten
 
@@ -61,7 +64,7 @@ Betreuer: Christoph Leitner, BEd., DI (FH) Markus Zacharias
 
 <!-- Genaue Kosten bei finaler Abrechnung prüfen. -->
 
-Gesamtkosten: 269.00 \euro{}
+Gesamtkosten: 369.00 \euro{}
 
 ### Projektrisiken
 
@@ -102,21 +105,21 @@ Gesamtkosten: 269.00 \euro{}
 
 ## Meilensteine
 
-### 2025-09-15 - Projektstart und Planung abgeschlossen
+### 2025-09-15 - Projektstart und Planung abgeschlossen (Status: Abgeschlossen)
 
 - Projektauftrag bestätigt
 - Projekthandbuch erstellt und abgestimmt
 - Zeitplan gemäß DA-Vorgaben festgelegt
 - GitHub-Repository und Grundstruktur eingerichtet
 
-### 2025-10-10 - Aufbau SmartHome-Modellhaus abgeschlossen
+### 2025-10-10 - Aufbau SmartHome-Modellhaus abgeschlossen (Status: Abgeschlossen)
 
 - Modellhaus mechanisch fertiggestellt
 - Grundverkabelung und Stromversorgung umgesetzt
 - Sensoren und Aktoren montiert
 - Erste Funktionstests durchgeführt
 
-### 2025-10-31 - Systemgrundlagen funktionsfähig
+### 2025-10-31 - Systemgrundlagen funktionsfähig (Status: Abgeschlossen)
 
 - Raspberry Pi eingerichtet
 - Docker-Umgebung aufgesetzt
@@ -124,28 +127,28 @@ Gesamtkosten: 269.00 \euro{}
 - Home Assistant gestartet
 - Erste Sensordaten werden übertragen
 
-### 2025-11-15 - Systemintegration abgeschlossen
+### 2025-11-15 - Systemintegration abgeschlossen (Status: Abgeschlossen)
 
 - Alle Sensoren und Aktoren integriert
 - Kommunikation über MQTT stabil
 - Node-RED-Flows implementiert
 - Grundlegende Automatisierungen laufen
 
-### 2025-12-15 - Systemtest und Optimierung
+### 2025-12-15 - Systemtest und Optimierung (Status: Abgeschlossen)
 
 - Gesamtsystem im Testbetrieb
 - Fehleranalyse durchgeführt
 - Optimierungen umgesetzt
 - Dashboard und Visualisierung verbessert
 
-### 2026-01-15 - Dokumentation weitgehend fertig
+### 2026-01-15 - Dokumentation weitgehend fertig (Status: Abgeschlossen)
 
 - Technische Dokumentation erstellt
 - Aufbau und Konfiguration beschrieben
 - Screenshots und Diagramme ergänzt
 - Erweiterungen (z. B. Szenen, Zeitsteuerung) implementiert
 
-### 2026-02-20 - Finalisierung
+### 2026-02-20 - Finalisierung (Status: Abgeschlossen)
 
 - Letzte Systemtests
 - Dokumentation korrigiert und formatiert
@@ -153,17 +156,17 @@ Gesamtkosten: 269.00 \euro{}
 - Präsentation vorbereitet
 - Demo-System einsatzbereit
 
-### 2026-03-06 - Offizielle Abgabe der Diplomarbeit
+### 2026-03-06 - Offizielle Abgabe der Diplomarbeit (Status: Fällig heute)
 
 - Abgabe der Dokumentation im DA-Portal
-- Gedruckte Version abgegeben
-- Projektstand vollständig dokumentiert
+- Gedruckte Version wird abgegeben
+- Projektstand wird vollständig dokumentiert
 
-### März 2026 - Präsentation und Abschluss
+### März 2026 - Präsentation und Abschluss (Status: Offen)
 
-- Diplomarbeitspräsentation durchgeführt
-- Fachgespräch absolviert
-- Projektabschluss und Reflexion
+- Diplomarbeitspräsentation wird durchgeführt
+- Fachgespräch wird absolviert
+- Projektabschluss und Reflexion werden abgeschlossen
 
 ## Anwendungsfälle
 

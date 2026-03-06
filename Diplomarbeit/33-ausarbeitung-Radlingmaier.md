@@ -500,7 +500,7 @@ Dadurch erscheint in der Weboberfläche automatisch ein Schalter.
 
 ##### Darstellung in der Weboberfläche
 
-![FHEM Weboberfläche](img/bilder-Radlingmaier/FHEM-Weboberfläche.png){ width=80% }
+![FHEM Weboberfläche](img/bilder-Radlingmaier/FHEM-Weboberflaeche.png){ width=80% }
 [@meintechblog_weihnachtsbeleuchtung_fhem]
 
 In der FHEM-Weboberfläche wird jedes definierte Device automatisch angezeigt.

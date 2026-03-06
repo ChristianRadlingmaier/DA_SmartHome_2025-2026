@@ -477,7 +477,7 @@ Parallel läuft ein zweiter Arduino mit StandardFirmata für die LED-Steuerung.
 - HTL-Sensor-Platine (NTC + LDR)
 - USB-Kabel für beide Arduinos
 
-![Ordnerstruktur](img/bilder-Gierer/WetterStationDatenfluss.png){ width=80% }
+![Ordnerstruktur](img/bilder-Gierer/WetterstationDatenfluss.png){ width=80% }
 
 ### Schritt 1: Wetterstations-Arduino programmieren
 

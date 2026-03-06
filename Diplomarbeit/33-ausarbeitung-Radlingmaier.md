@@ -34,20 +34,20 @@ Ein besonderer Schwerpunkt liegt auf der Installation und Nutzung von Docker auf
 - MQTT:
 - Portainer:
 
-# Teilaufgabe – Smart-Home-Umsetzung mit FHEM und Node-RED
+## Teilaufgabe – Smart-Home-Umsetzung mit FHEM und Node-RED
 
 **Schüler:** Christian Radlingmaier
 
-## Theoretische Grundlagen
+### Theoretische Grundlagen
 Unter einem Smart Home versteht man ein Haus, in dem verschiedene technische Komponenten miteinander vernetzt sind und zentral überwacht sowie gesteuert werden können. Diese Steuerung kann sowohl automatisch durch definierte Abläufe als auch manuell durch den Nutzer erfolgen. So ist es beispielsweise möglich, Beleuchtung oder Heizsysteme über ein mobiles Endgerät zu bedienen oder Rollläden zeitgesteuert automatisch zu bewegen.
 
 In dieser Diplomarbeit kommt ein Arduino als Mikrocontroller zum Einsatz, der für die Erfassung von Sensordaten sowie die Ansteuerung von Aktoren verantwortlich ist. Als zentrale Kontrolleinheit dient ein Raspberry Pi, auf dem die Smart-Home-Software FHEM betrieben wird. FHEM übernimmt die zentrale Verwaltung der angeschlossenen Geräte, verarbeitet eingehende Daten und setzt definierte Automatisierungsregeln um.
 
 Der Datenaustausch zwischen den einzelnen Systemkomponenten erfolgt über das MQTT-Protokoll. Dieses ermöglicht eine effiziente und zuverlässige Kommunikation zwischen Sensoren, Aktoren und der zentralen FHEM-Instanz.
 
-### Sensorik, Aktorik und Steuerung    
+#### Sensorik, Aktorik und Steuerung    
 
-#### Sensorik
+##### Sensorik
 Sensorik bildet eine zentrale Grundlage eines Smart-Home-Systems, da sie die Erfassung von physikalischen und umgebungsbezogenen Zuständen ermöglicht. Sensoren dienen dazu, Informationen aus der realen Umgebung aufzunehmen und diese in elektrische Signale umzuwandeln, die von Mikrocontrollern oder zentralen Steuereinheiten weiterverarbeitet werden können.
 
 In Smart-Home-Anwendungen kommen unterschiedliche Sensortypen zum Einsatz. Dazu zählen unter anderem Temperatursensoren, Feuchtigkeits- und Helligkeitssensoren sowie Bewegungs- und Kontaktsensoren. Diese erfassen kontinuierlich relevante Umgebungsdaten, die als Grundlage für automatisierte Entscheidungen und Steuerungsprozesse dienen.
@@ -58,7 +58,7 @@ Ein wesentlicher Vorteil moderner Sensorik ist ihre hohe Genauigkeit sowie der g
 
 In dieser Diplomarbeit wird Sensorik eingesetzt, um relevante Umgebungsparameter zu erfassen und als Grundlage für die Automatisierung und Steuerung innerhalb des Smart-Home-Systems zu dienen.[@smart_home_sensors_vesternet]
 
-#### Aktorik
+##### Aktorik
 Aktorik bezeichnet die Gesamtheit aller Komponenten in einem Smart-Home-System, die auf Basis von Steuerbefehlen physische Aktionen ausführen. Aktoren setzen digitale Signale aus der Steuerungslogik in konkrete mechanische, elektrische oder optische Vorgänge um und stellen damit das Gegenstück zur Sensorik dar.
 
 In Smart-Home-Anwendungen werden unterschiedliche Aktortypen eingesetzt. Dazu zählen unter anderem Relaismodule zum Schalten von elektrischen Verbrauchern, Aktoren für Beleuchtungssysteme, Motoren zur Steuerung von Rolllaeden sowie Stellventile für Heizungs- oder Lueftungssysteme. Diese Aktoren reagieren auf Steuerbefehle, die entweder manuell durch den Benutzer oder automatisch durch definierte Regeln ausgelöst werden.
@@ -69,7 +69,7 @@ Ein wichtiger Aspekt der Aktorik ist die Zuverlässigkeit und Sicherheit der aus
 
 In dieser Diplomarbeit wird Aktorik eingesetzt, um auf Basis von Sensordaten und definierten Automatisierungsregeln gezielt in die Umgebung einzugreifen und den gewuenschten Komfort-, Sicherheits- und Energieeffizienzgewinn zu realisieren.[@gira_aktoren_smarthome]
 
-#### Steuerung(Arduino UNO)
+##### Steuerung(Arduino UNO)
 Die Steuerung stellt eine zentrale Funktion innerhalb des Smart-Home-Systems dar und ist für die Verarbeitung von Sensordaten sowie die Ansteuerung der Aktoren verantwortlich. In dieser Diplomarbeit wird der Arduino Uno als Mikrocontroller eingesetzt, um diese Aufgaben zuverlässig und effizient zu übernehmen.
 
 Der Arduino Uno fungiert als dezentrale Steuereinheit, an die verschiedene Sensoren und Aktoren angeschlossen sind. Die vom System erfassten Sensordaten werden vom Mikrocontroller eingelesen, vorverarbeitet und anschließend an die zentrale Automatisierungsplattform weitergeleitet. Gleichzeitig empfängt der Arduino Uno Steuerbefehle von der Zentrale und setzt diese in entsprechende Schalt- oder Regelvorgänge um.
@@ -80,7 +80,7 @@ Durch den Einsatz des Arduino Uno wird eine klare Trennung zwischen der hardware
 
 In dieser Diplomarbeit übernimmt der Arduino Uno somit die Aufgabe der direkten Steuerung von Sensoren und Aktoren und bildet die Verbindung zwischen der physischen Umgebung und der übergeordneten Smart-Home-Logik.[@arduino_uno_docs]
 
-#### Raspberry Pi
+##### Raspberry Pi
 Der Raspberry Pi ist ein kompakter Einplatinencomputer, der für eine Vielzahl von Anwendungen im Bildungs-, Entwicklungs- und Embedded-Bereich eingesetzt wird. Trotz seiner geringen Größe bietet er ausreichende Rechenleistung, um als zentrale Steuereinheit in Smart-Home-Systemen zu fungieren. Der Betrieb erfolgt in der Regel mit einem Linux-basierten Betriebssystem, wodurch der Einsatz zahlreicher Open-Source-Anwendungen möglich ist.
 
 Im Rahmen dieser Diplomarbeit übernimmt der Raspberry Pi die Rolle der zentralen Steuer- und Kommunikationseinheit. Auf ihm werden mehrere Dienste ausgeführt, darunter Automatisierungs- und Management-Software wie Node-RED, MQTT-Broker sowie weitere containerisierte Anwendungen. Durch den Einsatz von Docker können diese Dienste voneinander getrennt betrieben und effizient verwaltet werden.
@@ -91,9 +91,9 @@ Ein weiterer Vorteil des Raspberry Pi ist seine geringe Leistungsaufnahme bei gl
 
 Aufgrund seiner Vielseitigkeit, der guten Unterstützung durch die Community sowie der Eignung für den Dauerbetrieb wird der Raspberry Pi in dieser Diplomarbeit als zentrale Plattform für den Betrieb und die Koordination des Smart-Home-Systems eingesetzt.[@raspberrypi_product_page] 
 
-### Frameworks
+#### Frameworks
 
-#### FHEM
+##### FHEM
 FHEM ist ein quelloffenes Smart-Home-Framework, das zur Steuerung, Überwachung und Automatisierung von Haus- und Gebäudetechnik eingesetzt wird. Die Software wird überwiegend auf Linux-basierten Systemen betrieben, wie beispielsweise einem Raspberry Pi, und fungiert als zentrale Steuereinheit innerhalb eines Smart-Home-Systems.
 
 Das Framework ist modular aufgebaut und unterstützt eine Vielzahl von Geräten, Protokollen und Kommunikationsschnittstellen. Dadurch können sowohl Sensoren (z. B. Temperatur- oder Bewegungssensoren) als auch Aktoren (z. B. Relais, Heizungsventile oder Beleuchtungssysteme) in das System integriert werden. Die Verwaltung dieser Komponenten erfolgt zentral über FHEM.
@@ -104,7 +104,7 @@ Die Kommunikation zwischen FHEM und externen Geräten kann über unterschiedlich
 
 Aufgrund seiner Offenheit, Erweiterbarkeit und großen Community eignet sich FHEM besonders für individuelle und anpassbare Smart-Home-Lösungen. Aus diesen Gründen wurde FHEM als zentrale Automatisierungsplattform für diese Diplomarbeit ausgewählt.[@fhem_framework]
 
-#### Node-RED
+##### Node-RED
 Node-RED ist ein quelloffenes, ereignisgesteuertes Entwicklungsframework, das insbesondere im Bereich Smart Home und Internet of Things (IoT) eingesetzt wird. Es ermöglicht die grafische Erstellung von Steuerungs- und Automatisierungslogiken mithilfe eines webbasierten Editors. Die einzelnen Funktionsbausteine, sogenannte Nodes, werden per Drag-and-Drop miteinander verbunden und bilden gemeinsam sogenannte Flows, welche den Daten- und Kontrollfluss innerhalb des Systems abbilden.
 
 Innerhalb eines Smart-Home-Systems übernimmt Node-RED die Verarbeitung von Sensordaten sowie die Umsetzung von logischen Abläufen. Eingehende Informationen, beispielsweise von Temperatur- oder Bewegungssensoren, können analysiert, gefiltert und anschließend zur Steuerung von Aktoren wie Beleuchtung, Heizung oder Rollläden verwendet werden. Dadurch lassen sich sowohl einfache Automatisierungen als auch komplexe Abhängigkeiten realisieren.
@@ -115,7 +115,7 @@ Zusätzlich besteht die Möglichkeit, eigene Funktionslogiken mithilfe von JavaS
 
 Aufgrund seiner übersichtlichen grafischen Programmierumgebung, der hohen Erweiterbarkeit und der aktiven Community eignet sich Node-RED besonders für die Entwicklung individueller Smart-Home-Lösungen. Daher wird das Framework in dieser Diplomarbeit als zentrales Werkzeug zur Umsetzung von Automatisierungs- und Steuerungsprozessen verwendet. [@nodered_framework]
 
-#### MQTT
+##### MQTT
 MQTT (Message Queuing Telemetry Transport) ist ein leichtgewichtiges, ereignisbasiertes Kommunikationsprotokoll, das speziell für den Einsatz in ressourcenbeschränkten Systemen entwickelt wurde. Aufgrund seines geringen Overheads und der hohen Zuverlässigkeit wird MQTT häufig in Smart-Home- und Internet-of-Things-Anwendungen eingesetzt.
 
 Das Protokoll basiert auf dem sogenannten Publish-Subscribe-Prinzip. Dabei kommunizieren die einzelnen Geräte nicht direkt miteinander, sondern über eine zentrale Instanz, den sogenannten Broker. Sensoren oder andere Datenquellen senden ihre Informationen als Nachrichten (Publish) an den Broker, während andere Komponenten diese Nachrichten abonnieren (Subscribe). Die Zuordnung erfolgt über eindeutig benannte Themen (Topics).
@@ -127,7 +127,7 @@ Ein weiterer Vorteil von MQTT ist die Unterstützung verschiedener Qualitätsstu
 Aufgrund seiner Effizienz, der einfachen Implementierung und der guten Integration in bestehende Smart-Home-Frameworks eignet sich MQTT besonders für die Kommunikation zwischen Sensoren, Aktoren und zentralen Steuerungssystemen. Aus diesen Gründen wird MQTT in dieser Diplomarbeit als zentrales Kommunikationsprotokoll für den Datenaustausch innerhalb des Smart-Home-Systems eingesetzt.[@mqtt_protocol]
 
 
-#### Portainer
+##### Portainer
 Portainer ist eine webbasierte Management- und Verwaltungsplattform zur einfachen Administration von containerbasierten Anwendungen. Die Software wird hauptsächlich in Verbindung mit Docker eingesetzt und ermöglicht es, Container, Images, Netzwerke und Volumes über eine grafische Benutzeroberfläche zu verwalten. Dadurch wird die Nutzung von Container-Technologien auch ohne tiefgehende Kommandozeilenkenntnisse erleichtert.
 
 Im Smart-Home-Umfeld eignet sich Portainer besonders für den Betrieb und die Organisation mehrerer Dienste auf einer zentralen Steuereinheit, wie beispielsweise einem Raspberry Pi oder einem Server. Anwendungen wie Node-RED, MQTT-Broker oder FHEM können in separaten Containern betrieben und über Portainer übersichtlich verwaltet werden. Dies erhöht die Wartbarkeit und Übersichtlichkeit des Gesamtsystems.
@@ -138,21 +138,21 @@ Durch die Trennung der einzelnen Anwendungen in eigenständige Container wird di
 
 Aufgrund der übersichtlichen Benutzeroberfläche, der einfachen Handhabung und der guten Integration in Docker-basierte Systeme wird Portainer in dieser Diplomarbeit zur Verwaltung und Überwachung der containerisierten Smart-Home-Komponenten eingesetzt.[@portainer_platform]
 
-### Einführung in die Programmiersprache Perl
+#### Einführung in die Programmiersprache Perl
 Im Rahmen dieser Diplomarbeit wurde erstmals mit der Programmiersprache Perl gearbeitet. Perl ist eine interpretierte, plattformunabhängige Programmiersprache, die besonders für Textverarbeitung, Systemskripte sowie die Automatisierung von Abläufen eingesetzt wird. Aufgrund ihrer Flexibilität und der guten Integration in Linux-Systeme findet Perl auch im Bereich Server- und Smart-Home-Anwendungen Verwendung.
 
 Perl-Programme bestehen aus einfachen, zeilenbasierten Anweisungen und werden in sogenannten Skripten gespeichert. Ein grundlegendes Perl-Programm beginnt üblicherweise mit einer sogenannten Shebang-Zeile, die angibt, mit welchem Interpreter das Skript ausgeführt werden soll.
 `#!/usr/bin/perl`
 [@tutorialspoint_perl_datatypes]
 
-##### Ausgabe von Text
+###### Ausgabe von Text
 
 Eine der grundlegendsten Funktionen in Perl ist die Ausgabe von Text auf der Konsole. Dies erfolgt mit dem Befehl print.
 `print "Hello World\n";`
 Der Ausdruck `\n` steht dabei für einen Zeilenumbruch.
 [@tutorialspoint_perl_datatypes]
 
-##### Variablen
+###### Variablen
 
 Perl verwendet unterschiedliche Variablentypen, die durch spezielle Zeichen gekennzeichnet sind. Skalare Variablen, die einzelne Werte wie Zahlen oder Zeichenketten speichern, beginnen mit dem Zeichen `$`.
 `my $zahl = 10;`
@@ -160,7 +160,7 @@ Perl verwendet unterschiedliche Variablentypen, die durch spezielle Zeichen geke
 Der Befehl my sorgt dafür, dass die Variable nur im aktuellen Gültigkeitsbereich verwendet werden kann.
 [@tutorialspoint_perl_datatypes]
 
-##### Bedingungen
+###### Bedingungen
 
 Mit bedingten Anweisungen lassen sich Entscheidungen im Programmablauf umsetzen. Eine einfache if-Anweisung sieht in Perl wie folgt aus:
 `if ($zahl > 5) {`
@@ -168,7 +168,7 @@ Mit bedingten Anweisungen lassen sich Entscheidungen im Programmablauf umsetzen.
 `}`
 [@tutorialspoint_perl_datatypes]
 
-##### Schleifen
+###### Schleifen
 
 Perl bietet verschiedene Möglichkeiten zur Wiederholung von Programmteilen. Eine häufig genutzte Variante ist die for-Schleife:
 `for (my $i = 0; $i < 3; $i++) {`
@@ -176,17 +176,17 @@ Perl bietet verschiedene Möglichkeiten zur Wiederholung von Programmteilen. Ein
 `}`
 [@tutorialspoint_perl_datatypes]
 
-##### Bedeutung für diese Diplomarbeit
+###### Bedeutung für diese Diplomarbeit
 
 In dieser Diplomarbeit wird Perl verwendet, um Automatisierungsaufgaben und logische Abläufe innerhalb des Smart-Home-Systems umzusetzen. Die einfache Syntax und die gute Integration in Linux-basierte Systeme ermöglichen eine effiziente Implementierung von Steuerungs- und Verwaltungsfunktionen.
 
 Durch das Erlernen der Programmiersprache Perl konnten grundlegende Programmierkonzepte wie Variablen, Bedingungen und Schleifen praktisch angewendet und in das Gesamtsystem integriert werden.
 
-## Praktische Arbeit
+### Praktische Arbeit
 
 In diesem Kapitel wird die praktische Umsetzung des Smart-Home-Systems beschrieben. Ziel war es, eine modulare und erweiterbare Architektur auf Basis von FHEM (Perl) zu realisieren. Als zentrale Steuereinheit wurde ein Raspberry Pi eingesetzt. Die Kommunikation zwischen Sensorik, Aktorik und der Steuerzentrale erfolgt über das MQTT-Protokoll. Zusätzlich wurde Node-RED zur Visualisierung und zur Erstellung von Logik-Workflows verwendet.
 
-### MQTT im Kontext von FHEM und Perl
+#### MQTT im Kontext von FHEM und Perl
 
 Rolle von MQTT in der FHEM-Architektur
 
@@ -198,7 +198,7 @@ MQTT stellt sicher, dass diese Kommunikation asynchron und zustandsunabhängig e
 Im Gegensatz zu direkten TCP- oder seriellen Verbindungen ermöglicht MQTT eine lose Kopplung der Systemkomponenten. Dadurch kann beispielsweise Node-RED oder ein zusätzliches Visualisierungssystem ergänzt werden, ohne die bestehende Struktur anzupassen.
 [@mqtt_protocol] [@fhem_framework]
 
-#### MQTT-Integration in FHEM
+##### MQTT-Integration in FHEM
 
 In FHEM erfolgt die MQTT-Anbindung über das Modul MQTT2_CLIENT.
 Dabei agiert FHEM selbst als MQTT-Client und verbindet sich mit einem lokal laufenden Broker wie Eclipse Mosquitto, der auf dem Raspberry Pi betrieben wird.
@@ -216,7 +216,7 @@ Dadurch kann FHEM:
 Ein wesentlicher Vorteil dieser Methode ist die direkte Weiterverarbeitung der MQTT-Payloads innerhalb von FHEM-Perl-Funktionen.
 [@mqtt_protocol] [@fhem_framework]
 
-#### Verarbeitung von MQTT-Daten in Perl
+##### Verarbeitung von MQTT-Daten in Perl
 
 Ein besonderer Schwerpunkt dieser Arbeit liegt auf der Nutzung von Perl innerhalb von FHEM.
 Eingehende MQTT-Nachrichten können in FHEM über sogenannte Notify- oder DOIF-Definitionen verarbeitet werden.
@@ -238,7 +238,7 @@ Hier wird deutlich:
 Diese Trennung erhöht die Wartbarkeit des Systems erheblich.
 [@mqtt_protocol] [@fhem_framework] [@tutorialspoint_perl_datatypes]
 
-#### Strukturierung der MQTT-Kommunikation
+##### Strukturierung der MQTT-Kommunikation
 
 Im Gegensatz zur reinen hierarchischen Topic-Betrachtung wird in dieser Arbeit zusätzlich auf eine funktionsbasierte Gliederung der Topics geachtet.
 
@@ -258,7 +258,7 @@ Diese Trennung ermöglicht:
 Gerade in FHEM erleichtert dies die Definition von Readings und Attributen.
 [@mqtt_protocol]
 
-#### Sicherheitsaspekte von MQTT im lokalen Netzwerk
+##### Sicherheitsaspekte von MQTT im lokalen Netzwerk
 
 Da das Smart-Home-System vollständig im lokalen Netzwerk betrieben wird, wurde bewusst auf externe Broker verzichtet.
 Der MQTT-Broker läuft ausschließlich auf dem Raspberry Pi.
@@ -272,7 +272,7 @@ Zur Absicherung wurden folgende Maßnahmen berücksichtigt:
 Damit wird verhindert, dass unautorisierte Geräte Nachrichten publizieren oder manipulieren.
 [@mosquitto_authentication]
 
-#### Abgrenzung zu anderen Protokollen
+##### Abgrenzung zu anderen Protokollen
 
 In der Planungsphase wurden auch alternative Kommunikationsmöglichkeiten betrachtet:
 
@@ -289,16 +289,16 @@ MQTT wurde gewählt, da es speziell für IoT-Anwendungen entwickelt wurde und:
 Im Gegensatz zur direkten seriellen Kommunikation ermöglicht MQTT zudem mehrere gleichzeitige Abonnenten.
 [@hivemq_mqtt_essentials]
 
-### Umsetzung des Systems FHEM (Perl)
+#### Umsetzung des Systems FHEM (Perl)
 
-#### Installation von FHEM auf den Raspberry PI
+##### Installation von FHEM auf den Raspberry PI
 
-##### Vorbereitung des Systems 
+###### Vorbereitung des Systems 
 
 Als zentrale Steuereinheit des Smart-Home-Systems wurde ein Raspberry Pi 5 verwendet. Dieses basiert auf Debian Linux und bietet eine stabile Grundlage für serverbasierte Anwendungen wie FHEM. Zuserst wurde das System aktualiesiert, um sicher zustellen das alle Pakete up to date sind, mit den commands (`sudo apt update & sudo apt upgrade -y`). 
 [@raspberrypi_os_docs]
 
-##### Installation von FHEM 
+###### Installation von FHEM 
 
 Bei FHEM handelt es sich um eine serverbasierte Smart-Home-Software, die in der Programmiersprache Perl entwickelt wurde. FHEM läuft als Hintergrunddienst und ist über ein Webinterface erreichbar.
 
@@ -312,7 +312,7 @@ Falls Abhängigkeiten fehlten, wurden diese mit folgenden Befehk nach installier
 Nach erfolgreciher Installation startet FHEM automatisch als Dienst.
 [@fhem_commandref]
 
-##### Überprüfung der Installation 
+###### Überprüfung der Installation 
 
 Die Weboberfläche ist standartmäßig über Port 8083 erreichbar: 
  `http://<IP-Adresse-des-Raspberry-Pi>:8083`
@@ -325,9 +325,9 @@ Zusätzlich kann man den Status des Dienstes überprüfen, mit den Befehl:
 Ein aktiver Status ("active(running)") zeigt an, das der Server korrekt ausgeführt wird.
 [@fhem_framework]
 
-#### Perl Code
+##### Perl Code
 
-##### Licht Ein/Aus
+###### Licht Ein/Aus
 
 Dieser Code verarbeitet den Set-Befehl von FHEM.
 
@@ -345,7 +345,7 @@ Schließlich wird der Befehl über MQTT gesendet.
 Der Arduino empfängt diese Nachricht und schaltet die LED entsprechend Ein oder Aus.
 [@tutorialspoint_perl_datatypes]
 
-##### Helligkeitssteuerung der LED(PWM)
+###### Helligkeitssteuerung der LED(PWM)
 
 Neben dem Ein- und Ausschalten kann auch die Helligkeit der LED gesteuert werden.
 
@@ -363,7 +363,7 @@ Diese Nachricht wird an den Arduino gesendet.
 Der Arduino nutzt anschließend PWM (Pulse Width Modulation), um die Helligkeit der LED zu verändern.
 [@arduino_pwm_output]
 
-#### Wetterstation
+##### Wetterstation
 
 Funktionsbeschreibung
 
@@ -382,7 +382,7 @@ Die Sensorwerte werden vom Arduino gemessen und über MQTT an FHEM übertragen.
 Das Perl-Modul speichert diese Werte anschließend als Readings im Smart-Home-System.
 [@metoffice_measure_weather]
 
-##### Verarbeitung der Wetterdaten
+###### Verarbeitung der Wetterdaten
 
 Die Verarbeitung erfolgt im Notify-Bereich des Perl-Moduls.
 
@@ -400,7 +400,7 @@ Danach wird eine Zuordnungstabelle (Hash-Map) erstellt.
 Diese Tabelle definiert, wie die Sensordaten im Smart-Home-System gespeichert werden.
 [@fhem_notify] [@perl_hash_structure]
 
-##### Speichern der Messwerte
+###### Speichern der Messwerte
 
 Der nächste Codeabschnitt speichert die Sensordaten.
 
@@ -424,9 +424,9 @@ wird in FHEM automatisch das Reading gesetzt:
 `weather_temperature = 21.5`
 [@fhem_readings_api]
 
-#### Einbindung der LEDs in die FHEM-Weboberfläche
+##### Einbindung der LEDs in die FHEM-Weboberfläche
 
-##### Grundprinzip der LED-Integration
+###### Grundprinzip der LED-Integration
 
 Die LEDs stellen im Modellhaus die Lichtaktoren dar.
 Physikalisch sind sie über Vorwiderstände mit digitalen Ausgängen des Arduino Uno verbunden.
@@ -442,7 +442,7 @@ Die Steuerung erfolgt in mehreren Schritten:
 FHEM übernimmt dabei die Rolle der zentralen Steuerinstanz.
 [@mqtt_pubsub_architecture]
 
-#### Anlegen des MQTT-Devices in FHEM
+##### Anlegen des MQTT-Devices in FHEM
 
 Zunächst wurde in FHEM die MQTT-Verbindung definiert:
 
@@ -452,7 +452,7 @@ Zunächst wurde in FHEM die MQTT-Verbindung definiert:
 Damit verbindet sich FHEM mit dem lokal laufenden Broker Eclipse Mosquitto.
 [@fhem_mqtt2_client]
 
-#### Anlegen eines LED-Geräts in FHEM
+##### Anlegen eines LED-Geräts in FHEM
 
 Für jede LED wurde ein eigenes Device angelegt.
 
@@ -478,7 +478,7 @@ setList mit Topic
 Dadurch erscheint in der Weboberfläche automatisch ein Schalter.
 [@fhem_mqtt2_client]
 
-#### Darstellung in der Weboberfläche
+##### Darstellung in der Weboberfläche
 
 In der FHEM-Weboberfläche wird jedes definierte Device automatisch angezeigt.
 Zur besseren Übersicht wurden:
@@ -493,7 +493,7 @@ Das bewirkt:
 - Übersichtliche Raumstruktur
 [@fhem_deviceoverview]
 
-#### Zuordnung zu Räumen
+##### Zuordnung zu Räumen
 
 Damit die LEDs logisch gruppiert werden, wurde das Attribut „room“ verwendet:
 `attr LED_Wohnzimmer room Wohnzimmer`
@@ -503,7 +503,7 @@ Damit die LEDs logisch gruppiert werden, wurde das Attribut „room“ verwendet
 Dadurch erscheinen die Geräte in der jeweiligen Raumansicht.
 [@fhem_room_attribute]
 
-#### Rückmeldung des LED-Zustandes
+##### Rückmeldung des LED-Zustandes
 
 Wichtig für die Weboberfläche ist die Statusrückmeldung.
 Der Arduino sendet nach jeder Zustandsänderung:
@@ -513,7 +513,7 @@ FHEM aktualisiert dadurch automatisch das Reading des Devices.
 Ohne Rückmeldung würde der Schalter zwar klicken, aber der Status wäre nicht synchron.
 [@hivemq_pubsub_architecture]
 
-#### Verarbeitung mit Perl (optional erweitert) 
+##### Verarbeitung mit Perl (optional erweitert) 
 
 In deiner Diplomarbeit kannst du zusätzlich zeigen, dass FHEM die LED auch logisch verarbeiten kann:
 `define autoLicht notify LED_Wohnzimmer:on {`
@@ -525,7 +525,7 @@ In deiner Diplomarbeit kannst du zusätzlich zeigen, dass FHEM die LED auch logi
 `Die Logik kann direkt in Perl erweitert werden.`
 [@fhem_notify_module]
 
-### Ausblick
+#### Ausblick
 
 Im Rahmen dieser Diplomarbeit wurde ein funktionales Smart-Home-System entwickelt und umgesetzt. Dabei wurde gezeigt, wie ein Raspberry Pi als zentrale Steuereinheit eingesetzt werden kann, um verschiedene Komponenten wie Beleuchtung, Heizungssteuerung und eine Wetterstation miteinander zu vernetzen. Durch die Verwendung von FHEM, MQTT sowie eines Arduino-Mikrocontrollers konnte eine flexible und erweiterbare Architektur geschaffen werden, die eine zuverlässige Kommunikation zwischen Sensoren, Aktoren und der zentralen Steuerung ermöglicht.
 

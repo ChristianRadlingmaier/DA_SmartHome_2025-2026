@@ -80,6 +80,9 @@ Durch den Einsatz des Arduino Uno wird eine klare Trennung zwischen der hardware
 
 In dieser Diplomarbeit übernimmt der Arduino Uno somit die Aufgabe der direkten Steuerung von Sensoren und Aktoren und bildet die Verbindung zwischen der physischen Umgebung und der übergeordneten Smart-Home-Logik.[@arduino_uno_docs]
 
+![Arduino Uno mit Pinbeschreibung](img/bilder-Radlingmaier/ArduinoUno_Pins.png){ width=80% }
+[@arduino_introduction_pins]
+
 ##### Raspberry Pi
 Der Raspberry Pi ist ein kompakter Einplatinencomputer, der für eine Vielzahl von Anwendungen im Bildungs-, Entwicklungs- und Embedded-Bereich eingesetzt wird. Trotz seiner geringen Größe bietet er ausreichende Rechenleistung, um als zentrale Steuereinheit in Smart-Home-Systemen zu fungieren. Der Betrieb erfolgt in der Regel mit einem Linux-basierten Betriebssystem, wodurch der Einsatz zahlreicher Open-Source-Anwendungen möglich ist.
 
@@ -90,6 +93,9 @@ Der Raspberry Pi ist für die Verarbeitung und Weiterleitung von Sensordaten ver
 Ein weiterer Vorteil des Raspberry Pi ist seine geringe Leistungsaufnahme bei gleichzeitig hoher Flexibilität. Dank integrierter Netzwerk- und Schnittstellenfunktionen kann er problemlos in bestehende Smart-Home-Infrastrukturen integriert und bei Bedarf erweitert werden.
 
 Aufgrund seiner Vielseitigkeit, der guten Unterstützung durch die Community sowie der Eignung für den Dauerbetrieb wird der Raspberry Pi in dieser Diplomarbeit als zentrale Plattform für den Betrieb und die Koordination des Smart-Home-Systems eingesetzt.[@raspberrypi_product_page] 
+
+![Raspberry_pi](img/bilder-Radlingmaier/Raspberry_pi.png){ width=80% }
+[@raspberry_pi4_inbetriebnahme_remote]
 
 #### Frameworks
 
@@ -126,6 +132,8 @@ Ein weiterer Vorteil von MQTT ist die Unterstützung verschiedener Qualitätsstu
 
 Aufgrund seiner Effizienz, der einfachen Implementierung und der guten Integration in bestehende Smart-Home-Frameworks eignet sich MQTT besonders für die Kommunikation zwischen Sensoren, Aktoren und zentralen Steuerungssystemen. Aus diesen Gründen wird MQTT in dieser Diplomarbeit als zentrales Kommunikationsprotokoll für den Datenaustausch innerhalb des Smart-Home-Systems eingesetzt.[@mqtt_protocol]
 
+![MQTT Struktur](img/bilder-Radlingmaier/MQTT_Struktur.png){ width=80% }
+[@opc_router_was_ist_mqtt]
 
 ##### Portainer
 Portainer ist eine webbasierte Management- und Verwaltungsplattform zur einfachen Administration von containerbasierten Anwendungen. Die Software wird hauptsächlich in Verbindung mit Docker eingesetzt und ermöglicht es, Container, Images, Netzwerke und Volumes über eine grafische Benutzeroberfläche zu verwalten. Dadurch wird die Nutzung von Container-Technologien auch ohne tiefgehende Kommandozeilenkenntnisse erleichtert.
@@ -187,6 +195,9 @@ Durch das Erlernen der Programmiersprache Perl konnten grundlegende Programmierk
 In diesem Kapitel wird die praktische Umsetzung des Smart-Home-Systems beschrieben. Ziel war es, eine modulare und erweiterbare Architektur auf Basis von FHEM (Perl) zu realisieren. Als zentrale Steuereinheit wurde ein Raspberry Pi eingesetzt. Die Kommunikation zwischen Sensorik, Aktorik und der Steuerzentrale erfolgt über das MQTT-Protokoll. Zusätzlich wurde Node-RED zur Visualisierung und zur Erstellung von Logik-Workflows verwendet.
 
 #### MQTT im Kontext von FHEM und Perl
+
+![MQTT_Kommunikation](img/bilder-Radlingmaier/MQTT_Kommunikation.png){ width=80% }
+[@emqx_mqtt5_publish_subscribe]
 
 Rolle von MQTT in der FHEM-Architektur
 
@@ -329,6 +340,8 @@ Ein aktiver Status ("active(running)") zeigt an, das der Server korrekt ausgefü
 
 ###### Licht Ein/Aus
 
+![Code: Licht Ein oder Aus](img/bilder-Radlingmaier/Licht_Ein_Aus.png){ width=80% }
+
 Dieser Code verarbeitet den Set-Befehl von FHEM.
 
 Zuerst wird überprüft, ob der Befehl light lautet.
@@ -347,6 +360,8 @@ Der Arduino empfängt diese Nachricht und schaltet die LED entsprechend Ein oder
 
 ###### Helligkeitssteuerung der LED(PWM)
 
+![Code für Licht Helligkeit](img/bilder-Radlingmaier/Licht_brightness.png){ width=80% }
+
 Neben dem Ein- und Ausschalten kann auch die Helligkeit der LED gesteuert werden.
 
 Erklärung: 
@@ -364,6 +379,8 @@ Der Arduino nutzt anschließend PWM (Pulse Width Modulation), um die Helligkeit 
 [@arduino_pwm_output]
 
 ##### Wetterstation
+
+![Code für die Wetterstation](img/bilder-Radlingmaier/Wetterstation.png){ width=80% }
 
 Funktionsbeschreibung
 
@@ -454,6 +471,9 @@ Damit verbindet sich FHEM mit dem lokal laufenden Broker Eclipse Mosquitto.
 
 ##### Anlegen eines LED-Geräts in FHEM
 
+![FHEM_Devices](img/bilder-Radlingmaier/FHEM_Devices.png){ width=80% }
+[@meintechblog_fhem_batterie_benachrichtigung]
+
 Für jede LED wurde ein eigenes Device angelegt.
 
 Beispiel: LED im Wohnzimmer
@@ -479,6 +499,9 @@ Dadurch erscheint in der Weboberfläche automatisch ein Schalter.
 [@fhem_mqtt2_client]
 
 ##### Darstellung in der Weboberfläche
+
+![FHEM Weboberfläche](img/bilder-Radlingmaier/FHEM_Weboberfläche.png){ width=80% }
+[@meintechblog_weihnachtsbeleuchtung_fhem]
 
 In der FHEM-Weboberfläche wird jedes definierte Device automatisch angezeigt.
 Zur besseren Übersicht wurden:

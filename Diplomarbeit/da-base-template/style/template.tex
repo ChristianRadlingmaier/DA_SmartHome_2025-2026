@@ -410,6 +410,17 @@ $endif$
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
+% Avoid TeX main-memory overflow when many PDF pages are attached.
+% pdfpages repeatedly appends to \@filelist; we disable that only during include.
+\makeatletter
+\newcommand{\includepdfnofilelist}[2][]{%
+  \begingroup
+  \let\@addtofilelist\@gobble
+  \includepdf[#1]{#2}%
+  \endgroup
+}
+\makeatother
+
 
 
 % Auch Fußnoten bündig ausrichten
@@ -627,9 +638,9 @@ $for(da-kiquellen)$
 \stepcounter{subsection}
 \phantomsection
 \addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}$da-kiquellen.ki$: $da-kiquellen.short-prompt$}
-\includepdf[
+\includepdfnofilelist[
     clip=0mm 0mm 0mm 0mm,
-    pages=$if(da-kiquellen.seiten)$$da-appendix.seiten$$else$-$endif$,
+    pages=$if(da-kiquellen.seiten)$$da-kiquellen.seiten$$else$-$endif$,
     frame,
     scale=.73,
     pagecommand={\begin{center}\translate{attachment}: $da-kiquellen.short-prompt$\\\begin{tiny}$da-kiquellen.pdf-file$\end{tiny}\end{center}}
@@ -667,7 +678,7 @@ $for(da-appendix)$
 \stepcounter{subsection}
 \phantomsection
 \addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}$da-appendix.abschnitt$}
-\includepdf[
+\includepdfnofilelist[
     clip=0mm 0mm 0mm 0mm,
     pages=$if(da-appendix.seiten)$$da-appendix.seiten$$else$-$endif$,
     nup=2x2,

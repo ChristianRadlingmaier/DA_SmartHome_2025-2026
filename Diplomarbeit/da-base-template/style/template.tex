@@ -670,8 +670,8 @@ $for(da-appendix)$
 \includepdf[
     clip=0mm 0mm 0mm 0mm,
     pages=$if(da-appendix.seiten)$$da-appendix.seiten$$else$-$endif$,
+    nup=2x2,
     frame,
-    scale=.73,
     pagecommand={\begin{center}\translate{attachment}: $da-appendix.abschnitt$\\\begin{tiny}$da-appendix.pdf-file$\end{tiny}\end{center}}
  ]{pdfs/$da-appendix.pdf-file$}
 %\includepdf[pages=$if(da-appendix.seiten)$$da-appendix.seiten$$else$-$endif$]{source/pdfs/$da-appendix.pdf-file$}

@@ -27,6 +27,9 @@ da-author:
   nachname: Radlingmaier
   klasse: 5BHWIN
   thema: FHEM Steuerung des Smart Homes
+  ki-tools:
+  - name: ChatGPT-5.3
+    zweck: Rechtschreibkorrektur und Formulierungshilfe & Informationsgewinn
 
 - vorname: Christian 
   nachname: Beichtbuchner
@@ -144,6 +147,9 @@ da-kiquellen:
   short-prompt: Aufbau eines Atoms
   pdf-file: gpt-atom.pdf
 
+- ki: ChatGPT5.3
+  short-prompt: Erklärung Docker Compose
+  pdf-file: gpt-docker-compose.pdf
 
 da-appendix:
 - abschnitt: Technische Dokumentation

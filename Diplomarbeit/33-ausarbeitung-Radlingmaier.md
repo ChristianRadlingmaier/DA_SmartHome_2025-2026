@@ -80,7 +80,7 @@ Durch den Einsatz des Arduino Uno wird eine klare Trennung zwischen der hardware
 
 In dieser Diplomarbeit übernimmt der Arduino Uno somit die Aufgabe der direkten Steuerung von Sensoren und Aktoren und bildet die Verbindung zwischen der physischen Umgebung und der übergeordneten Smart-Home-Logik.[@arduino_uno_docs]
 
-![Arduino Uno mit Pinbeschreibung](img/bilder-Radlingmaier/ArduinoUno_Pins.png){ width=80% }
+![Arduino Uno mit Pinbeschreibung](img/bilder-Radlingmaier/ArduinoUno-Pins.png){ width=80% }
 [@arduino_introduction_pins]
 
 ##### Raspberry Pi
@@ -94,7 +94,7 @@ Ein weiterer Vorteil des Raspberry Pi ist seine geringe Leistungsaufnahme bei gl
 
 Aufgrund seiner Vielseitigkeit, der guten Unterstützung durch die Community sowie der Eignung für den Dauerbetrieb wird der Raspberry Pi in dieser Diplomarbeit als zentrale Plattform für den Betrieb und die Koordination des Smart-Home-Systems eingesetzt.[@raspberrypi_product_page] 
 
-![Raspberry_pi](img/bilder-Radlingmaier/Raspberry_pi.png){ width=80% }
+![Raspberry_pi](img/bilder-Radlingmaier/Raspberry-pi.png){ width=80% }
 [@raspberry_pi4_inbetriebnahme_remote]
 
 #### Frameworks
@@ -132,7 +132,7 @@ Ein weiterer Vorteil von MQTT ist die Unterstützung verschiedener Qualitätsstu
 
 Aufgrund seiner Effizienz, der einfachen Implementierung und der guten Integration in bestehende Smart-Home-Frameworks eignet sich MQTT besonders für die Kommunikation zwischen Sensoren, Aktoren und zentralen Steuerungssystemen. Aus diesen Gründen wird MQTT in dieser Diplomarbeit als zentrales Kommunikationsprotokoll für den Datenaustausch innerhalb des Smart-Home-Systems eingesetzt.[@mqtt_protocol]
 
-![MQTT Struktur](img/bilder-Radlingmaier/MQTT_Struktur.png){ width=80% }
+![MQTT Struktur](img/bilder-Radlingmaier/MQTT-Struktur.png){ width=80% }
 [@opc_router_was_ist_mqtt]
 
 ##### Portainer
@@ -196,7 +196,7 @@ In diesem Kapitel wird die praktische Umsetzung des Smart-Home-Systems beschrieb
 
 #### MQTT im Kontext von FHEM und Perl
 
-![MQTT_Kommunikation](img/bilder-Radlingmaier/MQTT_Kommunikation.png){ width=80% }
+![MQTT_Kommunikation](img/bilder-Radlingmaier/MQTT-Kommunikation.png){ width=80% }
 [@emqx_mqtt5_publish_subscribe]
 
 Rolle von MQTT in der FHEM-Architektur
@@ -340,7 +340,7 @@ Ein aktiver Status ("active(running)") zeigt an, das der Server korrekt ausgefü
 
 ###### Licht Ein/Aus
 
-![Code: Licht Ein oder Aus](img/bilder-Radlingmaier/Licht_Ein_Aus.png){ width=80% }
+![Code: Licht Ein oder Aus](img/bilder-Radlingmaier/Licht-Ein-Aus.png){ width=80% }
 
 Dieser Code verarbeitet den Set-Befehl von FHEM.
 
@@ -360,7 +360,7 @@ Der Arduino empfängt diese Nachricht und schaltet die LED entsprechend Ein oder
 
 ###### Helligkeitssteuerung der LED(PWM)
 
-![Code für Licht Helligkeit](img/bilder-Radlingmaier/Licht_brightness.png){ width=80% }
+![Code für Licht Helligkeit](img/bilder-Radlingmaier/Licht-brightness.png){ width=80% }
 
 Neben dem Ein- und Ausschalten kann auch die Helligkeit der LED gesteuert werden.
 
@@ -471,7 +471,7 @@ Damit verbindet sich FHEM mit dem lokal laufenden Broker Eclipse Mosquitto.
 
 ##### Anlegen eines LED-Geräts in FHEM
 
-![FHEM_Devices](img/bilder-Radlingmaier/FHEM_Devices.png){ width=80% }
+![FHEM_Devices](img/bilder-Radlingmaier/FHEM-Devices.png){ width=80% }
 [@meintechblog_fhem_batterie_benachrichtigung]
 
 Für jede LED wurde ein eigenes Device angelegt.
@@ -500,7 +500,7 @@ Dadurch erscheint in der Weboberfläche automatisch ein Schalter.
 
 ##### Darstellung in der Weboberfläche
 
-![FHEM Weboberfläche](img/bilder-Radlingmaier/FHEM_Weboberfläche.png){ width=80% }
+![FHEM Weboberfläche](img/bilder-Radlingmaier/FHEM-Weboberfläche.png){ width=80% }
 [@meintechblog_weihnachtsbeleuchtung_fhem]
 
 In der FHEM-Weboberfläche wird jedes definierte Device automatisch angezeigt.

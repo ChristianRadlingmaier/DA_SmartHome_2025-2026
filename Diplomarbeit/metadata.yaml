@@ -151,6 +151,18 @@ da-kiquellen:
   short-prompt: Erklärung Docker Compose
   pdf-file: gpt-docker-compose.pdf
 
+- ki: ChatGPT5.3
+  short-prompt: FHEM Code
+  pdf-file: FHEM-Code.pdf  
+
+- ki: ChatGPT5.3
+  short-prompt: Perl Code
+  pdf-file: Perl-Code-Diplomarbeit.pdf  
+
+- ki: ChatGPT5.3
+  short-prompt: Perl Fehler Erklaerung
+  pdf-file: Perl-Fehler-Erklaerung.pdf  
+
 da-appendix:
 
 

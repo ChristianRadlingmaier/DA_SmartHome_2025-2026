@@ -676,18 +676,230 @@ Damit sind Wetterstation und LED-Logik sauber getrennt.
 
 Die Wetterstation liefert stabile Live-Werte über MQTT in Home Assistant. Durch die udev-Symlinks bleibt die Lösung auch nach Neustarts und Umstecken zuverlässig.
 
+## Architekturentscheidungen und Systemgrenzen
+
+Die Grundarchitektur wurde bewusst nicht als monolithische Anwendung, sondern als verteiltes, klar getrenntes System umgesetzt. Für ein schulisches Diplomprojekt hat das zwei Vorteile: Erstens sind Verantwortlichkeiten besser nachvollziehbar, zweitens können Fehler schneller lokalisiert werden, weil jede Schicht eine klar definierte Aufgabe hat.
+
+### Begründung der Dreiteilung
+
+Die Aufteilung in Feldebene (Arduino), Verarbeitungsebene (Node-RED plus MQTT) und Managementebene (Home Assistant) folgt einem einfachen Entwurfsprinzip: Hardwarezugriff, Datenverarbeitung und Bedienung sollen getrennt sein.
+
+Konkret bedeutet das:
+
+- Änderungen an Dashboards oder Automationen beeinflussen nicht direkt die serielle Hardwarekommunikation.
+- Anpassungen an der Hardwarebelegung erfordern keine komplette Neustrukturierung der Home-Assistant-Oberfläche.
+- Die Datenvermittlung bleibt über Topics transparent und dokumentierbar.
+
+Für die Wartbarkeit ist diese Trennung besonders wichtig, da in einem Team mehrere Personen parallel arbeiten und unterschiedliche Schwerpunkte haben (Modellbau, Steuerlogik, Plattformintegration). [@nodered_homepage] [@ha_installation]
+
+### Entscheidung für containerisierten Betrieb
+
+Home Assistant, MQTT-Broker und Portainer laufen containerisiert auf dem Raspberry Pi. Die Entscheidung für Docker wurde aus drei technischen Gründen getroffen:
+
+1. **Reproduzierbarkeit:** Der Startzustand der Dienste ist über `compose.yaml` dokumentiert.
+2. **Kapselung:** Abhängigkeiten der einzelnen Dienste bleiben getrennt.
+3. **Rollback-Fähigkeit:** Bei fehlerhaften Updates kann gezielt auf eine vorherige Image-Version zurückgegangen werden.
+
+Gerade in iterativen Projektphasen reduziert das den Aufwand bei Neuaufbau und Fehlerbehebung erheblich. [@docker_compose_overview] [@docker_compose_file_reference]
+
+### Abgrenzung zu alternativen Ansätzen
+
+Alternativ wäre eine direkte Kopplung Arduino <-> Home Assistant über eine proprietäre serielle Protokollimplementierung möglich gewesen. Dieser Ansatz wurde nicht gewählt, weil dabei die Entkopplungsebene fehlt und spätere Erweiterungen (weitere Sensorik, zweite Datenquellen, zusätzliche Auswertelogik) aufwendiger werden.
+
+Die gewählte Kombination aus Firmata für den I/O-nahen Zugriff und MQTT für den dienstübergreifenden Austausch ist für den aktuellen Projektumfang ein guter Kompromiss zwischen Einfachheit und Erweiterbarkeit. [@firmata_arduino_github] [@ha_mqtt_integration]
+
+## Datenmodell, Topic-Konzept und Entitätsabbildung
+
+Ein Smart-Home-System bleibt nur dann langfristig wartbar, wenn Topic-Namen, Payload-Formate und Entitätsnamen konsistent gehalten werden. In diesem Projekt wurde daher ein strukturiertes Benennungsschema verwendet, das zwischen Messwerten, Kommandos und Zuständen unterscheidet.
+
+### Topic-Namenskonvention
+
+Die Topics sind hierarchisch aufgebaut und folgen dem Schema:
+
+`<bereich>/<kategorie>/<raum-oder-komponente>/<typ>`
+
+Beispiele:
+
+- `haus/sensor/wohnzimmer/temperatur`
+- `haus/licht/wohnzimmer/set`
+- `haus/licht/wohnzimmer/state`
+- `weatherstation/state`
+
+Damit ist ohne zusätzliche Dokumentation erkennbar, ob ein Topic Messdaten transportiert oder ein Schaltkommando enthält. Diese Lesbarkeit ist ein wesentlicher Faktor für spätere Erweiterungen und für Fehlersuche unter Zeitdruck.
+
+### Trennung von Soll- und Ist-Zustand
+
+Ein häufiger Fehler in kleinen Smart-Home-Projekten ist die Vermischung von Befehl und Rückmeldung auf demselben Kanal. Im vorliegenden Aufbau wird dies bewusst vermieden:
+
+- `.../set` beschreibt den angeforderten Zielzustand.
+- `.../state` beschreibt den tatsächlich bestätigten Zustand.
+
+Diese Trennung ist besonders für Dashboards relevant. Ein Button-Klick darf nicht automatisch als physisch ausgeführte Aktion interpretiert werden. Erst die Rückmeldung über `state` bestätigt den tatsächlichen Aktorzustand. [@ha_mqtt_integration] [@oasis_mqtt_v5_2019]
+
+### Payload-Struktur und Datentypen
+
+Für Sensordaten der Wetterstation wird ein JSON-Objekt verwendet, das in Node-RED validiert und anschließend an MQTT publiziert wird. Das gewählte Format reduziert Mehrdeutigkeiten, weil alle Werte in einer gemeinsamen Nachricht mit eindeutigem Schlüsselnamen enthalten sind.
+
+Beispiel:
+
+```json
+{
+  "timestamp_ms": 254000,
+  "temperature_c": 22.48,
+  "humidity_pct": 0.0,
+  "light_raw": 318,
+  "light_pct": 68.91
+}
+```
+
+Dieses Schema ist bewusst klein gehalten, enthält aber bereits alle Informationen für:
+
+- numerische Darstellung im Dashboard,
+- Verlaufsgrafiken über Zeit,
+- spätere Regeldefinitionen mit Schwellwerten.
+
+### Entitätsabbildung in Home Assistant
+
+Die MQTT-Daten werden in Home Assistant über `value_template` einzelnen Entitäten zugeordnet. Das hat den Vorteil, dass Datenformat und Darstellung sauber getrennt bleiben: Node-RED kümmert sich um Aufbereitung und Validierung, Home Assistant um Visualisierung und Automationen.
+
+Zusätzlich entsteht dadurch eine klare Datenverantwortung:
+
+- Sensorwert-Parsing auf Integrationsschicht (Node-RED),
+- Zustandsdarstellung und Trigger auf Plattformschicht (Home Assistant).
+
+Diese Trennung erleichtert Änderungen, weil nicht alle Ebenen gleichzeitig angepasst werden müssen. [@ha_mqtt_sensor] [@ha_installation]
+
+## Betriebs- und Wartungskonzept
+
+Neben der reinen Funktionalität ist für den laufenden Betrieb entscheidend, ob ein System nach Neustarts, Fehlern oder Änderungen schnell wieder in einen definierten Zustand gebracht werden kann. Der Projektaufbau wurde daher um ein einfaches, aber strukturiertes Betriebskonzept ergänzt.
+
+### Standardisierter Startablauf
+
+Nach einem Neustart des Raspberry Pi wird folgender Ablauf verwendet:
+
+1. Container-Dienste starten (`docker compose up -d`).
+2. Laufstatus prüfen (`docker ps`).
+3. Erreichbarkeit der Oberflächen testen (Home Assistant, Portainer, Node-RED).
+4. serielle Gerätezuordnung kontrollieren (`ls -l /dev/arduino_*`).
+5. MQTT-Datenfluss mit Subscriber-Stichprobe prüfen.
+
+Die Reihenfolge ist wichtig: Erst wenn Infrastruktur und Broker stabil laufen, werden Automationen und Hardwarekommunikation bewertet.
+
+### Versionierbare Konfiguration
+
+Ein großer Teil der Projektlogik liegt in textbasierten Artefakten (Compose-Datei, Node-RED-Flows, Home-Assistant-Konfiguration). Diese sind grundsätzlich versionsfähig und lassen sich dadurch nachvollziehbar ändern.
+
+Empfohlenes Vorgehen im Projektkontext:
+
+- Änderung immer mit kurzer Zweckbeschreibung dokumentieren,
+- nur eine logische Änderung pro Schritt durchführen,
+- nach jeder Änderung Funktionsprobe durchführen,
+- erst dann weitere Anpassungen vornehmen.
+
+Dadurch werden Fehlerursachen klarer eingrenzbar und Rückschritte sind einfacher möglich.
+
+### Backup-Strategie
+
+Für den bisherigen Projektstand wurde ein pragmatischer Sicherungsansatz gewählt:
+
+- Sicherung der Verzeichnisse `homeassistant/`, `mosquitto/` und `portainer/`,
+- Export wichtiger Node-RED-Flows,
+- Sicherung kritischer Konfigurationsdateien (z. B. `compose.yaml`, MQTT-Config),
+- zusätzliche Sicherung vor Updates oder größeren Umbauten.
+
+Die Backups müssen nicht hochkomplex sein; entscheidend ist, dass sie regelmäßig und testweise rückspielbar sind.
+
+### Update- und Änderungsmanagement
+
+Updates werden in einer kontrollierten Reihenfolge durchgeführt:
+
+1. Backup erstellen.
+2. Einzeldienst aktualisieren.
+3. Kernfunktion testen (MQTT, Dashboard, Hardware-Schaltung).
+4. Erst danach nächsten Dienst aktualisieren.
+
+Damit wird verhindert, dass mehrere gleichzeitige Änderungen die Fehlersuche unnötig erschweren. Für ein lernorientiertes Entwicklungsprojekt ist dieser schrittweise Ansatz robuster als "alles gleichzeitig aktualisieren". [@portainer_docs] [@docker_compose_overview]
+
+### Beobachtbarkeit im Betrieb
+
+Zur Laufzeitüberwachung werden in erster Linie Systemlogs und Dienstlogs genutzt:
+
+- `docker logs <container>` für Containerdiagnose,
+- Node-RED-Debug-Nodes für Payload- und Ablaufkontrolle,
+- Statusdarstellung über Home-Assistant-Entitäten.
+
+Wesentlich ist die Korrelation: Ein beobachteter Fehler wird nie nur auf einer Ebene beurteilt, sondern entlang des gesamten Pfads (Eingangssignal -> Flow -> MQTT -> Dashboard/Aktor) überprüft. Dadurch sinkt das Risiko von Fehldiagnosen.
+
 ## Test und Validierung im bisherigen Projektstand
 
-Die bisherige Validierung orientiert sich an den definierten Use-Cases und den vorhandenen Komponenten. Dabei wurde der Fokus auf funktionale Korrektheit und Kommunikationsstabilität gelegt.
+Die Validierung orientiert sich an definierten Use-Cases und fokussiert auf zwei Kernfragen:
 
-Typischer Ablauf:
+- Wird die gewünschte Funktion korrekt ausgeführt?
+- Bleibt das Verhalten bei Wiederholung und bei Fehlerfällen stabil?
 
-1. Ereignis erzeugen.
-2. Trigger- und Bedingungslogik beobachten.
-3. Aktorreaktion am Modellhaus und im Dashboard vergleichen.
-4. Rückmeldung über Topics und Statuskarten kontrollieren.
+### Testmethodik
 
-Der bisher dokumentierte Projektbetrieb zeigt, dass Lichtsteuerung und zustandsabhängige Schaltabläufe reproduzierbar ausgelöst werden können. Verbindungsunterbrechungen wurden als Fehlerfall betrachtet und in der Logik berücksichtigt.
+Der verwendete Testansatz kombiniert manuelle Funktionsproben mit strukturierten Ablaufkontrollen in Node-RED und Home Assistant. Jeder Testfall folgt demselben Prinzip:
+
+1. definierten Startzustand herstellen,
+2. Ereignis gezielt auslösen,
+3. Reaktion auf allen Ebenen beobachten,
+4. Ergebnis dokumentieren.
+
+Diese Wiederholbarkeit ist entscheidend, damit Ergebnisse nicht zufällig, sondern reproduzierbar sind.
+
+### Prüfkriterien
+
+Für die Beurteilung wurden folgende Kriterien verwendet:
+
+- **Funktionale Korrektheit:** Der gewünschte Aktorzustand tritt zuverlässig ein.
+- **Rückmeldekonsistenz:** Dashboard-Zustand stimmt mit physischem Zustand überein.
+- **Kommunikationsstabilität:** Topics werden ohne unklare Zustandswechsel bedient.
+- **Fehlertoleranz:** Verbindungsabbrüche führen nicht zu dauerhaft inkonsistenten Zuständen.
+
+Erst wenn alle Kriterien erfüllt sind, gilt ein Szenario als erfolgreich validiert.
+
+### Repräsentative Testfälle
+
+**Testfall 1: Manuelles Schalten eines Lichtkanals**
+
+- Ausgangslage: Lichtkanal auf `OFF`, Dashboard zeigt `OFF`.
+- Aktion: Schaltbefehl über Dashboard.
+- Erwartung: physisches Umschalten, Status-Rückmeldung über `.../state`.
+- Ergebnis: Schaltpfad ist reproduzierbar; Rückmeldung entspricht dem Aktorzustand.
+
+**Testfall 2: Sensordatenfluss Wetterstation**
+
+- Ausgangslage: Wetterstations-Arduino aktiv, serial in verbunden.
+- Aktion: periodische Übertragung abwarten, MQTT-Topic abonnieren.
+- Erwartung: gültige JSON-Nachrichten mit numerischen Feldern.
+- Ergebnis: Werte werden regelmäßig publiziert und im Dashboard angezeigt.
+
+**Testfall 3: Neustart eines Einzeldienstes**
+
+- Ausgangslage: Gesamtsystem stabil.
+- Aktion: Neustart von Node-RED oder MQTT.
+- Erwartung: Reconnect ohne manuelle Komplettneukonfiguration.
+- Ergebnis: Nach Wiederverbindung werden Zustände erneut synchronisiert.
+
+**Testfall 4: Serielle Portproblematik**
+
+- Ausgangslage: absichtlich konkurrierender Zugriff auf seriellen Port.
+- Aktion: Flow mit Portzugriff starten.
+- Erwartung: Fehler wird erkannt, Ursache im Log nachvollziehbar.
+- Ergebnis: Fehlerbild ist reproduzierbar; Behebung über Prozessbereinigung möglich.
+
+### Aussagekraft der bisherigen Ergebnisse
+
+Der bisher dokumentierte Projektbetrieb zeigt, dass Lichtsteuerung und zustandsabhängige Schaltabläufe reproduzierbar ausgelöst werden können. Besonders relevant ist, dass nicht nur der "Happy Path" betrachtet wurde, sondern auch typische Störfälle wie Verbindungsunterbrechungen und Serial-Port-Konflikte in die Bewertung eingeflossen sind.
+
+Für den aktuellen Entwicklungsstand kann damit festgehalten werden:
+
+- Die Architektur arbeitet im Modellmaßstab stabil.
+- Die Trennung der Ebenen vereinfacht Fehlersuche und Erweiterung.
+- Die Datenpfade sind transparent genug, um neue Funktionen kontrolliert zu integrieren.
+
+Die Validierung ist damit nicht abgeschlossen, aber auf einem Stand, der eine systematische Weiterentwicklung erlaubt.
 
 ## Fehleranalyse und Optimierungen
 

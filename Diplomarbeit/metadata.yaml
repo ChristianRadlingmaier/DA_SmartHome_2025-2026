@@ -92,56 +92,48 @@ da-kurzfassung-de: >-
   
 
 da-kurzfassung-en: >-
-  This diploma thesis presents the planning, implementation, and evaluation of
+  This diploma thesis describes the planning, implementation, and evaluation of
   a modular smart-home system based on a model house. The starting point was
   the requirement to explain typical functions of modern home automation not
-  only in theory, but also in a technically clean and reproducible practical
-  setup. The core objective was a clearly structured architecture separating
-  hardware access, communication logic, and user interaction. The project was
-  executed as team work and divided into sub-areas: house modelling and
-  cabling, integration of the central control platform, and implementation of
-  automation and communication workflows.
+  only in theory, but to implement them in a technically clean and
+  reproducible way. The central focus was a clearly structured overall
+  architecture that separates hardware integration, communication logic, and
+  user interface. The project was carried out as team work and divided into
+  several sub-areas: modelling and wiring the house, integrating the control
+  platform, and implementing the automation and communication logic.
 
   The technical implementation was realised on a Raspberry Pi with
-  container-based operation. Docker Compose was used to deploy Home Assistant,
-  an MQTT broker, and Portainer. Node-RED served as the integration layer to
-  model and visualise data flows between serial hardware access, MQTT topics,
-  and automation logic. For the physical I/O layer, an Arduino Uno running
-  StandardFirmata was integrated to reliably transfer sensor and actuator
-  signals into the software stack. The separation into field layer, processing
-  layer, and management layer improved maintainability and made troubleshooting,
-  extension, and documentation significantly easier.
+  container-based operation. Docker Compose was used to provide Home Assistant,
+  an MQTT broker, and Portainer. Node-RED was used as an integration layer to
+  transparently map data flows between serial hardware access, MQTT topics, and
+  automations. For the physical I/O layer, an Arduino Uno with StandardFirmata
+  was used, allowing sensor and actuator signals to be transferred robustly
+  into the software layer. The separation into field layer, processing layer,
+  and management layer improved maintainability and simplified troubleshooting,
+  extension, and documentation.
 
-  In practical operation, key use cases were implemented and tested: automatic
-  lighting control depending on brightness and motion, continuous sensor data
+  In practical operation, central use cases were implemented and tested:
+  automatic lighting control depending on brightness, continuous sensor data
   acquisition, manual control via dashboard, and feedback of actual states via
-  separated MQTT command and state channels. Validation followed defined test
-  procedures and showed stable and traceable end-to-end communication between
-  sensors, Arduino, Node-RED, MQTT, and Home Assistant. Typical error sources
-  such as serial port conflicts, permission issues, or temporary connection
-  drops were analysed and mitigated through suitable operating and restart
-  strategies.
+  separate MQTT command and state channels. Validation was carried out using
+  defined test procedures and showed that end-to-end communication between
+  sensors, Arduino, Node-RED, MQTT, and Home Assistant works stably and
+  traceably. Typical error sources such as serial port conflicts, permission
+  issues, or connection interruptions were analysed and reduced through
+  suitable operating and restart strategies.
 
-  Beyond the technical implementation, the project also produced important
-  organisational and methodological outcomes. A clear distribution of roles in
-  the team, continuous version control, and documented design and test
-  decisions were essential for meeting schedule and quality targets. The model
-  house approach helped to connect theory and practice because electrical,
-  logical, and visual system behaviour could be observed directly. At the same
-  time, it became clear that scaling to real residential environments requires
-  additional focus on safety, power separation, and long-term operational
-  stability. Therefore, the thesis delivers not only a working demonstration,
-  but also a structured methodology for extending the solution toward more
-  advanced smart-home scenarios.
+  In addition to the technical results, the project also generated
+  organisational and methodological learning outcomes. The model-house approach
+  facilitated the link between theory and practice, because electrical, logical,
+  and visual aspects can be observed directly. The thesis therefore provides
+  not only a working demonstration, but also a clear methodological framework
+  for structured expansion toward more comprehensive smart-home scenarios.
 
-  In summary, the project goals were achieved: a functional and modular
-  smart-home demonstration system was created that connects theoretical
-  foundations with real technical implementation and serves as a robust basis
-  for further expansion. The architecture can be extended to additional rooms,
-  more sensor types, and more complex automation scenarios. At the same time,
-  the thesis provides structured documentation that simplifies commissioning,
-  configuration, testing, and future development for follow-up projects.
-
+  In summary, the defined goal was achieved: a functional, modular smart-home
+  demonstration system was created that combines theoretical foundations with
+  real technical implementation and serves as a robust basis for further
+  expansion stages. The system can be transferred to additional rooms,
+  additional sensors, and more complex automations.
 
 da-kiquellen:
 - ki: ChatGPT4

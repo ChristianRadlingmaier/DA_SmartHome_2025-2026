@@ -18,6 +18,10 @@ da-author:
   ki-tools:
   - name: Github Copilot
     zweck: Boilerplate codegenerierung, Codedokumentation
+  - name: ChatGPT 5.2
+    zweck: Informationsgewinn
+  - name: GPT-5.3-Codex
+    zweck: Rechtschreibkorrektur und Formulierungshilfe
 
 - vorname: Christian 
   nachname: Radlingmaier
@@ -63,7 +67,7 @@ da-kurzfassung-de: >-
   Fehlersuche, Erweiterung und Dokumentation.
 
   Im praktischen Betrieb wurden zentrale Use Cases umgesetzt und getestet:
-  automatische Lichtsteuerung in Abhängigkeit von Helligkeit und Bewegung,
+  automatische Lichtsteuerung in Abhängigkeit von der Helligkeit,
   kontinuierliche Sensordatenerfassung, manuelle Steuerung über Dashboard
   sowie Rückmeldung von Ist-Zuständen über getrennte MQTT-Command- und
   State-Kanäle. Die Validierung erfolgte anhand definierter Testabläufe und
@@ -74,14 +78,9 @@ da-kurzfassung-de: >-
   Restart-Strategien reduziert.
 
   Neben den technischen Ergebnissen zeigte das Projekt auch organisatorische
-  und methodische Lernerfolge. Die strukturierte Rollenverteilung innerhalb des
-  Teams, die laufende Versionsverwaltung sowie die Dokumentation von
-  Entscheidungen und Tests erwiesen sich als entscheidend für Termin- und
-  Qualitätsziele. Der Modellhausansatz erleichterte die Verknüpfung von
+  und methodische Lernerfolge. Der Modellhausansatz erleichterte die Verknüpfung von
   Theorie und Praxis, weil elektrische, logische und visuelle Aspekte direkt
-  beobachtbar waren. Gleichzeitig wurde sichtbar, dass Skalierung in reale
-  Umgebungen zusätzliche Anforderungen an Sicherheit, Lasttrennung und
-  Betriebsstabilität stellt. Damit liefert die Arbeit nicht nur eine
+  beobachtbar waren. Damit liefert die Arbeit nicht nur eine
   funktionierende Demonstration, sondern auch einen klaren methodischen Rahmen
   für den geordneten Ausbau zu umfangreicheren Smart-Home-Szenarien.
 
@@ -90,9 +89,7 @@ da-kurzfassung-de: >-
   fachliche Grundlagen mit realer technischer Umsetzung verbindet und als
   belastbare Basis für weitere Ausbaustufen dient. Das System ist auf weitere
   Räume, zusätzliche Sensorik und komplexere Automationen übertragbar.
-  Gleichzeitig liefert die Arbeit eine strukturierte Dokumentation, die
-  Inbetriebnahme, Konfiguration, Test und Weiterentwicklung für nachfolgende
-  Projekte deutlich erleichtert.
+  
 
 da-kurzfassung-en: >-
   This diploma thesis presents the planning, implementation, and evaluation of

@@ -164,15 +164,11 @@ da-kiquellen:
   pdf-file: Perl-Fehler-Erklaerung.pdf  
 
 da-appendix:
-- abschnitt: Technische Dokumentation
-  pdf-file: pandoc-manual.pdf
-  seiten: 53-73
+- abschnitt: Wetterstation
+  pdf-file: Wetterstation.pdf
+- abschnitt: Ordnerstruktur
+  pdf-file: Ordnerstruktur.pdf
+- abschnitt: Architecture
+  pdf-file: architecture.pdf
 
-- abschnitt: Betreuungsprotokolle
-  pdf-file: betreuungsprotokolle.pdf    
-
-# Diplomarbeitsvereinbarungen müssen zum Schluss sein 
-
-
-  
 ---

@@ -151,12 +151,17 @@ da-kiquellen:
   short-prompt: Perl Fehler Erklaerung
   pdf-file: Perl-Fehler-Erklaerung.pdf  
 
-da-appendix:
-- abschnitt: Wetterstation
-  pdf-file: wetterstation.pdf
-- abschnitt: Ordnerstruktur
-  pdf-file: Ordnerstruktur.pdf
-- abschnitt: Architecture
-  pdf-file: architecture.pdf
+- ki: ChatGPT5.3
+  short-prompt: Architecture diagramm
+  pdf-file: Perl-Fehler-Erklaerung.pdf  
+
+- ki: ChatGPT5.3
+  short-prompt: Ordnerstruktur Diagramm
+  pdf-file: Perl-Fehler-Erklaerung.pdf  
+
+- ki: ChatGPT5.3
+  short-prompt: Wetterstation Erklaerung
+  pdf-file: wetterstation.pdf  
+
 
 ---

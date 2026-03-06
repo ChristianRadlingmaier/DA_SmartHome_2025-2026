@@ -11,7 +11,7 @@ Behandelt werden dabei unter anderem:
 - fachbezogene Methoden und Vorgehensweisen
 
 
-Darüber hinaus werden in diesem Kapitel sowohl die theoretischen als auch die praktischen Grundlagen zur Realisierung eines Smart-Home-Systems für ein Modellhaus vorgestellt. Ergänzend wird aufgezeigt, inwiefern sich die beschriebenen Konzepte auf ein reales Wohngebäude übertragen lassen.
+Darüber hinaus werden in diesem Kapitel sowohl die theoretischen als auch die praktischen Grundlagen zur Realisierung eines Smart-Home-Systems für ein Modellhaus vorgestellt. 
 
 Ein besonderer Schwerpunkt liegt auf der Installation und Nutzung von Docker auf einem Raspberry Pi sowie auf der Kommunikation zwischen dem Raspberry Pi, dem Arduino Uno und den angebundenen Sensoren und Aktoren.
 
@@ -56,7 +56,7 @@ Die erfassten Sensordaten werden in der Regel von Mikrocontrollern, wie beispiel
 
 Ein wesentlicher Vorteil moderner Sensorik ist ihre hohe Genauigkeit sowie der geringe Energieverbrauch. In Kombination mit standardisierten Kommunikationsprotokollen lassen sich Sensoren flexibel in bestehende Smart-Home-Systeme integrieren und bei Bedarf erweitern.
 
-In dieser Diplomarbeit wird Sensorik eingesetzt, um relevante Umgebungsparameter zu erfassen und als Grundlage für die Automatisierung und Steuerung innerhalb des Smart-Home-Systems zu dienen.
+In dieser Diplomarbeit wird Sensorik eingesetzt, um relevante Umgebungsparameter zu erfassen und als Grundlage für die Automatisierung und Steuerung innerhalb des Smart-Home-Systems zu dienen.[@smart_home_sensors_vesternet]
 
 #### Aktorik
 Aktorik bezeichnet die Gesamtheit aller Komponenten in einem Smart-Home-System, die auf Basis von Steuerbefehlen physische Aktionen ausführen. Aktoren setzen digitale Signale aus der Steuerungslogik in konkrete mechanische, elektrische oder optische Vorgänge um und stellen damit das Gegenstück zur Sensorik dar.
@@ -67,7 +67,7 @@ Die Ansteuerung der Aktoren erfolgt in der Regel über Mikrocontroller wie den A
 
 Ein wichtiger Aspekt der Aktorik ist die Zuverlässigkeit und Sicherheit der ausgefuehrten Aktionen. Insbesondere bei netzspannungsbetriebenen Geraeten muessen geeignete Schutzmaßnahmen, wie Relais mit ausreichender Belastbarkeit, beruecksichtigt werden. Dadurch wird ein sicherer Betrieb des Smart-Home-Systems gewaehrleistet.
 
-In dieser Diplomarbeit wird Aktorik eingesetzt, um auf Basis von Sensordaten und definierten Automatisierungsregeln gezielt in die Umgebung einzugreifen und den gewuenschten Komfort-, Sicherheits- und Energieeffizienzgewinn zu realisieren.
+In dieser Diplomarbeit wird Aktorik eingesetzt, um auf Basis von Sensordaten und definierten Automatisierungsregeln gezielt in die Umgebung einzugreifen und den gewuenschten Komfort-, Sicherheits- und Energieeffizienzgewinn zu realisieren.[@gira_aktoren_smarthome]
 
 #### Steuerung(Arduino UNO)
 Die Steuerung stellt eine zentrale Funktion innerhalb des Smart-Home-Systems dar und ist für die Verarbeitung von Sensordaten sowie die Ansteuerung der Aktoren verantwortlich. In dieser Diplomarbeit wird der Arduino Uno als Mikrocontroller eingesetzt, um diese Aufgaben zuverlässig und effizient zu übernehmen.
@@ -78,7 +78,7 @@ Die Programmierung des Arduino Uno erfolgt über die Arduino-Entwicklungsumgebun
 
 Durch den Einsatz des Arduino Uno wird eine klare Trennung zwischen der hardwarebezogenen Steuerungsebene und der zentralen Automatisierungs- und Logikebene erreicht. Dies erhöht die Modularität des Systems und erleichtert sowohl Erweiterungen als auch Wartungsarbeiten.
 
-In dieser Diplomarbeit übernimmt der Arduino Uno somit die Aufgabe der direkten Steuerung von Sensoren und Aktoren und bildet die Verbindung zwischen der physischen Umgebung und der übergeordneten Smart-Home-Logik.
+In dieser Diplomarbeit übernimmt der Arduino Uno somit die Aufgabe der direkten Steuerung von Sensoren und Aktoren und bildet die Verbindung zwischen der physischen Umgebung und der übergeordneten Smart-Home-Logik.[@arduino_uno_docs]
 
 #### Raspberry Pi
 Der Raspberry Pi ist ein kompakter Einplatinencomputer, der für eine Vielzahl von Anwendungen im Bildungs-, Entwicklungs- und Embedded-Bereich eingesetzt wird. Trotz seiner geringen Größe bietet er ausreichende Rechenleistung, um als zentrale Steuereinheit in Smart-Home-Systemen zu fungieren. Der Betrieb erfolgt in der Regel mit einem Linux-basierten Betriebssystem, wodurch der Einsatz zahlreicher Open-Source-Anwendungen möglich ist.
@@ -89,7 +89,7 @@ Der Raspberry Pi ist für die Verarbeitung und Weiterleitung von Sensordaten ver
 
 Ein weiterer Vorteil des Raspberry Pi ist seine geringe Leistungsaufnahme bei gleichzeitig hoher Flexibilität. Dank integrierter Netzwerk- und Schnittstellenfunktionen kann er problemlos in bestehende Smart-Home-Infrastrukturen integriert und bei Bedarf erweitert werden.
 
-Aufgrund seiner Vielseitigkeit, der guten Unterstützung durch die Community sowie der Eignung für den Dauerbetrieb wird der Raspberry Pi in dieser Diplomarbeit als zentrale Plattform für den Betrieb und die Koordination des Smart-Home-Systems eingesetzt 
+Aufgrund seiner Vielseitigkeit, der guten Unterstützung durch die Community sowie der Eignung für den Dauerbetrieb wird der Raspberry Pi in dieser Diplomarbeit als zentrale Plattform für den Betrieb und die Koordination des Smart-Home-Systems eingesetzt.[@raspberrypi_product_page] 
 
 ### Frameworks
 
@@ -102,7 +102,7 @@ Ein wesentliches Merkmal von FHEM ist die flexible Automatisierungslogik. Mithil
 
 Die Kommunikation zwischen FHEM und externen Geräten kann über unterschiedliche Protokolle erfolgen. In dieser Diplomarbeit wird hierfür das MQTT-Protokoll verwendet, da es eine effiziente und zuverlässige Datenübertragung zwischen Mikrocontrollern, Sensoren und der FHEM-Zentrale ermöglicht.
 
-Aufgrund seiner Offenheit, Erweiterbarkeit und großen Community eignet sich FHEM besonders für individuelle und anpassbare Smart-Home-Lösungen. Aus diesen Gründen wurde FHEM als zentrale Automatisierungsplattform für diese Diplomarbeit ausgewählt.
+Aufgrund seiner Offenheit, Erweiterbarkeit und großen Community eignet sich FHEM besonders für individuelle und anpassbare Smart-Home-Lösungen. Aus diesen Gründen wurde FHEM als zentrale Automatisierungsplattform für diese Diplomarbeit ausgewählt.[@fhem_framework]
 
 #### Node-RED
 Node-RED ist ein quelloffenes, ereignisgesteuertes Entwicklungsframework, das insbesondere im Bereich Smart Home und Internet of Things (IoT) eingesetzt wird. Es ermöglicht die grafische Erstellung von Steuerungs- und Automatisierungslogiken mithilfe eines webbasierten Editors. Die einzelnen Funktionsbausteine, sogenannte Nodes, werden per Drag-and-Drop miteinander verbunden und bilden gemeinsam sogenannte Flows, welche den Daten- und Kontrollfluss innerhalb des Systems abbilden.
@@ -113,7 +113,7 @@ Ein wesentlicher Vorteil von Node-RED ist die Unterstützung zahlreicher Kommuni
 
 Zusätzlich besteht die Möglichkeit, eigene Funktionslogiken mithilfe von JavaScript zu implementieren, wodurch Node-RED flexibel erweitert werden kann. Über optionale Erweiterungen wie Dashboards können zudem grafische Benutzeroberflächen zur Visualisierung von Daten und zur manuellen Steuerung erstellt werden.
 
-Aufgrund seiner übersichtlichen grafischen Programmierumgebung, der hohen Erweiterbarkeit und der aktiven Community eignet sich Node-RED besonders für die Entwicklung individueller Smart-Home-Lösungen. Daher wird das Framework in dieser Diplomarbeit als zentrales Werkzeug zur Umsetzung von Automatisierungs- und Steuerungsprozessen verwendet. 
+Aufgrund seiner übersichtlichen grafischen Programmierumgebung, der hohen Erweiterbarkeit und der aktiven Community eignet sich Node-RED besonders für die Entwicklung individueller Smart-Home-Lösungen. Daher wird das Framework in dieser Diplomarbeit als zentrales Werkzeug zur Umsetzung von Automatisierungs- und Steuerungsprozessen verwendet. [@nodered_framework]
 
 #### MQTT
 MQTT (Message Queuing Telemetry Transport) ist ein leichtgewichtiges, ereignisbasiertes Kommunikationsprotokoll, das speziell für den Einsatz in ressourcenbeschränkten Systemen entwickelt wurde. Aufgrund seines geringen Overheads und der hohen Zuverlässigkeit wird MQTT häufig in Smart-Home- und Internet-of-Things-Anwendungen eingesetzt.
@@ -124,7 +124,7 @@ In einem Smart-Home-System ermöglicht MQTT eine klare Trennung zwischen Datener
 
 Ein weiterer Vorteil von MQTT ist die Unterstützung verschiedener Qualitätsstufen (Quality of Service), die festlegen, wie zuverlässig Nachrichten übertragen werden. Zusätzlich bietet das Protokoll Mechanismen wie Retained Messages und Last Will, die insbesondere in Smart-Home-Systemen zur Erhöhung der Ausfallsicherheit beitragen.
 
-Aufgrund seiner Effizienz, der einfachen Implementierung und der guten Integration in bestehende Smart-Home-Frameworks eignet sich MQTT besonders für die Kommunikation zwischen Sensoren, Aktoren und zentralen Steuerungssystemen. Aus diesen Gründen wird MQTT in dieser Diplomarbeit als zentrales Kommunikationsprotokoll für den Datenaustausch innerhalb des Smart-Home-Systems eingesetzt.
+Aufgrund seiner Effizienz, der einfachen Implementierung und der guten Integration in bestehende Smart-Home-Frameworks eignet sich MQTT besonders für die Kommunikation zwischen Sensoren, Aktoren und zentralen Steuerungssystemen. Aus diesen Gründen wird MQTT in dieser Diplomarbeit als zentrales Kommunikationsprotokoll für den Datenaustausch innerhalb des Smart-Home-Systems eingesetzt.[@mqtt_protocol]
 
 
 #### Portainer
@@ -136,19 +136,21 @@ Ein wesentlicher Vorteil von Portainer ist die vereinfachte Bereitstellung und A
 
 Durch die Trennung der einzelnen Anwendungen in eigenständige Container wird die Stabilität und Sicherheit des Systems erhöht. Fehler oder Abstürze eines Dienstes wirken sich nicht direkt auf andere Komponenten aus. Portainer unterstützt diesen modularen Ansatz, indem es eine zentrale Verwaltung aller Container bereitstellt.
 
-Aufgrund der übersichtlichen Benutzeroberfläche, der einfachen Handhabung und der guten Integration in Docker-basierte Systeme wird Portainer in dieser Diplomarbeit zur Verwaltung und Überwachung der containerisierten Smart-Home-Komponenten eingesetzt.
+Aufgrund der übersichtlichen Benutzeroberfläche, der einfachen Handhabung und der guten Integration in Docker-basierte Systeme wird Portainer in dieser Diplomarbeit zur Verwaltung und Überwachung der containerisierten Smart-Home-Komponenten eingesetzt.[@portainer_platform]
 
 ### Einführung in die Programmiersprache Perl
 Im Rahmen dieser Diplomarbeit wurde erstmals mit der Programmiersprache Perl gearbeitet. Perl ist eine interpretierte, plattformunabhängige Programmiersprache, die besonders für Textverarbeitung, Systemskripte sowie die Automatisierung von Abläufen eingesetzt wird. Aufgrund ihrer Flexibilität und der guten Integration in Linux-Systeme findet Perl auch im Bereich Server- und Smart-Home-Anwendungen Verwendung.
 
 Perl-Programme bestehen aus einfachen, zeilenbasierten Anweisungen und werden in sogenannten Skripten gespeichert. Ein grundlegendes Perl-Programm beginnt üblicherweise mit einer sogenannten Shebang-Zeile, die angibt, mit welchem Interpreter das Skript ausgeführt werden soll.
 `#!/usr/bin/perl`
+[@tutorialspoint_perl_datatypes]
 
 ##### Ausgabe von Text
 
 Eine der grundlegendsten Funktionen in Perl ist die Ausgabe von Text auf der Konsole. Dies erfolgt mit dem Befehl print.
 `print "Hello World\n";`
 Der Ausdruck `\n` steht dabei für einen Zeilenumbruch.
+[@tutorialspoint_perl_datatypes]
 
 ##### Variablen
 
@@ -156,6 +158,7 @@ Perl verwendet unterschiedliche Variablentypen, die durch spezielle Zeichen geke
 `my $zahl = 10;`
 `my $text = "Smart Home";`
 Der Befehl my sorgt dafür, dass die Variable nur im aktuellen Gültigkeitsbereich verwendet werden kann.
+[@tutorialspoint_perl_datatypes]
 
 ##### Bedingungen
 
@@ -163,6 +166,7 @@ Mit bedingten Anweisungen lassen sich Entscheidungen im Programmablauf umsetzen.
 `if ($zahl > 5) {`
 `   print "Die Zahl ist größer als 5\n";`
 `}`
+[@tutorialspoint_perl_datatypes]
 
 ##### Schleifen
 
@@ -170,6 +174,7 @@ Perl bietet verschiedene Möglichkeiten zur Wiederholung von Programmteilen. Ein
 `for (my $i = 0; $i < 3; $i++) {`
 `    print "Durchlauf $i\n";`
 `}`
+[@tutorialspoint_perl_datatypes]
 
 ##### Bedeutung für diese Diplomarbeit
 
@@ -191,6 +196,7 @@ Während der Arduino Sensordaten erzeugt und Aktoren physisch schaltet, verarbei
 MQTT stellt sicher, dass diese Kommunikation asynchron und zustandsunabhängig erfolgt.
 
 Im Gegensatz zu direkten TCP- oder seriellen Verbindungen ermöglicht MQTT eine lose Kopplung der Systemkomponenten. Dadurch kann beispielsweise Node-RED oder ein zusätzliches Visualisierungssystem ergänzt werden, ohne die bestehende Struktur anzupassen.
+[@mqtt_protocol] [@fhem_framework]
 
 #### MQTT-Integration in FHEM
 
@@ -208,6 +214,7 @@ Dadurch kann FHEM:
 - eigene Nachrichten publizieren
 
 Ein wesentlicher Vorteil dieser Methode ist die direkte Weiterverarbeitung der MQTT-Payloads innerhalb von FHEM-Perl-Funktionen.
+[@mqtt_protocol] [@fhem_framework]
 
 #### Verarbeitung von MQTT-Daten in Perl
 
@@ -229,6 +236,7 @@ Hier wird deutlich:
 - FHEM fungiert als zentrale Steuerinstanz
 
 Diese Trennung erhöht die Wartbarkeit des Systems erheblich.
+[@mqtt_protocol] [@fhem_framework] [@tutorialspoint_perl_datatypes]
 
 #### Strukturierung der MQTT-Kommunikation
 
@@ -248,6 +256,7 @@ Diese Trennung ermöglicht:
 - saubere Trennung von Status und Steuerbefehl
 
 Gerade in FHEM erleichtert dies die Definition von Readings und Attributen.
+[@mqtt_protocol]
 
 #### Sicherheitsaspekte von MQTT im lokalen Netzwerk
 
@@ -261,6 +270,7 @@ Zur Absicherung wurden folgende Maßnahmen berücksichtigt:
 - Einschränkung auf das interne Netzwerk
 
 Damit wird verhindert, dass unautorisierte Geräte Nachrichten publizieren oder manipulieren.
+[@mosquitto_authentication]
 
 #### Abgrenzung zu anderen Protokollen
 
@@ -277,6 +287,7 @@ MQTT wurde gewählt, da es speziell für IoT-Anwendungen entwickelt wurde und:
 - skalierbar ist
 
 Im Gegensatz zur direkten seriellen Kommunikation ermöglicht MQTT zudem mehrere gleichzeitige Abonnenten.
+[@hivemq_mqtt_essentials]
 
 ### Umsetzung des Systems FHEM (Perl)
 
@@ -285,6 +296,7 @@ Im Gegensatz zur direkten seriellen Kommunikation ermöglicht MQTT zudem mehrere
 ##### Vorbereitung des Systems 
 
 Als zentrale Steuereinheit des Smart-Home-Systems wurde ein Raspberry Pi 5 verwendet. Dieses basiert auf Debian Linux und bietet eine stabile Grundlage für serverbasierte Anwendungen wie FHEM. Zuserst wurde das System aktualiesiert, um sicher zustellen das alle Pakete up to date sind, mit den commands (`sudo apt update & sudo apt upgrade -y`). 
+[@raspberrypi_os_docs]
 
 ##### Installation von FHEM 
 
@@ -298,6 +310,7 @@ Falls Abhängigkeiten fehlten, wurden diese mit folgenden Befehk nach installier
 `sudo apt --fix-broken install` 
 
 Nach erfolgreciher Installation startet FHEM automatisch als Dienst.
+[@fhem_commandref]
 
 ##### Überprüfung der Installation 
 
@@ -310,6 +323,7 @@ Zusätzlich kann man den Status des Dienstes überprüfen, mit den Befehl:
 `sudo systemctl status fhem`
 
 Ein aktiver Status ("active(running)") zeigt an, das der Server korrekt ausgeführt wird.
+[@fhem_framework]
 
 #### Perl Code
 
@@ -329,6 +343,7 @@ Schließlich wird der Befehl über MQTT gesendet.
 - Mit dem Code `_publish_mqtt($hash, $topic, $payload);`
 
 Der Arduino empfängt diese Nachricht und schaltet die LED entsprechend Ein oder Aus.
+[@tutorialspoint_perl_datatypes]
 
 ##### Helligkeitssteuerung der LED(PWM)
 
@@ -346,6 +361,7 @@ Danach wird eine MQTT-Nachricht erzeugt.
 Diese Nachricht wird an den Arduino gesendet.
 
 Der Arduino nutzt anschließend PWM (Pulse Width Modulation), um die Helligkeit der LED zu verändern.
+[@arduino_pwm_output]
 
 #### Wetterstation
 
@@ -364,6 +380,7 @@ Folgende Messwerte werden verarbeitet:
 
 Die Sensorwerte werden vom Arduino gemessen und über MQTT an FHEM übertragen.
 Das Perl-Modul speichert diese Werte anschließend als Readings im Smart-Home-System.
+[@metoffice_measure_weather]
 
 ##### Verarbeitung der Wetterdaten
 
@@ -381,6 +398,7 @@ Wenn ein Gerät mit dem Namen Wetter Daten sendet, wird dieser Code ausgeführt.
 Danach wird eine Zuordnungstabelle (Hash-Map) erstellt.
 - MIt dem Code `my %map = (temperature => "weather_temperature");`
 Diese Tabelle definiert, wie die Sensordaten im Smart-Home-System gespeichert werden.
+[@fhem_notify] [@perl_hash_structure]
 
 ##### Speichern der Messwerte
 
@@ -404,7 +422,7 @@ Wenn der Arduino folgende MQTT-Nachricht sendet:
 `temperature: 21.5`
 wird in FHEM automatisch das Reading gesetzt:
 `weather_temperature = 21.5`
-
+[@fhem_readings_api]
 
 #### Einbindung der LEDs in die FHEM-Weboberfläche
 
@@ -422,6 +440,7 @@ Die Steuerung erfolgt in mehreren Schritten:
 5. LED leuchtet bzw. erlischt
 
 FHEM übernimmt dabei die Rolle der zentralen Steuerinstanz.
+[@mqtt_pubsub_architecture]
 
 #### Anlegen des MQTT-Devices in FHEM
 
@@ -431,6 +450,7 @@ Zunächst wurde in FHEM die MQTT-Verbindung definiert:
 `attr myMQTT autocreate 1`
 
 Damit verbindet sich FHEM mit dem lokal laufenden Broker Eclipse Mosquitto.
+[@fhem_mqtt2_client]
 
 #### Anlegen eines LED-Geräts in FHEM
 
@@ -456,6 +476,7 @@ setList mit Topic
  -> sendet beim Klick auf „on“ oder „off“ eine MQTT-Nachricht
 
 Dadurch erscheint in der Weboberfläche automatisch ein Schalter.
+[@fhem_mqtt2_client]
 
 #### Darstellung in der Weboberfläche
 
@@ -470,6 +491,7 @@ Das bewirkt:
 - Anzeige eines Lichtsymbols
 - Direkte Schaltbuttons im Webinterface
 - Übersichtliche Raumstruktur
+[@fhem_deviceoverview]
 
 #### Zuordnung zu Räumen
 
@@ -479,6 +501,7 @@ Damit die LEDs logisch gruppiert werden, wurde das Attribut „room“ verwendet
 `attr LED_Schlafzimmer room Schlafzimmer`
 
 Dadurch erscheinen die Geräte in der jeweiligen Raumansicht.
+[@fhem_room_attribute]
 
 #### Rückmeldung des LED-Zustandes
 
@@ -488,6 +511,7 @@ Der Arduino sendet nach jeder Zustandsänderung:
 
 FHEM aktualisiert dadurch automatisch das Reading des Devices.
 Ohne Rückmeldung würde der Schalter zwar klicken, aber der Status wäre nicht synchron.
+[@hivemq_pubsub_architecture]
 
 #### Verarbeitung mit Perl (optional erweitert) 
 
@@ -499,6 +523,7 @@ In deiner Diplomarbeit kannst du zusätzlich zeigen, dass FHEM die LED auch logi
 `Damit wird bei jeder Zustandsänderung ein Logeintrag erzeugt.`
 `Hier zeigt sich der Vorteil von FHEM:`
 `Die Logik kann direkt in Perl erweitert werden.`
+[@fhem_notify_module]
 
 ### Ausblick
 

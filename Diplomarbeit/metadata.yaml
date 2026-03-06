@@ -138,8 +138,6 @@ da-kurzfassung-en: >-
   expansion stages. The system can be transferred to additional rooms,
   additional sensors, and more complex automations.
 
-da-appendix:
-
 da-kiquellen:
 - ki: ChatGPT5.3
   short-prompt: FHEM Code
@@ -155,13 +153,10 @@ da-kiquellen:
 
 - ki: ChatGPT5.3
   short-prompt: Architecture diagramm
-  pdf-file: Perl-Fehler-Erklaerung.pdf  
+  pdf-file: architecture.pdf  
 
 - ki: ChatGPT5.3
   short-prompt: Ordnerstruktur Diagramm
-  pdf-file: Perl-Fehler-Erklaerung.pdf  
-
-
-
+  pdf-file: Ordnerstruktur.pdf  
 
 ---

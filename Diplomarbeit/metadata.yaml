@@ -152,8 +152,8 @@ da-kiquellen:
   pdf-file: Perl-Fehler-Erklaerung.pdf  
 
 da-appendix:
-- abschnitt: wetterstation
-  pdf-file: wetterstation.pdf
+- abschnitt: Wetterstation
+  pdf-file: Wetterstation.pdf
 - abschnitt: Ordnerstruktur
   pdf-file: Ordnerstruktur.pdf
 - abschnitt: Architecture

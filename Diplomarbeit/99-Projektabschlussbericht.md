@@ -3,13 +3,13 @@
 
 ### Erfolgsmessung
 
-#### Erreichung Leistungs-/Qualitätsziele
+#### Erreichung Leistungs- und Qualitätsziele
 Hier beschreiben Sie, ob Sie das ursprünglich vereinbarte Ziel erreicht haben oder nicht. Falls es zu Abweichungen gekommen ist, beschreiben Sie, warum das so war und was Sie dagegen unternommen haben.
 
 #### Erreichung Terminziele
 Hier dokumentieren Sie, ob Sie Ihre gesteckten Termine für die Meilensteine einhalten konnten. Falls es zu Verzögerungen gekommen ist, argumentieren Sie hier, warum das so war.
 
-#### Erreichung Kosten-/Aufwandsziele
+#### Erreichung Kosten- und Aufwandsziele
 Hier dokumentieren Sie, ob Sie Ihr eingangs geplantes Budget einhalten konnten oder nicht. Wenn nicht, geben Sie hier bitte eine Begründung dafür an.
 
 ### Reflexion / Lessons Learned

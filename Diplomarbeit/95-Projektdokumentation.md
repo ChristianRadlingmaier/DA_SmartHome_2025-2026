@@ -34,8 +34,8 @@
 
 #### Sensordaten visualisieren
 
-**Beschreibung:** Mess- und Statusdaten werden über Dashboard-Oberflächen dargestellt.  
-**Trigger:** Benutzer öffnet Home-Assistant-, FHEM- oder Node-RED-Dashboard  
+**Beschreibung:** Mess- und Statusdaten werden über Dashboardoberflächen dargestellt.  
+**Trigger:** Benutzer öffnet das Dashboard von Home Assistant, FHEM oder Node-RED  
 **Bedingungen:** Dienste und Datenquellen sind aktiv  
 **Ablauf:**
 
@@ -64,17 +64,17 @@
 
 **Beschreibung:** Betriebsdienste (Home Assistant, FHEM, MQTT, Portainer) werden containerbasiert betrieben und verwaltet.  
 **Trigger:** Wartung, Neustart oder Konfigurationsänderung  
-**Bedingungen:** Docker-Umgebung auf Raspberry Pi ist aktiv  
+**Bedingungen:** Umgebung mit Docker auf Raspberry Pi ist aktiv  
 **Ablauf:**
 
-1. Administrator öffnet Portainer oder Docker-Setup  
+1. Administrator öffnet Portainer oder die Dockerkonfiguration  
 2. Container werden gestartet, gestoppt oder aktualisiert  
 3. Dienststatus wird kontrolliert  
 
 **Alternative:** Container startet aufgrund Konfigurationsfehler nicht  
 **Ergebnis:** Plattformdienste laufen stabil und getrennt voneinander
 
-#### MQTT-Verbindungsabbruch behandeln
+#### Verbindungsabbruch bei MQTT behandeln
 
 **Beschreibung:** Das System reagiert auf Kommunikationsprobleme zwischen Komponenten.  
 **Trigger:** Broker oder Client verliert Verbindung  
@@ -82,7 +82,7 @@
 **Ablauf:**
 
 1. Verbindungsabbruch wird erkannt  
-2. Reconnect-Mechanismus startet  
+2. Wiederverbindungsmechanismus startet  
 3. Dienststatus wird protokolliert und erneut geprüft  
 
 **Alternative:** Reconnect scheitert mehrfach  
@@ -100,7 +100,7 @@
 
 | Dimension           | Status                         | Maßnahmen |
 |:--------------------|:-------------------------------|:-----------|
-| Leistungsziele      | Teilweise erreicht             | Fokus auf stabile Sensor-/Aktoranbindung und erste End-to-End-Flows |
+| Leistungsziele      | Teilweise erreicht             | Fokus auf stabile Sensor- und Aktoranbindung sowie erste durchgängige Flows |
 | Terminziele         | Im Plan                        | Priorisierung der Kernfunktionen vor Detailerweiterungen |
 | Kostenziele         | Im Budget                   | Weiterhin Nutzung geplanter Komponenten und vorhandener Infrastruktur |
 | Teamarbeit          | Gut                            | Regelmäßige Abstimmung zwischen Modellbau, Backend und Automatisierung |
@@ -141,9 +141,9 @@
 
 #### Notwendige Entscheidungen
 
-* Endgültige Abgrenzung des Funktionsumfangs gemäß Nicht-Zielen (kein Produktivsystem, keine native App).
+* Endgültige Abgrenzung des Funktionsumfangs gemäß den nicht als Ziel definierten Punkten (kein Produktivsystem, keine native App).
 * Vereinheitlichung der Formulierungen und technische Konsistenz in allen Kapitelteilen.
-* Festlegung der finalen Demo-Szenarien für Präsentation und Fachgespräch.
+* Festlegung der finalen Demonstrationsszenarien für Präsentation und Fachgespräch.
 
 #### Nächste Schritte
 

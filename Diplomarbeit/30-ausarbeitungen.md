@@ -1,14 +1,8 @@
-# Aufgabenstellung
 
-Dieses Kapitel beschreibt den organisatorischen und fachlichen Rahmen der Aufgabenstellung.
 
 ## Auftraggeber
 
 Der Auftraggeber dieses Projekts ist die HTL Leoben. Die Schule sowie die betreuenden Lehrpersonen begleiten und unterstützen die Umsetzung der Diplomarbeit. Das Projekt wird im Rahmen der Diplomarbeit durchgeführt und verfolgt das Ziel, ein praxisnahes und nachvollziehbares Smart-Home-System im Modellhaus umzusetzen. Dabei sollen Hardware-, Netzwerk- und Softwarekenntnisse angewendet, vertieft und miteinander verknüpft werden.
-
-## Ausgangssituation
-
-Die Ausgangssituation wird im Folgenden entlang der aktuellen Arbeitsweise konkretisiert.
 
 ### Aktuelle Arbeitsweise
 

@@ -49,11 +49,11 @@ CATIA ist eine leistungsstarke CAD-Software, die vor allem in großen Industrien
 SketchUp ist ein intuitiv nutzbares CAD-Programm, das sich besonders für architektonische Visualisierungen und Konzeptmodelle eignet. Die einfache Bedienung macht es für Einsteiger und Schüler attraktiv. Eine kostenlose Version ist im Browser verfügbar, während die Pro-Version zusätzliche Funktionen für technische Zeichnungen bietet.
 
 **FreeCAD**  
-FreeCAD ist eine freie, Open-Source-Alternative, die parametrische 3D-Modellierung bietet. Die Software eignet sich für Anwender mit begrenztem Budget, zum Beispiel für Schüler, Studenten oder kleinere Projekte. FreeCAD unterstützt verschiedene Arbeitsbereiche und wird kontinuierlich weiterentwickelt, auch wenn der Funktionsumfang im Vergleich zu kommerziellen Programmen teilweise eingeschränkt ist.
+FreeCAD ist eine freie, Open-Source-Alternative, die parametrische 3D-Modellierung bietet. Die Software eignet sich für Anwender mit begrenztem Budget, zum Beispiel für Schüler, Studenten oder kleinere Projekte. FreeCAD unterstützt verschiedene Arbeitsbereiche und wird kontinuierlich weiterentwickelt, auch wenn der Funktionsumfang im Vergleich zu kommerziellen Programmen teilweise eingeschränkt ist.[@aedificium-digital-CAD-Software]
 
 ### Übersichtstabelle
 
-| Programm | Zielgruppe | Besonderheiten | Einsatzgebiet |
+|      Programm      |      Zielgruppe      |      Besonderheiten      |      Einsatzgebiet      |
 |----------|-------------|---------------|---------------|
 | AutoCAD | Profis/Einsteiger | Umfangreiche 2D-/3D-Werkzeuge | Architektur, Bau, Technik |
 | SolidWorks | Profis | Parametrische Modellierung, Simulation | Produkt- & Maschinenbau |
@@ -63,7 +63,7 @@ FreeCAD ist eine freie, Open-Source-Alternative, die parametrische 3D-Modellieru
 | SketchUp | Einsteiger | Einfache, intuitive Modellierung | Architektur & Visualisierung |
 | FreeCAD | Alle | Open Source, kostenlos | Unterricht, kleine Projekte |
 
-[@aedificium-digital-CAD-Software]
+
 
 ## Modellierung
 
@@ -86,8 +86,7 @@ In diesem Schritt wird das Objekt mithilfe einer 3D-Software erstellt. Dabei kom
 Nach der Erstellung der Grundform werden dem Modell Materialien und Oberflächen zugewiesen. Diese bestimmen das visuelle Erscheinungsbild und verleihen dem Objekt Farbe, Struktur und Detailtiefe. Texturen können individuell erstellt, automatisch generiert oder aus Bildvorlagen abgeleitet werden.
 
 **4. Rendering und Nachbearbeitung**  
-Im letzten Schritt wird das fertige Modell visualisiert. Dabei werden Beleuchtung, Schatten und weitere visuelle Effekte berücksichtigt, um realistische oder stilisierte Darstellungen zu erzeugen. Dieser Vorgang erfordert in der Regel eine hohe Rechenleistung. Optional können die erzeugten Bilder oder Animationen anschließend weiterbearbeitet werden, um das Endergebnis zu optimieren.  
-[@3D-Modellierung-Adobe]
+Im letzten Schritt wird das fertige Modell visualisiert. Dabei werden Beleuchtung, Schatten und weitere visuelle Effekte berücksichtigt, um realistische oder stilisierte Darstellungen zu erzeugen. Dieser Vorgang erfordert in der Regel eine hohe Rechenleistung. Optional können die erzeugten Bilder oder Animationen anschließend weiterbearbeitet werden, um das Endergebnis zu optimieren.[@3D-Modellierung-Adobe]
 
 ### Arbeiten mit Skizzen
 
@@ -321,7 +320,7 @@ Durch diese Arbeitsweise ist es möglich, einfache wie auch komplexere Steuerung
 
 ![Arduino Uno[@Arduino-Uno-Bild]](img/bilder-ausarbeitung-Beichtbuchner/Mikrocontroller/Arduino-Uno-R3.jpg)
 
-Der Arduino Uno ist einer der am häufigsten verwendeten Mikrocontroller und eignet sich besonders für Einsteiger sowie für einfache bis mittelkomplexe Projekte. Er basiert auf einem 8-Bit-Mikrocontroller und bietet eine übersichtliche Anzahl an digitalen und analogen Ein- und Ausgängen. Durch die einfache Programmierung und die große Verfügbarkeit an Bibliotheken und Beispielen lässt sich der Arduino Uno schnell in Betrieb nehmen. Er wird häufig für Steuerungsaufgaben, das Auslesen von Sensoren oder das Ansteuern von LEDs und anderen Aktoren verwendet. Aufgrund seiner Stabilität und guten Dokumentation ist er auch im schulischen Umfeld weit verbreitet. In dem Projekt wurde letztendlich der Arduino Uno gewählt, da er eine gute Balance zwischen Leistungsfähigkeit und Benutzerfreundlichkeit bietet und sich für die geplanten Anwendungen als ausreichend und zuverlässig erwiesen hat.
+Der Arduino Uno ist einer der am häufigsten verwendeten Mikrocontroller und eignet sich besonders für Einsteiger sowie für einfache bis mittelkomplexe Projekte. Er basiert auf einem 8-Bit-Mikrocontroller und bietet eine übersichtliche Anzahl an digitalen und analogen Ein- und Ausgängen. Durch die einfache Programmierung und die große Verfügbarkeit an Bibliotheken und Beispielen lässt sich der Arduino Uno schnell in Betrieb nehmen. Er wird häufig für Steuerungsaufgaben, das Auslesen von Sensoren oder das Ansteuern von LEDs und anderen Aktoren verwendet. Aufgrund seiner Stabilität und guten Dokumentation ist er auch im schulischen Umfeld weit verbreitet. In diesem Projekt wurde letztendlich der Arduino Uno gewählt, da er eine gute Balance zwischen Leistungsfähigkeit und Benutzerfreundlichkeit bietet und sich für die geplanten Anwendungen als ausreichend und zuverlässig erwiesen hat.
 
 
 #### Arduino Nano

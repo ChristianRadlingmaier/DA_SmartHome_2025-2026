@@ -1,4 +1,4 @@
-﻿# Projekthandbuch SmartHome Diplomarbeit
+# Projekthandbuch Smart Home Diplomarbeit
 
 **Autor:** Janik Gierer, Christian Radlingmaier, Christian Beichtbuchner
 **Stand:** 06.03.2026
@@ -7,11 +7,11 @@
 
 ### Projektauftrag
 
-Im Rahmen unserer Diplomarbeit entwickeln wir ein modellbasiertes SmartHome-System mit verschiedenen Sensoren und Aktoren. Diese werden über ein zentrales System mit FHEM und Home Assistant verwaltet und gesteuert. Das Projekt befasst sich mit der Automatisierung von Haushaltsprozessen auf einem Miniaturmodellhaus und bietet zusätzlich eine webbasierte Bedienoberfläche über Portainer und Node-RED. Ziel ist es, ein skalierbares, offenes System zu demonstrieren, das mit Protokollen wie MQTT kommuniziert.
+Im Rahmen unserer Diplomarbeit entwickeln wir ein modellbasiertes Smart-Home-System mit verschiedenen Sensoren und Aktoren. Diese werden über ein zentrales System mit FHEM und Home Assistant verwaltet und gesteuert. Das Projekt befasst sich mit der Automatisierung von Haushaltsprozessen auf einem Miniaturmodellhaus und bietet zusätzlich eine webbasierte Bedienoberfläche über Portainer und Node-RED. Ziel ist es, ein skalierbares, offenes System zu demonstrieren, das mit Protokollen wie MQTT kommuniziert.
 
 ### Projektziele
 
-- Aufbau eines funktionstüchtigen SmartHome-Modellhauses mit realitätsnaher Steuerung.
+- Aufbau eines funktionstüchtigen Smart-Home-Modellhauses mit realitätsnaher Steuerung.
 - Integration von Home Assistant zur Steuerung und Visualisierung.
 - Anbindung von Sensoren (Temperatur, Helligkeit, Türkontakt) und Aktoren (Licht, Motoren, Heizung) via MQTT.
 - Visualisierung und Bedienung über Node-RED.
@@ -42,7 +42,7 @@ Betreuer: Christoph Leitner, BEd., DI (FH) Markus Zacharias
 | Termin     | Inhalt                          | Status (Stand 06.03.2026) |
 |------------|---------------------------------|----------------------------|
 | 2025-09-15 | Projektstart und Planung        | Abgeschlossen              |
-| 2025-10-10 | Aufbau SmartHome-Modellhaus     | Abgeschlossen              |
+| 2025-10-10 | Aufbau Smart-Home-Modellhaus   | Abgeschlossen              |
 | 2025-10-31 | Systemgrundlagen funktionsfähig | Abgeschlossen              |
 | 2025-11-15 | Systemintegration               | Abgeschlossen              |
 | 2025-12-15 | Systemtest und Optimierung      | Abgeschlossen              |
@@ -112,7 +112,7 @@ Gesamtkosten: 369.00 \euro{}
 - Zeitplan gemäß DA-Vorgaben festgelegt
 - GitHub-Repository und Grundstruktur eingerichtet
 
-### 2025-10-10 - Aufbau SmartHome-Modellhaus abgeschlossen (Status: Abgeschlossen)
+### 2025-10-10 - Aufbau Smart-Home-Modellhaus abgeschlossen (Status: Abgeschlossen)
 
 - Modellhaus mechanisch fertiggestellt
 - Grundverkabelung und Stromversorgung umgesetzt
@@ -172,7 +172,7 @@ Gesamtkosten: 369.00 \euro{}
 
 ### Überblick
 
-- SmartHome automatisch beleuchten
+- Smart Home automatisch beleuchten
 - Temperaturabhängige Heizsteuerung
 - Türkontaktmeldung per Pushnachricht
 - Visualisierung der Sensordaten im Dashboard

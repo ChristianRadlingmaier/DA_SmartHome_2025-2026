@@ -1,5 +1,5 @@
 ---
-da-titel: DA-SmartHome Systeme
+da-titel: Smart-Home-Systeme
 
 da-jahr: 2025/26 
 
@@ -44,7 +44,7 @@ da-betreuer:
   name: Dipl.-Wirt.-Ing. (FH) Leitner Christoph, BEd 
 
 - paraffe: 
-  name: DI Dr. mont Thomas Messner
+  name: DI (FH) Markus Zacharias
 
 da-kurzfassung-de: >-
   Diese Diplomarbeit beschreibt die Planung, Umsetzung und Bewertung eines
@@ -148,7 +148,7 @@ da-kiquellen:
   pdf-file: Perl-Code-Diplomarbeit.pdf  
 
 - ki: ChatGPT5.3
-  short-prompt: Perl Fehler Erklaerung
+  short-prompt: Perl Fehler Erklärung
   pdf-file: Perl-Fehler-Erklaerung.pdf  
 
 - ki: ChatGPT5.3

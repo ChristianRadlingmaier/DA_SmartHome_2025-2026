@@ -61,13 +61,13 @@ In dieser Diplomarbeit wird Sensorik eingesetzt, um relevante Umgebungsparameter
 ##### Aktorik
 Aktorik bezeichnet die Gesamtheit aller Komponenten in einem Smart-Home-System, die auf Basis von Steuerbefehlen physische Aktionen ausführen. Aktoren setzen digitale Signale aus der Steuerungslogik in konkrete mechanische, elektrische oder optische Vorgänge um und stellen damit das Gegenstück zur Sensorik dar.
 
-In Smart-Home-Anwendungen werden unterschiedliche Aktortypen eingesetzt. Dazu zählen unter anderem Relaismodule zum Schalten von elektrischen Verbrauchern, Aktoren für Beleuchtungssysteme, Motoren zur Steuerung von Rolllaeden sowie Stellventile für Heizungs- oder Lueftungssysteme. Diese Aktoren reagieren auf Steuerbefehle, die entweder manuell durch den Benutzer oder automatisch durch definierte Regeln ausgelöst werden.
+In Smart-Home-Anwendungen werden unterschiedliche Aktortypen eingesetzt. Dazu zählen unter anderem Relaismodule zum Schalten von elektrischen Verbrauchern, Aktoren für Beleuchtungssysteme, Motoren zur Steuerung von Rollläden sowie Stellventile für Heizungs- oder Lüftungssysteme. Diese Aktoren reagieren auf Steuerbefehle, die entweder manuell durch den Benutzer oder automatisch durch definierte Regeln ausgelöst werden.
 
 Die Ansteuerung der Aktoren erfolgt in der Regel über Mikrocontroller wie den Arduino, der die von der zentralen Steuereinheit empfangenen Befehle interpretiert und entsprechende Schaltsignale erzeugt. Die zentrale Steuerlogik wird dabei von einer Automatisierungsplattform wie Node-RED oder FHEM übernommen, während die Kommunikation häufig über das MQTT-Protokoll realisiert wird.
 
-Ein wichtiger Aspekt der Aktorik ist die Zuverlässigkeit und Sicherheit der ausgefuehrten Aktionen. Insbesondere bei netzspannungsbetriebenen Geraeten muessen geeignete Schutzmaßnahmen, wie Relais mit ausreichender Belastbarkeit, beruecksichtigt werden. Dadurch wird ein sicherer Betrieb des Smart-Home-Systems gewaehrleistet.
+Ein wichtiger Aspekt der Aktorik ist die Zuverlässigkeit und Sicherheit der ausgeführten Aktionen. Insbesondere bei netzspannungsbetriebenen Geräten müssen geeignete Schutzmaßnahmen, wie Relais mit ausreichender Belastbarkeit, berücksichtigt werden. Dadurch wird ein sicherer Betrieb des Smart-Home-Systems gewährleistet.
 
-In dieser Diplomarbeit wird Aktorik eingesetzt, um auf Basis von Sensordaten und definierten Automatisierungsregeln gezielt in die Umgebung einzugreifen und den gewuenschten Komfort-, Sicherheits- und Energieeffizienzgewinn zu realisieren.[@gira_aktoren_smarthome]
+In dieser Diplomarbeit wird Aktorik eingesetzt, um auf Basis von Sensordaten und definierten Automatisierungsregeln gezielt in die Umgebung einzugreifen und den gewünschten Komfort-, Sicherheits- und Energieeffizienzgewinn zu realisieren.[@gira_aktoren_smarthome]
 
 ##### Steuerung(Arduino UNO)
 Die Steuerung stellt eine zentrale Funktion innerhalb des Smart-Home-Systems dar und ist für die Verarbeitung von Sensordaten sowie die Ansteuerung der Aktoren verantwortlich. In dieser Diplomarbeit wird der Arduino Uno als Mikrocontroller eingesetzt, um diese Aufgaben zuverlässig und effizient zu übernehmen.
@@ -306,7 +306,7 @@ Im Gegensatz zur direkten seriellen Kommunikation ermöglicht MQTT zudem mehrere
 
 ###### Vorbereitung des Systems 
 
-Als zentrale Steuereinheit des Smart-Home-Systems wurde ein Raspberry Pi 5 verwendet. Dieses basiert auf Debian Linux und bietet eine stabile Grundlage für serverbasierte Anwendungen wie FHEM. Zuserst wurde das System aktualiesiert, um sicher zustellen das alle Pakete up to date sind, mit den commands (`sudo apt update & sudo apt upgrade -y`). 
+Als zentrale Steuereinheit des Smart-Home-Systems wurde ein Raspberry Pi 5 verwendet. Dieses basiert auf Debian Linux und bietet eine stabile Grundlage für serverbasierte Anwendungen wie FHEM. Zuerst wurde das System aktualisiert, um sicherzustellen, dass alle Pakete auf dem neuesten Stand sind, mit dem Befehl `sudo apt update && sudo apt upgrade -y`.
 [@raspberrypi_os_docs]
 
 ###### Installation von FHEM 

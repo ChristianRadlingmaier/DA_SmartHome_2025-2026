@@ -14,24 +14,17 @@ CAD-Programme sind spezielle Softwareprogramme, die zur Erstellung und Bearbeitu
 
 >CAD-Programme werden in der Architektur, im Ingenieurwesen und im Baugewerbe eingesetzt, um Projekte zu entwerfen und Konstruktionsunterlagen, wie z. B. Konstruktions- und Fertigungszeichnungen, zu erstellen.[@CAD-Programme-ALLPLAN]
 
-[@CAD-Programme-ALLPLAN]
-
 ### Allgemeine Funktionsweise von CAD-Programmen
 
 CAD ist die Abkürzung für computergestütztes Zeichnen bzw. computergestütztes Entwerfen. Während Bau- und Konstruktionszeichnungen früher manuell auf Papier erstellt wurden, werden diese Aufgaben heute größtenteils mithilfe spezieller Software durchgeführt. CAD-Programme ermöglichen es, Entwürfe digital zu erstellen und sowohl in zweidimensionaler als auch in dreidimensionaler Form darzustellen. Dadurch können Zeichnungen ausgedruckt oder digitale 3D-Modelle weiterverwendet und geteilt werden.
 
-Der Einsatz von CAD-Software erleichtert es, unterschiedliche Entwurfsvarianten zu vergleichen und komplexe Konstruktionen anschaulich darzustellen. Zudem erlauben CAD-Programme eine sehr präzise Arbeitsweise, was bereits in der Planungsphase zu einer höheren Genauigkeit führt. Diese Präzision trägt dazu bei, Fehler während der Umsetzung zu reduzieren, wodurch Zeit und Kosten eingespart werden können. Darüber hinaus unterstützt die digitale Planung ein effizienteres und nachhaltigeres Arbeiten. 
-
-[@CAD-Programme-ALLPLAN] 
+Der Einsatz von CAD-Software erleichtert es, unterschiedliche Entwurfsvarianten zu vergleichen und komplexe Konstruktionen anschaulich darzustellen. Zudem erlauben CAD-Programme eine sehr präzise Arbeitsweise, was bereits in der Planungsphase zu einer höheren Genauigkeit führt. Diese Präzision trägt dazu bei, Fehler während der Umsetzung zu reduzieren, wodurch Zeit und Kosten eingespart werden können. Darüber hinaus unterstützt die digitale Planung ein effizienteres und nachhaltigeres Arbeiten. [@CAD-Programme-ALLPLAN] 
 
 ### Auswahl eines geeigneten CAD-Programms
 
 Bei der Auswahl eines geeigneten CAD-Programms ist es wichtig, sich im Vorfeld Gedanken über die Komplexität des geplanten Projekts zu machen. Je nach Umfang und Detailgrad der Konstruktion werden unterschiedliche Funktionen und Werkzeuge benötigt, weshalb nicht jedes CAD-Programm für jedes Projekt gleichermaßen geeignet ist.
 
 >Die Entscheidung für die richtige CAD Software hängt von verschiedenen Faktoren ab. Zunächst sollten Sie Ihre spezifischen Anforderungen analysieren: Benötigen Sie primär 2D-Zeichnungen oder 3D-Modellierung? Arbeiten Sie allein oder im Team? Welche Branchen-spezifischen Funktionen sind erforderlich? [@aedificium-digital-CAD-Software]
-
-[@aedificium-digital-CAD-Software]
-
 
 ### Vergleich wichtiger CAD-Programme
 
@@ -47,7 +40,7 @@ SolidWorks ist eine weit verbreitete CAD-Lösung, die besonders im Maschinen- un
 Fusion 360 kombiniert CAD, CAM und CAE in einer einheitlichen Plattform und arbeitet cloud-basiert. Dadurch ermöglicht die Software die Zusammenarbeit über verschiedene Geräte hinweg und vereinfacht den Austausch von Projektdaten im Team. Sie ist gut geeignet für Produktentwicklung, 3D-Druck und moderne Fertigungsverfahren. Fusion 360 bietet auch eine kostenlose Nutzung für Studenten, Startups und Hobbyanwender an, was insbesondere für Projekte mit beschränktem Budget von Vorteil sein kann.
 
 **Autodesk Inventor**  
-Inventor ist eine weitere professionelle Lösung von Autodesk und richtet sich vor allem an Anwender im Maschinenbau und Produktdesign. Die Software bietet erweiterte parametrische Modellierungsfunktionen und eine gute Integration in andere Autodesk-Produkte. Sie eignet sich für anspruchsvolle Konstruktionsaufgaben und technische Dokumentationen.{index=3}
+Inventor ist eine weitere professionelle Lösung von Autodesk und richtet sich vor allem an Anwender im Maschinenbau und Produktdesign. Die Software bietet erweiterte parametrische Modellierungsfunktionen und eine gute Integration in andere Autodesk-Produkte. Sie eignet sich für anspruchsvolle Konstruktionsaufgaben und technische Dokumentationen.
 
 **CATIA**  
 CATIA ist eine leistungsstarke CAD-Software, die vor allem in großen Industrien wie Luft- und Raumfahrt oder Fahrzeugbau eingesetzt wird. Sie ermöglicht die Modellierung sehr komplexer Freiformflächen und umfangreicher Baugruppen. Aufgrund des hohen Funktionsumfangs und der steilen Lernkurve ist sie eher für professionelle Anwender in spezialisierten Branchen geeignet.
@@ -83,7 +76,7 @@ Unter 3D-Modellierung versteht man die digitale Erstellung dreidimensionaler Obj
 
 Der Prozess der 3D-Modellierung lässt sich in mehrere grundlegende Schritte unterteilen. Diese Abfolge stellt einen allgemeinen Überblick dar, wobei der genaue Arbeitsablauf je nach verwendeter Software, persönlicher Arbeitsweise oder Projektanforderungen variieren kann. 
 
-**1. Konzeptphase** 
+**1. Konzeptphase**  
 Zu Beginn steht die Ideenfindung. In dieser Phase wird das geplante Objekt konzeptionell ausgearbeitet, beispielsweise durch Skizzen auf Papier oder einfache digitale Entwürfe. Ziel ist es, eine klare Vorstellung des Modells zu entwickeln, bevor mit der eigentlichen Modellierung begonnen wird.
 
 **2. Modellierungsphase**  
@@ -124,9 +117,7 @@ Im Gegensatz dazu steht das Bottom-Up-Design. Hier werden einzelne Bauteile unab
 
 >Bei der Bottom-up-Modellierung arbeiten Designer zunächst an einzelnen Teilemodellen und kombinieren diese schließlich zu einem separaten Montagemodell. Die Teilemodelle enthalten die für die Fertigung benötigte Geometrie. Das Montagemodell enthält Informationen darüber, wie Teile miteinander in Beziehung stehen, und kann a erzeugen Materialschein (BOM)&. Bei diesem traditionellen Ansatz müssen Designänderungen individuell an jedem miteinander verbundenen Teil vorgenommen werden, was eine fehleranfälligere Methode sein kann. Die Bottom-up-Methode wird am häufigsten von Teams verwendet, die an einem Design für ein Produkt mit vielen standardisierten Beziehungen zwischen Komponenten arbeiten, beispielsweise einem Fahrrad.[@Autodesk-Modeling]
 
-Zusätzlich tragen eine sinnvolle Unterteilung in Baugruppen, eine klare Benennung von Bauteilen sowie eine logische Organisation von Ebenen und Referenzen wesentlich zur Übersichtlichkeit bei. 
-
-[@Autodesk-Modeling]
+Zusätzlich tragen eine sinnvolle Unterteilung in Baugruppen, eine klare Benennung von Bauteilen sowie eine logische Organisation von Ebenen und Referenzen wesentlich zur Übersichtlichkeit bei.[@Autodesk-Modeling]
 
 ### Verwendung externer Modelle und Bibliotheken
 
@@ -134,33 +125,25 @@ Neben der eigenen Modellierung besteht die Möglichkeit, auf externe 3D-Modelle 
 
 Der Einsatz externer Modelle kann den Modellierungsprozess deutlich beschleunigen, da häufig verwendete oder standardisierte Objekte nicht vollständig neu erstellt werden müssen. Diese Modelle können in das eigene CAD-Projekt importiert und bei Bedarf angepasst oder weiterverarbeitet werden.
 
-Solche Modelle eignen sich auch für die physische Umsetzung mithilfe eines 3D-Druckers. Dabei können heruntergeladene Modelle ausgedruckt und anschließend in ein Projekt integriert werden. Voraussetzung hierfür ist jedoch, dass die Modelle korrekt skaliert sind und den technischen Anforderungen des jeweiligen Druckverfahrens entsprechen. Durch den gezielten Einsatz externer Modelle lässt sich der Arbeitsaufwand reduzieren, während gleichzeitig ein hoher Detailgrad erreicht werden kann. 
-
-[@Grabcad-Modeling]
+Solche Modelle eignen sich auch für die physische Umsetzung mithilfe eines 3D-Druckers. Dabei können heruntergeladene Modelle ausgedruckt und anschließend in ein Projekt integriert werden. Voraussetzung hierfür ist jedoch, dass die Modelle korrekt skaliert sind und den technischen Anforderungen des jeweiligen Druckverfahrens entsprechen. Durch den gezielten Einsatz externer Modelle lässt sich der Arbeitsaufwand reduzieren, während gleichzeitig ein hoher Detailgrad erreicht werden kann.[@Grabcad-Modeling]
 
 ## 3D-Druck
 
 ### Grundlagen des 3D-Drucks  
 
-Beim 3D-Druck handelt es sich um ein modernes Fertigungsverfahren, bei dem reale Gegenstände direkt aus digitalen 3D-Modellen hergestellt werden. Anstatt Material aus einem festen Werkstück zu entfernen, wird das Bauteil von Grund auf neu aufgebaut. Der Drucker erzeugt das Objekt dabei Schritt für Schritt, indem er Material in sehr dünnen Lagen aufträgt und diese übereinanderlegt. Die Form des Objekts ergibt sich aus einer zuvor erstellten digitalen Vorlage, die dem Drucker genau vorgibt, wo und wie viel Material benötigt wird. Häufig wird ein Kunststoff verwendet, der erhitzt und anschließend gezielt abgelegt wird, bis am Ende ein vollständiges dreidimensionales Bauteil entsteht.
-
-[@3D-Printing-Grundlagen-Autodesk]
+Beim 3D-Druck handelt es sich um ein modernes Fertigungsverfahren, bei dem reale Gegenstände direkt aus digitalen 3D-Modellen hergestellt werden. Anstatt Material aus einem festen Werkstück zu entfernen, wird das Bauteil von Grund auf neu aufgebaut. Der Drucker erzeugt das Objekt dabei Schritt für Schritt, indem er Material in sehr dünnen Lagen aufträgt und diese übereinanderlegt. Die Form des Objekts ergibt sich aus einer zuvor erstellten digitalen Vorlage, die dem Drucker genau vorgibt, wo und wie viel Material benötigt wird. Häufig wird ein Kunststoff verwendet, der erhitzt und anschließend gezielt abgelegt wird, bis am Ende ein vollständiges dreidimensionales Bauteil entsteht.[@3D-Printing-Grundlagen-Autodesk]
 
 ### Vorbereitung der Modelle
 
 Die Vorbereitung eines 3D-Modells für den Druck beginnt mit der Überprüfung der Geometrie. Ein druckbares Modell muss ein geschlossenes Volumen besitzen, frei von offenen Kanten oder Löchern sein und die gewünschten Abmessungen korrekt wiedergeben. Zusätzlich ist darauf zu achten, dass filigrane Strukturen und Überhänge stabil genug sind, um während des Drucks nicht zu brechen oder zu verziehen.
 
-Nach der geometrischen Kontrolle erfolgt der Export des Modells in ein für 3D-Drucker geeignetes Format, wie STL, OBJ oder 3MF. Diese Formate repräsentieren das Modell als Netz aus Dreiecken, das vom Slicer verarbeitet werden kann. Dabei muss die Mesh-Auflösung so gewählt werden, dass Details erhalten bleiben, während die Dateigröße handhabbar bleibt. Die korrekte Ausrichtung des Modells auf dem Druckbett wird bereits bei diesem Schritt berücksichtigt, um eine optimale Platzierung im Slicer zu ermöglichen.
-
-[@3D-Printing-FreeCAD]
+Nach der geometrischen Kontrolle erfolgt der Export des Modells in ein für 3D-Drucker geeignetes Format, wie STL, OBJ oder 3MF. Diese Formate repräsentieren das Modell als Netz aus Dreiecken, das vom Slicer verarbeitet werden kann. Dabei muss die Mesh-Auflösung so gewählt werden, dass Details erhalten bleiben, während die Dateigröße handhabbar bleibt. Die korrekte Ausrichtung des Modells auf dem Druckbett wird bereits bei diesem Schritt berücksichtigt, um eine optimale Platzierung im Slicer zu ermöglichen.[@3D-Printing-FreeCAD]
 
 ### Slicing
 
 Der Slicer übersetzt das digitale Modell in druckbare Anweisungen für den 3D-Drucker. Dabei wird das Objekt in horizontale Schichten zerlegt, die vom Drucker nacheinander aufgebaut werden. Außerdem berechnet der Slicer die Innenstruktur, das sogenannte Infill, sowie gegebenenfalls Stützstrukturen für Überhänge.
 
-Darüber hinaus werden alle relevanten Druckparameter festgelegt, darunter Materialwahl, Schichthöhe, Druckgeschwindigkeit und Temperatur. Diese Einstellungen legen fest, wie das Modell Schicht für Schicht aufgebaut wird und haben einen großen Einfluss auf die Qualität, Stabilität und Druckdauer des fertigen Bauteils. Moderne Slicer, wie beispielsweise Bambu Studio, automatisieren viele dieser Schritte und ermöglichen eine präzise Vorschau des Druckvorgangs. Bambu Studio veranschaulicht, wie ein Slicer das Modell analysiert, die Schichten erzeugt und den G-Code generiert, der anschließend vom Drucker interpretiert wird. Der G-Code enthält die genauen Bewegungen des Druckers sowie Informationen zu Materialzufuhr, Temperaturen und Geschwindigkeiten. Auf diese Weise wird sichergestellt, dass das digitale Modell korrekt und mit den gewünschten Eigenschaften in ein physisches Objekt umgesetzt werden kann.
-
-[@3D-Printing-FreeCAD]
+Darüber hinaus werden alle relevanten Druckparameter festgelegt, darunter Materialwahl, Schichthöhe, Druckgeschwindigkeit und Temperatur. Diese Einstellungen legen fest, wie das Modell Schicht für Schicht aufgebaut wird und haben einen großen Einfluss auf die Qualität, Stabilität und Druckdauer des fertigen Bauteils. Moderne Slicer, wie beispielsweise Bambu Studio, automatisieren viele dieser Schritte und ermöglichen eine präzise Vorschau des Druckvorgangs. Bambu Studio veranschaulicht, wie ein Slicer das Modell analysiert, die Schichten erzeugt und den G-Code generiert, der anschließend vom Drucker interpretiert wird. Der G-Code enthält die genauen Bewegungen des Druckers sowie Informationen zu Materialzufuhr, Temperaturen und Geschwindigkeiten. Auf diese Weise wird sichergestellt, dass das digitale Modell korrekt und mit den gewünschten Eigenschaften in ein physisches Objekt umgesetzt werden kann.[@3D-Printing-FreeCAD]
 
 ### Druckprozess und Einstellungen  
 
@@ -172,9 +155,9 @@ Im Folgenden werden die wichtigsten Einstellungen beim 3D-Druck erklärt.
 
 Die Layerhöhe beschreibt die Dicke jeder einzelnen gedruckten Schicht.
 
-- Kleine Layerhöhen erzeugen eine glattere und detailliertere Oberfläche  
-- Dadurch verlängert sich jedoch die Druckzeit, da mehr Schichten gedruckt werden müssen  
-- Größere Layerhöhen verkürzen die Druckzeit, führen jedoch zu sichtbaren Schichtlinien  
+- Kleine Layerhöhen erzeugen eine glattere und detailliertere Oberfläche
+- Dadurch verlängert sich jedoch die Druckzeit, da mehr Schichten gedruckt werden müssen
+- Größere Layerhöhen verkürzen die Druckzeit, führen jedoch zu sichtbaren Schichtlinien
 
 Die Wahl der richtigen Layerhöhe ist daher immer ein Kompromiss zwischen Druckqualität und Druckdauer.
 
@@ -182,9 +165,9 @@ Die Wahl der richtigen Layerhöhe ist daher immer ein Kompromiss zwischen Druckq
 
 Die Außenwände bestimmen, wie viele Linien der Drucker an der Außenseite des Modells druckt.
 
-- Mehr Außenwände erhöhen die Stabilität des Bauteils  
-- Dünne Strukturen oder Öffnungen werden dadurch stabiler  
-- Außerdem verbessert sich die Oberflächenqualität des Modells  
+- Mehr Außenwände erhöhen die Stabilität des Bauteils
+- Dünne Strukturen oder Öffnungen werden dadurch stabiler
+- Außerdem verbessert sich die Oberflächenqualität des Modells
 
 Zusätzlich werden die obersten und untersten Schichten (Top- und Bottom-Layers) definiert.  
 Diese sorgen dafür, dass das Modell eine geschlossene Oberfläche erhält und keine Lücken entstehen.
@@ -193,9 +176,9 @@ Diese sorgen dafür, dass das Modell eine geschlossene Oberfläche erhält und k
 
 Das Infill beschreibt die innere Struktur eines gedruckten Bauteils.
 
-- Der Füllgrad bestimmt, wie stark das Modell im Inneren gefüllt ist  
-- Ein höherer Füllgrad sorgt für mehr Stabilität  
-- Gleichzeitig steigt jedoch auch der Materialverbrauch und die Druckzeit  
+- Der Füllgrad bestimmt, wie stark das Modell im Inneren gefüllt ist
+- Ein höherer Füllgrad sorgt für mehr Stabilität
+- Gleichzeitig steigt jedoch auch der Materialverbrauch und die Druckzeit
 
 In vielen Fällen reicht eine teilweise Füllung aus, da die Außenwände bereits einen Großteil der Stabilität übernehmen.  
 Typische Infill-Muster sind beispielsweise Linien, Dreiecke oder Wabenstrukturen.
@@ -207,9 +190,9 @@ Das sind Bereiche, bei denen während des Drucks keine Schicht direkt darunter l
 
 Um ein Absacken des Materials zu verhindern, können im Slicer Supports erzeugt werden.
 
-- Diese dienen als temporäre Stütze während des Drucks  
-- Sie stabilisieren Überhänge oder größere Öffnungen  
-- Nach dem Druck werden sie wieder entfernt  
+- Diese dienen als temporäre Stütze während des Drucks
+- Sie stabilisieren Überhänge oder größere Öffnungen
+- Nach dem Druck werden sie wieder entfernt
 
 **Haftung auf dem Druckbett:**
 
@@ -218,34 +201,28 @@ Wenn dies nicht der Fall ist, kann sich das Modell während des Drucks lösen od
 
 Zur Verbesserung der Haftung können verschiedene Methoden verwendet werden:
 
-- **Skirt:** Linie um das Modell, um den Materialfluss zu stabilisieren  
-  
-- **Brim:** Erweiterung der Kontaktfläche des Modells mit dem Druckbett  
-  
-- **Raft:** zusätzliche Grundplatte unter dem Bauteil für bessere Stabilität  
+- **Skirt:** Linie um das Modell, um den Materialfluss zu stabilisieren
+- **Brim:** Erweiterung der Kontaktfläche des Modells mit dem Druckbett
+- **Raft:** zusätzliche Grundplatte unter dem Bauteil für bessere Stabilität
 
 **Temperatur und Druckgeschwindigkeit:**
 
 Auch Temperatur und Druckgeschwindigkeit haben großen Einfluss auf das Druckergebnis.
 
-- Die Düsentemperatur muss zum verwendeten Filament passen, damit das Material gleichmäßig schmilzt  
-- Die Druckbetttemperatur verbessert die Haftung der ersten Schicht  
-- Eine höhere Druckgeschwindigkeit verkürzt die Druckzeit  
-- Für detaillierte Modelle wird meist eine geringere Geschwindigkeit verwendet, um präzisere Ergebnisse zu erzielen  
-
-[@Conrad-3D-Drucker-Kalibrieren]
+- Die Düsentemperatur muss zum verwendeten Filament passen, damit das Material gleichmäßig schmilzt
+- Die Druckbetttemperatur verbessert die Haftung der ersten Schicht
+- Eine höhere Druckgeschwindigkeit verkürzt die Druckzeit
+- Für detaillierte Modelle wird meist eine geringere Geschwindigkeit verwendet, um präzisere Ergebnisse zu erzielen[@Conrad-3D-Drucker-Kalibrieren]
 
 ### Nachbearbeitung und Integration ins Projekt
 
-Nach dem 3D-Druck eines Bauteils folgt die Phase der Nachbearbeitung, in der das gedruckte Objekt gezielt optimiert wird, um Oberflächenqualität, Funktionalität und Einsatzfähigkeit zu verbessern. Da 3D‑gedruckte Teile schichtweise aufgebaut werden, weisen sie meist sichtbare Schichtrasterungen auf. Zudem entstehen an Stellen, an denen Stützstrukturen verwendet wurden, kleine Unebenheiten. Diese Merkmale werden während der Nachbearbeitung gezielt korrigiert, um die Bauteile an die Anforderungen ihres späteren Einsatzes anzupassen.
+Nach dem 3D-Druck eines Bauteils folgt die Phase der Nachbearbeitung, in der das gedruckte Objekt gezielt optimiert wird, um Oberflächenqualität, Funktionalität und Einsatzfähigkeit zu verbessern. Da 3D gedruckte Teile schichtweise aufgebaut werden, weisen sie meist sichtbare Schichtrasterungen auf. Zudem entstehen an Stellen, an denen Stützstrukturen verwendet wurden, kleine Unebenheiten. Diese Merkmale werden während der Nachbearbeitung gezielt korrigiert, um die Bauteile an die Anforderungen ihres späteren Einsatzes anzupassen.
 
 Ein zentraler Bestandteil der Nachbearbeitung ist das Entfernen von Stützstrukturen, die während des Drucks zur Stabilisierung von Überhängen oder komplexen Geometrien eingesetzt wurden. Nach dem Abtrennen der Supports bleiben häufig kleine Kanten oder Unebenheiten zurück, die durch weitere Verfahren geglättet werden. Darüber hinaus kommen unterschiedliche Techniken zum Einsatz, um Oberflächen zu veredeln, mechanische Eigenschaften zu verbessern oder zusätzliche Funktionen zu ermöglichen. Diese Verfahren lassen sich grundsätzlich in subtraktive, additive und stoffverändernde Methoden einteilen, die jeweils unterschiedliche Herangehensweisen verfolgen, aber alle darauf abzielen, das gedruckte Bauteil für die Integration in ein größeres Projekt vorzubereiten.
 
 Subtraktive Methoden basieren auf dem gezielten Entfernen von Material, beispielsweise durch Schleifen, Polieren, Sandstrahlen oder maschinelle Bearbeitung. Sie glätten Schichtrasterungen und korrigieren lokale Unebenheiten. Additive Verfahren fügen Material hinzu, etwa durch Spachtelmasse oder Beschichtungen, um Oberflächen auszugleichen oder die strukturellen Eigenschaften zu verbessern. Stoffverändernde Methoden wirken durch chemische oder thermische Behandlung auf das Material ein, wodurch glattere Oberflächen oder eine erhöhte Festigkeit erzielt werden können.
 
-Nach der Nachbearbeitung können die 3D-Druckteile auf vielfältige Weise in ein übergeordnetes Projekt integriert werden. Sie eignen sich als Bestandteile größerer Baugruppen, als funktionale Prototypen oder als fertige Bauteile für Endprodukte. Durch diese Verfahren wird sichergestellt, dass die gedruckten Komponenten sowohl technisch als auch ästhetisch den Anforderungen des jeweiligen Einsatzbereichs entsprechen – sei es im industriellen Umfeld, im Prototypenbau oder in der Fertigung individueller Objekte.
-
-[@3D-Printing-BigRep]
+Nach der Nachbearbeitung können die 3D-Druckteile auf vielfältige Weise in ein übergeordnetes Projekt integriert werden. Sie eignen sich als Bestandteile größerer Baugruppen, als funktionale Prototypen oder als fertige Bauteile für Endprodukte. Durch diese Verfahren wird sichergestellt, dass die gedruckten Komponenten sowohl technisch als auch ästhetisch den Anforderungen des jeweiligen Einsatzbereichs entsprechen sei es im industriellen Umfeld, im Prototypenbau oder in der Fertigung individueller Objekte.[@3D-Printing-BigRep]
 
 ## Elektronik
 
@@ -255,58 +232,52 @@ Die Grundlagen der Elektronik beschäftigen sich damit, wie Strom und Spannung f
 
 ### Überblick über elektronische Bauteile
 
-Elektronische Bauteile sind einzelne Bestandteile, aus denen elektronische Schaltungen aufgebaut werden. Sie übernehmen unterschiedliche Aufgaben, wie das Steuern, Verarbeiten oder Speichern elektrischer Signale. Diese Bauteile bilden die Grundlage moderner elektronischer Systeme und kommen in zahlreichen technischen Anwendungen zum Einsatz, angefangen bei einfachen Alltagsgeräten bis hin zu komplexen elektronischen Systemen wie Computern oder automatisierten Anlagen. Man unterscheidet bei den jeweiligen Bauteil ob er Aktiv(Transistor, Diode) oder Passiv(Widerstand, Kondensator) ist. 
+Elektronische Bauteile sind einzelne Bestandteile, aus denen elektronische Schaltungen aufgebaut werden. Sie übernehmen unterschiedliche Aufgaben, wie das Steuern, Verarbeiten oder Speichern elektrischer Signale. Diese Bauteile bilden die Grundlage moderner elektronischer Systeme und kommen in zahlreichen technischen Anwendungen zum Einsatz, angefangen bei einfachen Alltagsgeräten bis hin zu komplexen elektronischen Systemen wie Computern oder automatisierten Anlagen. Man unterscheidet bei den jeweiligen Bauteil ob er Aktiv (Transistor, Diode) oder Passiv (Widerstand, Kondensator) ist. 
 
 Der Unterschied zwischen diesen zwei Kategorien ist:
 
-**Aktive Bauteile:**
-  - Steuern oder verstärken den Stromfluss jedoch brauchen sie eine externe Energiequelle.
+**Aktive Bauteile:**  
+- Steuern oder verstärken den Stromfluss jedoch brauchen sie eine externe Energiequelle.
 
-**Passive Bauteile:**
-  - Beeinflussen den Stromfluss indem sie ihn regulieren, speichern oder verzögern ohne einer zusätzlichen externen Energiequelle.
-
-[@Elektronische-Bauteile-HEINEN]
+**Passive Bauteile:**  
+- Beeinflussen den Stromfluss indem sie ihn regulieren, speichern oder verzögern ohne einer zusätzlichen externen Energiequelle.[@Elektronische-Bauteile-HEINEN]
 
 ### Spannungsversorgung elektronischer Schaltungen
 
-Die Spannungsversorgung ist ein grundlegender Bestandteil elektronischer Schaltungen. Ihre Aufgabe besteht darin, eine vorhandene Energiequelle, wie beispielsweise Netzstrom oder eine Batterie, in eine für die jeweilige Schaltung geeignete und möglichst konstante Gleichspannung umzuwandeln. Viele elektronische Bauteile benötigen feste Versorgungsspannungen, etwa 5 V oder 12 V, um zuverlässig arbeiten zu können. Dabei muss die Spannungsversorgung Schwankungen der Eingangsspannung sowie Änderungen der Stromaufnahme ausgleichen, damit die Ausgangsspannung stabil bleibt.
+Die Spannungsversorgung ist ein grundlegender Bestandteil elektronischer Schaltungen. Ihre Aufgabe besteht darin, eine vorhandene Energiequelle, wie beispielsweise Netzstrom oder eine Batterie, in eine für die jeweilige Schaltung geeignete und möglichst konstante Gleichspannung umzuwandeln. Viele elektronische Bauteile benötigen feste Versorgungsspannungen, etwa 5V oder 12V, um zuverlässig arbeiten zu können. Dabei muss die Spannungsversorgung Schwankungen der Eingangsspannung sowie Änderungen der Stromaufnahme ausgleichen, damit die Ausgangsspannung stabil bleibt.
 
 [@Spannungsquellen-ElectronicsTutorials]
 
 ### Arten von Spannungsversorgungen
 
-**Netzteil:**
-  - Ist ein Gerät, das den Strom aus der Steckdose in eine benutzbare Gleichspannung für elektronische Geräte umwandelt.
+**Netzteil:**  
+- Ist ein Gerät, das den Strom aus der Steckdose in eine benutzbare Gleichspannung für elektronische Geräte umwandelt.
   
-**Batterie/Akku:**
-  - Bieten mobile Gleichspannungen, die aber mit der Zeit schwanken.
+**Batterie/Akku:**  
+- Bieten mobile Gleichspannungen, die aber mit der Zeit schwanken.
   
-**Generator:**
-  - Wandelt mechanische Energie in elektrischen Strom um.
+**Generator:**  
+- Wandelt mechanische Energie in elektrischen Strom um.
   
-**Konstantspannungsquelle:**
-  - Versucht immer die gleiche Spannung am Ausgang zu liefern, egal wie sich Last oder Eingangsspannung verändert. 
-  
-[@Spannungsquellen-ElectronicsTutorials]
+**Konstantspannungsquelle:**  
+- Versucht immer die gleiche Spannung am Ausgang zu liefern, egal wie sich Last oder Eingangsspannung verändert.[@Spannungsquellen-ElectronicsTutorials]
 
 ### Methoden zur Spannungsstabilisierung
 
-**Z-Diode:**
-  - Einfachste Methode, gut für geringe, konstante Ströme, aber mit höherem Spannungsabfall und Wärmeentwicklung bei höheren Strömen.
+**Z-Diode:**  
+- Einfachste Methode, gut für geringe, konstante Ströme, aber mit höherem Spannungsabfall und Wärmeentwicklung bei höheren Strömen.
   
-**Spannungsregler (IC):**
-  - Integrierte Schaltungen (ICs), die eine sehr genaue und stabile Spannung liefern, auch mit Überstromschutz.
+**Spannungsregler (IC):**  
+- Integrierte Schaltungen (ICs), die eine sehr genaue und stabile Spannung liefern, auch mit Überstromschutz.
   
-**Linearregler:** 
-  - Einfache Schaltung, oft mit einem Transistor, erzeugt wenig Rauschen, aber viel Wärme (Verlustleistung).
+**Linearregler:**  
+- Einfache Schaltung, oft mit einem Transistor, erzeugt wenig Rauschen, aber viel Wärme (Verlustleistung).
   
-**Schaltregler:** 
-  - Effizienter, wandelt Spannung durch schnelles Schalten; heutzutage dominierend (z.B. in Schaltnetzteilen).
+**Schaltregler:**  
+- Effizienter, wandelt Spannung durch schnelles Schalten; heutzutage dominierend (z.B. in Schaltnetzteilen).
   
-**Spannungsteiler (Widerstände):** 
-  - Nur für spezielle Fälle geeignet, wenn die Stromaufnahme konstant ist, da die Spannung mit abnehmender Batterie (oder steigender Last) abfällt. 
-  
-[@Schaltungstechnik-Stromversorgung-technik-reicke]
+**Spannungsteiler (Widerstände):**  
+- Nur für spezielle Fälle geeignet, wenn die Stromaufnahme konstant ist, da die Spannung mit abnehmender Batterie (oder steigender Last) abfällt.[@Schaltungstechnik-Stromversorgung-technik-reicke]
 
 ## Mikrocontroller
 
@@ -314,17 +285,13 @@ Die Spannungsversorgung ist ein grundlegender Bestandteil elektronischer Schaltu
 
 Mikrocontroller, häufig auch als MCU (Microcontroller Unit) bezeichnet, sind sehr kompakte Recheneinheiten, bei denen alle wesentlichen Komponenten eines Computers auf einem einzigen Chip integriert sind. Dazu zählen unter anderem eine Recheneinheit, Speicher sowie Ein- und Ausgabeschnittstellen. Aufgrund dieses Aufbaus bilden Mikrocontroller ein vollständig in sich geschlossenes System.
 
-Im Gegensatz zu klassischen Mikroprozessoren, wie sie in Personal Computern oder Tablets eingesetzt werden, sind Mikrocontroller für die Ausführung einer klar definierten Aufgabe vorgesehen. Sie führen meist ein einzelnes Programm dauerhaft und wiederholt aus, typischerweise in Form einer Endlosschleife. Solche Anwendungen werden als eingebettete Systeme bezeichnet. Durch ihre Spezialisierung eignen sich Mikrocontroller besonders für automatisierte Steuerungs- und Regelaufgaben. 
-
-[@Mikrocontroller-RS]
+Im Gegensatz zu klassischen Mikroprozessoren, wie sie in Personal Computern oder Tablets eingesetzt werden, sind Mikrocontroller für die Ausführung einer klar definierten Aufgabe vorgesehen. Sie führen meist ein einzelnes Programm dauerhaft und wiederholt aus, typischerweise in Form einer Endlosschleife. Solche Anwendungen werden als eingebettete Systeme bezeichnet. Durch ihre Spezialisierung eignen sich Mikrocontroller besonders für automatisierte Steuerungs- und Regelaufgaben.[@Mikrocontroller-RS]
 
 ### Mikrocontroller Typen
 
 Mikrocontroller lassen sich anhand ihrer Datenbreite in 8-Bit-, 16-Bit- und 32-Bit-Systeme einteilen. Diese Angabe beschreibt, wie viele Bits der Mikrocontroller in einem Verarbeitungsschritt verarbeiten kann und beeinflusst damit sowohl die Rechenleistung als auch die Geschwindigkeit.
 
-8-Bit-Mikrocontroller werden häufig für einfache Anwendungen eingesetzt, da sie kostengünstig und energieeffizient sind, jedoch nur eine begrenzte Rechenleistung bieten. 16-Bit- und 32-Bit-Mikrocontroller ermöglichen komplexere Berechnungen und schnellere Verarbeitung, sind jedoch meist teurer. Die Wahl des passenden Mikrocontrollers hängt daher von den Anforderungen der jeweiligen Anwendung ab, etwa vom Funktionsumfang, der Rechengeschwindigkeit und den verfügbaren Programmiersprachen.
-
-[@Mikrocontroller-RS]
+8-Bit-Mikrocontroller werden häufig für einfache Anwendungen eingesetzt, da sie kostengünstig und energieeffizient sind, jedoch nur eine begrenzte Rechenleistung bieten. 16-Bit- und 32-Bit-Mikrocontroller ermöglichen komplexere Berechnungen und schnellere Verarbeitung, sind jedoch meist teurer. Die Wahl des passenden Mikrocontrollers hängt daher von den Anforderungen der jeweiligen Anwendung ab, etwa vom Funktionsumfang, der Rechengeschwindigkeit und den verfügbaren Programmiersprachen.[@Mikrocontroller-RS]
 
 ### Aufbau eines Mikrocontrollers
 
@@ -340,17 +307,13 @@ Ein weiterer wichtiger Bestandteil ist der interne Oszillator. Dieser erzeugt de
 
 Über sogenannte Ein- und Ausgänge (Input/Output, kurz I/O) kann der Mikrocontroller mit seiner Umgebung kommunizieren. Diese Anschlüsse, meist als Pins ausgeführt, ermöglichen das Einlesen von Signalen von Sensoren sowie das Ansteuern von Aktoren wie LEDs oder Motoren.
 
-Abhängig vom jeweiligen Mikrocontroller sind außerdem zusätzliche Peripherieeinheiten integriert. Dazu zählen unter anderem Timer und Zähler, Analog-Digital-Wandler zur Verarbeitung analoger Signale, Digital-Analog-Wandler sowie Module zur Pulsweitenmodulation (PWM). Diese erweitern die Einsatzmöglichkeiten des Mikrocontrollers und ermöglichen eine flexible Anpassung an unterschiedliche Anwendungen. 
-
-[@Mikrocontroller-RS]
+Abhängig vom jeweiligen Mikrocontroller sind außerdem zusätzliche Peripherieeinheiten integriert. Dazu zählen unter anderem Timer und Zähler, Analog-Digital-Wandler zur Verarbeitung analoger Signale, Digital-Analog-Wandler sowie Module zur Pulsweitenmodulation (PWM). Diese erweitern die Einsatzmöglichkeiten des Mikrocontrollers und ermöglichen eine flexible Anpassung an unterschiedliche Anwendungen.[@Mikrocontroller-RS]
 
 ### Funktionsweise eines Mikrocontrollers
 
 Nach dem Einschalten eines Mikrocontrollers wird das im nichtflüchtigen Speicher abgelegte Programm geladen und von der CPU schrittweise ausgeführt. Während des Betriebs verarbeitet der Mikrocontroller eingehende Signale, beispielsweise von Sensoren oder Schaltern, und reagiert darauf durch das Ansteuern von Ausgängen wie LEDs, Motoren oder Relais.
 
-Durch diese Arbeitsweise ist es möglich, einfache wie auch komplexere Steuerungsaufgaben zuverlässig und effizient umzusetzen. Mikrocontroller finden daher Anwendung in zahlreichen technischen Systemen, insbesondere dort, wo wiederholbare Prozesse automatisiert gesteuert werden müssen.
-
-[@Mikrocontroller-RS]
+Durch diese Arbeitsweise ist es möglich, einfache wie auch komplexere Steuerungsaufgaben zuverlässig und effizient umzusetzen. Mikrocontroller finden daher Anwendung in zahlreichen technischen Systemen, insbesondere dort, wo wiederholbare Prozesse automatisiert gesteuert werden müssen.[@Mikrocontroller-RS]
 
 ### Vergleich gängiger Mikrocontroller-Plattformen
 
@@ -358,7 +321,7 @@ Durch diese Arbeitsweise ist es möglich, einfache wie auch komplexere Steuerung
 
 ![Arduino Uno[@Arduino-Uno-Bild]](img/bilder-ausarbeitung-Beichtbuchner/Mikrocontroller/Arduino-Uno-R3.jpg)
 
-Der Arduino Uno ist einer der am häufigsten verwendeten Mikrocontroller und eignet sich besonders für Einsteiger sowie für einfache bis mittelkomplexe Projekte. Er basiert auf einem 8-Bit-Mikrocontroller und bietet eine übersichtliche Anzahl an digitalen und analogen Ein- und Ausgängen. Durch die einfache Programmierung und die große Verfügbarkeit an Bibliotheken und Beispielen lässt sich der Arduino Uno schnell in Betrieb nehmen. Er wird häufig für Steuerungsaufgaben, das Auslesen von Sensoren oder das Ansteuern von LEDs und anderen Aktoren verwendet. Aufgrund seiner Stabilität und guten Dokumentation ist er auch im schulischen Umfeld weit verbreitet.
+Der Arduino Uno ist einer der am häufigsten verwendeten Mikrocontroller und eignet sich besonders für Einsteiger sowie für einfache bis mittelkomplexe Projekte. Er basiert auf einem 8-Bit-Mikrocontroller und bietet eine übersichtliche Anzahl an digitalen und analogen Ein- und Ausgängen. Durch die einfache Programmierung und die große Verfügbarkeit an Bibliotheken und Beispielen lässt sich der Arduino Uno schnell in Betrieb nehmen. Er wird häufig für Steuerungsaufgaben, das Auslesen von Sensoren oder das Ansteuern von LEDs und anderen Aktoren verwendet. Aufgrund seiner Stabilität und guten Dokumentation ist er auch im schulischen Umfeld weit verbreitet. In dem Projekt wurde letztendlich der Arduino Uno gewählt, da er eine gute Balance zwischen Leistungsfähigkeit und Benutzerfreundlichkeit bietet und sich für die geplanten Anwendungen als ausreichend und zuverlässig erwiesen hat.
 
 
 #### Arduino Nano
@@ -383,9 +346,7 @@ Die STM32-Mikrocontroller basieren auf einer 32-Bit-Architektur und sind in viel
 
 ## Sensoren und Aktoren
 
-Sensoren und Aktoren bilden zentrale Bestandteile automatisierter und elektronischer Systeme. Sie ermöglichen es technischen Systemen, Informationen aus ihrer Umgebung aufzunehmen und darauf gezielt zu reagieren. Sensoren übernehmen dabei die Aufgabe der Datenerfassung, während Aktoren für die Umsetzung von Aktionen verantwortlich sind. Man kann Sensoren als Eingabeelemente und Aktoren als Ausgabeelemente eines Systems verstehen.
-
-[@Sensorik-und-Aktorik-StudySmarter]
+Sensoren und Aktoren bilden zentrale Bestandteile automatisierter und elektronischer Systeme. Sie ermöglichen es technischen Systemen, Informationen aus ihrer Umgebung aufzunehmen und darauf gezielt zu reagieren. Sensoren übernehmen dabei die Aufgabe der Datenerfassung, während Aktoren für die Umsetzung von Aktionen verantwortlich sind. Man kann Sensoren als Eingabeelemente und Aktoren als Ausgabeelemente eines Systems verstehen.[@Sensorik-und-Aktorik-StudySmarter]
 
 ### Sensoren – Funktionsweise und Einsatzgebiete
 
@@ -393,9 +354,7 @@ Sensoren dienen dazu, physikalische oder chemische Größen aus der Umgebung zu 
 
 Typische Sensoren kommen in vielen technischen Anwendungen zum Einsatz. Ein Temperatursensor misst beispielsweise die Umgebungstemperatur, ein Lichtsensor erfasst die Helligkeit, und ein Feuchtigkeitssensor bestimmt den Feuchtigkeitsgehalt der Luft oder eines Materials.
 
-Je nach Messgröße lassen sich Sensoren in verschiedene Kategorien einteilen. Häufig verwendete Sensortypen sind Temperatursensoren zur Erfassung von Wärme, Lichtsensoren zur Messung von Helligkeit, Drucksensoren zur Erkennung von Kraft- oder Druckänderungen sowie Feuchtigkeitssensoren, die den Feuchtigkeitsgehalt von Luft oder Materialien erfassen. Alle diese Sensoren haben gemeinsam, dass sie physikalische Informationen in elektrische Signale umwandeln, die weiterverarbeitet werden können.
-
-[@Sensorik-und-Aktorik-StudySmarter]
+Je nach Messgröße lassen sich Sensoren in verschiedene Kategorien einteilen. Häufig verwendete Sensortypen sind Temperatursensoren zur Erfassung von Wärme, Lichtsensoren zur Messung von Helligkeit, Drucksensoren zur Erkennung von Kraft- oder Druckänderungen sowie Feuchtigkeitssensoren, die den Feuchtigkeitsgehalt von Luft oder Materialien erfassen. Alle diese Sensoren haben gemeinsam, dass sie physikalische Informationen in elektrische Signale umwandeln, die weiterverarbeitet werden können.[@Sensorik-und-Aktorik-StudySmarter]
 
 ### Aktoren – Funktionsweise und Einsatzgebiete
 
@@ -403,9 +362,7 @@ Aktoren übernehmen die Aufgabe, elektrische Signale in eine physische Aktion um
 
 Zu den häufig eingesetzten Aktoren zählen unter anderem Elektromotoren, die mechanische Bewegung erzeugen, Lautsprecher, die elektrische Signale in Schall umwandeln, sowie Leuchtdioden (LEDs), die durch elektrische Ansteuerung Licht aussenden. Aktoren spielen eine entscheidende Rolle in automatisierten Systemen, da sie digitale Steuerbefehle in reale Vorgänge umsetzen.
 
-Ein funktionierendes Zusammenspiel zwischen Sensoren und Aktoren ist Voraussetzung dafür, dass Systeme selbstständig und zielgerichtet arbeiten können. Nur wenn Sensordaten korrekt ausgewertet werden, können Aktoren die passenden Aktionen ausführen.
-
-[@Sensorik-und-Aktorik-StudySmarter]
+Ein funktionierendes Zusammenspiel zwischen Sensoren und Aktoren ist Voraussetzung dafür, dass Systeme selbstständig und zielgerichtet arbeiten können. Nur wenn Sensordaten korrekt ausgewertet werden, können Aktoren die passenden Aktionen ausführen.[@Sensorik-und-Aktorik-StudySmarter]
 
 
 ### Wie Sensoren und Aktoren Zusammenarbeiten
@@ -414,10 +371,7 @@ Das Zusammenwirken von Sensoren und Aktoren erfolgt meist in einem wiederkehrend
 
 Ein einfaches Beispiel für diesen Ablauf ist ein automatisches Bewässerungssystem. Ein Feuchtigkeitssensor misst den Feuchtigkeitsgehalt des Bodens. Sinkt dieser unter einen festgelegten Wert, wird ein Signal ausgelöst. Daraufhin öffnet ein elektronisch gesteuertes Ventil und startet die Bewässerung.
 
-Damit solche Systeme zuverlässig funktionieren, ist eine sorgfältige Programmierung und Abstimmung der Sensoren und Aktoren notwendig. Nur durch genaue Messungen und präzise Steuerung können automatisierte Systeme korrekt und effizient auf Veränderungen ihrer Umgebung reagieren.
-
-[@Sensorik-und-Aktorik-StudySmarter]
-
+Damit solche Systeme zuverlässig funktionieren, ist eine sorgfältige Programmierung und Abstimmung der Sensoren und Aktoren notwendig. Nur durch genaue Messungen und präzise Steuerung können automatisierte Systeme korrekt und effizient auf Veränderungen ihrer Umgebung reagieren.[@Sensorik-und-Aktorik-StudySmarter]
 
 ## Verkabelung
 
@@ -433,21 +387,15 @@ Bei einer Reihenschaltung werden mehrere Bauteile hintereinander geschaltet, sod
 
 ![Reihenschaltung[@Reihenschaltung-Wikipedia]](img/bilder-ausarbeitung-Beichtbuchner/Verkabelung/Reihenschaltung.png)
 
-[@Reihenschaltung-Wikipedia]
-
 #### Parallelschaltung
 
 Bei einer Parallelschaltung werden mehrere Bauteile so miteinander verbunden, dass jedes Bauteil direkt mit den gleichen beiden Klemmen der Spannungsquelle verbunden ist. Dadurch liegt an allen Bauteilen die gleiche Spannung an, während sich die Ströme auf die einzelnen Zweige aufteilen.
 
 ![Parallelschaltung[@Parallelschaltung-Wikipedia]](img/bilder-ausarbeitung-Beichtbuchner/Verkabelung/Parallelschaltung.png)
 
-[@Parallelschaltung-Wikipedia]
-
 #### Gemischte Schaltung
 
-Eine gemischte Schaltung kombiniert Elemente einer Reihen- und Parallelschaltung, sodass einige Bauteile hintereinander und andere nebeneinander geschaltet sind. Dabei fließt der Strom durch die Reihenbauteile gleichmäßig, während die Spannung auf die Parallelelemente verteilt wird. Gemischte Schaltungen werden eingesetzt, wenn bestimmte Spannungs- oder Stromverhältnisse innerhalb einer Schaltung benötigt werden.
-
-[@Gemischte-Schaltung-ElektronikKompendium]
+Eine gemischte Schaltung kombiniert Elemente einer Reihen- und Parallelschaltung, sodass einige Bauteile hintereinander und andere nebeneinander geschaltet sind. Dabei fließt der Strom durch die Reihenbauteile gleichmäßig, während die Spannung auf die Parallelelemente verteilt wird. Gemischte Schaltungen werden eingesetzt, wenn bestimmte Spannungs- oder Stromverhältnisse innerhalb einer Schaltung benötigt werden.[@Gemischte-Schaltung-ElektronikKompendium]
 
 ### Verbindungstechniken in der Elektronik
 
@@ -458,26 +406,21 @@ Nicht lösbare Verbindungen
 
 Löten ist ein Verfahren zur dauerhaften Verbindung von Metallteilen, insbesondere in der Elektronik. Dabei wird ein Lötmaterial (Lötzinn) auf die zu verbindende Stelle aufgebracht und durch Erwärmen mit einem Lötkolben geschmolzen. Nach dem Abkühlen härtet das Lötzinn aus und bildet eine mechanisch stabile und elektrisch leitfähige Verbindung zwischen den Bauteilen.
 
-Dieses Verfahren wird insbesondere bei der Durchsteckmontage (THT) und der Oberflächenmontage (SMD) von Bauteilen auf Leiterplatten eingesetzt, da es präzise und zuverlässig ist und die Bauteile nur minimal thermisch belastet.
-[@Richtig-löten-Hornbach]
+Dieses Verfahren wird insbesondere bei der Durchsteckmontage (THT) und der Oberflächenmontage (SMD) von Bauteilen auf Leiterplatten eingesetzt, da es präzise und zuverlässig ist und die Bauteile nur minimal thermisch belastet.[@Richtig-löten-Hornbach]
 
 ### Crimpen von Kabeln
 
-Crimpen bezeichnet das Verfahren, bei dem ein Kabel mit einem Steckverbinder verbunden wird. Dabei wird zunächst ein Stück der Kabelisolierung entfernt, sodass die einzelnen Leiter freigelegt sind. Die freigelegten Drähte werden anschließend in einen Kontakt(z.B Aderendhülse) eingeführt und mit einer Crimpzange zusammengepresst. Abschließend wird ein Kunststoffkopf aufgebracht, der die Verbindung schützt und stabilisiert. 
-[@Richtig-Crimpen-Jungheinrich-PROFISHOP]
+Crimpen bezeichnet das Verfahren, bei dem ein Kabel mit einem Steckverbinder verbunden wird. Dabei wird zunächst ein Stück der Kabelisolierung entfernt, sodass die einzelnen Leiter freigelegt sind. Die freigelegten Drähte werden anschließend in einen Kontakt(z.B Aderendhülse) eingeführt und mit einer Crimpzange zusammengepresst. Abschließend wird ein Kunststoffkopf aufgebracht, der die Verbindung schützt und stabilisiert.[@Richtig-Crimpen-Jungheinrich-PROFISHOP]
 
 ![Crimpen[@Crimpen-Anleitung-Conrad]](img/bilder-ausarbeitung-Beichtbuchner/Verkabelung/korrekte-crimpverbindung.jpg)
 
->Bei einer korrekten Ausführung müssen an Punkt 1 die Litzendrähte und die Isolierung sichtbar sein. An Punkt 2 müssen die Drahtenden sichtbar sein.
-[@Crimpen-Anleitung-Conrad]
+>Bei einer korrekten Ausführung müssen an Punkt 1 die Litzendrähte und die Isolierung sichtbar sein. An Punkt 2 müssen die Drahtenden sichtbar sein.[@Crimpen-Anleitung-Conrad]
 
 ### Schaltplan
 
 Ein Schaltplan ist eine grafische Darstellung einer elektrischen oder elektronischen Schaltung, die es ermöglicht, die Verbindungen zwischen Bauteilen klar zu erkennen. Er zeigt auf, wie Komponenten wie Widerstände, Kondensatoren, Mikrocontroller oder Sensoren elektrisch miteinander verbunden sind, und dient damit als übersichtliche Orientierung für Aufbau und Analyse der Schaltung.
 
-Darüber hinaus werden Schaltpläne häufig als Grundlage für das Layout von Leiterplatten (PCB) verwendet. Da Leiterplatten sehr komplex sein können, erlaubt der Schaltplan, alle Verbindungen und Bauteilpositionen präzise zu planen, bevor die Leiterplatte gefertigt wird. Auf diese Weise dient er sowohl der Dokumentation als auch der fehlerfreien Umsetzung eines Projekts.
-
-[@Schaltplan-Wikipedia]
+Darüber hinaus werden Schaltpläne häufig als Grundlage für das Layout von Leiterplatten (PCB) verwendet. Da Leiterplatten sehr komplex sein können, erlaubt der Schaltplan, alle Verbindungen und Bauteilpositionen präzise zu planen, bevor die Leiterplatte gefertigt wird. Auf diese Weise dient er sowohl der Dokumentation als auch der fehlerfreien Umsetzung eines Projekts.[@Schaltplan-Wikipedia]
 
 ## Praktische Arbeit
 
@@ -497,37 +440,39 @@ Für die Modellierung wird das CAD-Programm Fusion 360 verwendet, da es kostenlo
 
 ### Modellierung des Hauses
 
-In Fusion 360 begann der Modellierungsprozess mit dem Skizzieren des Bodens beziehungsweise der Grundfläche des Hauses aus der Vogelperspektive. Dabei wurde die reale Länge und Breite des Hauses jeweils mit 0,04 multipliziert, um die korrekten Maße für den späteren 3D-Druck zu erhalten. Aus diesen Berechnungen ergab sich eine Breite von 43,36cm, eine Länge von 45,12cm und eine Insgesamte Höhe von 12,61cm. Anschließend wurde der Skizze ein Volumen zugewiesen, indem sie um 5 mm in die Höhe extrudiert wurde. Danach wurden die äußeren Wände mit einer Wandstärke von 1,26 cm konstruiert. Im nächsten Schritt folgte die Modellierung der inneren Wände mit einer Dicke von 0,908 cm. Sowohl die äußeren als auch die inneren Wände wurden anschließend auf eine Höhe von 10,46 cm extrudiert.
+In Fusion 360 begann der Modellierungsprozess mit dem Skizzieren des Bodens beziehungsweise der Grundfläche des Hauses aus der Vogelperspektive. Dabei wurde die reale Länge und Breite des Hauses jeweils mit 0,04 multipliziert, um die korrekten Maße für den späteren 3D-Druck zu erhalten. Aus diesen Berechnungen ergab sich eine Breite von 43,36cm, eine Länge von 45,12cm und eine Insgesamte Höhe von 12,61cm. Anschließend wurde der Skizze ein Volumen zugewiesen, indem sie um 5mm in die Höhe extrudiert wurde. Danach wurden die äußeren Wände mit einer Wandstärke von 1,26cm konstruiert. Im nächsten Schritt folgte die Modellierung der inneren Wände mit einer Dicke von 0,908cm. Sowohl die äußeren als auch die inneren Wände wurden anschließend auf eine Höhe von 10,46cm extrudiert.
 
-![3](img/bilder-ausarbeitung-Beichtbuchner/3D-Modellierung/Haus/3.png)
+![Boden&Wände](img/bilder-ausarbeitung-Beichtbuchner/3D-Modellierung/Haus/Boden&Wände.png)
 
-Anschließend erfolgte die Modellierung der Fenster und Türen. Da hierfür im Plan keine genauen Maße vorgegeben waren, wurden passende Abmessungen aus dem Internet recherchiert. Die entsprechenden Umrisse wurden anschließend aus den Wänden ausgeschnitten. Jedes Fenster wurde zusätzlich mit einem Schlitz versehen, der auf jeder Seite 5 mm breiter als dieses ist. Dadurch können sie nach dem Druck mit Plexiglas ausgestattet werden, das von oben eingesetzt wird um das Glas zu veranschaulichen.
+Anschließend erfolgte die Modellierung der Fenster und Türen. Da hierfür im Plan keine genauen Maße vorgegeben waren, wurden passende Abmessungen aus dem Internet recherchiert. Die entsprechenden Umrisse wurden anschließend aus den Wänden ausgeschnitten. Jedes Fenster wurde zusätzlich mit einem Schlitz versehen, der auf jeder Seite 5mm breiter als dieses ist. Dadurch können sie nach dem Druck mit Plexiglas ausgestattet werden, das von oben eingesetzt wird um das Glas zu veranschaulichen.
 
-![4](img/bilder-ausarbeitung-Beichtbuchner/3D-Modellierung/Haus/4.png)
+![ModellhausmitFenster&Türöffnungen&Schlitze](img/bilder-ausarbeitung-Beichtbuchner/3D-Modellierung/Haus/ModellhausmitFenster&Türöffnungen&Schlitze.png)
 
-Im nächsten Schritt wurde das Zwischendach modelliert. Dieses besitzt die gleichen Abmessungen wie der Boden des Hauses und weist eine Materialstärke von 6 mm auf. Um ein Verrutschen nach dem Druck zu verhindern und einen sicheren Sitz zu gewährleisten, wurden auf den Wänden entsprechende Dübel vorgesehen, die das Zwischendach fixieren. Zusätzlich wurden fünf Kabelkanäle konstruiert, die durch die Wände geführt sind. Diese sind für die Verkabelung der LEDs verantwortlich, welche die funktion der Deckenlampen übernehmen, sodass man vom keller mit den Kabeln direkt auf das Zwischendach kommt.
+Im nächsten Schritt wurde das Zwischendach modelliert. Dieses besitzt die gleichen Abmessungen wie der Boden des Hauses und weist eine Materialstärke von 6mm auf. Um ein Verrutschen nach dem Druck zu verhindern und einen sicheren Sitz zu gewährleisten, wurden auf den Wänden entsprechende Dübel vorgesehen, die das Zwischendach fixieren. Zusätzlich wurden fünf Kabelkanäle konstruiert, die durch die Wände geführt sind. Diese sind für die Verkabelung der LEDs verantwortlich, welche die funktion der Deckenlampen übernehmen, sodass man vom Keller mit den Kabeln direkt auf das Zwischendach kommt.
 
-![6](img/bilder-ausarbeitung-Beichtbuchner/3D-Modellierung/Haus/6.png)
+![Modellhaus&Kabelkanäle&Verbindungsdübel](img/bilder-ausarbeitung-Beichtbuchner/3D-Modellierung/Haus/Modellhaus&Kabelkanäle&Verbindungsdübel.png)
 
-Anschließend wurde das Dach modelliert. Es handelt sich dabei um ein Flachdach, das umlaufend mit einer niedrigen Begrenzungswand versehen ist. Das Dach liegt nicht direkt auf dem Zwischendach auf, sodass die darunter verlaufenden Kabel nicht eingeklemmt werden. Die Materialstärke des Dachs beträgt ebenfalls 6 mm.
+![Zwischendach](img/bilder-ausarbeitung-Beichtbuchner/3D-Modellierung/Haus/Zwischendach.png)
 
-![7](img/bilder-ausarbeitung-Beichtbuchner/3D-Modellierung/Haus/7.png)
+Anschließend wurde das Dach modelliert. Es handelt sich dabei um ein Flachdach, das umlaufend mit einer niedrigen Begrenzungswand versehen ist. Das Dach liegt nicht direkt auf dem Zwischendach auf, sodass die darunter verlaufenden Kabel nicht eingeklemmt werden. Die Materialstärke des Dachs beträgt ebenfalls 6mm.
+
+![Dach](img/bilder-ausarbeitung-Beichtbuchner/3D-Modellierung/Haus/Dach.png)
 
 Nun wurden noch kleinere Anpassungen vorgenommen. Dazu zählten unter anderem die Erstellung eines zusätzlichen Kabelkanals sowie das Einbringen von Öffnungen in die Zwischenplatte, durch die die LEDs geführt werden können. Außerdem wurden alle Maße noch einmal überprüft, um die Passgenauigkeit und Funktionalität des Modells sicherzustellen.
 
-![10](img/bilder-ausarbeitung-Beichtbuchner/3D-Modellierung/Haus/10.png)
+![Zwischendach&LöcherLEDs](img/bilder-ausarbeitung-Beichtbuchner/3D-Modellierung/Haus/Zwischendach&LöcherLEDs.png)
 
 ### Aufteilung des Modells in druckbare Einzelteile
 
-Abschließend habe ich das Haus in insgesamt 11 Teile unterteilt, da ein Druck als ein einziges Bauteil aufgrund der Größe nicht möglich gewesen wäre. Das Zwischendach als auch das Dach wurde jeweils geviertelt. Zwischen den Wänden und den einzelnen Dachsegmenten habe ich Dübel modelliert, sodass die Bauteile nach dem 3D-Druck zusammengesteckt werden können. Diese Unterteilung bietet zudem den Vorteil, dass einzelne Wände oder Bauteile bei Beschädigungen einfach und unkompliziert ausgetauscht werden können.
+Abschließend habe ich das Haus in insgesamt elf Teile unterteilt, da ein Druck als ein einziges Bauteil aufgrund der Größe nicht möglich gewesen wäre. Das Zwischendach als auch das Dach wurde jeweils geviertelt. Zwischen den Wänden und den einzelnen Dachsegmenten habe ich Dübel modelliert, sodass die Bauteile nach dem 3D-Druck zusammengesteckt werden können. Diese Unterteilung bietet zudem den Vorteil, dass einzelne Wände oder Bauteile bei Beschädigungen einfach und unkompliziert ausgetauscht werden können.
 
-![9](img/bilder-ausarbeitung-Beichtbuchner/3D-Modellierung/Haus/9.png)
+![Modellhausaufgeteilt&Verbindungsdübel](img/bilder-ausarbeitung-Beichtbuchner/3D-Modellierung/Haus/Modellhausaufgeteilt&Verbindungsdübel.png)
 
-![12](img/bilder-ausarbeitung-Beichtbuchner/3D-Modellierung/Haus/12.png)
+![Dach&Zwischendachaufgeteilt&Verbindungsdübel](img/bilder-ausarbeitung-Beichtbuchner/3D-Modellierung/Haus/Dach&Zwischendachaufgeteilt&Verbindungsdübel.png)
 
-Bei einem Element des Zwischendachs wurde festgestellt, dass es nur mit 2 Seiten auf den wänden, aufliegt. Deswegen hat man das nächstgelegene teil als Stütze genommen und eine kleine Kante modelliert somit das Herunterfallen des Teils verhindert.
+Bei einem Element des Zwischendachs wurde festgestellt, dass es nur mit zwei Seiten auf den Wänden, aufliegt. Deswegen hat man das nächstgelegene Teil als Stütze genommen und eine kleine Kante modelliert somit das Herunterfallen des Teils verhindert wird.
 
-![14](img/bilder-ausarbeitung-Beichtbuchner/3D-Modellierung/Haus/14.png)
+![Zwischendachüberlappend](img/bilder-ausarbeitung-Beichtbuchner/3D-Modellierung/Haus/Zwischendachüberlappend.png)
 
 ## 3D-Druck der Bauteile
 
@@ -543,21 +488,21 @@ Als Druckmaterial wurde PLA verwendet, da es sich einfach verarbeiten lässt, ei
 
 Nach Abschluss der Modellierung in Fusion 360 wurden alle Bauteile über die Funktion „3D-Drucken“ als STL-Dateien exportiert. Dieses Dateiformat ist für den 3D-Druck geeignet, da es die Oberflächengeometrie der Modelle beschreibt und vom Slicer verarbeitet werden kann.
 
-Anschließend wurden die STL-Dateien in die verwendete Slicing-Software importiert. Als Drucker wurde der Bambu Lab H2S mit einer 0,2 mm Düse ausgewählt. Dabei kam das Profil „0.10 mm Standard @ BBL H2S 0.2 nozzle“ zum Einsatz, welches bereits auf eine hohe Detailgenauigkeit ausgelegt ist.
+Anschließend wurden die STL-Dateien in die verwendete Slicing-Software importiert. Als Drucker wurde der Bambu Lab H2S mit einer 0,2mm Düse ausgewählt. Dabei kam das Profil „0.10mm Standard @ BBL H2S 0.2 nozzle“ zum Einsatz, welches bereits auf eine hohe Detailgenauigkeit ausgelegt ist.
 
 Im Bereich „Qualität“ wurden die grundlegenden Parameter überprüft und bei Bedarf angepasst. Danach erfolgte die Ausrichtung der einzelnen Bauteile im Bauraum. Diese wurden so positioniert, dass Überhänge möglichst reduziert und eine optimale Haftung auf dem Druckbett erreicht wird. Wo es konstruktionsbedingt erforderlich war, wurden automatisch generierte Stützstrukturen aktiviert. Diese dienten dazu, Tür- und Fensteröffnungen sowie Dachüberstände während des Druckvorgangs zu stabilisieren und ein sauberes Druckergebnis zu gewährleisten.
 
 ### Druckparameter und Druckeinstellungen
 
-Für den Druck wurde eine Schichthöhe von 0,1 mm gewählt. Auch die erste Schicht wurde mit 0,1 mm definiert, um eine gleichmäßige Oberfläche zu erzielen. Die geringe Schichthöhe sorgt für eine hohe Detailgenauigkeit und ein sauberes Erscheinungsbild der Bauteile.
+Für den Druck wurde eine Schichthöhe von 0,1mm gewählt. Auch die erste Schicht wurde mit 0,1mm definiert, um eine gleichmäßige Oberfläche zu erzielen. Die geringe Schichthöhe sorgt für eine hohe Detailgenauigkeit und ein sauberes Erscheinungsbild der Bauteile.
 
 Die Druckgeschwindigkeit wurde gemäß dem gewählten Standardprofil beibehalten, um ein ausgewogenes Verhältnis zwischen Druckdauer und Druckqualität sicherzustellen. Das Infill wurde je nach Bauteil angepasst, sodass ausreichend Stabilität gegeben war, ohne unnötig viel Material zu verbrauchen.
 
-Die Wandstärken wurden passend zur 0,2 mm Düse sowie zu den konstruierten Modellmaßen eingestellt. Dadurch konnten robuste Außenflächen und eine gute Formstabilität gewährleistet werden.
+Die Wandstärken wurden passend zur 0,2mm Düse sowie zu den konstruierten Modellmaßen eingestellt. Dadurch konnten robuste Außenflächen und eine gute Formstabilität gewährleistet werden.
 
 ### Durchführung des Druckvorgangs
 
-Die einzelnen Bauteile unterscheiden sich in ihrer Größe, weshalb auch die Druckzeiten stark variierten. Das größte Bauteil benötigte rund 10 Stunden Druckzeit, während kleinere Teile bereits nach etwa einer Stunde fertiggestellt waren.
+Die einzelnen Bauteile unterscheiden sich in ihrer Größe, weshalb auch die Druckzeiten stark variierten. Das größte Bauteil benötigte rund zehn Stunden Druckzeit, während kleinere Teile bereits nach etwa einer Stunde fertiggestellt waren.
 
 Während des Druckvorgangs wurde der Prozess über die integrierte Kamera des Druckers überwacht. Dadurch konnten mögliche Fehler frühzeitig erkannt und bei Bedarf sofort eingegriffen werden. Diese Kontrolle half dabei, Materialverschwendung zu vermeiden und fehlerhafte Drucke rechtzeitig abzubrechen.
 
@@ -575,7 +520,7 @@ Während des Druckvorgangs brach die Stützstruktur im Bereich der Türöffnung 
 
 ![Druckfehler2](img/bilder-ausarbeitung-Beichtbuchner/Druckfehler/Druckfehler2.png)
 
-Bei diesem Bauteil reichte das Filament während des Drucks nicht aus. Nach dem Rollenwechsel setzte der Drucker den Vorgang mit einem Versatz von etwa 5 mm fort. Dadurch entstand eine deutliche Verschiebung im Bauteil, wodurch dieses unbrauchbar wurde und ebenfalls neu gedruckt werden musste.
+Bei diesem Bauteil reichte das Filament während des Drucks nicht aus. Nach dem Rollenwechsel setzte der Drucker den Vorgang mit einem Versatz von etwa 5mm fort. Dadurch entstand eine deutliche Verschiebung im Bauteil, wodurch dieses unbrauchbar wurde und ebenfalls neu gedruckt werden musste.
 
 ### Nachbearbeitung der gedruckten Bauteile
 
@@ -589,13 +534,17 @@ Abschließend wurden alle Bauteile auf Passgenauigkeit geprüft und für den sp�
 
 ![Haus](img/bilder-ausarbeitung-Beichtbuchner/FertigesHaus/Haus.png)
 
-Die Grundplatte, auf der das Haus und alle weiteren Komponenten platziert wird, besteht aus einer 70 cm langen, 70 cm breiten und 2 cm dicken Holzplatte. Darauf wurde ein Rahmen montiert, der exakt dem Umriss des Hauses entspricht, jedoch leicht versetzt angebracht wurde, um auf einer Seite mehr Platz für den Garten zu schaffen. An der gegenüberliegenden Seite des Rahmens wurde ein Scharnier befestigt, an dem das Haus montiert wurde. Dadurch lässt es sich kippen, um einen leichteren Zugang zur darunterliegenden Elektronik zu ermöglichen. Zusätzlich wurde für die Terrasse eine weitere kleinere Holzplatte auf der Höhe des Hausbodens angebracht, um die Pflasterung mithilfe von Stickern darzustellen. 
+Die Grundplatte, auf der das Haus und alle weiteren Komponenten platziert wird, besteht aus einer 70cm langen, 70cm breiten und 2cm dicken Holzplatte. Darauf wurde ein Rahmen montiert, der exakt dem Umriss des Hauses entspricht, jedoch leicht versetzt angebracht wurde, um auf einer Seite mehr Platz für den Garten zu schaffen. An der gegenüberliegenden Seite des Rahmens wurde ein Scharnier befestigt, an dem das Haus montiert wurde. Dadurch lässt es sich kippen, um einen leichteren Zugang zur darunterliegenden Elektronik zu ermöglichen. Zusätzlich wurde für die Terrasse eine weitere kleinere Holzplatte auf der Höhe des Hausbodens angebracht, um die Pflasterung mithilfe von Stickern darzustellen. 
 
 ## Elektronischer Aufbau und Verkabelung
 
+### Verwendete Elektronik im Projekt
+
+Im Projekt wurde eine bereits im Unterricht entwickelte Wetterstation verwendet, da diese vorhandene Funktionen bereitstellt und ohne großen zusätzlichen Aufwand integriert werden konnte. Sie ermöglicht das Erfassen von Umweltdaten und erweitert somit die Funktionalität des Modells sinnvoll. Ergänzend kamen LEDs zum Einsatz, da sie sich einfach ansteuern lassen und eine anschauliche Darstellung der Beleuchtung ermöglichen. Die Entscheidung hierfür wurde zusätzlich durch zeitliche Einschränkungen infolge unterschätzter Druckzeiten beeinflusst.
+
 ### Planung der elektrischen Verschaltung
 
-Zu Beginn wurde eine detaillierte Planung der elektrischen Verschaltung durchgeführt. Dabei wurde eine Übersicht über alle benötigten Komponenten erstellt. Hierzu zählen der Mikrocontroller, mehrere LEDs zur Simulation der Deckenbeleuchtung sowie die entsprechenden Verbindungskabel. Der Arduino wurde zentral unter dem Haus positioniert, um möglichst kurze Leitungswege zu gewährleisten. Für jede einzelne LED wurde ein separater digitaler Pin am Arduino vorgesehen. Dadurch ist es möglich, jede Lichtquelle unabhängig voneinander anzusteuern und gezielt zu schalten. Ein weiterer wichtiger Bestandteil der Planung war die Leitungsführung. Die Kabel verlaufen von der Unterseite des Hauses durch die zuvor konstruierten Kabelkanäle innerhalb der Wände bis hin zum Zwischendach. Diese strukturierte Kabelführung sorgt für Ordnung im Modell und verhindert lose oder sichtbare Leitungen im Innenraum.
+Zu Beginn wurde eine detaillierte Planung der elektrischen Verschaltung durchgeführt. Dabei wurde eine Übersicht über alle benötigten Komponenten erstellt. Hierzu zählen der Mikrocontroller, Verbindungskabel, die Wetterstation zur Erfassung sämtlicher Umweltdaten und mehrere LEDs zur Simulation der Deckenbeleuchtung. Der Arduino wurde zentral unter dem Haus positioniert, um möglichst kurze Leitungswege zu gewährleisten. Für jede einzelne LED wurde ein separater digitaler Pin am Arduino vorgesehen. Dadurch ist es möglich, jede Lichtquelle unabhängig voneinander anzusteuern und gezielt zu schalten. Ein weiterer wichtiger Bestandteil der Planung war die Leitungsführung. Die Kabel verlaufen von der Unterseite des Hauses durch die zuvor konstruierten Kabelkanäle innerhalb der Wände bis hin zum Zwischendach. Diese strukturierte Kabelführung sorgt für Ordnung im Modell und verhindert lose oder sichtbare Leitungen im Innenraum.
 
 ![Schaltplan](img/bilder-ausarbeitung-Beichtbuchner/FertigesHaus/Schaltplan.png)
 

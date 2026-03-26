@@ -420,7 +420,7 @@ Crimpen bezeichnet das Verfahren, bei dem ein Kabel mit einem Steckverbinder ver
 
 Ein Schaltplan ist eine grafische Darstellung einer elektrischen oder elektronischen Schaltung, die es ermöglicht, die Verbindungen zwischen Bauteilen klar zu erkennen. Er zeigt auf, wie Komponenten wie Widerstände, Kondensatoren, Mikrocontroller oder Sensoren elektrisch miteinander verbunden sind, und dient damit als übersichtliche Orientierung für Aufbau und Analyse der Schaltung.
 
-Darüber hinaus werden Schaltpläne häufig als Grundlage für das Layout von Leiterplatten (PCB) verwendet. Da Leiterplatten sehr komplex sein können, erlaubt der Schaltplan, alle Verbindungen und Bauteilpositionen präzise zu planen, bevor die Leiterplatte gefertigt wird. Auf diese Weise dient er sowohl der Dokumentation als auch der fehlerfreien Umsetzung eines Projekts.[@Schaltplan-Wikipedia]
+Darüber hinaus werden Schaltpläne häufig als Grundlage für das Layout von Leiterplatten (PCB) verwendet. Da Leiterplatten sehr komplex sein können, erlaubt der Schaltplan, alle Verbindungen und Bauteilpositionen präzise zu planen, bevor die Leiterplatte gefertigt wird. Auf diese Weise dient er sowohl der Dokumentation als auch der fehlerfreien Umsetzung eines Projekts.[@Schaltplan-Krayer]
 
 ## Praktische Arbeit
 
@@ -442,15 +442,15 @@ Für die Modellierung wird das CAD-Programm Fusion 360 verwendet, da es kostenlo
 
 In Fusion 360 begann der Modellierungsprozess mit dem Skizzieren des Bodens beziehungsweise der Grundfläche des Hauses aus der Vogelperspektive. Dabei wurde die reale Länge und Breite des Hauses jeweils mit 0,04 multipliziert, um die korrekten Maße für den späteren 3D-Druck zu erhalten. Aus diesen Berechnungen ergab sich eine Breite von 43,36cm, eine Länge von 45,12cm und eine Insgesamte Höhe von 12,61cm. Anschließend wurde der Skizze ein Volumen zugewiesen, indem sie um 5mm in die Höhe extrudiert wurde. Danach wurden die äußeren Wände mit einer Wandstärke von 1,26cm konstruiert. Im nächsten Schritt folgte die Modellierung der inneren Wände mit einer Dicke von 0,908cm. Sowohl die äußeren als auch die inneren Wände wurden anschließend auf eine Höhe von 10,46cm extrudiert.
 
-![BodenmitWände](img/bilder-ausarbeitung-Beichtbuchner/3D-Modellierung/Haus/BodenmitWände.png)
+![BodenmitWaende](img/bilder-ausarbeitung-Beichtbuchner/3D-Modellierung/Haus/BodenmitWaende.png)
 
 Anschließend erfolgte die Modellierung der Fenster und Türen. Da hierfür im Plan keine genauen Maße vorgegeben waren, wurden passende Abmessungen aus dem Internet recherchiert. Die entsprechenden Umrisse wurden anschließend aus den Wänden ausgeschnitten. Jedes Fenster wurde zusätzlich mit einem Schlitz versehen, der auf jeder Seite 5mm breiter als dieses ist. Dadurch können sie nach dem Druck mit Plexiglas ausgestattet werden, das von oben eingesetzt wird um das Glas zu veranschaulichen.
 
-![ModellhausmitFensterundTüröffnungensowieSchlitze](img/bilder-ausarbeitung-Beichtbuchner/3D-Modellierung/Haus/ModellhausmitFensterundTüröffnungensowieSchlitze.png)
+![ModellhausmitFensterundTueroeffnungensowieSchlitze](img/bilder-ausarbeitung-Beichtbuchner/3D-Modellierung/Haus/ModellhausmitFensterundTueroeffnungensowieSchlitze.png)
 
 Im nächsten Schritt wurde das Zwischendach modelliert. Dieses besitzt die gleichen Abmessungen wie der Boden des Hauses und weist eine Materialstärke von 6mm auf. Um ein Verrutschen nach dem Druck zu verhindern und einen sicheren Sitz zu gewährleisten, wurden auf den Wänden entsprechende Dübel vorgesehen, die das Zwischendach fixieren. Zusätzlich wurden fünf Kabelkanäle konstruiert, die durch die Wände geführt sind. Diese sind für die Verkabelung der LEDs verantwortlich, welche die funktion der Deckenlampen übernehmen, sodass man vom Keller mit den Kabeln direkt auf das Zwischendach kommt.
 
-![ModellhausmitKabelkanäleundVerbindungsdübel](img/bilder-ausarbeitung-Beichtbuchner/3D-Modellierung/Haus/ModellhausmitKabelkanäleundVerbindungsdübel.png)
+![ModellhausmitKabelkanaeleundVerbindungsduebel](img/bilder-ausarbeitung-Beichtbuchner/3D-Modellierung/Haus/ModellhausmitKabelkanaeleundVerbindungsduebel.png)
 
 ![Zwischendach](img/bilder-ausarbeitung-Beichtbuchner/3D-Modellierung/Haus/Zwischendach.png)
 
@@ -460,19 +460,19 @@ Anschließend wurde das Dach modelliert. Es handelt sich dabei um ein Flachdach,
 
 Nun wurden noch kleinere Anpassungen vorgenommen. Dazu zählten unter anderem die Erstellung eines zusätzlichen Kabelkanals sowie das Einbringen von Öffnungen in die Zwischenplatte, durch die die LEDs geführt werden können. Außerdem wurden alle Maße noch einmal überprüft, um die Passgenauigkeit und Funktionalität des Modells sicherzustellen.
 
-![ZwischendachundLöcherfürLEDs](img/bilder-ausarbeitung-Beichtbuchner/3D-Modellierung/Haus/ZwischendachundLöcherfürLEDs.png)
+![ZwischendachundLoecherfuerLEDs](img/bilder-ausarbeitung-Beichtbuchner/3D-Modellierung/Haus/ZwischendachundLoecherfuerLEDs.png)
 
 ### Aufteilung des Modells in druckbare Einzelteile
 
 Abschließend habe ich das Haus in insgesamt elf Teile unterteilt, da ein Druck als ein einziges Bauteil aufgrund der Größe nicht möglich gewesen wäre. Das Zwischendach als auch das Dach wurde jeweils geviertelt. Zwischen den Wänden und den einzelnen Dachsegmenten habe ich Dübel modelliert, sodass die Bauteile nach dem 3D-Druck zusammengesteckt werden können. Diese Unterteilung bietet zudem den Vorteil, dass einzelne Wände oder Bauteile bei Beschädigungen einfach und unkompliziert ausgetauscht werden können.
 
-![ModellhausaufgeteiltmitVerbindungsdübel](img/bilder-ausarbeitung-Beichtbuchner/3D-Modellierung/Haus/ModellhausaufgeteiltmitVerbindungsdübel.png)
+![ModellhausaufgeteiltmitVerbindungsduebel](img/bilder-ausarbeitung-Beichtbuchner/3D-Modellierung/Haus/ModellhausaufgeteiltmitVerbindungsduebel.png)
 
-![DachundZwischendachaufgeteiltmitVerbindungsdübel](img/bilder-ausarbeitung-Beichtbuchner/3D-Modellierung/Haus/DachundZwischendachaufgeteiltmitVerbindungsdübel.png)
+![DachundZwischendachaufgeteiltmitVerbindungsduebel](img/bilder-ausarbeitung-Beichtbuchner/3D-Modellierung/Haus/DachundZwischendachaufgeteiltmitVerbindungsduebel.png)
 
 Bei einem Element des Zwischendachs wurde festgestellt, dass es nur mit zwei Seiten auf den Wänden, aufliegt. Deswegen hat man das nächstgelegene Teil als Stütze genommen und eine kleine Kante modelliert somit das Herunterfallen des Teils verhindert wird.
 
-![Zwischendachüberlappend](img/bilder-ausarbeitung-Beichtbuchner/3D-Modellierung/Haus/Zwischendachüberlappend.png)
+![Zwischendachueberlappend](img/bilder-ausarbeitung-Beichtbuchner/3D-Modellierung/Haus/Zwischendachueberlappend.png)
 
 ## 3D-Druck der Bauteile
 

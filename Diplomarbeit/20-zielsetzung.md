@@ -3,17 +3,17 @@
 
 ## Motivation der Arbeit
 
-Die Motivation für diese Diplomarbeit ergibt sich aus der zunehmenden Relevanz von Smart-Home- und Gebäudeautomatisierungstechnologien in Alltag, Industrie und Ausbildung. Gleichzeitig zeigt sich, dass der Einstieg in diese Themenbereiche aufgrund der Vielzahl an Technologien, Frameworks und Schnittstellen komplex ist. Besonders im schulischen Umfeld fehlt häufig eine praxisnahe, strukturierte Umsetzung, die Theorie und Praxis sinnvoll miteinander verbindet.
+Die Motivation für diese Diplomarbeit ergibt sich aus der zunehmenden Relevanz von Smart Home- und Gebäudeautomatisierungstechnologien in Alltag, Industrie und Ausbildung. Gleichzeitig zeigt sich, dass der Einstieg in diese Themenbereiche aufgrund der Vielzahl an Technologien, Frameworks und Schnittstellen komplex ist. Besonders im schulischen Umfeld fehlt häufig eine praxisnahe, strukturierte Umsetzung, die Theorie und Praxis sinnvoll miteinander verbindet.
 
 Diese Arbeit soll zeigen, wie moderne Automatisierungs- und Integrationskonzepte verständlich aufgebaut, praktisch umgesetzt und systematisch dokumentiert werden können. Durch die Aufteilung in mehrere Teilbereiche und Ausarbeitungen wird außerdem Teamarbeit gefördert und die Zusammenarbeit verschiedener technischer Disziplinen realitätsnah abgebildet.
 
 ## Ziel der Diplomarbeit
 
-Ziel der Diplomarbeit ist die Konzeption, Umsetzung und Dokumentation eines modularen Smart-Home-Gesamtsystems anhand mehrerer praxisnaher Teilprojekte. Dabei soll ein funktionsfähiges Modell entstehen, das folgende Aspekte vereint:
+Ziel der Diplomarbeit ist die Konzeption, Umsetzung und Dokumentation eines modularen Smart Home-Gesamtsystems anhand mehrerer praxisnaher Teilprojekte. Dabei soll ein funktionsfähiges Modell entstehen, das folgende Aspekte vereint:
 
 - Aufbau und Modellierung eines realitätsnahen Modellhauses
 - Einsatz von Mikrocontrollern zur Anbindung von Sensoren und Aktoren
-- Zentrale Steuerung und Automatisierung mittels Smart-Home-Plattformen
+- Zentrale Steuerung und Automatisierung mittels Smart Home-Plattformen
 - Nutzung standardisierter Kommunikationsprotokolle
 - Trennung von Hardware-, Kommunikations- und Steuerungsebene
 - Verständliche Dokumentation der theoretischen Grundlagen und der praktischen Umsetzung
@@ -22,11 +22,11 @@ Das System soll modular, erweiterbar und nachvollziehbar aufgebaut sein, sodass 
 
 ## Nicht-Ziele der Diplomarbeit
 
-Die Diplomarbeit verfolgt bewusst nicht das Ziel, ein marktreifes oder industriell zertifiziertes Smart-Home-Produkt zu entwickeln. Ebenso wenig sollen folgende Punkte erreicht werden:
+Die Diplomarbeit verfolgt bewusst nicht das Ziel, ein marktreifes oder industriell zertifiziertes Smart Home-Produkt zu entwickeln. Ebenso wenig sollen folgende Punkte erreicht werden:
 
-- Entwicklung einer vollständig kommerziellen Smart-Home-Lösung
+- Entwicklung einer vollständig kommerziellen Smart Home-Lösung
 - Umsetzung eines sicherheitszertifizierten Systems für den produktiven Einsatz
-- Vollständige Abdeckung aller Smart-Home- oder Automatisierungs-Anwendungsfälle
+- Vollständige Abdeckung aller Smart Home- oder Automatisierungs-Anwendungsfälle
 - Optimierung auf maximale Performance oder industrielle Skalierung
 - Entwicklung eigener Hardware oder eigener Kommunikationsprotokolle
 

@@ -1,11 +1,11 @@
-﻿
+
 # Teilaufgabe Schüler Gierer
 
 \textauthor{Janik Gierer}
 
-Dieses Kapitel beschreibt die theoretischen Grundlagen sowie die bisher umgesetzten technischen Bausteine meines Teilprojekts innerhalb der Diplomarbeit. Der Schwerpunkt liegt auf dem Zusammenspiel von Home Assistant, Node-RED, MQTT, Docker und einem Arduino Uno in einem Smart-Home-Modellhaus. Es wird bewusst darauf geachtet, den Inhalt fachlich korrekt, nachvollziehbar und reproduzierbar darzustellen.
+Dieses Kapitel beschreibt die theoretischen Grundlagen sowie die bisher umgesetzten technischen Bausteine meines Teilprojekts innerhalb der Diplomarbeit. Der Schwerpunkt liegt auf dem Zusammenspiel von Home Assistant, Node-RED, MQTT, Docker und einem Arduino Uno in einem Smart Home-Modellhaus. Es wird bewusst darauf geachtet, den Inhalt fachlich korrekt, nachvollziehbar und reproduzierbar darzustellen.
 
-Ziel dieses Kapitels ist es, nicht nur einzelne Werkzeuge aufzulisten, sondern den Gesamtzusammenhang zu erklären: Welche Rolle übernimmt welche Komponente, wie werden Daten transportiert, wie werden Zustandsänderungen verarbeitet und wie wird daraus ein bedienbares, erweiterbares Smart-Home-System.
+Ziel dieses Kapitels ist es, nicht nur einzelne Werkzeuge aufzulisten, sondern den Gesamtzusammenhang zu erklären: Welche Rolle übernimmt welche Komponente, wie werden Daten transportiert, wie werden Zustandsänderungen verarbeitet und wie wird daraus ein bedienbares, erweiterbares Smart Home-System.
 
 ## Einordnung und Ziel dieses Abschnitts
 
@@ -19,7 +19,7 @@ Die Ausführungen decken drei Ebenen ab:
 
 Die Inhalte sind so formuliert, dass keine zusätzlichen praktischen Ergebnisse behauptet werden, die nicht bereits Teil der bisherigen Projektarbeit sind.
 
-Die zentrale Zielsetzung besteht darin, ein modulares und verständliches Smart-Home-System im Modellmaßstab zu realisieren, das typische Funktionen realer Hausautomation technisch korrekt abbildet. Dazu gehören die Erfassung von Umgebungsdaten, die Ausführung von Schaltaktionen sowie die sichtbare Darstellung der Systemzustände in einer Benutzeroberfläche.
+Die zentrale Zielsetzung besteht darin, ein modulares und verständliches Smart Home-System im Modellmaßstab zu realisieren, das typische Funktionen realer Hausautomation technisch korrekt abbildet. Dazu gehören die Erfassung von Umgebungsdaten, die Ausführung von Schaltaktionen sowie die sichtbare Darstellung der Systemzustände in einer Benutzeroberfläche.
 
 Die Arbeit verfolgt nicht das Ziel, ein marktreifes Produkt zu entwickeln. Der Fokus liegt stattdessen auf:
 
@@ -109,7 +109,7 @@ Der praktische Nutzen liegt darin, dass keine vollständig eigene serielle Proto
 
 [@arduino_firmata_docs] [@firmata_arduino_github]
 
-## Smart-Home-Umsetzung mit Home Assistant und Node-RED
+## Smart Home-Umsetzung mit Home Assistant und Node-RED
 
 **Schüler:** Janik Gierer
 
@@ -266,7 +266,7 @@ Diese Punkte sind häufige Fehlerquellen in gemischten Hardware-/Software-Setups
 
 ### Home Assistant als zentrale Steuereinheit
 
-Home Assistant dient als zentrale Bedien- und Automationsplattform des gesamten Smart-Home-Systems.
+Home Assistant dient als zentrale Bedien- und Automationsplattform des gesamten Smart Home-Systems.
 In dieser Umgebung werden alle relevanten Komponenten zusammengeführt: die einzelnen Entitäten (z. B. Sensoren, Aktoren und Geräte), auslösende Bedingungen (Trigger) sowie die Visualisierung über Dashboards. Dadurch können Zustände und Messwerte in Echtzeit überwacht, Geräte manuell gesteuert und automatisierte Abläufe zentral konfiguriert werden.
 Die Bündelung dieser Funktionen in einer Oberfläche erhöht die Übersichtlichkeit, vereinfacht die Verwaltung des Systems und ermöglicht eine benutzerfreundliche Bedienung im Alltag.
 
@@ -758,7 +758,7 @@ Die gewählte Kombination aus Firmata für den I/O-nahen Zugriff und MQTT für d
 
 ## Datenmodell, Topickonzept und Entitätsabbildung
 
-Ein Smart-Home-System bleibt nur dann langfristig wartbar, wenn Topicnamen, Payloadformate und Entitätsnamen konsistent gehalten werden. In diesem Projekt wurde daher ein strukturiertes Benennungsschema verwendet, das zwischen Messwerten, Kommandos und Zuständen unterscheidet.
+Ein Smart Home-System bleibt nur dann langfristig wartbar, wenn Topicnamen, Payloadformate und Entitätsnamen konsistent gehalten werden. In diesem Projekt wurde daher ein strukturiertes Benennungsschema verwendet, das zwischen Messwerten, Kommandos und Zuständen unterscheidet.
 
 ### Topicnamenskonvention
 
@@ -777,7 +777,7 @@ Damit ist ohne zusätzliche Dokumentation erkennbar, ob ein Topic Messdaten tran
 
 ### Trennung von Soll- und Ist-Zustand
 
-Ein häufiger Fehler in kleinen Smart-Home-Projekten ist die Vermischung von Befehl und Rückmeldung auf demselben Kanal. Im vorliegenden Aufbau wird dies bewusst vermieden:
+Ein häufiger Fehler in kleinen Smart Home-Projekten ist die Vermischung von Befehl und Rückmeldung auf demselben Kanal. Im vorliegenden Aufbau wird dies bewusst vermieden:
 
 - `.../set` beschreibt den angeforderten Zielzustand.
 - `.../state` beschreibt den tatsächlich bestätigten Zustand.
@@ -998,7 +998,7 @@ Damit ist eine gute Grundlage für spätere Skalierung geschaffen, ohne die Grun
 
 ## Zusammenfassende Bewertung des Teilprojekts
 
-Aus technischer Sicht zeigt der bisherige Stand, dass der gewählte Stack für ein modulares Smart-Home-Modell geeignet ist:
+Aus technischer Sicht zeigt der bisherige Stand, dass der gewählte Stack für ein modulares Smart Home-Modell geeignet ist:
 
 - Home Assistant als zentrale Plattform,
 - Node-RED als flexible Integrationslogik,

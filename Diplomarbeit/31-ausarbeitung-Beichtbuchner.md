@@ -334,7 +334,7 @@ Der Arduino Nano bietet im Wesentlichen denselben Funktionsumfang wie der Arduin
 
 ![ESP32[@ESP32-Bild]](img/bilder-ausarbeitung-Beichtbuchner/Mikrocontroller/ESP32.jpg)
 
-Der ESP32 ist ein leistungsstarker 32-Bit-Mikrocontroller, der sich vor allem durch seine integrierten Kommunikationsmöglichkeiten auszeichnet. Er verfügt über WLAN- und Bluetooth-Funktionalität und eignet sich daher besonders für vernetzte Anwendungen. Dank seiner höheren Rechenleistung und der Vielzahl an verfügbaren Schnittstellen kann der ESP32 mehrere Aufgaben gleichzeitig ausführen. Er wird häufig in Smart-Home-Anwendungen, IoT-Projekten oder Systemen eingesetzt, bei denen eine drahtlose Datenübertragung erforderlich ist. Zusätzlich bietet er Energiesparmodi, wodurch er auch für batteriebetriebene Anwendungen geeignet ist.
+Der ESP32 ist ein leistungsstarker 32-Bit-Mikrocontroller, der sich vor allem durch seine integrierten Kommunikationsmöglichkeiten auszeichnet. Er verfügt über WLAN- und Bluetooth-Funktionalität und eignet sich daher besonders für vernetzte Anwendungen. Dank seiner höheren Rechenleistung und der Vielzahl an verfügbaren Schnittstellen kann der ESP32 mehrere Aufgaben gleichzeitig ausführen. Er wird häufig in Smart Home-Anwendungen, IoT-Projekten oder Systemen eingesetzt, bei denen eine drahtlose Datenübertragung erforderlich ist. Zusätzlich bietet er Energiesparmodi, wodurch er auch für batteriebetriebene Anwendungen geeignet ist.
 
 
 #### STM32

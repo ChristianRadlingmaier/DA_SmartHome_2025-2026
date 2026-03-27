@@ -4,7 +4,7 @@
 ### Erfolgsmessung
 
 #### Erreichung Leistungs- und Qualitaetsziele
-Die Leistungsziele wurden im Wesentlichen erreicht. Es entstand ein funktionsfaehiges Smart-Home-Modellhaus mit Sensorik, Aktorik, MQTT, Node-RED, Home Assistant sowie einem alternativen FHEM/Perl-Ansatz. Die Systemarchitektur ist dokumentiert und die wichtigsten Anwendungsfaelle wurden umgesetzt und getestet.
+Die Leistungsziele wurden im Wesentlichen erreicht. Es entstand ein funktionsfaehiges Smart Home-Modellhaus mit Sensorik, Aktorik, MQTT, Node-RED, Home Assistant sowie einem alternativen FHEM/Perl-Ansatz. Die Systemarchitektur ist dokumentiert und die wichtigsten Anwendungsfaelle wurden umgesetzt und getestet.
 
 Die Qualitaetsziele wurden weitgehend erreicht. Das System ist fuer Demonstrationszwecke stabil und nachvollziehbar aufgebaut. Abweichungen gab es nur beim bewusst begrenzten Umfang: Es wurde kein produktives Komplettsystem mit Fernzugriff, App oder vollstaendiger Sicherheitsabsicherung umgesetzt.
 

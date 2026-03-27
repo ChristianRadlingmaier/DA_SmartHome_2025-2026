@@ -105,7 +105,7 @@
 | Kostenziele         | Im Budget                   | Weiterhin Nutzung geplanter Komponenten und vorhandener Infrastruktur |
 | Teamarbeit          | Gut                            | Regelmäßige Abstimmung zwischen Modellbau, Backend und Automatisierung |
 
-:Projektstatus am 2025-08-25
+Table: Projektstatus am 2025-08-25
 
 #### Notwendige Entscheidungen
 
@@ -137,7 +137,7 @@
 | Kostenziele         | Im Budget                   | Keine ungeplanten Zusatzanschaffungen |
 | Teamarbeit          | Sehr gut                       | Rollenaufteilung (Modellbau, Steuerlogik, Plattformbetrieb) beibehalten |
 
-:Projektstatus am 2026-02-20
+Table: Projektstatus am 2026-02-20
 
 #### Notwendige Entscheidungen
 

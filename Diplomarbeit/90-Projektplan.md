@@ -51,6 +51,8 @@ Betreuer: Christoph Leitner, BEd., DI (FH) Markus Zacharias
 | 2026-03-06 | Abgabe Dokumentation            | Fällig heute               |
 | März 2026  | Präsentation und Fachgespräch   | Offen                      |
 
+Table: Projekttermine und aktueller Status
+
 ### Projektkosten
 
 | Meilenstein | Kostenart      | Menge | Einzelpreis   | Gesamtkosten  | Bezahlt durch |
@@ -61,6 +63,8 @@ Betreuer: Christoph Leitner, BEd., DI (FH) Markus Zacharias
 | Haus        | 3D Druck       | 8     | 25.00 \euro{} | 200.00 \euro{}| Schule        |
 | Zubehör    | Kabel/Adapter  | 1     | 10.00 \euro{} | 10.00 \euro{} | Schüler      |
 | Druckkosten | Dokumentation  | 1     | 25.00 \euro{} | 25.00 \euro{} | Schüler      |
+
+Table: Projektkosten nach Kostenart und Finanzierung
 
 <!-- Genaue Kosten bei finaler Abrechnung prüfen. -->
 
@@ -75,6 +79,8 @@ Gesamtkosten: 369.00 \euro{}
 | MQTT-Verbindungsprobleme  | Mittel (20%)       | Sensoren/Aktoren nicht steuerbar     | Logging, Restart-Mechanismen implementieren |
 | Komplexität Home Assistant | Hoch (40%)      | Verzögerung durch Konfigurationsfehler | Schrittweise testen, Dokumentation lesen |
 
+Table: Projektrisiken mit Eintrittswahrscheinlichkeit und Maßnahmen
+
 ## Projektorganisation
 
 ![Projektorganisation](img/Projektplan/Projektorganisation.png){ width=100% }
@@ -87,6 +93,8 @@ Gesamtkosten: 369.00 \euro{}
 | Christian | Beichtbuchner  | HTL Leoben   | 211wita01@htl-leoben.at |
 | Christian | Radlingmaier   | HTL Leoben   | 211witb21@htl-leoben.at |
 
+Table: Projektbeteiligte mit Organisation und Kontaktinformation
+
 ### Projektrollen
 
 | Rolle          | Beschreibung                                          | Name                    |
@@ -96,6 +104,8 @@ Gesamtkosten: 369.00 \euro{}
 | Teammitglied   | Umsetzung in FHEM                                     | Christian Radlingmaier  |
 | Betreuer       | Schulischer Ansprechpartner, techn. Kontrolle         | Christoph Leitner, BEd. |
 | Zweitbetreuer  | Zweiter schulischer Ansprechpartner, techn. Kontrolle | DI (FH) Markus Zacharias |
+
+Table: Projektrollen und Zuständigkeiten im Team
 
 ### Vorgehen bei Änderungen
 

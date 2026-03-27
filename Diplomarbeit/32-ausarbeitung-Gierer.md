@@ -7,7 +7,7 @@ Dieses Kapitel beschreibt die theoretischen Grundlagen sowie die bisher umgesetz
 
 Ziel dieses Kapitels ist es, nicht nur einzelne Werkzeuge aufzulisten, sondern den Gesamtzusammenhang zu erklären: Welche Rolle übernimmt welche Komponente, wie werden Daten transportiert, wie werden Zustandsänderungen verarbeitet und wie wird daraus ein bedienbares, erweiterbares Smart-Home-System.
 
-## Einordnung und Ziel dieses Abschnitts [@ha_installation] [@nodered_homepage] [@oasis_mqtt_v5_2019]
+## Einordnung und Ziel dieses Abschnitts
 
 Der vorliegende Abschnitt ist eine Verbindung aus Literaturrecherche und technischer Dokumentation. Er soll einem fachlich interessierten Leser ermöglichen, den praktischen Teil logisch nachzuvollziehen, ohne vorauszusetzen, dass die konkrete Projektumgebung bereits bekannt ist.
 
@@ -29,6 +29,8 @@ Die Arbeit verfolgt nicht das Ziel, ein marktreifes Produkt zu entwickeln. Der F
 - guter Erweiterbarkeit für spätere Projektphasen.
 
 Diese Abgrenzung ist wesentlich, damit Bewertung und Dokumentation auf denselben technischen Rahmenbedingungen basieren.
+
+[@ha_installation] [@nodered_homepage] [@oasis_mqtt_v5_2019]
 
 ## Verwendete Komponenten
 
@@ -57,7 +59,7 @@ Der Aufbau im Modellhaus hat einen didaktischen Vorteil: Leitungsführung, Kanal
 
 ## Verwendete Frameworks und Protokolle
 
-### Home Assistant [@ha_installation] [@ha_automation]
+### Home Assistant
 
 Home Assistant dient als zentrale Integrations- und Bedienplattform. Hier laufen Entitäten, Automationen und Dashboards zusammen. Damit entsteht ein einheitlicher Blick auf den Systemzustand.
 
@@ -67,7 +69,9 @@ Im Projekt ist Home Assistant besonders wichtig für:
 - die Auslösung manueller Schaltvorgänge,
 - die Definition regelbasierter Automationen.
 
-### Node-RED [@nodered_homepage]
+[@ha_installation] [@ha_automation]
+
+### Node-RED
 
 Node-RED wird als visuelle Verarbeitungsschicht eingesetzt. Datenflüsse können über Nodes modelliert, angepasst und nachvollzogen werden. Das erleichtert Iterationen während der Entwicklung deutlich, da Logikbausteine ohne kompletten Neuaufbau des Systems angepasst werden können.
 
@@ -77,7 +81,9 @@ Wesentliche Rolle von Node-RED im Projekt:
 - Validierung und Transformation von Payloads,
 - geordnete Weitergabe von Befehlen und Statusmeldungen.
 
-### MQTT [@oasis_mqtt_v5_2019] [@agyemang_mqtt_2022] [@ha_mqtt_integration]
+[@nodered_homepage]
+
+### MQTT
 
 MQTT wird als leichtgewichtiges Publish/Subscribe-Protokoll für den Nachrichtenaustausch zwischen Diensten eingesetzt. Der Einsatz ist vor allem bei verteilten Komponenten sinnvoll, weil Sender und Empfänger nicht direkt gekoppelt sein müssen.
 
@@ -87,15 +93,21 @@ Typische Vorteile im vorliegenden Kontext:
 - einfache Skalierung auf weitere Topics und Entitäten,
 - klare Trennung von Kommando- und Statuskanälen.
 
-### Portainer [@portainer_docs]
+[@oasis_mqtt_v5_2019] [@agyemang_mqtt_2022] [@ha_mqtt_integration]
+
+### Portainer
 
 Portainer dient als Weboberfläche zur Verwaltung der Docker-Container. Das ist besonders hilfreich, wenn mehrere Dienste parallel betrieben und bei Bedarf einzeln neu gestartet, aktualisiert oder überwacht werden müssen.
 
-### Firmata [@arduino_firmata_docs] [@firmata_arduino_github]
+[@portainer_docs]
+
+### Firmata
 
 Firmata ist ein standardisiertes Protokoll, mit dem ein Hostrechner (hier Raspberry Pi bzw. Node-RED) einen Mikrocontroller (Arduino Uno) über die serielle Schnittstelle ansteuern kann.
 
 Der praktische Nutzen liegt darin, dass keine vollständig eigene serielle Protokolldefinition implementiert werden muss. Stattdessen wird ein etablierter Standard genutzt.
+
+[@arduino_firmata_docs] [@firmata_arduino_github]
 
 ## Smart-Home-Umsetzung mit Home Assistant und Node-RED
 
@@ -113,7 +125,7 @@ Das System kann in drei logisch getrennte Ebenen aufgeteilt werden:
 
 Diese Trennung erhöht die Wartbarkeit, weil Änderungen auf einer Ebene nicht automatisch alle anderen Ebenen brechen.
 
-### Kommunikationspfad [@firmata_arduino_github] [@ha_mqtt_integration]
+### Kommunikationspfad
 
 Im aktuellen Aufbau läuft die Kommunikation entlang eines klaren Pfades:
 
@@ -129,7 +141,9 @@ Technisch wichtig: In dieser Architektur ist MQTT nicht der direkte Transportweg
 
 ![Systemanwendungsfalldiagramm](img/bilder-Gierer/Systemanwendugsfalldiagramm.png){ width=80% }
 
-### Theoretische Grundlagen [@abutair_secure_privacy_smart_home_2020]
+[@firmata_arduino_github] [@ha_mqtt_integration]
+
+### Theoretische Grundlagen
 
 Ein Smart Home ist ein vernetztes System, in dem Sensorik, Aktorik und Steuerlogik zusammenwirken. Eingehende Daten werden ausgewertet und führen je nach Regelwerk zu Aktionen. Die Interaktion kann automatisch oder manuell über eine Benutzeroberfläche erfolgen.
 
@@ -163,7 +177,9 @@ Steuerung verbindet Sensorik und Aktorik über ein Regelwerk. Ein typisches Must
 
 Je klarer dieses Muster in Topics, Flows und Automationen abgebildet ist, desto besser sind Fehlersuche und Erweiterung möglich.
 
-### Arduino Uno mit StandardFirmata [@arduino_firmata_docs] [@firmata_arduino_github]
+[@abutair_secure_privacy_smart_home_2020]
+
+### Arduino Uno mit StandardFirmata
 
 Der Arduino Uno dient als direkte I/O-Schnittstelle zur physikalischen Ebene. Er ist dort sinnvoll, wo Signale in Echtzeit eingelesen oder Ausgänge unmittelbar gesetzt werden müssen.
 
@@ -181,7 +197,9 @@ Wesentliche Bestandteile:
 
 Dieses Vorgehen ist für ein Lern- und Demonstrationsprojekt sinnvoll, weil es robuste Grundfunktionalität bereitstellt und den Fokus auf Systemintegration statt auf Low-Level-Protokolldesign legt.
 
-### Datenübertragung und Kommunikationsdesign [@oasis_mqtt_v5_2019] [@ha_mqtt_integration]
+[@arduino_firmata_docs] [@firmata_arduino_github]
+
+### Datenübertragung und Kommunikationsdesign
 
 MQTT arbeitet mit einem Broker als zentralem Verteiler. Clients publizieren Nachrichten auf Topics oder abonnieren Topics. Der Broker entkoppelt damit Sender und Empfänger.
 
@@ -216,7 +234,9 @@ Die Auswahl passender MQTT-Mechanismen verbessert Robustheit:
 
 Im Zusammenspiel mit Home Assistant erhöht das die Nachvollziehbarkeit bei Verbindungsunterbrechungen und Neustarts.
 
-### Node-RED als Logik- und Integrationsschicht [@nodered_homepage] [@nodered_raspberrypi]
+[@oasis_mqtt_v5_2019] [@ha_mqtt_integration]
+
+### Node-RED als Logik- und Integrationsschicht
 
 Node-RED ist in dieser Arbeit mehr als ein Visualisierungstool für Datenflüsse. Es übernimmt die technische Mittlerrolle zwischen serieller Hardwareanbindung und MQTT-basierter Plattformintegration.
 
@@ -242,7 +262,9 @@ Arduino-Geräte erscheinen typischerweise als `/dev/ttyACM0` oder `/dev/ttyUSB0`
 
 Diese Punkte sind häufige Fehlerquellen in gemischten Hardware-/Software-Setups.
 
-### Home Assistant als zentrale Steuereinheit [@ha_installation] [@ha_automation] [@ha_mqtt_sensor] [@ha_dashboards_intro] [@ha_cards]
+[@nodered_homepage] [@nodered_raspberrypi]
+
+### Home Assistant als zentrale Steuereinheit
 
 Home Assistant dient als zentrale Bedien- und Automationsplattform des gesamten Smart-Home-Systems.
 In dieser Umgebung werden alle relevanten Komponenten zusammengeführt: die einzelnen Entitäten (z. B. Sensoren, Aktoren und Geräte), auslösende Bedingungen (Trigger) sowie die Visualisierung über Dashboards. Dadurch können Zustände und Messwerte in Echtzeit überwacht, Geräte manuell gesteuert und automatisierte Abläufe zentral konfiguriert werden.
@@ -260,27 +282,37 @@ Das Muster ist bewusst einfach, aber präzise genug, um die Trennung zwischen Se
 
 Die Visualisierung erfolgt über Karten im Dashboard wie Entities-, Button- und Verlaufskarten. Damit sind Schaltzustände, Messwerttrends und manuelle Eingriffe auf einer Oberfläche verfügbar.
 
-### Sicherheit des Systems [@oasis_mqtt_v5_2019] [@ha_installation]
+[@ha_installation] [@ha_automation] [@ha_mqtt_sensor] [@ha_dashboards_intro] [@ha_cards]
+
+### Sicherheit des Systems
 
 Für den Gesamtbetrieb ist nicht nur die Funktion, sondern auch die Absicherung der Kommunikations- und Bedienebene entscheidend. Im vorliegenden Aufbau betrifft das vor allem den MQTT-Broker, Node-RED als Logikschicht und Home Assistant als zentrale Plattform. Ziel ist es, unbefugte Zugriffe zu verhindern, Zustandsdaten konsistent zu halten und Ausfälle möglichst schnell erkennbar zu machen.
 
-#### MQTT-Broker [@oasis_mqtt_v5_2019] [@ha_mqtt_integration]
+[@oasis_mqtt_v5_2019] [@ha_installation]
+
+#### MQTT-Broker
 
 Beim Einsatz von MQTT sollte der Broker nicht anonym erreichbar sein. Sinnvoll sind eigene Benutzerkonten pro Dienst (z. B. Home Assistant und Node-RED), starke Passwörter, eine klare ACL-Regelung pro Topic-Bereich sowie verschlüsselte Verbindungen (TLS), sobald Daten nicht ausschließlich in einem isolierten Testnetz laufen. Dadurch wird vermieden, dass beliebige Clients Schaltbefehle publizieren oder Statusdaten manipulieren.
 
-#### Node-RED [@nodered_homepage]
+[@oasis_mqtt_v5_2019] [@ha_mqtt_integration]
+
+#### Node-RED
 
 Node-RED benötigt insbesondere Schutz am Editor-Zugang, da dort die gesamte Verarbeitungslogik verändert werden kann. Deshalb sind Passwortschutz für den Editor, ein restriktiver Netzwerkzugriff (nur internes Netz oder VPN) sowie regelmäßige Updates der installierten Nodes wesentlich. Zusätzlich sollten Flows versioniert bzw. gesichert werden, damit nach Fehlkonfigurationen oder Ausfällen ein definierter Zustand schnell wiederhergestellt werden kann.
 
-#### Home Assistant [@ha_installation] [@ha_automation]
+[@nodered_homepage]
+
+#### Home Assistant
 
 In Home Assistant steht die Zugriffskontrolle der Benutzerkonten im Vordergrund. Bewährte Maßnahmen sind getrennte Benutzer statt gemeinsamer Logins, starke Passwörter, aktivierte Mehrfaktor-Authentifizierung bei Fernzugriff sowie eine saubere Trennung von Konfigurationsdaten und Geheimnissen (z. B. Passwörter oder Tokens nicht im Klartext in Automationen). Ergänzend erhöhen regelmäßige Backups und zeitnahe Sicherheitsupdates die Betriebssicherheit deutlich.
 
 In Summe ergibt sich ein mehrschichtiges Sicherheitskonzept: abgesicherter Nachrichtentransport über MQTT, kontrollierbare Logikänderungen in Node-RED und rollenbasierter Zugriff in Home Assistant. Damit bleibt das System auch bei wachsendem Umfang wartbar und widerstandsfähig.
 
+[@ha_installation] [@ha_automation]
+
 ## Praktische Umsetzung
 
-### Raspberry Pi Befehle mit Erklärung [@arduino_firmata_docs] [@firmata_arduino_github]
+### Raspberry Pi Befehle mit Erklärung
 
 - `sudo apt update` aktualisiert die Paketlisten des Systems.
 - `sudo apt upgrade -y` installiert verfügbare Paket-Updates automatisch mit Bestätigung.
@@ -320,7 +352,9 @@ Die im Projekt verwendete Logik kann wie folgt zusammengefasst werden:
 
 Durch diese Kette bleibt die Steuerlogik nachvollziehbar und modular.
 
-### Erstinbetriebnahme am Raspberry Pi [@docker_compose_overview] [@docker_compose_file_reference] [@portainer_docs]
+[@arduino_firmata_docs] [@firmata_arduino_github]
+
+### Erstinbetriebnahme am Raspberry Pi
 
 Für einen reproduzierbaren Erstaufbau hat sich ein klarer Ablauf bewährt:
 
@@ -331,6 +365,8 @@ Für einen reproduzierbaren Erstaufbau hat sich ein klarer Ablauf bewährt:
 5. Portainer initial konfigurieren.
 
 Der Vorteil dieser festen Reihenfolge ist, dass Fehlerquellen früh sichtbar werden und nicht erst später bei der Automationslogik auftreten.
+
+[@docker_compose_overview] [@docker_compose_file_reference] [@portainer_docs]
 
 ### Docker-basierter Betrieb
 
@@ -434,7 +470,7 @@ Für den Betrieb nach Neustart:
   - Home Assistant: `http://<raspberry-ip>:8123`
   - Portainer: `http://<raspberry-ip>:9000`
 
-### Node-RED-Installation auf Raspberry Pi [@nodered_raspberrypi]
+### Node-RED-Installation auf Raspberry Pi
 
 ```bash
 bash <(curl -sL https://github.com/node-red/linux-installers/releases/latest/download/update-nodejs-and-nodered-deb)
@@ -448,12 +484,16 @@ Editor-Zugriff:
 - lokal: `http://localhost:1880`
 - im Netzwerk: `http://<raspberry-ip>:1880`
 
-### Bedienung und Steuerung [@ha_dashboards_intro] [@nodered_homepage]
+[@nodered_raspberrypi]
+
+### Bedienung und Steuerung
 
 Die tägliche Bedienung erfolgt über Home-Assistant-Dashboards. Node-RED arbeitet parallel als Logik- und Integrationsschicht. Dadurch wird die Benutzeroberfläche von der eigentlichen Nachrichtenverarbeitung entkoppelt.
 
 Der Zugriff ist über Browser auf PC, Tablet und Smartphone möglich. Schaltbefehle werden in der Regel per Button ausgelöst, Zustandsänderungen erscheinen als direkte Rückmeldung in den Karten.
 
+
+[@ha_dashboards_intro] [@nodered_homepage]
 
 ## Integration der Wetterstation (einfach nachbaubar)
 
@@ -682,7 +722,7 @@ Die Wetterstation liefert stabile Livewerte über MQTT in Home Assistant. Durch 
 
 Die Grundarchitektur wurde bewusst nicht als monolithische Anwendung, sondern als verteiltes, klar getrenntes System umgesetzt. Für ein schulisches Diplomprojekt hat das zwei Vorteile: Erstens sind Verantwortlichkeiten besser nachvollziehbar, zweitens können Fehler schneller lokalisiert werden, weil jede Schicht eine klar definierte Aufgabe hat.
 
-### Begründung der Dreiteilung [@nodered_homepage] [@ha_installation]
+### Begründung der Dreiteilung
 
 Die Aufteilung in Feldebene (Arduino), Verarbeitungsebene (Node-RED plus MQTT) und Managementebene (Home Assistant) folgt einem einfachen Entwurfsprinzip: Hardwarezugriff, Datenverarbeitung und Bedienung sollen getrennt sein.
 
@@ -694,7 +734,9 @@ Konkret bedeutet das:
 
 Für die Wartbarkeit ist diese Trennung besonders wichtig, da in einem Team mehrere Personen parallel arbeiten und unterschiedliche Schwerpunkte haben (Modellbau, Steuerlogik, Plattformintegration).
 
-### Entscheidung für containerisierten Betrieb [@docker_compose_overview] [@docker_compose_file_reference]
+[@nodered_homepage] [@ha_installation]
+
+### Entscheidung für containerisierten Betrieb
 
 Home Assistant, MQTT-Broker und Portainer laufen containerisiert auf dem Raspberry Pi. Die Entscheidung für Docker wurde aus drei technischen Gründen getroffen:
 
@@ -704,11 +746,15 @@ Home Assistant, MQTT-Broker und Portainer laufen containerisiert auf dem Raspber
 
 Gerade in iterativen Projektphasen reduziert das den Aufwand bei Neuaufbau und Fehlerbehebung erheblich.
 
-### Abgrenzung zu alternativen Ansätzen [@firmata_arduino_github] [@ha_mqtt_integration]
+[@docker_compose_overview] [@docker_compose_file_reference]
+
+### Abgrenzung zu alternativen Ansätzen
 
 Alternativ wäre eine direkte Kopplung Arduino <-> Home Assistant über eine proprietäre serielle Protokollimplementierung möglich gewesen. Dieser Ansatz wurde nicht gewählt, weil dabei die Entkopplungsebene fehlt und spätere Erweiterungen (weitere Sensorik, zweite Datenquellen, zusätzliche Auswertelogik) aufwendiger werden.
 
 Die gewählte Kombination aus Firmata für den I/O-nahen Zugriff und MQTT für den dienstübergreifenden Austausch ist für den aktuellen Projektumfang ein guter Kompromiss zwischen Einfachheit und Erweiterbarkeit.
+
+[@firmata_arduino_github] [@ha_mqtt_integration]
 
 ## Datenmodell, Topickonzept und Entitätsabbildung
 
@@ -729,7 +775,7 @@ Beispiele:
 
 Damit ist ohne zusätzliche Dokumentation erkennbar, ob ein Topic Messdaten transportiert oder ein Schaltkommando enthält. Diese Lesbarkeit ist ein wesentlicher Faktor für spätere Erweiterungen und für Fehlersuche unter Zeitdruck.
 
-### Trennung von Soll- und Ist-Zustand [@ha_mqtt_integration] [@oasis_mqtt_v5_2019]
+### Trennung von Soll- und Ist-Zustand
 
 Ein häufiger Fehler in kleinen Smart-Home-Projekten ist die Vermischung von Befehl und Rückmeldung auf demselben Kanal. Im vorliegenden Aufbau wird dies bewusst vermieden:
 
@@ -737,6 +783,8 @@ Ein häufiger Fehler in kleinen Smart-Home-Projekten ist die Vermischung von Bef
 - `.../state` beschreibt den tatsächlich bestätigten Zustand.
 
 Diese Trennung ist besonders für Dashboards relevant. Ein Buttonklick darf nicht automatisch als physisch ausgeführte Aktion interpretiert werden. Erst die Rückmeldung über `state` bestätigt den tatsächlichen Aktorzustand.
+
+[@ha_mqtt_integration] [@oasis_mqtt_v5_2019]
 
 ### Payloadstruktur und Datentypen
 
@@ -760,7 +808,7 @@ Dieses Schema ist bewusst klein gehalten, enthält aber bereits alle Information
 - Verlaufsgrafiken über Zeit,
 - spätere Regeldefinitionen mit Schwellwerten.
 
-### Entitätsabbildung in Home Assistant [@ha_mqtt_sensor] [@ha_installation]
+### Entitätsabbildung in Home Assistant
 
 Die MQTT-Daten werden in Home Assistant über `value_template` einzelnen Entitäten zugeordnet. Das hat den Vorteil, dass Datenformat und Darstellung sauber getrennt bleiben: Node-RED kümmert sich um Aufbereitung und Validierung, Home Assistant um Visualisierung und Automationen.
 
@@ -770,6 +818,8 @@ Zusätzlich entsteht dadurch eine klare Datenverantwortung:
 - Zustandsdarstellung und Trigger auf Plattformschicht (Home Assistant).
 
 Diese Trennung erleichtert Änderungen, weil nicht alle Ebenen gleichzeitig angepasst werden müssen.
+
+[@ha_mqtt_sensor] [@ha_installation]
 
 ## Betriebs- und Wartungskonzept
 
@@ -811,7 +861,7 @@ Für den bisherigen Projektstand wurde ein pragmatischer Sicherungsansatz gewäh
 
 Die Backups müssen nicht hochkomplex sein; entscheidend ist, dass sie regelmäßig und testweise rückspielbar sind.
 
-### Update- und Änderungsmanagement [@portainer_docs] [@docker_compose_overview]
+### Update- und Änderungsmanagement
 
 Updates werden in einer kontrollierten Reihenfolge durchgeführt:
 
@@ -821,6 +871,8 @@ Updates werden in einer kontrollierten Reihenfolge durchgeführt:
 4. Erst danach nächsten Dienst aktualisieren.
 
 Damit wird verhindert, dass mehrere gleichzeitige Änderungen die Fehlersuche unnötig erschweren. Für ein lernorientiertes Entwicklungsprojekt ist dieser schrittweise Ansatz robuster als ein gleichzeitiges Aktualisieren aller Dienste.
+
+[@portainer_docs] [@docker_compose_overview]
 
 ### Beobachtbarkeit im Betrieb
 
@@ -922,7 +974,7 @@ Bewährte Maßnahmen:
 
 Diese Maßnahmen verbessern die Stabilität der Kommunikation vom Host zum Arduino deutlich.
 
-### MQTT-Stabilität [@oasis_mqtt_v5_2019] [@ha_mqtt_integration]
+### MQTT-Stabilität
 
 Bei MQTT-Verbindungen sind vor allem Reconnectverhalten und Zustandskonsistenz entscheidend. Durch geeignete Kombination aus QoS, Retained Messages und LWT kann das System robuster auf Netzunterbrechungen reagieren.
 
@@ -931,6 +983,8 @@ Wichtige Beobachtung für den Betrieb:
 - Offline-Zustände sollen sichtbar werden,
 - nach Wiederverbindung soll ein konsistenter Ausgangszustand hergestellt werden,
 - Dashboards dürfen dabei keine veralteten Zustandsbilder dauerhaft anzeigen.
+
+[@oasis_mqtt_v5_2019] [@ha_mqtt_integration]
 
 ### Übertragbarkeit auf reale Wohnhausszenarien
 
@@ -958,9 +1012,11 @@ Der zentrale Vorteil dieser Kombination liegt in der klaren Rollenverteilung. Je
 
 Die bestehende Architektur ist für Erweiterungen vorbereitet.
 
-### Sprachsteuerung als Erweiterung [@ha_voice_control] [@ha_alexa_smart_home]
+### Sprachsteuerung als Erweiterung
 
 Eine mögliche Erweiterung ist die Einbindung von Sprachsteuerung, z. B. über Home-Assistant-Voice oder Alexa-Integration.
+
+[@ha_voice_control] [@ha_alexa_smart_home]
 
 ### Erweiterung auf weitere Räume
 
@@ -972,9 +1028,11 @@ Die bestehende Topic- und Entitätsstruktur kann auf weitere Räume erweitert we
 
 Wichtig ist dabei, die bisherige Namenskonvention konsistent beizubehalten.
 
-### Zusätzliche Sensorik [@ha_dev_sensor_entity]
+### Zusätzliche Sensorik
 
 Zusätzliche Sensoren (z. B. CO2, Luftqualität, Feuchtigkeit) können als weitere Entitäten in Home Assistant und als weitere Datenkanäle in Node-RED integriert werden.
+
+[@ha_dev_sensor_entity]
 
 ### Vorgehen bei Erweiterungen
 

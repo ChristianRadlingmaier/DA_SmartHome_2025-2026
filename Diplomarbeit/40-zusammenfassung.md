@@ -16,11 +16,3 @@ Als wesentliche Ergebnisse wurden die zentralen Use Cases umgesetzt und getestet
 Offen geblieben sind vor allem Punkte, die bewusst außerhalb des Projektumfangs lagen: kein produktiver Außenzugriff, keine native App, keine industrielle Sicherheitszertifizierung und keine vollständige Abdeckung aller Smart Home-Szenarien. Für die Weiterarbeit bieten sich folgende Schritte an: Vereinheitlichung der final genutzten Steuerungsplattform, Ausbau der Sensorik (z. B. CO2/Luftqualität), zusätzliche Automationen, konsequente Sicherheitshärtung (TLS, Zugriffstrennung, Backupstrategie) sowie optional Sprachsteuerung.
 
 Zusammenfassend hat die Arbeit gezeigt, dass mit kostengünstiger Hardware und Open-Source-Software ein technisch sauberes, didaktisch gut nutzbares und erweiterbares Smart Home-Demonstrationssystem aufgebaut werden kann. Die entwickelte Architektur ist eine belastbare Grundlage für Folgeprojekte.
-
-## Lesen und lesen lassen
-
-Nach der Fertigstellung sollte die gesamte Arbeit mindestens in zwei eigenen Korrekturdurchgängen gelesen werden: zuerst inhaltlich und technisch (Stimmigkeit von Architektur, Begriffen, Abbildungen, Verweisen), danach sprachlich (Rechtschreibung, Grammatik, Stil, einheitliche Formulierungen). Besonders wichtig ist dabei die Konsistenz zwischen den Teilkapiteln, damit keine Widersprüche bei Technologien, Zuständigkeiten oder Projektständen entstehen.
-
-Zusätzlich sollte mindestens eine externe Person die Arbeit vollständig gegenlesen. Externe Leser erkennen unklare Stellen, fehlende Übergänge und Formulierungen, die für das Team selbst bereits betriebsblind geworden sind. Die Rückmeldungen sollten gesammelt, priorisiert und strukturiert eingearbeitet werden.
-
-Für den finalen Stand empfiehlt sich ein kurzer Abschlusscheck: Kapitelreihenfolge, Abbildungs- und Quellenverweise, Terminangaben, Einheitlichkeit der Fachbegriffe sowie ein letzter Test aller beschriebenen Demonstrationsszenarien. So wird sichergestellt, dass die schriftliche Dokumentation den tatsächlichen Projektstand korrekt und verständlich abbildet.
